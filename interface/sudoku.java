@@ -520,4 +520,164 @@ public sudoku() {
 				grille[8][7] = Integer.parseInt(case87.getText());
 				grille[8][8] = Integer.parseInt(case88.getText());
 	}
+	
+	///////Methodes de bases
+	
+	//Obtenir les indices des colonnes d'une region particuliere
+	private int[] getIndicesColonnesRegion(int indiceRegion)
+	{
+		int[] indicesColonnesRegion = new int[3];
+		
+		switch(indiceRegion)
+		{
+			case 0:
+			case 3:
+			case 6:
+			{
+				indicesColonnesRegion = new int[]{0,1,2};
+			}
+			
+			case 1:
+			case 4:
+			case 7:
+			{
+				indicesColonnesRegion = new int[]{3,4,5};
+			}
+			
+			case 2:
+			case 5:
+			case 8:
+			{
+				indicesColonnesRegion = new int[]{6,7,8};
+			}
+		}
+		
+		return indicesColonnesRegion;
 	}
+	
+	//Obtenir les indices des lignes d'une region particuliere
+	private int[] getIndicesLignesRegion(int indiceRegion)
+	{
+		int[] indicesLignesRegion = new int[3];
+		
+		switch(indiceRegion)
+		{
+			case 0:
+			case 1:
+			case 2:
+			{
+				indicesLignesRegion = new int[]{0,1,2};
+			}
+			
+			case 3:
+			case 4:
+			case 5:
+			{
+				indicesLignesRegion = new int[]{3,4,5};
+			}
+			
+			case 6:
+			case 7:
+			case 8:
+			{
+				indicesLignesRegion = new int[]{6,7,8};
+			}
+		}
+		
+		return indicesLignesRegion;
+	}
+	
+	//Savoir si une region contient un chiffre
+	//grille[colonne][ligne]
+	public boolean InspecterRegion(int indiceRegion, int chiffre)
+	{
+		boolean laRegionContientLeChiffre = false;
+		
+		int[] indicesColonnesRegion = getIndicesColonnesRegion(indiceRegion);
+		int[] indicesLignesRegion = getIndicesLignesRegion(indiceRegion);
+		
+		for(int i=0;i<3;i++)
+		{
+			for (int j=0;j<3;j++)
+			{
+				if(grille[indicesColonnesRegion[i]][indicesLignesRegion[j]]==chiffre)
+				{
+					laRegionContientLeChiffre=true;
+				}
+			}
+		}
+		
+		return laRegionContientLeChiffre;
+	}
+	
+	public boolean InspecterColonne(int indiceColonne, int chiffre)
+	{
+		boolean laColonneContientLeChiffre = false;
+		
+		for (int j=0;j<9;j++)
+		{
+			if(grille[indiceColonne][j]==chiffre)
+			{
+				laColonneContientLeChiffre=true;
+			}
+		}
+		
+		return laColonneContientLeChiffre;
+	}
+	
+	public boolean InspecterLigne(int indiceLigne, int chiffre)
+	{
+		boolean laLigneContientLeChiffre = false;
+		
+		for (int i=0;i<9;i++)
+		{
+			if(grille[i][indiceLigne]==chiffre)
+			{
+				laLigneContientLeChiffre=true;
+			}
+		}
+		
+		return laLigneContientLeChiffre;
+	}
+	
+	///////Implementation des regles de bases
+	
+	
+	
+	///////Implementation des strategies - Algorithme de resolution des Soduko
+	
+	////Strategie 1 : Remplissage
+	//But : on veut savoir s'il est possible de placer une chiffre dans une case d'une region donnee a l'aide des informations dont on dispose.
+	
+	//Entrees : on choisit une region et un chiffre.
+	
+	//Initialisation : on inspecte la region en verifiant si le chiffre est deja place.
+	//  Si le chiffre est deja place : on arrete l'algorithme (critere : trivial).
+	//  Sinon : on continue
+	
+	//Compteur : on compte le nombre de colonnes dont le chiffre est deja place (initialement 0).
+	//Memoire : on memorise le numero de la colonne ou il serait possible de placer le chiffre (initialement peu importe).
+	//Pour chaque colonne de la region : on les inspecte en verifiant si le chiffre est deja place
+	//  Si la colonne inspectee contient le chiffre : on incremente le compteur et on passe a la colonne suivante si possible
+	//  Sinon : on memorise le numero de la colonne.
+	
+	//Selon la valeur du compteur : on regarde combien de colonnes ont le chiffre deja place
+	//  0 colonne : on arrete l'algorithme (critere : pas assez d'information)
+	//  1 colonne : on arrete l'algorithme (critere : pas assez d'information)
+	//  2 colonnes : on continue
+	//  autres valeurs : on arrete l'algorithme (critere : cas impossible)
+	
+	//Compteur : on compte le nombre de ligne dont le chiffre est deja place (initialement 0).
+	//Memoire : on memorise le numero de la ligne ou il serait possible de placer le chiffre (initialement peu importe).
+	//Pour chaque ligne de la region : on les inspecte en verifiant si le chiffre est deja place
+	//  Si la ligne inspectee contient le chiffre : on incremente le compteur et on passe a la ligne suivante si possible
+	//  Sinon : on memorise le numero de la ligne.
+	
+	//Selon la valeur du compteur : on regarde combien de colonnes ont le chiffre deja place
+	//  0 ligne : on arrete l'algorithme (critere : pas assez d'information)
+	//  1 ligne : on arrete l'algorithme (critere : pas assez d'information)
+	//  2 lignes : on continue
+	//  autres valeurs : on arrete l'algorithme (critere : cas impossible)
+	
+	//Resultat : le chiffre peut etre place a la colonne et a la ligne memorisee
+}
