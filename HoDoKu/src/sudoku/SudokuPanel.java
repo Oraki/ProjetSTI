@@ -146,7 +146,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
     private Sudoku2 sudoku; // Daten fÃ¼r das Sudoku
     private SudokuSolver solver; // LÃ¶sung fÃ¼r das Sudoku
     private SudokuGenerator generator; // LÃ¶sung mit BruteForce (Dancing Links)
-    private MainFrame mainFrame; // fÃ¶r OberflÃ¤che
+    //private MainFrame mainFrame; // fÃ¶r OberflÃ¤che
     private CellZoomPanel cellZoomPanel; // active cell display and color chooser
     private SolutionStep step;   // fÃ¼r Anzeige der Hinweise
     private int chainIndex = -1; // if != -1, only the chain with the right index is shown
@@ -252,8 +252,8 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
      *
      * @param mf
      */
-    public SudokuPanel(MainFrame mf) {
-        mainFrame = mf;
+    public SudokuPanel(/*MainFrame mf*/) {
+       // mainFrame = mf;
         sudoku = new Sudoku2();
         sudoku.clearSudoku();
         setShowCandidates(Options.getInstance().isShowCandidates());
@@ -261,7 +261,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
         solver = SudokuSolverFactory.getDefaultSolverInstance();
         solver.setSudoku(sudoku.clone());
         solver.solve();
-        progressChecker = new ProgressChecker(mainFrame);
+        //progressChecker = new ProgressChecker(mainFrame);
 
         initComponents();
 
@@ -627,24 +627,24 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
     private void formKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyReleased
         handleKeysReleased(evt);
         updateCellZoomPanel();
-        mainFrame.fixFocus();
+       // mainFrame.fixFocus();
     }//GEN-LAST:event_formKeyReleased
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         int keyCode = evt.getKeyCode();
         switch (keyCode) {
             case KeyEvent.VK_ESCAPE:
-                mainFrame.coloringPanelClicked(-1);
+              //  mainFrame.coloringPanelClicked(-1);
                 clearRegion();
-                if (step != null) {
+                /*if (step != null) {
                     mainFrame.abortStep();
-                }
+                }*/
                 break;
             default:
                 handleKeys(evt);
         }
         updateCellZoomPanel();
-        mainFrame.fixFocus();
+      //  mainFrame.fixFocus();
     }//GEN-LAST:event_formKeyPressed
 
     private void formMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_formMouseClicked
@@ -680,7 +680,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
                 undoStack.pop();
             }
             updateCellZoomPanel();
-            mainFrame.check();
+           // mainFrame.check();
             repaint();
         }
     }//GEN-LAST:event_excludeSeveralMenuItemActionPerformed
@@ -980,7 +980,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
                 undoStack.pop();
             }
             updateCellZoomPanel();
-            mainFrame.check();
+           // mainFrame.check();
             repaint();
         }
     }
@@ -1074,7 +1074,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
         step = state.getStep();
         updateCellZoomPanel();
         checkProgress();
-        mainFrame.check();
+//        mainFrame.check();
         repaint();
     }
 
@@ -1393,7 +1393,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
                     // Zelle setzen
                     if (selectedCells.isEmpty()) {
                         setCell(aktLine, aktCol, number);
-                        if (mainFrame.isEingabeModus() && Options.getInstance().isEditModeAutoAdvance()) {
+                        if (/*mainFrame.isEingabeModus() && */Options.getInstance().isEditModeAutoAdvance()) {
                             // automatically advance to the next cell
                             if (aktCol < 8) {
                                 setAktRowCol(aktLine, aktCol + 1);
@@ -1438,7 +1438,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
                         sudoku.setCell(aktLine, aktCol, 0);
                         changed = true;
                     }
-                    if (mainFrame.isEingabeModus() && Options.getInstance().isEditModeAutoAdvance()) {
+                    if (/*mainFrame.isEingabeModus() && */Options.getInstance().isEditModeAutoAdvance()) {
                         // automatically advance to the next cell
                         if (aktCol < 8) {
                             setAktRowCol(aktLine, aktCol + 1);
@@ -1583,7 +1583,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
             undoStack.pop();
         }
         updateCellZoomPanel();
-        mainFrame.check();
+//        mainFrame.check();
         repaint();
     }
 
@@ -1733,7 +1733,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
         coloringCandidateMap.clear();
         setActiveColor(-1);
         updateCellZoomPanel();
-        mainFrame.check();
+//        mainFrame.check();
     }
 
     /**
@@ -1763,7 +1763,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
         handleColoring(aktLine, aktCol, candidate, aktColorIndex);
         repaint();
         updateCellZoomPanel();
-        mainFrame.fixFocus();
+      //  mainFrame.fixFocus();
     }
 
     /**
@@ -1816,7 +1816,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
             }
         }
         updateCellZoomPanel();
-        mainFrame.check();
+    //    mainFrame.check();
         repaint();
     }
 
@@ -3065,9 +3065,9 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
             sudoku = undoStack.pop();
             updateCellZoomPanel();
             checkProgress();
-            mainFrame.setCurrentLevel(sudoku.getLevel());
-            mainFrame.setCurrentScore(sudoku.getScore());
-            mainFrame.check();
+//            mainFrame.setCurrentLevel(sudoku.getLevel());
+  //          mainFrame.setCurrentScore(sudoku.getScore());
+ //           mainFrame.check();
             repaint();
         }
     }
@@ -3078,9 +3078,9 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
             sudoku = redoStack.pop();
             updateCellZoomPanel();
             checkProgress();
-            mainFrame.setCurrentLevel(sudoku.getLevel());
-            mainFrame.setCurrentScore(sudoku.getScore());
-            mainFrame.check();
+    //        mainFrame.setCurrentLevel(sudoku.getLevel());
+       //     mainFrame.setCurrentScore(sudoku.getScore());
+       //     mainFrame.check();
             repaint();
         }
     }
@@ -3171,11 +3171,11 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
             }
         }
         updateCellZoomPanel();
-        if (mainFrame != null) {
+      /*  if (mainFrame != null) {
             mainFrame.setCurrentLevel(sudoku.getLevel());
             mainFrame.setCurrentScore(sudoku.getScore());
             mainFrame.check();
-        }
+        }*/
         repaint();
     }
 
@@ -3222,7 +3222,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
         setChainInStep(-1);
         updateCellZoomPanel();
         checkProgress();
-        mainFrame.check();
+//        mainFrame.check();
         repaint();
     }
 
@@ -3288,7 +3288,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
             setChainInStep(-1);
             updateCellZoomPanel();
             checkProgress();
-            mainFrame.check();
+         //   mainFrame.check();
             repaint();
             if (sudoku.isSolved() && Options.getInstance().isShowSudokuSolved()) {
                 JOptionPane.showMessageDialog(this, java.util.ResourceBundle.getBundle("intl/MainFrame").getString("MainFrame.sudoku_solved"),
@@ -3369,7 +3369,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
 
     public void setShowDeviations(boolean showDeviations) {
         this.showDeviations = showDeviations;
-        mainFrame.check();
+//        mainFrame.check();
         repaint();
     }
 
@@ -3734,8 +3734,8 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
                 undoStack.pop();
             }
             updateCellZoomPanel();
-            mainFrame.check();
-            mainFrame.fixFocus();
+//            mainFrame.check();
+  //          mainFrame.fixFocus();
             repaint();
         }
     }
@@ -3761,8 +3761,8 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
             undoStack.pop();
         }
         updateCellZoomPanel();
-        mainFrame.fixFocus();
-        mainFrame.check();
+ //       mainFrame.fixFocus();
+ //       mainFrame.check();
         repaint();
     }
 
@@ -3819,7 +3819,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
                 undoStack.pop();
             }
             updateCellZoomPanel();
-            mainFrame.check();
+  //          mainFrame.check();
             repaint();
         }
     }
@@ -3848,8 +3848,8 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
                 undoStack.pop();
             }
             updateCellZoomPanel();
-            mainFrame.check();
-            mainFrame.fixFocus();
+ //           mainFrame.check();
+ //           mainFrame.fixFocus();
             repaint();
         }
     }
@@ -3873,7 +3873,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
             // coloring is active
             handleColoring(aktLine, aktCol, -1, color);
             updateCellZoomPanel();
-            mainFrame.check();
+   //         mainFrame.check();
             repaint();
         }
     }
@@ -3934,7 +3934,7 @@ public class SudokuPanel extends javax.swing.JPanel implements Printable {
         sudoku.setGivens(givens);
         updateCellZoomPanel();
         repaint();
-        mainFrame.check();
+//        mainFrame.check();
     }
 
     /**
