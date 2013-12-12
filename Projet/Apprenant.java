@@ -6,6 +6,7 @@ public class Apprenant
 	int knowledge_fail[] = new int[KNOWLEDGE_COUNT];
 	int numRandom;
 	int nombreDeCoupJoue;
+	int nombreDHypoCorrectesFaites;
 	
 	// 0 -> KNOWLEDGE_1, //Voir un chiffre d'une ligne et l'éliminer de cette dernière
 	// 1 -> KNOWLEDGE_2, //Voir un chiffre d'une colonne et l'éliminer de cette dernière
@@ -23,6 +24,7 @@ public class Apprenant
 		}
 		numRandom = 0;
 		nombreDeCoupJoue = 0;
+		nombreDHypoCorrectesFaites = 0;
 	}
 	
 	void AddSuccess(int knowledge)
