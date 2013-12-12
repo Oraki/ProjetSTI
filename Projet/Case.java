@@ -21,4 +21,5 @@ public class Case
 	{
 		return (chiffre != 0);
 	}
+	
 }
