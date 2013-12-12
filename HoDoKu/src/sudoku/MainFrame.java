@@ -93,15 +93,7 @@ import solver.SudokuSolverFactory;
  * @author  hobiwan
  */
 public class MainFrame extends javax.swing.JFrame implements FlavorListener {
-
-    private static final long serialVersionUID = 1L;
-    public static final String VERSION = "HoDoKu - v2.2.0";
-//    public static final String BUILD = "Build 16";
-    public static final String BUILD;
-    public static final String REV = "$LastChangedRevision: 116 $";
-    /** The size of the toggle button icons */
-    private static final int TOGGLE_BUTTON_ICON_SIZE = 32;
-    private SudokuPanel sudokuPanel;
+	
     //private DifficultyLevel level = Options.getInstance().getDifficultyLevels()[DifficultyType.EASY.ordinal()];
     private JToggleButton[] toggleButtons = new JToggleButton[10];
     /** Icons for the filter toggle buttons in the toolbar (original version) */
@@ -219,7 +211,7 @@ public class MainFrame extends javax.swing.JFrame implements FlavorListener {
         // else is done (helps restoring the screen layout)
         if (launchFile != null && launchFile.endsWith("." + configFileExt)) {
             Options.readOptions(launchFile);
-            BackgroundGeneratorThread.getInstance().resetAll();
+            BackgroundGeneratorThread.getInstance().reseAll();
         }
         Options.getInstance().checkAllFonts();
 
@@ -1784,7 +1776,8 @@ public class MainFrame extends javax.swing.JFrame implements FlavorListener {
         askQuestionMenuItem.setMnemonic(java.util.ResourceBundle.getBundle("intl/MainFrame").getString("MainFrame.askQuestionMenuItem.mnemonic").charAt(0));
         askQuestionMenuItem.setText(bundle.getString("MainFrame.askQuestionMenuItem.text")); // NOI18N
         askQuestionMenuItem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+           public void actionPerformed(java.awt.event.ActionEvent evt) {
+// </editor-fold>//GEN-END:initComponents
                 askQuestionMenuItemActionPerformed(evt);
             }
         });
@@ -1805,8 +1798,7 @@ public class MainFrame extends javax.swing.JFrame implements FlavorListener {
         setJMenuBar(jMenuBar1);
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
-
+    }
     private void savePuzzleAsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_savePuzzleAsMenuItemActionPerformed
         saveToFile(true);
     }//GEN-LAST:event_savePuzzleAsMenuItemActionPerformed
