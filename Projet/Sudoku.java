@@ -38,6 +38,8 @@ public class Sudoku
 		listeCoupStrat1.clear();
 		listeCoupStrat2.clear();
 		listeCoupStrat3.clear();
+		
+		//Faire la MAJ avec Jess
 	}
 	
 	public void AddHypo(int ligne, int colonne, int numero)//Ajout d'une hypothèse par l'utilisateur
