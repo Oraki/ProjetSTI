@@ -1,4 +1,3 @@
-package sudoku;
 
 public class Case
 {
@@ -21,4 +20,5 @@ public class Case
 	{
 		return (chiffre != 0);
 	}
+	
 }
