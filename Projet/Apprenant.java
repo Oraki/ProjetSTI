@@ -12,7 +12,7 @@ public class Apprenant
 	// 2 -> KNOWLEDGE_3, //Voir un chiffre d'une région et l'éliminer de cette dernière
 	// 3 -> KNOWLEDGE_4, //Valider un chiffre sur une case lorsque c'est la seule possibilité
 	// 4 -> KNOWLEDGE_5,
-	// 5 -> KNOWLEDGE_6,
+	// 5 -> KNOWLEDGE_6, // Random
 	
 	public Apprenant()
 	{
@@ -29,11 +29,19 @@ public class Apprenant
 		knowledge_success[knowledge]++;
 	}
 	
-	void Removefail(int knowledge)
+	void RemoveFail(int knowledge)
 	{
 		knowledge_fail[knowledge]--;
 	}
 	
+	void AddRandom()
+	{
+		AddSuccess(5);
+	}
 	
+	void RemoveRandom()
+	{
+		RemoveFail(5);
+	}
 	
 }
