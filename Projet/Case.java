@@ -1,4 +1,3 @@
-package sudoku;
 
 public class Case
 {

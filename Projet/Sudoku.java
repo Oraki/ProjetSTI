@@ -5,6 +5,9 @@ import java.util.ListIterator;
 
 public class Sudoku
 {
+	Apprenant apprenant = new Apprenant();
+	Tuteur tuteur = new Tuteur();
+	
 	Case matriceSudoku[][] = new Case[9][9];
 	Case matriceAffiche[][] = new Case[9][9];
 	Case matrice[][] = new Case[9][9];
