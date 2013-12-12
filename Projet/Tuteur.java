@@ -2,22 +2,28 @@
 
 public class Tuteur 
 {
+	private String texteTuteur ="";
+	
 	private static String nom_STI = "SudokuSmartTutor";
 	private static String nom_Auteur1 = "Gilles Godefroid";
 	private static String nom_Auteur2 = "Ludovic Lefebvre";
 	private static String nom_Auteur3 = "Jules Mozes";
 	private static String nom_Auteur4 = "Maxime Turmel";
 	
-	private static String message_Connexion_Bienvenue = "Bienvenue sur "+nom_STI+"! Le systeme tutoriel intelligent pour apprendre au joueur au Sudoku !";
+	private static String message_Connexion_Bienvenue = "Bienvenue sur "+nom_STI+", le systeme tutoriel intelligent pour apprendre a jouer au Sudoku !";
 	private static String message_Connexion_Auteurs = nom_STI+" a ete realise par "+nom_Auteur1+", "+nom_Auteur2+", "+nom_Auteur3+" et "+nom_Auteur4+" dans le cadre du cours de maitrise INF7470 a l'UQAM.";
 	private static String message_Connexion_ButDuJeu = "Le but du jeu du Sudoku est de completer la grille en remplissant chaque case par un chiffre compris entre 1 et 9, de maniere a ce que les regles de bases soient satisfaites.";
 	
 	private static String message_Regle_Introduction = "Voici les regles de bases.";
 	private static String message_Regle_Rappel = "Rappel des regles de bases.";
-	private static String message_Regle_Grille = "La grille du Sudoku est composee de 81 cases reparties en un carre. On peut la diviser en 9 colonnes, 9 lignes ou 9 region carre.";
-	private static String message_Regle_Colonne = "Un chiffre dans une case satisfait la regle de la colonne si aucun autre meme chiffre ne se trouve dans la colonne de la case en question.";
-	private static String message_Regle_Ligne = "Un chiffre dans une case satisfait la regle de la ligne si aucun autre meme chiffre ne se trouve dans la ligne de la case en question.";
-	private static String message_Regle_Region = "Un chiffre dans une case satisfait la regle de la region si aucun autre meme chiffre ne se trouve dans la region de la case en question.";
+	private static String message_Regle_Grille = "La grille du Sudoku est composee de 81 cases reparties en un carre. On peut la diviser en 9 colonnes, 9 lignes ou 9 regions carrees.";
+	private static String message_Regle_Colonne1 = "Un chiffre dans une case satisfait la regle de la colonne si aucun autre meme chiffre ne se trouve dans la colonne de la case en question.";
+	private static String message_Regle_Colonne2 = "Il en va de meme avec la regle de la colonne.";
+	private static String message_Regle_Ligne1 = "Un chiffre dans une case satisfait la regle de la ligne si aucun autre meme chiffre ne se trouve dans la ligne de la case en question.";
+	private static String message_Regle_Ligne2 = "Il en va de meme avec la regle de la ligne.";
+	private static String message_Regle_Region1 = "Un chiffre dans une case satisfait la regle de la region si aucun autre meme chiffre ne se trouve dans la region de la case en question.";
+	private static String message_Regle_Region2 = "Il en va de meme avec la regle de la region.";
+	private static String message_Regle_ColonneLigneRegion = "Un chiffre dans une case satisfait la regle de la colonne si aucun autre meme chiffre ne se trouve dans la colonne de la case en question. Il en va de meme avec la regle de la ligne et la regle de la region.";
 	
 	private static String message_Hypotheses_Introduction = "Voici le principe de fonctionnement des hypotheses.";
 	private static String message_Hypotheses_Definition = "Si un chiffre satisfait presentement les trois regles de bases dans une case, ce chiffre est une hypothese pour cette case.";
@@ -43,5 +49,78 @@ public class Tuteur
 	private static String message_Strat2_Conseil = "";
 	private static String message_Strat2_Application1 = "";
 	private static String message_Strat2_Application2 = "";
+	
+	public void MAJTexteTuteur(String texte)
+	{
+		if(!texte.equals("\n"))
+		{	
+			System.out.print("Tuteur :\n");
+		}
+		
+		try 
+		{
+			Thread.sleep(500);
+		} catch (InterruptedException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		for(int i=0; i<texte.length();i++)
+		{
+			System.out.print(texte.charAt(i));
+			
+			try 
+			{
+				Thread.sleep(80);
+			} catch (InterruptedException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		try 
+		{
+			Thread.sleep(1000);
+		} catch (InterruptedException e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		System.out.print("\n\n");
+	}
+	
+	public void messagesConnexion()
+	{
+
+		MAJTexteTuteur(message_Connexion_Bienvenue);
+		
+		MAJTexteTuteur(message_Connexion_Auteurs);
+		
+		MAJTexteTuteur(message_Connexion_ButDuJeu);
+		
+		MAJTexteTuteur("\n");
+
+	}
+	
+	public void messagesIntroductionRegles()
+	{
+		MAJTexteTuteur(message_Regle_Introduction);
+		
+		MAJTexteTuteur(message_Regle_ColonneLigneRegion);
+		
+		MAJTexteTuteur("\n");
+	}
+	
+	public static void main(String[] args)
+	{
+		Tuteur zeTuteur = new Tuteur();
+		zeTuteur.messagesConnexion();
+		zeTuteur.messagesIntroductionRegles();
+	}
+	
+	
 	
 }
