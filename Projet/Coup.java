@@ -51,4 +51,8 @@ public class Coup {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "Coup{" + "ligne=" + ligne + ", colonne=" + colonne + ", region=" + region + ", numero=" + numero + '}';
+    }
 }
