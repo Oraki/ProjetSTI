@@ -12,6 +12,8 @@ public class Sudoku
 	Case matriceAffiche[][] = new Case[9][9];
 	Case matrice[][] = new Case[9][9];
 	
+	ExpertSudoku expert;
+	
 	List listeCoupStrat1 = new LinkedList(); //liste des coup possibles en applicant la stratégie 1
 	List listeCoupStrat2 = new LinkedList(); //liste des coup possibles en applicant la stratégie 2
 	List listeCoupStrat3 = new LinkedList(); //liste des coup possibles en applicant la stratégie 3
@@ -25,7 +27,33 @@ public class Sudoku
 				matriceSudoku[i][j] = new Case();	
 				matriceAffiche[i][j] = new Case();
 			}
-		}		
+		}	
+		
+		expert = new ExpertSudoku( ConvertToTabInt(matriceSudoku));
+	}
+	
+	private int[][] ConvertToTabInt(Case[][] tab)
+	{
+		int[][] tabTemp = new int[9][9];
+		
+		for(int i = 0; i<9; i++)
+		{
+			for(int j = 0; j<9; j++)
+			{
+				if (tab[i][j].CaseRemplie())
+				{
+					tabTemp[i][j] = tab[i][j].chiffre;
+				}
+				
+				else
+				{
+					tabTemp[i][j] = 0;
+				}
+					
+			}
+		}
+		
+		return tabTemp;  
 	}
 	
 	public boolean CheckValiditeDuCoup(Coup coup)
@@ -39,7 +67,9 @@ public class Sudoku
 		listeCoupStrat2.clear();
 		listeCoupStrat3.clear();
 		
-		//Faire la MAJ avec Jess
+		listeCoupStrat1 = expert.getCoupPossible(1);
+		listeCoupStrat2 = expert.getCoupPossible(2);
+		listeCoupStrat3 = expert.getCoupPossible(3);
 	}
 	
 	public void AddHypo(int ligne, int colonne, int numero)//Ajout d'une hypothèse par l'utilisateur
@@ -56,9 +86,47 @@ public class Sudoku
 	{
 		if(matriceSudoku[ligne][colonne].CaseRemplie())//on vérifie si la case n'est pas déjà remplie
 		{
-			return;
+			Coup coup = new Coup(ligne, colonne, numero);
+			boolean CoupPossible = expert.jouerValeur(new Coup(ligne, colonne, numero)); //Cette fonction check quoi? 
 		}
 		
 		
+	}
+	
+	public boolean VerifHypo()
+	{
+		//Savoir comment envoyer les cases déjà remplie.
+		
+		int[][][] tabTemp = new int[9][9][9];
+		for(int i = 0; i<9; i++)
+		{
+			for(int j = 0; j<9; j++)
+			{
+				if(!matriceSudoku[i][j].CaseRemplie())
+				{
+					for(int k = 0; k < 9; k++)
+					{
+						if(matriceSudoku[i][j].tabHypo[k])
+						{
+							tabTemp[i][j][k] = 1;
+						}
+						else
+						{
+							tabTemp[i][j][k] = 0;
+						}
+					}
+				}
+				
+				else
+				{
+					for(int k = 0; k < 9; k++)
+					{
+						tabTemp[i][j][k] = 0;
+					}
+				}
+			}
+		}	
+		
+		return true;
 	}
 }
