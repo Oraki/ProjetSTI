@@ -3,8 +3,15 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 
+
 public class Sudoku
 {
+	public static void main(String[] arg)
+	{
+		Sudoku sudo = new Sudoku();
+	}
+	
+	
 	Apprenant apprenant = new Apprenant();
 	Tuteur tuteur = new Tuteur();
 	
@@ -18,6 +25,8 @@ public class Sudoku
 	List listeCoupStrat2 = new LinkedList(); //liste des coup possibles en applicant la stratégie 2
 	List listeCoupStrat3 = new LinkedList(); //liste des coup possibles en applicant la stratégie 3
 	
+	Interface inter;
+	
 	public Sudoku()
 	{
 		for(int i = 0; i<9; i++)
@@ -30,6 +39,8 @@ public class Sudoku
 		}	
 		
 		expert = new ExpertSudoku( ConvertToTabInt(matriceSudoku));
+		inter = new Interface();
+		//inter.show();
 	}
 	
 	private int[][] ConvertToTabInt(Case[][] tab)
@@ -87,45 +98,61 @@ public class Sudoku
 		if(matriceSudoku[ligne][colonne].CaseRemplie())//on vérifie si la case n'est pas déjà remplie
 		{
 			Coup coup = new Coup(ligne, colonne, numero);
-			boolean CoupPossible = expert.jouerValeur(new Coup(ligne, colonne, numero)); //Cette fonction check quoi? 
+			int CoupPossible = expert.jouerValeur(coup); //Cette fonction check quoi?
+			
+			
+			switch (CoupPossible)
+			{
+			case -2 ://reponse fausse
+				
+				return;
+				
+			case -1://réponse bonne mais impossible d'identifier les stratégies
+				apprenant.AddRandom();
+				return;
+			
+			case 0://strat 1
+				
+				return;
+			
+			case 1://strat 2
+				
+				return;
+				
+			default:
+				return;
+			}
 		}
 		
 		
 	}
 	
-	public boolean VerifHypo()
-	{
-		//Savoir comment envoyer les cases déjà remplie.
+	public boolean RetirerHypothese(int ligne, int colonne, int region, int  numero)
+	{				
+		Coup coup = new Coup(ligne, colonne, numero);
+		int CoupPossible = expert.retirerPossibilite(coup);
 		
-		int[][][] tabTemp = new int[9][9][9];
-		for(int i = 0; i<9; i++)
+		switch (CoupPossible)
 		{
-			for(int j = 0; j<9; j++)
-			{
-				if(!matriceSudoku[i][j].CaseRemplie())
-				{
-					for(int k = 0; k < 9; k++)
-					{
-						if(matriceSudoku[i][j].tabHypo[k])
-						{
-							tabTemp[i][j][k] = 1;
-						}
-						else
-						{
-							tabTemp[i][j][k] = 0;
-						}
-					}
-				}
-				
-				else
-				{
-					for(int k = 0; k < 9; k++)
-					{
-						tabTemp[i][j][k] = 0;
-					}
-				}
-			}
-		}	
+		case -2 ://reponse fausse
+			
+			return;
+			
+		case -1://réponse bonne mais impossible d'identifier les stratégies
+			apprenant.AddRandom();
+			return;
+		
+		case 0://strat 1
+			
+			return;
+		
+		case 1://strat 2
+			
+			return;
+			
+		default:
+			return;
+		}
 		
 		return true;
 	}
