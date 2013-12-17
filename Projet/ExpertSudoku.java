@@ -11,8 +11,10 @@ import jess.*;
 public class ExpertSudoku {
 
     private final int[][] puzzle;
-    private int[][] solution;
+    private final boolean[][][] possibilites;
+    private final int[][] solution;
     private final List<Coup>[] coupPossible;
+    private final List<Coup>[] retraitPossible;
 
     //***  Objet Jess ***//
     private final jess.Rete moteur;
@@ -27,15 +29,41 @@ public class ExpertSudoku {
     public ExpertSudoku(int[][] puzzle) {
         this.puzzle = puzzle;
         this.moteur = new Rete();
-        coupPossible = new List[3];
-        initialiserList();
-        trouverCoups();
+        coupPossible = new List[2];
+        retraitPossible = new List[2];
+        possibilites = new boolean[9][9][9];
+        solution = new int[9][9];
+        for (int i = 0; i < puzzle.length; ++i) {
+            for (int j = 0; j < puzzle[i].length; ++j) {
+                if (puzzle[i][j] == 0) {
+                    for (int k = 0; k < possibilites[i][j].length; ++k) {
+                        possibilites[i][j][k] = true;
+                    }
+                }
+            }
+        }
+        try {
+            trouverSolution();
+            initialiserList();
+            trouverCoups();
+        } catch (JessException e) {
+            e.printStackTrace();
+        }
     }
 
     private void initialiserList() {
         for (int i = 0; i < coupPossible.length; ++i) {
             coupPossible[i] = new LinkedList<>();
         }
+        for (int i = 0; i < retraitPossible.length; ++i) {
+            retraitPossible[i] = new LinkedList<>();
+        }
+    }
+
+    //TODO
+    private void trouverSolution() throws JessException {
+        definirTemplate();
+
     }
 
     /**
@@ -51,28 +79,88 @@ public class ExpertSudoku {
         if (c.getNumero() != solution[c.getLigne()][c.getColonne()]) {
             return -2;
         } else {
-            puzzle[c.getLigne()][c.getColonne()] = c.getNumero();
-            initialiserList();
-            trouverCoups();
+            try {
+                puzzle[c.getLigne()][c.getColonne()] = c.getNumero();
+                initialiserList();
+                trouverCoups();
 
-            int strat = -1;
-            for (int i = 0; i < coupPossible.length; ++i) {
-                if (coupPossible[i].contains(c)) {
-                    strat = i;
+                int strat = -1;
+                for (int i = 0; i < coupPossible.length; ++i) {
+                    if (coupPossible[i].contains(c)) {
+                        strat = i;
+                    }
                 }
+                return strat;
+            } catch (JessException e) {
+                e.printStackTrace();
+                return -3;
             }
-            return strat;
         }
     }
 
     /**
-     * La liste des couts suvants possibles pour une stratégie
+     * Enregistre le retrait d'une possibilité de valeur par l'utilisateur. S'il
+     * y a une erreur, la valeur n'est pas intégé à la grille.
+     *
+     * @param c le coup du joueur
+     * @return Si le retrait d'une valeur possible n'est la réponse de la case
+     * et est compatible avec une stratégie, le numéro de la stratégie (>=0). Si
+     * le retrait n'est la réponse de la case mais que la stratégie n'est pas
+     * identifiable, -1. Si mauvause réponse, -2.
+     */
+    public int retirerPossibilite(Coup c) {
+        if (c.getNumero() == solution[c.getLigne()][c.getColonne()]) {
+            return -2;
+        } else {
+            try {
+                possibilites[c.getLigne()][c.getColonne()][c.getNumero()] = false;
+                initialiserList();
+                trouverCoups();
+
+                int strat = -1;
+                for (int i = 0; i < retraitPossible.length; ++i) {
+                    if (retraitPossible[i].contains(c)) {
+                        strat = i;
+                    }
+                }
+                return strat;
+            } catch (JessException e) {
+                e.printStackTrace();
+                return -3;
+            }
+        }
+    }
+
+    /**
+     * Retire une valeur de l'utilisateur
+     *
+     * @param c le coup à retirer
+     */
+    public void retirerCoup(Coup c) {
+        puzzle[c.getLigne()][c.getColonne()] = 0;
+    }
+
+    /**
+     * Remet une valeur possible
+     *
+     * @param c le cout à remettre
+     */
+    public void remettrePossibilite(Coup c) {
+        possibilites[c.getLigne()][c.getColonne()][c.getNumero()] = true;
+    }
+
+    /**
+     * La liste des couts suivants possibles pour une stratégie
      *
      * @param strategie le numéro de la stratégie
      * @return La liste de coup possible pour cette stratégie
      */
     public List<Coup> getCoupPossible(int strategie) {
         return coupPossible[strategie];
+    }
+
+    public List<Coup> getRetraitHypothesePossible(int strategie) {
+        return retraitPossible[strategie];
     }
 
     /**
@@ -117,12 +205,14 @@ public class ExpertSudoku {
                     moteur.assertFact(f);
                 } else {
                     for (int k = 1; k <= 9; ++k) {
-                        Fact f = new Fact(dtPoss);
-                        f.setSlotValue("ligne", new Value(i, RU.INTEGER));
-                        f.setSlotValue("col", new Value(j, RU.INTEGER));
-                        f.setSlotValue("zone", new Value(i / 3 + (j / 3) * 3, RU.INTEGER));
-                        f.setSlotValue("is", new Value(k, RU.INTEGER));
-                        moteur.assertFact(f);
+                        if (possibilites[i][j][k]) {
+                            Fact f = new Fact(dtPoss);
+                            f.setSlotValue("ligne", new Value(i, RU.INTEGER));
+                            f.setSlotValue("col", new Value(j, RU.INTEGER));
+                            f.setSlotValue("zone", new Value(i / 3 + (j / 3) * 3, RU.INTEGER));
+                            f.setSlotValue("is", new Value(k, RU.INTEGER));
+                            moteur.assertFact(f);
+                        }
                     }
                 }
             }
@@ -130,7 +220,7 @@ public class ExpertSudoku {
     }
 
     /**
-     * Fonction pour Jess. Ne pas utiiliser.
+     * Fonction pour communiquer avec Jess. Ne pas utiiliser.
      *
      * @param ligne
      * @param col
@@ -141,76 +231,76 @@ public class ExpertSudoku {
         coupPossible[strat].add(new Coup(ligne, col, val));
     }
 
-    private void trouverCoups() {
-        try {
-            moteur.reset();
-            definirTemplate();
-
-            //Stratégie #0 (Retrait hypothese)
-            moteur.executeCommand("(defrule eliminerPossi "
-                    + "?f <-(possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
-                    + "(valeur (ligne ?x2) (col ?y2) (zone ?z2) (is ?v))"
-                    + "(test (or (eq ?x2 ?x) (eq ?z2 ?z) (eq ?y2 ?y))) "
-                    + "=> "
-                    + "(retract ?f)) ");
-
-            //Stratégie #1 (Retrait hypothese)
-            moteur.executeCommand("(defrule insertitude "
-                    + "(possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
-                    + "(possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v2&:(neq ?v2 ?v))) "
-                    + "(not (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v3&:(neq ?v3 ?v ?v2)))) "
-                    + "(possibilite (ligne ?x2) (col ?y2) (zone ?z2) (is ?v)) "
-                    + "(test (or (eq ?x ?x2) (eq ?y2 ?y) (eq ?z2 ?z)))"
-                    + "(possibilite (ligne ?x2) (col ?y2) (zone ?z2) (is ?v2)) "
-                    + "(not (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v4&:(neq ?v4 ?v ?v2)))) "
-                    + "?f <- (possibilite (ligne ?x3) (ligne ?y3) (zone ?z3) (is ?v5&:(or (eq ?v5 ?v) (eq ?v5 ?v2)))) "
-                    + "(test (or (eq ?x ?x3) (eq ?y3 ?y) (eq ?z3 ?z))) "
-                    + "=> "
-                    + "(retract ?f)"
-                    + ")");
-
-            //Stratégie #0 (Coup)
-            moteur.executeCommand("(defrule strategie0 "
-                    + "?f <- (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
-                    + "(or (not (possibilite (ligne ?x) (col ?y2&:(neq ?y2 ?y)) (is ?v))) "
-                    + "(not (possibilite (ligne ?x2&:(neq ?x2 ?x)) (col ?y) (is ?v))) "
-                    + "(not (and (possibilite (ligne ?x2) (col ?y2) (zone ?z) (is ?v)) "
-                    + "(test (not (and (eq ?x2 ?x) (eq ?y2 ?y))))))) "
-                    + "=> "
-                    + "(call (fetch EXPERT) ajouterCoup ?x ?y ?v 0) "
-                    + "(retract ?f)"
-                    + ")");
-
-            //Stratégie #1 (Coup)
-            moteur.executeCommand("(defrule strategie1 "
-                    + "?f <- (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
-                    + "(not (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v2&:(neq ?v2 ?v)))) "
-                    + "=> "
-                    + "(call (fetch EXPERT) ajouterCoup ?x ?y ?v 1) "
-                    + "(retract ?f) "
-                    + ")");
-
-            //Stratégie #2 (Retrait hypothese)
-            moteur.executeCommand("(defrule insertitude "
-                    + "(possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
-                    + "(possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v2&:(neq ?v2 ?v))) "
-                    + "(not (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v3&:(neq ?v3 ?v ?v2)))) "
-                    + "(possibilite (ligne ?x2) (col ?y2) (zone ?z2) (is ?v)) "
-                    + "(test (or (eq ?x ?x2) (eq ?y2 ?y) (eq ?z2 ?z)))"
-                    + "(possibilite (ligne ?x2) (col ?y2) (zone ?z2) (is ?v2)) "
-                    + "(not (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v4&:(neq ?v4 ?v ?v2)))) "
-                    + "?f <- (possibilite (ligne ?x3) (ligne ?y3) (zone ?z3) (is ?v5&:(or (eq ?v5 ?v) (eq ?v5 ?v2)))) "
-                    + "(test (or (eq ?x ?x3) (eq ?y3 ?y) (eq ?z3 ?z))) "
-                    + "=> "
-                    + "(retract ?f)"
-                    + ")");
-            ajouterPuzzleDansJess();
-            moteur.run();
-        } catch (JessException e) {
-            e.printStackTrace();
-        }
+    /**
+     * Fonction pour communiquer avec Jess. Ne pas utiiliser.
+     *
+     * @param ligne
+     * @param col
+     * @param val
+     * @param strat
+     */
+    public void retirerPossibilite(int ligne, int col, int val, int strat) {
+        retraitPossible[strat].add(new Coup(ligne, col, val));
     }
 
+    private void trouverCoups() throws JessException {
+        moteur.reset();
+        definirTemplate();
+
+        //Stratégie #0 (Retrait hypothese)
+        moteur.executeCommand("(defrule eliminerPossi "
+                + "?f <-(possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
+                + "(valeur (ligne ?x2) (col ?y2) (zone ?z2) (is ?v))"
+                + "(test (or (eq ?x2 ?x) (eq ?z2 ?z) (eq ?y2 ?y))) "
+                + "=> "
+                + "(call (fetch EXPERT) retirerPossibilite ?x ?y ?v 0) "
+                + "(retract ?f)) ");
+
+        //Stratégie #0 (Coup)
+        moteur.executeCommand("(defrule strategie0 "
+                + "?f <- (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
+                + "(or (not (possibilite (ligne ?x) (col ?y2&:(neq ?y2 ?y)) (is ?v))) "
+                + "(not (possibilite (ligne ?x2&:(neq ?x2 ?x)) (col ?y) (is ?v))) "
+                + "(not (and (possibilite (ligne ?x2) (col ?y2) (zone ?z) (is ?v)) "
+                + "(test (not (and (eq ?x2 ?x) (eq ?y2 ?y))))))) "
+                + "=> "
+                + "(call (fetch EXPERT) ajouterCoup ?x ?y ?v 0) "
+                + "(retract ?f)"
+                + ")");
+
+        //Stratégie #1 (Coup)
+        moteur.executeCommand("(defrule strategie1 "
+                + "?f <- (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
+                + "(not (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v2&:(neq ?v2 ?v)))) "
+                + "=> "
+                + "(call (fetch EXPERT) ajouterCoup ?x ?y ?v 1) "
+                + "(retract ?f) "
+                + ")");
+
+        //Stratégie #1 (Retrait hypothese)
+        moteur.executeCommand("(defrule insertitude "
+                + "(possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
+                + "(possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v2&:(neq ?v2 ?v))) "
+                + "(not (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v3&:(neq ?v3 ?v ?v2)))) "
+                + "(possibilite (ligne ?x2) (col ?y2) (zone ?z2) (is ?v)) "
+                + "(test (or (eq ?x ?x2) (eq ?y2 ?y) (eq ?z2 ?z)))"
+                + "(possibilite (ligne ?x2) (col ?y2) (zone ?z2) (is ?v2)) "
+                + "(not (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v4&:(neq ?v4 ?v ?v2)))) "
+                + "?f <- (possibilite (ligne ?x3) (ligne ?y3) (zone ?z3) (is ?v5&:(or (eq ?v5 ?v) (eq ?v5 ?v2)))) "
+                + "(test (or (eq ?x ?x3) (eq ?y3 ?y) (eq ?z3 ?z))) "
+                + "=> "
+                + "(call (fetch EXPERT) retirerPossibilite ?x ?y ?v 1) "
+                + "(retract ?f)"
+                + ")");
+
+        ajouterPuzzleDansJess();
+        moteur.run();
+    }
+
+    /**
+     * Main de test
+     * @param a 
+     */
     public static void main(String[] a) {
         int[][] g = new int[9][9];
         g[0][0] = 0;
