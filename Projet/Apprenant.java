@@ -22,16 +22,6 @@ public class Apprenant
 	int nombreDeCoupJoue;
 	int nombreDHypoCorrectesFaites;
 	
-	// 0 -> KNOWLEDGE_1, //Validation d'une valeur avec la stratégie de l'hypothèse seule explicite 
-	// 1 -> KNOWLEDGE_2, //Validation d'une valeur avec la stratégie de l'hypothèse seule cachée 
-	// 2 -> KNOWLEDGE_3, //Elimination d'une hypothèses avec les règles de bases
-	// 3 -> KNOWLEDGE_4, //Elimination d'une hypothèses avec la stratégie des paires d'hypothèses explicite
-	// 4 -> KNOWLEDGE_5,
-	// 5 -> KNOWLEDGE_6,
-	// 6 -> KNOWLEDGE_7,
-	// 7 -> KNOWLEDGE_8,
-	// 8 -> KNOWLEDGE_9, // Random
-	
 	public Apprenant()
 	{
 		for (int i = 0 ; i < KNOWLEDGE_COUNT; i++ )
@@ -74,6 +64,7 @@ public class Apprenant
 	public void AddRandom()
 	{
 		numRandom++;
+		AddCoupJoue();
 	}
 	
 	public void AddCoupJoue()

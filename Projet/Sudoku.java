@@ -98,7 +98,7 @@ public class Sudoku
 		matriceSudoku[ligne][colonne].chiffre = numero;
 	}
 	
-	public void AjoutChiffreMat(int ligne, int colonne)//Retrait d'un chiffre dans la matrice
+	public void RetraitChiffreMat(int ligne, int colonne)//Retrait d'un chiffre dans la matrice
 	{
 		matriceSudoku[ligne][colonne].chiffre = 0;
 	}
@@ -108,36 +108,38 @@ public class Sudoku
 		if(matriceSudoku[ligne][colonne].CaseRemplie())//on vérifie si la case n'est pas déjà remplie
 		{
 			Coup coup = new Coup(ligne, colonne, numero);
-			int CoupPossible = expert.jouerValeur(coup); //Cette fonction check quoi?
+			int CoupPossible = expert.jouerValeur(coup); 
 			
 			
 			switch (CoupPossible)
 			{
 			case -2 ://reponse fausse
-				apprenant.AddFail(1);
-				return;
+				apprenant.AddFail(0);
+				break;
 				
 			case -1://réponse bonne mais impossible d'identifier les stratégies
 				apprenant.AddRandom();
-				return;
+				break;
 			
 			case 0://strat 1
 				apprenant.AddSuccess(0);
-				return;
+				break;
 			
 			case 1://strat 2
 				apprenant.AddSuccess(1);
-				return;
+				break;
 				
 			default:
-				return;
+				break;
 			}
+			
+			AjoutChiffreMat(ligne, colonne, numero);
 		}
 		
 		
 	}
 	
-	public boolean RetirerHypothese(int ligne, int colonne, int region, int  numero)
+	public void RetirerHypothese(int ligne, int colonne, int region, int  numero)
 	{				
 		Coup coup = new Coup(ligne, colonne, numero);
 		int CoupPossible = expert.retirerPossibilite(coup);
@@ -145,25 +147,25 @@ public class Sudoku
 		switch (CoupPossible)
 		{
 		case -2 ://reponse fausse
-			
-			return true;
+			apprenant.AddFail(1);
+			break;
 			
 		case -1://réponse bonne mais impossible d'identifier les stratégies
 			apprenant.AddRandom();
-			return true;
+			break;
 		
 		case 0://strat 1
 			apprenant.AddSuccess(2);
-			return true;
+			break;
 		
 		case 1://strat 2
 			apprenant.AddSuccess(3);
-			return true;
+			break;
 			
 		default:
-			return true;
+			break;
 		}
 		
-		return true;
+		RetirerHypotheseMat(ligne, colonne, numero);
 	}
 }
