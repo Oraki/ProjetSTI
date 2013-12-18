@@ -15,11 +15,11 @@ public class Tuteur
 	private boolean _aDejaVuStrat2 = false;
 	private boolean _aDejaVuStrat3 = false;
 	
+	
 	private static String _indiceStrat;
 	private static String _indiceCoup;
 	private static String _indiceRegion;
 	private static String _indiceZone;
-	
 	
 	private static String message_Connexion_Bienvenue = "Bienvenue sur SudokuSmartTutor, le systeme tutoriel intelligent pour apprendre a jouer au Sudoku !";
 	private static String message_Connexion_Interface = "L'interface de SudokuSmartTutor te permet d'eliminer des hypotheses (ecrites en petites) a l'aide du clic droit sur une case. Tu peux aussi jouer un coup pour entrer une valeur definitive (ecrite en gros) a l'aide du clic gauche. Si tu es bloque, tu peux demander de l'aide avec le bouton Indice.";
@@ -68,7 +68,7 @@ public class Tuteur
 		
 	}
 	
-	public void message_Indice()
+	public void Message_Indice()
 	{
 		if(_aDejaEuUnIndice == false)
 		{
@@ -175,11 +175,91 @@ public class Tuteur
 		}
 	}
 	
-	public void message_Coup()
+	public void Message_Strategie()
 	{
+		int niveauExpertise = 0; //get de l'apprenant
 		
+		switch(niveauExpertise)
+		{
+			case 0:
+			{
+				if(_aDejaVuStrat0 == false)
+				{
+					messages_Strat0_Introduction();
+					_aDejaVuStrat0 = true;
+				}
+			}
+			break;
+			
+			case 1:
+			{
+				if(_aDejaVuStrat1 == false)
+				{
+					messages_Strat1_Introduction();
+					_aDejaVuStrat1 = true;
+				}
+			}
+			break;
+			
+			case 2:
+			{
+				if(_aDejaVuStrat2 == false)
+				{
+					messages_Strat2_Introduction();
+					_aDejaVuStrat2 = true;
+				}
+			}
+			break;
+			
+			case 3:
+			{
+				if(_aDejaVuStrat3 == false)
+				{
+					messages_Strat3_Introduction();
+					_aDejaVuStrat3 = true;
+				}
+			}
+			break;
+			
+			
+		}
 	}
 
+	public void Message_Erreur()
+	{
+		int niveauExpertise = 0; //get de l'apprenant
+		//check le nombre d'erreur dans la classe principale ou ici ?
+		
+		switch(niveauExpertise)
+		{
+			case 0:
+			{
+				messages_Erreur_1();
+			}
+			break;
+			
+			case 1:
+			{
+				messages_Erreur_2();
+			}
+			break;
+
+			case 2:
+			{
+				messages_Erreur_3();
+			}
+			break;
+			
+			case 3:
+			{
+				messages_Erreur_4();
+			}
+			break;
+			
+			//Maj interface
+		}
+	}
+	
 	public void MAJTexteTuteur(String texte)
 	{
 		if(!texte.equals("\n"))
@@ -332,13 +412,40 @@ public class Tuteur
 		MAJTexteTuteur("\n");
 	}
 	
+	public void messages_Erreur_1()
+	{
+		MAJTexteTuteur(message_Erreur_1);
+		MAJTexteTuteur("\n");
+	}
+	
+	public void messages_Erreur_2()
+	{
+		MAJTexteTuteur(message_Erreur_2);
+		MAJTexteTuteur("\n");
+	}
+	
+	public void messages_Erreur_3()
+	{
+		MAJTexteTuteur(message_Erreur_3);
+		MAJTexteTuteur("\n");
+	}
+	
+	public void messages_Erreur_4()
+	{
+		MAJTexteTuteur(message_Erreur_4);
+		MAJTexteTuteur("\n");
+	}
+	
 	public static void main(String[] args)
 	{
+		/*
 		Tuteur zeTuteur = new Tuteur();
 		zeTuteur.messages_Connexion_Bienvenue();
 		zeTuteur.messages_But_Introduction();
 		zeTuteur.messages_Strat0_Introduction();
 		zeTuteur.messages_Strat1_Introduction();
+		*/
+		Grille ZEinterface = new Grille();
 	}
 	
 	
