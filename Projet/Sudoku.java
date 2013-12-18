@@ -13,7 +13,7 @@ public class Sudoku
 	
 	
 	Apprenant apprenant = new Apprenant();
-	Tuteur tuteur = new Tuteur();
+	//Tuteur tuteur = new Tuteur();
 	
 	Case matriceSudoku[][] = new Case[9][9];
 	Case matriceAffiche[][] = new Case[9][9];
@@ -38,9 +38,9 @@ public class Sudoku
 			}
 		}	
 		
-		expert = new ExpertSudoku( ConvertToTabInt(matriceSudoku));
+		//expert = new ExpertSudoku( ConvertToTabInt(matriceSudoku));
 		inter = new Interface();
-		//inter.show();
+		inter.show();
 	}
 	
 	private int[][] ConvertToTabInt(Case[][] tab)
@@ -104,7 +104,7 @@ public class Sudoku
 			switch (CoupPossible)
 			{
 			case -2 ://reponse fausse
-				
+				apprenant.AddFail(1);
 				return;
 				
 			case -1://réponse bonne mais impossible d'identifier les stratégies
@@ -112,11 +112,11 @@ public class Sudoku
 				return;
 			
 			case 0://strat 1
-				
+				apprenant.AddSuccess(0);
 				return;
 			
 			case 1://strat 2
-				
+				apprenant.AddSuccess(1);
 				return;
 				
 			default:
@@ -136,22 +136,22 @@ public class Sudoku
 		{
 		case -2 ://reponse fausse
 			
-			return;
+			return true;
 			
 		case -1://réponse bonne mais impossible d'identifier les stratégies
 			apprenant.AddRandom();
-			return;
+			return true;
 		
 		case 0://strat 1
-			
-			return;
+			apprenant.AddSuccess(2);
+			return true;
 		
 		case 1://strat 2
-			
-			return;
+			apprenant.AddSuccess(3);
+			return true;
 			
 		default:
-			return;
+			return true;
 		}
 		
 		return true;
