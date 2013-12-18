@@ -83,14 +83,24 @@ public class Sudoku
 		listeCoupStrat3 = expert.getCoupPossible(3);
 	}
 	
-	public void AddHypo(int ligne, int colonne, int numero)//Ajout d'une hypothèse par l'utilisateur
+	public void AjoutHypotheseMat(int ligne, int colonne, int numero)//Ajout d'une hypothèse par l'utilisateur
 	{
 		matriceSudoku[ligne][colonne].tabHypo[numero - 1] = true;
 	}
 	
-	public void RemoveHypo(int ligne, int colonne, int numero)//Retrait d'une hypothèse par l'utilisateur
+	public void RetirerHypotheseMat(int ligne, int colonne, int numero)//Retrait d'une hypothèse par l'utilisateur
 	{
 		matriceSudoku[ligne][colonne].tabHypo[numero - 1] = false;
+	}
+	
+	public void AjoutChiffreMat(int ligne, int colonne, int numero)//Ajout d'un chiffre dans la matrice
+	{
+		matriceSudoku[ligne][colonne].chiffre = numero;
+	}
+	
+	public void AjoutChiffreMat(int ligne, int colonne)//Retrait d'un chiffre dans la matrice
+	{
+		matriceSudoku[ligne][colonne].chiffre = 0;
 	}
 	
 	public void JouerCoup(int ligne, int colonne, int region, int  numero)
