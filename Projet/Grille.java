@@ -741,11 +741,12 @@ public class Grille  extends JFrame implements MouseListener {
 	private JTextField textField_818;
 	private JTextField textField_819;
 	private JTextField textField;
-
-	public Grille() {
+	
+		public Grille() {
 		setTitle ("Grille de Sudoku");
-		setBounds(10, 20, 500, 700);
+		setBounds(10, 20, 800, 700);
 		addMouseListener(this);
+		initComponents();
 		initComponents();
 		initComponent2();
 	}
@@ -753,8 +754,9 @@ public class Grille  extends JFrame implements MouseListener {
 		setForeground(Color.LIGHT_GRAY);
 		setLayout(null);
 		
+		
 		textField_11 = new JTextField();
-		textField_11.setForeground(Color.LIGHT_GRAY);
+		textField_11.setForeground(Color.BLACK);
 		textField_11.addMouseListener(this);
 		textField_11.setText("1");
 		textField_11.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -763,7 +765,7 @@ public class Grille  extends JFrame implements MouseListener {
 		textField_11.setColumns(10);
 		
 		textField_12 = new JTextField();
-		textField_12.setForeground(Color.LIGHT_GRAY);
+		textField_12.setForeground(Color.BLACK);
 		textField_12.addMouseListener(this);
 		textField_12.setText("2");
 		textField_12.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -773,7 +775,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_12);
 		
 		textField_13 = new JTextField();
-		textField_13.setForeground(Color.LIGHT_GRAY);
+		textField_13.setForeground(Color.BLACK);
 		textField_13.addMouseListener(this);
 		textField_13.setText("3");
 		textField_13.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -782,7 +784,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_13);
 		
 		textField_14 = new JTextField();
-		textField_14.setForeground(Color.LIGHT_GRAY);
+		textField_14.setForeground(Color.BLACK);
 		textField_14.addMouseListener(this);
 		textField_14.setText("4");
 		textField_14.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -791,7 +793,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_14);
 		
 		textField_15 = new JTextField();
-		textField_15.setForeground(Color.LIGHT_GRAY);
+		textField_15.setForeground(Color.BLACK);
 		textField_15.addMouseListener(this);
 		textField_15.setText("5");
 		textField_15.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -801,7 +803,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_15);
 		
 		textField_16 = new JTextField();
-		textField_16.setForeground(Color.LIGHT_GRAY);
+		textField_16.setForeground(Color.BLACK);
 		textField_16.addMouseListener(this);
 		textField_16.setText("6");
 		textField_16.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -810,7 +812,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_16);
 		
 		textField_17 = new JTextField();
-		textField_17.setForeground(Color.LIGHT_GRAY);
+		textField_17.setForeground(Color.BLACK);
 		textField_17.addMouseListener(this);
 		textField_17.setText("7");
 		textField_17.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -819,7 +821,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_17);
 		
 		textField_18 = new JTextField();
-		textField_18.setForeground(Color.LIGHT_GRAY);
+		textField_18.setForeground(Color.BLACK);
 		textField_18.addMouseListener(this);
 		textField_18.setText("8");
 		textField_18.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -828,7 +830,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_18);
 		
 		textField_19 = new JTextField();
-		textField_19.setForeground(Color.LIGHT_GRAY);
+		textField_19.setForeground(Color.BLACK);
 		textField_19.addMouseListener(this);
 		textField_19.setText("9");
 		textField_19.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -837,7 +839,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_19);
 		
 		textField_21 = new JTextField();
-		textField_21.setForeground(Color.LIGHT_GRAY);
+		textField_21.setForeground(Color.BLACK);
 		textField_21.addMouseListener(this);
 		textField_21.setText("1");
 		textField_21.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -846,7 +848,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_21);
 		
 		textField_22 = new JTextField();
-		textField_22.setForeground(Color.LIGHT_GRAY);
+		textField_22.setForeground(Color.BLACK);
 		textField_22.addMouseListener(this);
 		textField_22.setText("2");
 		textField_22.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -855,7 +857,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_22);
 		
 		textField_23 = new JTextField();
-		textField_23.setForeground(Color.LIGHT_GRAY);
+		textField_23.setForeground(Color.BLACK);
 		textField_23.addMouseListener(this);
 		textField_23.setText("3");
 		textField_23.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -864,7 +866,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_23);
 		
 		textField_24 = new JTextField();
-		textField_24.setForeground(Color.LIGHT_GRAY);
+		textField_24.setForeground(Color.BLACK);
 		textField_24.addMouseListener(this);
 		textField_24.setText("4");
 		textField_24.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -873,7 +875,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_24);
 		
 		textField_25 = new JTextField();
-		textField_25.setForeground(Color.LIGHT_GRAY);
+		textField_25.setForeground(Color.BLACK);
 		textField_25.addMouseListener(this);
 		textField_25.setText("5");
 		textField_25.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -882,7 +884,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_25);
 		
 		textField_26 = new JTextField();
-		textField_26.setForeground(Color.LIGHT_GRAY);
+		textField_26.setForeground(Color.BLACK);
 		textField_26.addMouseListener(this);
 		textField_26.setText("6");
 		textField_26.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -891,7 +893,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_26);
 		
 		textField_27 = new JTextField();
-		textField_27.setForeground(Color.LIGHT_GRAY);
+		textField_27.setForeground(Color.BLACK);
 		textField_27.addMouseListener(this);
 		textField_27.setText("7");
 		textField_27.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -900,7 +902,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_27);
 		
 		textField_28 = new JTextField();
-		textField_28.setForeground(Color.LIGHT_GRAY);
+		textField_28.setForeground(Color.BLACK);
 		textField_28.addMouseListener(this);
 		textField_28.setText("8");
 		textField_28.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -909,7 +911,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_28);
 		
 		textField_29 = new JTextField();
-		textField_29.setForeground(Color.LIGHT_GRAY);
+		textField_29.setForeground(Color.BLACK);
 		textField_29.addMouseListener(this);
 		textField_29.setText("9");
 		textField_29.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -918,9 +920,9 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_29);
 		
 		textField_31 = new JTextField();
-		textField_31.setForeground(Color.LIGHT_GRAY);
+		textField_31.setForeground(Color.BLACK);
 		textField_31.addMouseListener(this);
-		textField_31.setForeground(Color.LIGHT_GRAY);
+		textField_31.setForeground(Color.BLACK);
 		textField_31.addMouseListener(this);
 		textField_31.setText("1");
 		textField_31.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -929,7 +931,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_31);
 		
 		textField_32 = new JTextField();
-		textField_32.setForeground(Color.LIGHT_GRAY);
+		textField_32.setForeground(Color.BLACK);
 		textField_32.addMouseListener(this);
 		textField_32.setText("2");
 		textField_32.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -938,7 +940,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_32);
 		
 		textField_33 = new JTextField();
-		textField_33.setForeground(Color.LIGHT_GRAY);
+		textField_33.setForeground(Color.BLACK);
 		textField_33.addMouseListener(this);
 		textField_33.setText("3");
 		textField_33.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -947,7 +949,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_33);
 		
 		textField_39 = new JTextField();
-		textField_39.setForeground(Color.LIGHT_GRAY);
+		textField_39.setForeground(Color.BLACK);
 		textField_39.addMouseListener(this);
 		textField_39.setText("9");
 		textField_39.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -956,7 +958,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_39);
 		
 		textField_36 = new JTextField();
-		textField_36.setForeground(Color.LIGHT_GRAY);
+		textField_36.setForeground(Color.BLACK);
 		textField_36.addMouseListener(this);
 		textField_36.setText("6");
 		textField_36.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -965,7 +967,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_36);
 		
 		textField_35 = new JTextField();
-		textField_35.setForeground(Color.LIGHT_GRAY);
+		textField_35.setForeground(Color.BLACK);
 		textField_35.addMouseListener(this);
 		textField_35.setText("5");
 		textField_35.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -974,7 +976,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_35);
 		
 		textField_34 = new JTextField();
-		textField_34.setForeground(Color.LIGHT_GRAY);
+		textField_34.setForeground(Color.BLACK);
 		textField_34.addMouseListener(this);
 		textField_34.setText("4");
 		textField_34.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -983,7 +985,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_34);
 		
 		textField_38 = new JTextField();
-		textField_38.setForeground(Color.LIGHT_GRAY);
+		textField_38.setForeground(Color.BLACK);
 		textField_38.addMouseListener(this);
 		textField_38.setText("8");
 		textField_38.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -992,7 +994,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_38);
 		
 		textField_37 = new JTextField();
-		textField_37.setForeground(Color.LIGHT_GRAY);
+		textField_37.setForeground(Color.BLACK);
 		textField_37.addMouseListener(this);
 		textField_37.setText("7");
 		textField_37.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1001,7 +1003,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_37);
 		
 		textField_101 = new JTextField();
-		textField_101.setForeground(Color.LIGHT_GRAY);
+		textField_101.setForeground(Color.BLACK);
 		textField_101.addMouseListener(this);
 		textField_101.setText("1");
 		textField_101.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1010,7 +1012,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_101);
 		
 		textField_102 = new JTextField();
-		textField_102.setForeground(Color.LIGHT_GRAY);
+		textField_102.setForeground(Color.BLACK);
 		textField_102.addMouseListener(this);
 		textField_102.setText("2");
 		textField_102.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1019,7 +1021,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_102);
 		
 		textField_103 = new JTextField();
-		textField_103.setForeground(Color.LIGHT_GRAY);
+		textField_103.setForeground(Color.BLACK);
 		textField_103.addMouseListener(this);
 		textField_103.setText("3");
 		textField_103.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1028,7 +1030,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_103);
 		
 		textField_104 = new JTextField();
-		textField_104.setForeground(Color.LIGHT_GRAY);
+		textField_104.setForeground(Color.BLACK);
 		textField_104.addMouseListener(this);
 		textField_104.setText("4");
 		textField_104.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1037,7 +1039,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_104);
 		
 		textField_105 = new JTextField();
-		textField_105.setForeground(Color.LIGHT_GRAY);
+		textField_105.setForeground(Color.BLACK);
 		textField_105.addMouseListener(this);
 		textField_105.setText("5");
 		textField_105.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1046,7 +1048,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_105);
 		
 		textField_106 = new JTextField();
-		textField_106.setForeground(Color.LIGHT_GRAY);
+		textField_106.setForeground(Color.BLACK);
 		textField_106.addMouseListener(this);
 		textField_106.setText("6");
 		textField_106.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1055,7 +1057,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_106);
 		
 		textField_107 = new JTextField();
-		textField_107.setForeground(Color.LIGHT_GRAY);
+		textField_107.setForeground(Color.BLACK);
 		textField_107.addMouseListener(this);
 		textField_107.setText("7");
 		textField_107.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1064,7 +1066,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_107);
 		
 		textField_108 = new JTextField();
-		textField_108.setForeground(Color.LIGHT_GRAY);
+		textField_108.setForeground(Color.BLACK);
 		textField_108.addMouseListener(this);
 		textField_108.setText("8");
 		textField_108.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1073,7 +1075,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_108);
 		
 		textField_109 = new JTextField();
-		textField_109.setForeground(Color.LIGHT_GRAY);
+		textField_109.setForeground(Color.BLACK);
 		textField_109.addMouseListener(this);
 		textField_109.setText("9");
 		textField_109.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1082,7 +1084,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_109);
 		
 		textField_111 = new JTextField();
-		textField_111.setForeground(Color.LIGHT_GRAY);
+		textField_111.setForeground(Color.BLACK);
 		textField_111.addMouseListener(this);
 		textField_111.setText("1");
 		textField_111.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1091,7 +1093,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_111);
 		
 		textField_112 = new JTextField();
-		textField_112.setForeground(Color.LIGHT_GRAY);
+		textField_112.setForeground(Color.BLACK);
 		textField_112.addMouseListener(this);
 		textField_112.setText("2");
 		textField_112.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1100,7 +1102,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_112);
 		
 		textField_113 = new JTextField();
-		textField_113.setForeground(Color.LIGHT_GRAY);
+		textField_113.setForeground(Color.BLACK);
 		textField_113.addMouseListener(this);
 		textField_113.setText("3");
 		textField_113.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1109,7 +1111,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_113);
 		
 		textField_114 = new JTextField();
-		textField_114.setForeground(Color.LIGHT_GRAY);
+		textField_114.setForeground(Color.BLACK);
 		textField_114.addMouseListener(this);
 		textField_114.setText("4");
 		textField_114.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1118,7 +1120,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_114);
 		
 		textField_115 = new JTextField();
-		textField_115.setForeground(Color.LIGHT_GRAY);
+		textField_115.setForeground(Color.BLACK);
 		textField_115.addMouseListener(this);
 		textField_115.setText("5");
 		textField_115.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1127,7 +1129,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_115);
 		
 		textField_116 = new JTextField();
-		textField_116.setForeground(Color.LIGHT_GRAY);
+		textField_116.setForeground(Color.BLACK);
 		textField_116.addMouseListener(this);
 		textField_116.setText("6");
 		textField_116.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1136,7 +1138,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_116);
 		
 		textField_117 = new JTextField();
-		textField_117.setForeground(Color.LIGHT_GRAY);
+		textField_117.setForeground(Color.BLACK);
 		textField_117.addMouseListener(this);
 		textField_117.setText("7");
 		textField_117.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1145,7 +1147,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_117);
 		
 		textField_118 = new JTextField();
-		textField_118.setForeground(Color.LIGHT_GRAY);
+		textField_118.setForeground(Color.BLACK);
 		textField_118.addMouseListener(this);
 		textField_118.setText("8");
 		textField_118.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1154,7 +1156,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_118);
 		
 		textField_119 = new JTextField();
-		textField_119.setForeground(Color.LIGHT_GRAY);
+		textField_119.setForeground(Color.BLACK);
 		textField_119.addMouseListener(this);
 		textField_119.setText("9");
 		textField_119.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1163,7 +1165,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_119);
 		
 		textField_121 = new JTextField();
-		textField_121.setForeground(Color.LIGHT_GRAY);
+		textField_121.setForeground(Color.BLACK);
 		textField_121.addMouseListener(this);
 		textField_121.setText("1");
 		textField_121.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1172,7 +1174,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_121);
 		
 		textField_122 = new JTextField();
-		textField_122.setForeground(Color.LIGHT_GRAY);
+		textField_122.setForeground(Color.BLACK);
 		textField_122.addMouseListener(this);
 		textField_122.setText("2");
 		textField_122.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1181,7 +1183,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_122);
 		
 		textField_123 = new JTextField();
-		textField_123.setForeground(Color.LIGHT_GRAY);
+		textField_123.setForeground(Color.BLACK);
 		textField_123.addMouseListener(this);
 		textField_123.setText("3");
 		textField_123.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1190,7 +1192,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_123);
 		
 		textField_124 = new JTextField();
-		textField_124.setForeground(Color.LIGHT_GRAY);
+		textField_124.setForeground(Color.BLACK);
 		textField_124.addMouseListener(this);
 		textField_124.setText("4");
 		textField_124.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1199,7 +1201,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_124);
 		
 		textField_125 = new JTextField();
-		textField_125.setForeground(Color.LIGHT_GRAY);
+		textField_125.setForeground(Color.BLACK);
 		textField_125.addMouseListener(this);
 		textField_125.setText("5");
 		textField_125.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1208,7 +1210,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_125);
 		
 		textField_126 = new JTextField();
-		textField_126.setForeground(Color.LIGHT_GRAY);
+		textField_126.setForeground(Color.BLACK);
 		textField_126.addMouseListener(this);
 		textField_126.setText("6");
 		textField_126.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1217,7 +1219,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_126);
 		
 		textField_127 = new JTextField();
-		textField_127.setForeground(Color.LIGHT_GRAY);
+		textField_127.setForeground(Color.BLACK);
 		textField_127.addMouseListener(this);
 		textField_127.setText("7");
 		textField_127.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1226,7 +1228,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_127);
 		
 		textField_128 = new JTextField();
-		textField_128.setForeground(Color.LIGHT_GRAY);
+		textField_128.setForeground(Color.BLACK);
 		textField_128.addMouseListener(this);
 		textField_128.setText("8");
 		textField_128.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1235,7 +1237,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_128);
 		
 		textField_129 = new JTextField();
-		textField_129.setForeground(Color.LIGHT_GRAY);
+		textField_129.setForeground(Color.BLACK);
 		textField_129.addMouseListener(this);
 		textField_129.setText("9");
 		textField_129.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1244,7 +1246,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_129);
 		
 		textField_191 = new JTextField();
-		textField_191.setForeground(Color.LIGHT_GRAY);
+		textField_191.setForeground(Color.BLACK);
 		textField_191.addMouseListener(this);
 		textField_191.setText("1");
 		textField_191.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1253,7 +1255,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_191);
 		
 		textField_192 = new JTextField();
-		textField_192.setForeground(Color.LIGHT_GRAY);
+		textField_192.setForeground(Color.BLACK);
 		textField_192.addMouseListener(this);
 		textField_192.setText("2");
 		textField_192.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1262,7 +1264,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_192);
 		
 		textField_193 = new JTextField();
-		textField_193.setForeground(Color.LIGHT_GRAY);
+		textField_193.setForeground(Color.BLACK);
 		textField_193.addMouseListener(this);
 		textField_193.setText("3");
 		textField_193.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1271,7 +1273,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_193);
 		
 		textField_194 = new JTextField();
-		textField_194.setForeground(Color.LIGHT_GRAY);
+		textField_194.setForeground(Color.BLACK);
 		textField_194.addMouseListener(this);
 		textField_194.setText("4");
 		textField_194.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1280,7 +1282,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_194);
 		
 		textField_195 = new JTextField();
-		textField_195.setForeground(Color.LIGHT_GRAY);
+		textField_195.setForeground(Color.BLACK);
 		textField_195.addMouseListener(this);
 		textField_195.setText("5");
 		textField_195.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1289,7 +1291,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_195);
 		
 		textField_196 = new JTextField();
-		textField_196.setForeground(Color.LIGHT_GRAY);
+		textField_196.setForeground(Color.BLACK);
 		textField_196.addMouseListener(this);
 		textField_196.setText("6");
 		textField_196.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1298,7 +1300,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_196);
 		
 		textField_197 = new JTextField();
-		textField_197.setForeground(Color.LIGHT_GRAY);
+		textField_197.setForeground(Color.BLACK);
 		textField_197.addMouseListener(this);
 		textField_197.setText("7");
 		textField_197.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1307,7 +1309,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_197);
 		
 		textField_198 = new JTextField();
-		textField_198.setForeground(Color.LIGHT_GRAY);
+		textField_198.setForeground(Color.BLACK);
 		textField_198.addMouseListener(this);
 		textField_198.setText("8");
 		textField_198.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1316,7 +1318,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_198);
 		
 		textField_199 = new JTextField();
-		textField_199.setForeground(Color.LIGHT_GRAY);
+		textField_199.setForeground(Color.BLACK);
 		textField_199.addMouseListener(this);
 		textField_199.setText("9");
 		textField_199.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1325,7 +1327,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_199);
 		
 		textField_201 = new JTextField();
-		textField_201.setForeground(Color.LIGHT_GRAY);
+		textField_201.setForeground(Color.BLACK);
 		textField_201.addMouseListener(this);
 		textField_201.setText("1");
 		textField_201.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1334,7 +1336,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_201);
 		
 		textField_202 = new JTextField();
-		textField_202.setForeground(Color.LIGHT_GRAY);
+		textField_202.setForeground(Color.BLACK);
 		textField_202.addMouseListener(this);
 		textField_202.setText("2");
 		textField_202.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1343,7 +1345,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_202);
 		
 		textField_203 = new JTextField();
-		textField_203.setForeground(Color.LIGHT_GRAY);
+		textField_203.setForeground(Color.BLACK);
 		textField_203.addMouseListener(this);
 		textField_203.setText("3");
 		textField_203.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1352,7 +1354,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_203);
 		
 		textField_204 = new JTextField();
-		textField_204.setForeground(Color.LIGHT_GRAY);
+		textField_204.setForeground(Color.BLACK);
 		textField_204.addMouseListener(this);
 		textField_204.setText("4");
 		textField_204.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1361,7 +1363,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_204);
 		
 		textField_205 = new JTextField();
-		textField_205.setForeground(Color.LIGHT_GRAY);
+		textField_205.setForeground(Color.BLACK);
 		textField_205.addMouseListener(this);
 		textField_205.setText("5");
 		textField_205.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1370,7 +1372,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_205);
 		
 		textField_206 = new JTextField();
-		textField_206.setForeground(Color.LIGHT_GRAY);
+		textField_206.setForeground(Color.BLACK);
 		textField_206.addMouseListener(this);
 		textField_206.setText("6");
 		textField_206.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1379,7 +1381,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_206);
 		
 		textField_207 = new JTextField();
-		textField_207.setForeground(Color.LIGHT_GRAY);
+		textField_207.setForeground(Color.BLACK);
 		textField_207.addMouseListener(this);
 		textField_207.setText("7");
 		textField_207.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1388,7 +1390,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_207);
 		
 		textField_208 = new JTextField();
-		textField_208.setForeground(Color.LIGHT_GRAY);
+		textField_208.setForeground(Color.BLACK);
 		textField_208.addMouseListener(this);
 		textField_208.setText("8");
 		textField_208.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1397,7 +1399,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_208);
 		
 		textField_209 = new JTextField();
-		textField_209.setForeground(Color.LIGHT_GRAY);
+		textField_209.setForeground(Color.BLACK);
 		textField_209.addMouseListener(this);
 		textField_209.setText("9");
 		textField_209.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1406,7 +1408,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_209);
 		
 		textField_211 = new JTextField();
-		textField_211.setForeground(Color.LIGHT_GRAY);
+		textField_211.setForeground(Color.BLACK);
 		textField_211.addMouseListener(this);
 		textField_211.setText("1");
 		textField_211.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1415,7 +1417,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_211);
 		
 		textField_212 = new JTextField();
-		textField_212.setForeground(Color.LIGHT_GRAY);
+		textField_212.setForeground(Color.BLACK);
 		textField_212.addMouseListener(this);
 		textField_212.setText("2");
 		textField_212.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1424,7 +1426,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_212);
 		
 		textField_213 = new JTextField();
-		textField_213.setForeground(Color.LIGHT_GRAY);
+		textField_213.setForeground(Color.BLACK);
 		textField_213.addMouseListener(this);
 		textField_213.setText("3");
 		textField_213.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1433,7 +1435,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_213);
 		
 		textField_214 = new JTextField();
-		textField_214.setForeground(Color.LIGHT_GRAY);
+		textField_214.setForeground(Color.BLACK);
 		textField_214.addMouseListener(this);
 		textField_214.setText("4");
 		textField_214.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1442,7 +1444,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_214);
 		
 		textField_215 = new JTextField();
-		textField_215.setForeground(Color.LIGHT_GRAY);
+		textField_215.setForeground(Color.BLACK);
 		textField_215.addMouseListener(this);
 		textField_215.setText("5");
 		textField_215.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1451,7 +1453,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_215);
 		
 		textField_216 = new JTextField();
-		textField_216.setForeground(Color.LIGHT_GRAY);
+		textField_216.setForeground(Color.BLACK);
 		textField_216.addMouseListener(this);
 		textField_216.setText("6");
 		textField_216.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1460,7 +1462,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_216);
 		
 		textField_217 = new JTextField();
-		textField_217.setForeground(Color.LIGHT_GRAY);
+		textField_217.setForeground(Color.BLACK);
 		textField_217.addMouseListener(this);
 		textField_217.setText("7");
 		textField_217.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1469,7 +1471,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_217);
 		
 		textField_218 = new JTextField();
-		textField_218.setForeground(Color.LIGHT_GRAY);
+		textField_218.setForeground(Color.BLACK);
 		textField_218.addMouseListener(this);
 		textField_218.setText("8");
 		textField_218.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1478,7 +1480,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_218);
 		
 		textField_219 = new JTextField();
-		textField_219.setForeground(Color.LIGHT_GRAY);
+		textField_219.setForeground(Color.BLACK);
 		textField_219.addMouseListener(this);
 		textField_219.setText("9");
 		textField_219.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1487,7 +1489,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_219);
 		
 		textField_41 = new JTextField();
-		textField_41.setForeground(Color.LIGHT_GRAY);
+		textField_41.setForeground(Color.BLACK);
 		textField_41.addMouseListener(this);
 		textField_41.setText("1");
 		textField_41.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1496,7 +1498,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_41);
 		
 		textField_42 = new JTextField();
-		textField_42.setForeground(Color.LIGHT_GRAY);
+		textField_42.setForeground(Color.BLACK);
 		textField_42.addMouseListener(this);
 		textField_42.setText("2");
 		textField_42.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1505,7 +1507,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_42);
 		
 		textField_43 = new JTextField();
-		textField_43.setForeground(Color.LIGHT_GRAY);
+		textField_43.setForeground(Color.BLACK);
 		textField_43.addMouseListener(this);
 		textField_43.setText("3");
 		textField_43.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1514,7 +1516,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_43);
 		
 		textField_51 = new JTextField();
-		textField_51.setForeground(Color.LIGHT_GRAY);
+		textField_51.setForeground(Color.BLACK);
 		textField_51.addMouseListener(this);
 		textField_51.setText("1");
 		textField_51.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1523,7 +1525,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_51);
 		
 		textField_52 = new JTextField();
-		textField_52.setForeground(Color.LIGHT_GRAY);
+		textField_52.setForeground(Color.BLACK);
 		textField_52.addMouseListener(this);
 		textField_52.setText("2");
 		textField_52.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1532,7 +1534,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_52);
 		
 		textField_53 = new JTextField();
-		textField_53.setForeground(Color.LIGHT_GRAY);
+		textField_53.setForeground(Color.BLACK);
 		textField_53.addMouseListener(this);
 		textField_53.setText("3");
 		textField_53.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1541,7 +1543,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_53);
 		
 		textField_61 = new JTextField();
-		textField_61.setForeground(Color.LIGHT_GRAY);
+		textField_61.setForeground(Color.BLACK);
 		textField_61.addMouseListener(this);
 		textField_61.setText("1");
 		textField_61.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1550,7 +1552,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_61);
 		
 		textField_62 = new JTextField();
-		textField_62.setForeground(Color.LIGHT_GRAY);
+		textField_62.setForeground(Color.BLACK);
 		textField_62.addMouseListener(this);
 		textField_62.setText("2");
 		textField_62.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1559,7 +1561,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_62);
 		
 		textField_63 = new JTextField();
-		textField_63.setForeground(Color.LIGHT_GRAY);
+		textField_63.setForeground(Color.BLACK);
 		textField_63.addMouseListener(this);
 		textField_63.setText("3");
 		textField_63.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1568,7 +1570,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_63);
 		
 		textField_44 = new JTextField();
-		textField_44.setForeground(Color.LIGHT_GRAY);
+		textField_44.setForeground(Color.BLACK);
 		textField_44.addMouseListener(this);
 		textField_44.setText("4");
 		textField_44.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1577,7 +1579,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_44);
 		
 		textField_45 = new JTextField();
-		textField_45.setForeground(Color.LIGHT_GRAY);
+		textField_45.setForeground(Color.BLACK);
 		textField_45.addMouseListener(this);
 		textField_45.setText("5");
 		textField_45.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1586,7 +1588,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_45);
 		
 		textField_46 = new JTextField();
-		textField_46.setForeground(Color.LIGHT_GRAY);
+		textField_46.setForeground(Color.BLACK);
 		textField_46.addMouseListener(this);
 		textField_46.setText("6");
 		textField_46.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1595,7 +1597,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_46);
 		
 		textField_54 = new JTextField();
-		textField_54.setForeground(Color.LIGHT_GRAY);
+		textField_54.setForeground(Color.BLACK);
 		textField_54.addMouseListener(this);
 		textField_54.setText("4");
 		textField_54.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1604,7 +1606,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_54);
 		
 		textField_55 = new JTextField();
-		textField_55.setForeground(Color.LIGHT_GRAY);
+		textField_55.setForeground(Color.BLACK);
 		textField_55.addMouseListener(this);
 		textField_55.setText("5");
 		textField_55.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1613,7 +1615,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_55);
 		
 		textField_56 = new JTextField();
-		textField_56.setForeground(Color.LIGHT_GRAY);
+		textField_56.setForeground(Color.BLACK);
 		textField_56.addMouseListener(this);
 		textField_56.setText("6");
 		textField_56.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1622,7 +1624,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_56);
 		
 		textField_64 = new JTextField();
-		textField_64.setForeground(Color.LIGHT_GRAY);
+		textField_64.setForeground(Color.BLACK);
 		textField_64.addMouseListener(this);
 		textField_64.setText("4");
 		textField_64.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1631,7 +1633,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_64);
 		
 		textField_65 = new JTextField();
-		textField_65.setForeground(Color.LIGHT_GRAY);
+		textField_65.setForeground(Color.BLACK);
 		textField_65.addMouseListener(this);
 		textField_65.setText("5");
 		textField_65.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1640,7 +1642,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_65);
 		
 		textField_66 = new JTextField();
-		textField_66.setForeground(Color.LIGHT_GRAY);
+		textField_66.setForeground(Color.BLACK);
 		textField_66.addMouseListener(this);
 		textField_66.setText("6");
 		textField_66.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1649,7 +1651,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_66);
 		
 		textField_47 = new JTextField();
-		textField_47.setForeground(Color.LIGHT_GRAY);
+		textField_47.setForeground(Color.BLACK);
 		textField_47.addMouseListener(this);
 		textField_47.setText("7");
 		textField_47.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1658,7 +1660,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_47);
 		
 		textField_48 = new JTextField();
-		textField_48.setForeground(Color.LIGHT_GRAY);
+		textField_48.setForeground(Color.BLACK);
 		textField_48.addMouseListener(this);
 		textField_48.setText("8");
 		textField_48.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1667,7 +1669,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_48);
 		
 		textField_49 = new JTextField();
-		textField_49.setForeground(Color.LIGHT_GRAY);
+		textField_49.setForeground(Color.BLACK);
 		textField_49.addMouseListener(this);
 		textField_49.setText("9");
 		textField_49.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1676,7 +1678,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_49);
 		
 		textField_57 = new JTextField();
-		textField_57.setForeground(Color.LIGHT_GRAY);
+		textField_57.setForeground(Color.BLACK);
 		textField_57.addMouseListener(this);
 		textField_57.setText("7");
 		textField_57.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1685,7 +1687,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_57);
 		
 		textField_58 = new JTextField();
-		textField_58.setForeground(Color.LIGHT_GRAY);
+		textField_58.setForeground(Color.BLACK);
 		textField_58.addMouseListener(this);
 		textField_58.setText("8");
 		textField_58.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1694,7 +1696,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_58);
 		
 		textField_59 = new JTextField();
-		textField_59.setForeground(Color.LIGHT_GRAY);
+		textField_59.setForeground(Color.BLACK);
 		textField_59.addMouseListener(this);
 		textField_59.setText("9");
 		textField_59.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1703,7 +1705,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_59);
 		
 		textField_67 = new JTextField();
-		textField_67.setForeground(Color.LIGHT_GRAY);
+		textField_67.setForeground(Color.BLACK);
 		textField_67.addMouseListener(this);
 		textField_67.setText("7");
 		textField_67.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1712,7 +1714,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_67);
 		
 		textField_69 = new JTextField();
-		textField_69.setForeground(Color.LIGHT_GRAY);
+		textField_69.setForeground(Color.BLACK);
 		textField_69.addMouseListener(this);
 		textField_69.setText("9");
 		textField_69.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1721,7 +1723,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_69);
 		
 		textField_68 = new JTextField();
-		textField_68.setForeground(Color.LIGHT_GRAY);
+		textField_68.setForeground(Color.BLACK);
 		textField_68.addMouseListener(this);
 		textField_68.setText("8");
 		textField_68.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1730,9 +1732,9 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_68);
 		
 		textField_131 = new JTextField();
-		textField_131.setForeground(Color.LIGHT_GRAY);
+		textField_131.setForeground(Color.BLACK);
 		textField_131.addMouseListener(this);
-		textField_131.setForeground(Color.LIGHT_GRAY);
+		textField_131.setForeground(Color.BLACK);
 		textField_131.addMouseListener(this);
 		textField_131.setText("1");
 		textField_131.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1741,7 +1743,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_131);
 		
 		textField_132 = new JTextField();
-		textField_132.setForeground(Color.LIGHT_GRAY);
+		textField_132.setForeground(Color.BLACK);
 		textField_132.addMouseListener(this);
 		textField_132.setText("2");
 		textField_132.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1750,7 +1752,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_132);
 		
 		textField_133 = new JTextField();
-		textField_133.setForeground(Color.LIGHT_GRAY);
+		textField_133.setForeground(Color.BLACK);
 		textField_133.addMouseListener(this);
 		textField_133.setText("3");
 		textField_133.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1759,7 +1761,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_133);
 		
 		textField_141 = new JTextField();
-		textField_141.setForeground(Color.LIGHT_GRAY);
+		textField_141.setForeground(Color.BLACK);
 		textField_141.addMouseListener(this);
 		textField_141.setText("1");
 		textField_141.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1768,7 +1770,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_141);
 		
 		textField_142 = new JTextField();
-		textField_142.setForeground(Color.LIGHT_GRAY);
+		textField_142.setForeground(Color.BLACK);
 		textField_142.addMouseListener(this);
 		textField_142.setText("2");
 		textField_142.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1777,7 +1779,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_142);
 		
 		textField_143 = new JTextField();
-		textField_143.setForeground(Color.LIGHT_GRAY);
+		textField_143.setForeground(Color.BLACK);
 		textField_143.addMouseListener(this);
 		textField_143.setText("3");
 		textField_143.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1786,7 +1788,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_143);
 		
 		textField_151 = new JTextField();
-		textField_151.setForeground(Color.LIGHT_GRAY);
+		textField_151.setForeground(Color.BLACK);
 		textField_151.addMouseListener(this);
 		textField_151.setText("1");
 		textField_151.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1795,7 +1797,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_151);
 		
 		textField_152 = new JTextField();
-		textField_152.setForeground(Color.LIGHT_GRAY);
+		textField_152.setForeground(Color.BLACK);
 		textField_152.addMouseListener(this);
 		textField_152.setText("2");
 		textField_152.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1804,7 +1806,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_152);
 		
 		textField_153 = new JTextField();
-		textField_153.setForeground(Color.LIGHT_GRAY);
+		textField_153.setForeground(Color.BLACK);
 		textField_153.addMouseListener(this);
 		textField_153.setText("3");
 		textField_153.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1813,7 +1815,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_153);
 		
 		textField_134 = new JTextField();
-		textField_134.setForeground(Color.LIGHT_GRAY);
+		textField_134.setForeground(Color.BLACK);
 		textField_134.addMouseListener(this);
 		textField_134.setText("4");
 		textField_134.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1822,7 +1824,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_134);
 		
 		textField_135 = new JTextField();
-		textField_135.setForeground(Color.LIGHT_GRAY);
+		textField_135.setForeground(Color.BLACK);
 		textField_135.addMouseListener(this);
 		textField_135.setText("5");
 		textField_135.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1831,7 +1833,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_135);
 		
 		textField_136 = new JTextField();
-		textField_136.setForeground(Color.LIGHT_GRAY);
+		textField_136.setForeground(Color.BLACK);
 		textField_136.addMouseListener(this);
 		textField_136.setText("6");
 		textField_136.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1840,7 +1842,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_136);
 		
 		textField_144 = new JTextField();
-		textField_144.setForeground(Color.LIGHT_GRAY);
+		textField_144.setForeground(Color.BLACK);
 		textField_144.addMouseListener(this);
 		textField_144.setText("4");
 		textField_144.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1849,7 +1851,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_144);
 		
 		textField_145 = new JTextField();
-		textField_145.setForeground(Color.LIGHT_GRAY);
+		textField_145.setForeground(Color.BLACK);
 		textField_145.addMouseListener(this);
 		textField_145.setText("5");
 		textField_145.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1858,7 +1860,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_145);
 		
 		textField_146 = new JTextField();
-		textField_146.setForeground(Color.LIGHT_GRAY);
+		textField_146.setForeground(Color.BLACK);
 		textField_146.addMouseListener(this);
 		textField_146.setText("6");
 		textField_146.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1867,7 +1869,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_146);
 		
 		textField_154 = new JTextField();
-		textField_154.setForeground(Color.LIGHT_GRAY);
+		textField_154.setForeground(Color.BLACK);
 		textField_154.addMouseListener(this);
 		textField_154.setText("4");
 		textField_154.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1876,7 +1878,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_154);
 		
 		textField_155 = new JTextField();
-		textField_155.setForeground(Color.LIGHT_GRAY);
+		textField_155.setForeground(Color.BLACK);
 		textField_155.addMouseListener(this);
 		textField_155.setText("5");
 		textField_155.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1885,7 +1887,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_155);
 		
 		textField_156 = new JTextField();
-		textField_156.setForeground(Color.LIGHT_GRAY);
+		textField_156.setForeground(Color.BLACK);
 		textField_156.addMouseListener(this);
 		textField_156.setText("6");
 		textField_156.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1894,7 +1896,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_156);
 		
 		textField_137 = new JTextField();
-		textField_137.setForeground(Color.LIGHT_GRAY);
+		textField_137.setForeground(Color.BLACK);
 		textField_137.addMouseListener(this);
 		textField_137.setText("7");
 		textField_137.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1903,7 +1905,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_137);
 		
 		textField_138 = new JTextField();
-		textField_138.setForeground(Color.LIGHT_GRAY);
+		textField_138.setForeground(Color.BLACK);
 		textField_138.addMouseListener(this);
 		textField_138.setText("8");
 		textField_138.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1912,7 +1914,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_138);
 		
 		textField_139 = new JTextField();
-		textField_139.setForeground(Color.LIGHT_GRAY);
+		textField_139.setForeground(Color.BLACK);
 		textField_139.addMouseListener(this);
 		textField_139.setText("9");
 		textField_139.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1921,7 +1923,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_139);
 		
 		textField_147 = new JTextField();
-		textField_147.setForeground(Color.LIGHT_GRAY);
+		textField_147.setForeground(Color.BLACK);
 		textField_147.addMouseListener(this);
 		textField_147.setText("7");
 		textField_147.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1930,7 +1932,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_147);
 		
 		textField_148 = new JTextField();
-		textField_148.setForeground(Color.LIGHT_GRAY);
+		textField_148.setForeground(Color.BLACK);
 		textField_148.addMouseListener(this);
 		textField_148.setText("8");
 		textField_148.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1939,7 +1941,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_148);
 		
 		textField_149 = new JTextField();
-		textField_149.setForeground(Color.LIGHT_GRAY);
+		textField_149.setForeground(Color.BLACK);
 		textField_149.addMouseListener(this);
 		textField_149.setText("9");
 		textField_149.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1948,7 +1950,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_149);
 		
 		textField_157 = new JTextField();
-		textField_157.setForeground(Color.LIGHT_GRAY);
+		textField_157.setForeground(Color.BLACK);
 		textField_157.addMouseListener(this);
 		textField_157.setText("7");
 		textField_157.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1957,7 +1959,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_157);
 		
 		textField_158 = new JTextField();
-		textField_158.setForeground(Color.LIGHT_GRAY);
+		textField_158.setForeground(Color.BLACK);
 		textField_158.addMouseListener(this);
 		textField_158.setText("8");
 		textField_158.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1966,7 +1968,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_158);
 		
 		textField_159 = new JTextField();
-		textField_159.setForeground(Color.LIGHT_GRAY);
+		textField_159.setForeground(Color.BLACK);
 		textField_159.addMouseListener(this);
 		textField_159.setText("9");
 		textField_159.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1975,7 +1977,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_159);
 		
 		textField_221 = new JTextField();
-		textField_221.setForeground(Color.LIGHT_GRAY);
+		textField_221.setForeground(Color.BLACK);
 		textField_221.addMouseListener(this);
 		textField_221.setText("1");
 		textField_221.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1984,7 +1986,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_221);
 		
 		textField_222 = new JTextField();
-		textField_222.setForeground(Color.LIGHT_GRAY);
+		textField_222.setForeground(Color.BLACK);
 		textField_222.addMouseListener(this);
 		textField_222.setText("2");
 		textField_222.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -1993,7 +1995,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_222);
 		
 		textField_223 = new JTextField();
-		textField_223.setForeground(Color.LIGHT_GRAY);
+		textField_223.setForeground(Color.BLACK);
 		textField_223.addMouseListener(this);
 		textField_223.setText("3");
 		textField_223.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2002,7 +2004,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_223);
 		
 		textField_231 = new JTextField();
-		textField_231.setForeground(Color.LIGHT_GRAY);
+		textField_231.setForeground(Color.BLACK);
 		textField_231.addMouseListener(this);
 		textField_231.setText("1");
 		textField_231.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2011,7 +2013,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_231);
 		
 		textField_232 = new JTextField();
-		textField_232.setForeground(Color.LIGHT_GRAY);
+		textField_232.setForeground(Color.BLACK);
 		textField_232.addMouseListener(this);
 		textField_232.setText("2");
 		textField_232.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2020,7 +2022,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_232);
 		
 		textField_233 = new JTextField();
-		textField_233.setForeground(Color.LIGHT_GRAY);
+		textField_233.setForeground(Color.BLACK);
 		textField_233.addMouseListener(this);
 		textField_233.setText("3");
 		textField_233.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2029,7 +2031,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_233);
 		
 		textField_241 = new JTextField();
-		textField_241.setForeground(Color.LIGHT_GRAY);
+		textField_241.setForeground(Color.BLACK);
 		textField_241.addMouseListener(this);
 		textField_241.setText("1");
 		textField_241.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2038,7 +2040,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_241);
 		
 		textField_242 = new JTextField();
-		textField_242.setForeground(Color.LIGHT_GRAY);
+		textField_242.setForeground(Color.BLACK);
 		textField_242.addMouseListener(this);
 		textField_242.setText("2");
 		textField_242.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2047,7 +2049,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_242);
 		
 		textField_243 = new JTextField();
-		textField_243.setForeground(Color.LIGHT_GRAY);
+		textField_243.setForeground(Color.BLACK);
 		textField_243.addMouseListener(this);
 		textField_243.setText("3");
 		textField_243.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2056,7 +2058,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_243);
 		
 		textField_224 = new JTextField();
-		textField_224.setForeground(Color.LIGHT_GRAY);
+		textField_224.setForeground(Color.BLACK);
 		textField_224.addMouseListener(this);
 		textField_224.setText("4");
 		textField_224.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2065,7 +2067,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_224);
 		
 		textField_225 = new JTextField();
-		textField_225.setForeground(Color.LIGHT_GRAY);
+		textField_225.setForeground(Color.BLACK);
 		textField_225.addMouseListener(this);
 		textField_225.setText("5");
 		textField_225.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2074,7 +2076,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_225);
 		
 		textField_226 = new JTextField();
-		textField_226.setForeground(Color.LIGHT_GRAY);
+		textField_226.setForeground(Color.BLACK);
 		textField_226.addMouseListener(this);
 		textField_226.setText("6");
 		textField_226.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2083,7 +2085,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_226);
 		
 		textField_234 = new JTextField();
-		textField_234.setForeground(Color.LIGHT_GRAY);
+		textField_234.setForeground(Color.BLACK);
 		textField_234.addMouseListener(this);
 		textField_234.setText("4");
 		textField_234.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2092,7 +2094,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_234);
 		
 		textField_235 = new JTextField();
-		textField_235.setForeground(Color.LIGHT_GRAY);
+		textField_235.setForeground(Color.BLACK);
 		textField_235.addMouseListener(this);
 		textField_235.setText("5");
 		textField_235.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2101,7 +2103,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_235);
 		
 		textField_236 = new JTextField();
-		textField_236.setForeground(Color.LIGHT_GRAY);
+		textField_236.setForeground(Color.BLACK);
 		textField_236.addMouseListener(this);
 		textField_236.setText("6");
 		textField_236.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2110,7 +2112,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_236);
 		
 		textField_244 = new JTextField();
-		textField_244.setForeground(Color.LIGHT_GRAY);
+		textField_244.setForeground(Color.BLACK);
 		textField_244.addMouseListener(this);
 		textField_244.setText("4");
 		textField_244.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2119,7 +2121,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_244);
 		
 		textField_245 = new JTextField();
-		textField_245.setForeground(Color.LIGHT_GRAY);
+		textField_245.setForeground(Color.BLACK);
 		textField_245.addMouseListener(this);
 		textField_245.setText("5");
 		textField_245.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2128,7 +2130,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_245);
 		
 		textField_246 = new JTextField();
-		textField_246.setForeground(Color.LIGHT_GRAY);
+		textField_246.setForeground(Color.BLACK);
 		textField_246.addMouseListener(this);
 		textField_246.setText("6");
 		textField_246.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2137,7 +2139,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_246);
 		
 		textField_227 = new JTextField();
-		textField_227.setForeground(Color.LIGHT_GRAY);
+		textField_227.setForeground(Color.BLACK);
 		textField_227.addMouseListener(this);
 		textField_227.setText("7");
 		textField_227.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2146,7 +2148,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_227);
 		
 		textField_228 = new JTextField();
-		textField_228.setForeground(Color.LIGHT_GRAY);
+		textField_228.setForeground(Color.BLACK);
 		textField_228.addMouseListener(this);
 		textField_228.setText("8");
 		textField_228.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2155,7 +2157,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_228);
 		
 		textField_229 = new JTextField();
-		textField_229.setForeground(Color.LIGHT_GRAY);
+		textField_229.setForeground(Color.BLACK);
 		textField_229.addMouseListener(this);
 		textField_229.setText("9");
 		textField_229.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2164,7 +2166,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_229);
 		
 		textField_237 = new JTextField();
-		textField_237.setForeground(Color.LIGHT_GRAY);
+		textField_237.setForeground(Color.BLACK);
 		textField_237.addMouseListener(this);
 		textField_237.setText("7");
 		textField_237.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2173,7 +2175,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_237);
 		
 		textField_238 = new JTextField();
-		textField_238.setForeground(Color.LIGHT_GRAY);
+		textField_238.setForeground(Color.BLACK);
 		textField_238.addMouseListener(this);
 		textField_238.setText("8");
 		textField_238.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2182,7 +2184,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_238);
 		
 		textField_239 = new JTextField();
-		textField_239.setForeground(Color.LIGHT_GRAY);
+		textField_239.setForeground(Color.BLACK);
 		textField_239.addMouseListener(this);
 		textField_239.setText("9");
 		textField_239.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2191,7 +2193,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_239);
 		
 		textField_247 = new JTextField();
-		textField_247.setForeground(Color.LIGHT_GRAY);
+		textField_247.setForeground(Color.BLACK);
 		textField_247.addMouseListener(this);
 		textField_247.setText("7");
 		textField_247.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2200,7 +2202,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_247);
 		
 		textField_248 = new JTextField();
-		textField_248.setForeground(Color.LIGHT_GRAY);
+		textField_248.setForeground(Color.BLACK);
 		textField_248.addMouseListener(this);
 		textField_248.setText("8");
 		textField_248.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2209,7 +2211,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_248);
 		
 		textField_249 = new JTextField();
-		textField_249.setForeground(Color.LIGHT_GRAY);
+		textField_249.setForeground(Color.BLACK);
 		textField_249.addMouseListener(this);
 		textField_249.setText("9");
 		textField_249.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2218,7 +2220,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_249);
 		
 		textField_71 = new JTextField();
-		textField_71.setForeground(Color.LIGHT_GRAY);
+		textField_71.setForeground(Color.BLACK);
 		textField_71.addMouseListener(this);
 		textField_71.setText("1");
 		textField_71.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2227,7 +2229,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_71);
 		
 		textField_72 = new JTextField();
-		textField_72.setForeground(Color.LIGHT_GRAY);
+		textField_72.setForeground(Color.BLACK);
 		textField_72.addMouseListener(this);
 		textField_72.setText("2");
 		textField_72.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2236,7 +2238,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_72);
 		
 		textField_73 = new JTextField();
-		textField_73.setForeground(Color.LIGHT_GRAY);
+		textField_73.setForeground(Color.BLACK);
 		textField_73.addMouseListener(this);
 		textField_73.setText("3");
 		textField_73.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2245,7 +2247,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_73);
 		
 		textField_81 = new JTextField();
-		textField_81.setForeground(Color.LIGHT_GRAY);
+		textField_81.setForeground(Color.BLACK);
 		textField_81.addMouseListener(this);
 		textField_81.setText("1");
 		textField_81.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2254,7 +2256,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_81);
 		
 		textField_82 = new JTextField();
-		textField_82.setForeground(Color.LIGHT_GRAY);
+		textField_82.setForeground(Color.BLACK);
 		textField_82.addMouseListener(this);
 		textField_82.setText("2");
 		textField_82.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2263,7 +2265,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_82);
 		
 		textField_83 = new JTextField();
-		textField_83.setForeground(Color.LIGHT_GRAY);
+		textField_83.setForeground(Color.BLACK);
 		textField_83.addMouseListener(this);
 		textField_83.setText("3");
 		textField_83.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2272,7 +2274,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_83);
 		
 		textField_91 = new JTextField();
-		textField_91.setForeground(Color.LIGHT_GRAY);
+		textField_91.setForeground(Color.BLACK);
 		textField_91.addMouseListener(this);
 		textField_91.setText("1");
 		textField_91.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2281,7 +2283,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_91);
 		
 		textField_92 = new JTextField();
-		textField_92.setForeground(Color.LIGHT_GRAY);
+		textField_92.setForeground(Color.BLACK);
 		textField_92.addMouseListener(this);
 		textField_92.setText("2");
 		textField_92.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2290,7 +2292,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_92);
 		
 		textField_93 = new JTextField();
-		textField_93.setForeground(Color.LIGHT_GRAY);
+		textField_93.setForeground(Color.BLACK);
 		textField_93.addMouseListener(this);
 		textField_93.setText("3");
 		textField_93.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2299,7 +2301,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_93);
 		
 		textField_74 = new JTextField();
-		textField_74.setForeground(Color.LIGHT_GRAY);
+		textField_74.setForeground(Color.BLACK);
 		textField_74.addMouseListener(this);
 		textField_74.setText("4");
 		textField_74.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2308,7 +2310,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_74);
 		
 		textField_75 = new JTextField();
-		textField_75.setForeground(Color.LIGHT_GRAY);
+		textField_75.setForeground(Color.BLACK);
 		textField_75.addMouseListener(this);
 		textField_75.setText("5");
 		textField_75.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2317,7 +2319,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_75);
 		
 		textField_76 = new JTextField();
-		textField_76.setForeground(Color.LIGHT_GRAY);
+		textField_76.setForeground(Color.BLACK);
 		textField_76.addMouseListener(this);
 		textField_76.setText("6");
 		textField_76.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2326,7 +2328,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_76);
 		
 		textField_84 = new JTextField();
-		textField_84.setForeground(Color.LIGHT_GRAY);
+		textField_84.setForeground(Color.BLACK);
 		textField_84.addMouseListener(this);
 		textField_84.setText("4");
 		textField_84.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2335,7 +2337,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_84);
 		
 		textField_85 = new JTextField();
-		textField_85.setForeground(Color.LIGHT_GRAY);
+		textField_85.setForeground(Color.BLACK);
 		textField_85.addMouseListener(this);
 		textField_85.setText("5");
 		textField_85.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2344,7 +2346,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_85);
 		
 		textField_86 = new JTextField();
-		textField_86.setForeground(Color.LIGHT_GRAY);
+		textField_86.setForeground(Color.BLACK);
 		textField_86.addMouseListener(this);
 		textField_86.setText("6");
 		textField_86.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2353,7 +2355,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_86);
 		
 		textField_94 = new JTextField();
-		textField_94.setForeground(Color.LIGHT_GRAY);
+		textField_94.setForeground(Color.BLACK);
 		textField_94.addMouseListener(this);
 		textField_94.setText("4");
 		textField_94.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2362,7 +2364,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_94);
 		
 		textField_95 = new JTextField();
-		textField_95.setForeground(Color.LIGHT_GRAY);
+		textField_95.setForeground(Color.BLACK);
 		textField_95.addMouseListener(this);
 		textField_95.setText("5");
 		textField_95.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2371,7 +2373,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_95);
 		
 		textField_96 = new JTextField();
-		textField_96.setForeground(Color.LIGHT_GRAY);
+		textField_96.setForeground(Color.BLACK);
 		textField_96.addMouseListener(this);
 		textField_96.setText("6");
 		textField_96.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2380,7 +2382,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_96);
 		
 		textField_77 = new JTextField();
-		textField_77.setForeground(Color.LIGHT_GRAY);
+		textField_77.setForeground(Color.BLACK);
 		textField_77.addMouseListener(this);
 		textField_77.setText("7");
 		textField_77.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2389,7 +2391,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_77);
 		
 		textField_78 = new JTextField();
-		textField_78.setForeground(Color.LIGHT_GRAY);
+		textField_78.setForeground(Color.BLACK);
 		textField_78.addMouseListener(this);
 		textField_78.setText("8");
 		textField_78.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2398,7 +2400,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_78);
 		
 		textField_79 = new JTextField();
-		textField_79.setForeground(Color.LIGHT_GRAY);
+		textField_79.setForeground(Color.BLACK);
 		textField_79.addMouseListener(this);
 		textField_79.setText("9");
 		textField_79.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2407,7 +2409,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_79);
 		
 		textField_87 = new JTextField();
-		textField_87.setForeground(Color.LIGHT_GRAY);
+		textField_87.setForeground(Color.BLACK);
 		textField_87.addMouseListener(this);
 		textField_87.setText("7");
 		textField_87.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2416,7 +2418,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_87);
 		
 		textField_88 = new JTextField();
-		textField_88.setForeground(Color.LIGHT_GRAY);
+		textField_88.setForeground(Color.BLACK);
 		textField_88.addMouseListener(this);
 		textField_88.setText("8");
 		textField_88.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2425,7 +2427,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_88);
 		
 		textField_89 = new JTextField();
-		textField_89.setForeground(Color.LIGHT_GRAY);
+		textField_89.setForeground(Color.BLACK);
 		textField_89.addMouseListener(this);
 		textField_89.setText("9");
 		textField_89.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2434,7 +2436,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_89);
 		
 		textField_97 = new JTextField();
-		textField_97.setForeground(Color.LIGHT_GRAY);
+		textField_97.setForeground(Color.BLACK);
 		textField_97.addMouseListener(this);
 		textField_97.setText("7");
 		textField_97.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2443,7 +2445,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_97);
 		
 		textField_99 = new JTextField();
-		textField_99.setForeground(Color.LIGHT_GRAY);
+		textField_99.setForeground(Color.BLACK);
 		textField_99.addMouseListener(this);
 		textField_99.setText("9");
 		textField_99.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2452,7 +2454,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_99);
 		
 		textField_98 = new JTextField();
-		textField_98.setForeground(Color.LIGHT_GRAY);
+		textField_98.setForeground(Color.BLACK);
 		textField_98.addMouseListener(this);
 		textField_98.setText("8");
 		textField_98.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2461,7 +2463,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_98);
 		
 		textField_161 = new JTextField();
-		textField_161.setForeground(Color.LIGHT_GRAY);
+		textField_161.setForeground(Color.BLACK);
 		textField_161.addMouseListener(this);
 		textField_161.setText("1");
 		textField_161.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2470,7 +2472,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_161);
 		
 		textField_162 = new JTextField();
-		textField_162.setForeground(Color.LIGHT_GRAY);
+		textField_162.setForeground(Color.BLACK);
 		textField_162.addMouseListener(this);
 		textField_162.setText("2");
 		textField_162.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2479,7 +2481,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_162);
 		
 		textField_163 = new JTextField();
-		textField_163.setForeground(Color.LIGHT_GRAY);
+		textField_163.setForeground(Color.BLACK);
 		textField_163.addMouseListener(this);
 		textField_163.setText("3");
 		textField_163.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2488,7 +2490,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_163);
 		
 		textField_171 = new JTextField();
-		textField_171.setForeground(Color.LIGHT_GRAY);
+		textField_171.setForeground(Color.BLACK);
 		textField_171.addMouseListener(this);
 		textField_171.setText("1");
 		textField_171.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2497,7 +2499,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_171);
 		
 		textField_172 = new JTextField();
-		textField_172.setForeground(Color.LIGHT_GRAY);
+		textField_172.setForeground(Color.BLACK);
 		textField_172.addMouseListener(this);
 		textField_172.setText("2");
 		textField_172.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2506,7 +2508,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_172);
 		
 		textField_173 = new JTextField();
-		textField_173.setForeground(Color.LIGHT_GRAY);
+		textField_173.setForeground(Color.BLACK);
 		textField_173.addMouseListener(this);
 		textField_173.setText("3");
 		textField_173.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2515,7 +2517,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_173);
 		
 		textField_181 = new JTextField();
-		textField_181.setForeground(Color.LIGHT_GRAY);
+		textField_181.setForeground(Color.BLACK);
 		textField_181.addMouseListener(this);
 		textField_181.setText("1");
 		textField_181.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2524,7 +2526,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_181);
 		
 		textField_182 = new JTextField();
-		textField_182.setForeground(Color.LIGHT_GRAY);
+		textField_182.setForeground(Color.BLACK);
 		textField_182.addMouseListener(this);
 		textField_182.setText("2");
 		textField_182.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2533,7 +2535,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_182);
 		
 		textField_183 = new JTextField();
-		textField_183.setForeground(Color.LIGHT_GRAY);
+		textField_183.setForeground(Color.BLACK);
 		textField_183.addMouseListener(this);
 		textField_183.setText("3");
 		textField_183.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2542,7 +2544,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_183);
 		
 		textField_164 = new JTextField();
-		textField_164.setForeground(Color.LIGHT_GRAY);
+		textField_164.setForeground(Color.BLACK);
 		textField_164.addMouseListener(this);
 		textField_164.setText("4");
 		textField_164.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2551,7 +2553,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_164);
 		
 		textField_165 = new JTextField();
-		textField_165.setForeground(Color.LIGHT_GRAY);
+		textField_165.setForeground(Color.BLACK);
 		textField_165.addMouseListener(this);
 		textField_165.setText("5");
 		textField_165.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2560,7 +2562,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_165);
 		
 		textField_166 = new JTextField();
-		textField_166.setForeground(Color.LIGHT_GRAY);
+		textField_166.setForeground(Color.BLACK);
 		textField_166.addMouseListener(this);
 		textField_166.setText("6");
 		textField_166.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2569,7 +2571,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_166);
 		
 		textField_174 = new JTextField();
-		textField_174.setForeground(Color.LIGHT_GRAY);
+		textField_174.setForeground(Color.BLACK);
 		textField_174.addMouseListener(this);
 		textField_174.setText("4");
 		textField_174.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2578,7 +2580,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_174);
 		
 		textField_175 = new JTextField();
-		textField_175.setForeground(Color.LIGHT_GRAY);
+		textField_175.setForeground(Color.BLACK);
 		textField_175.addMouseListener(this);
 		textField_175.setText("5");
 		textField_175.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2587,7 +2589,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_175);
 		
 		textField_176 = new JTextField();
-		textField_176.setForeground(Color.LIGHT_GRAY);
+		textField_176.setForeground(Color.BLACK);
 		textField_176.addMouseListener(this);
 		textField_176.setText("6");
 		textField_176.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2596,7 +2598,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_176);
 		
 		textField_184 = new JTextField();
-		textField_184.setForeground(Color.LIGHT_GRAY);
+		textField_184.setForeground(Color.BLACK);
 		textField_184.addMouseListener(this);
 		textField_184.setText("4");
 		textField_184.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2605,7 +2607,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_184);
 		
 		textField_185 = new JTextField();
-		textField_185.setForeground(Color.LIGHT_GRAY);
+		textField_185.setForeground(Color.BLACK);
 		textField_185.addMouseListener(this);
 		textField_185.setText("5");
 		textField_185.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2614,7 +2616,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_185);
 		
 		textField_186 = new JTextField();
-		textField_186.setForeground(Color.LIGHT_GRAY);
+		textField_186.setForeground(Color.BLACK);
 		textField_186.addMouseListener(this);
 		textField_186.setText("6");
 		textField_186.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2623,7 +2625,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_186);
 		
 		textField_167 = new JTextField();
-		textField_167.setForeground(Color.LIGHT_GRAY);
+		textField_167.setForeground(Color.BLACK);
 		textField_167.addMouseListener(this);
 		textField_167.setText("7");
 		textField_167.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2632,7 +2634,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_167);
 		
 		textField_168 = new JTextField();
-		textField_168.setForeground(Color.LIGHT_GRAY);
+		textField_168.setForeground(Color.BLACK);
 		textField_168.addMouseListener(this);
 		textField_168.setText("8");
 		textField_168.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2641,7 +2643,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_168);
 		
 		textField_169 = new JTextField();
-		textField_169.setForeground(Color.LIGHT_GRAY);
+		textField_169.setForeground(Color.BLACK);
 		textField_169.addMouseListener(this);
 		textField_169.setText("9");
 		textField_169.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2650,7 +2652,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_169);
 		
 		textField_177 = new JTextField();
-		textField_177.setForeground(Color.LIGHT_GRAY);
+		textField_177.setForeground(Color.BLACK);
 		textField_177.addMouseListener(this);
 		textField_177.setText("7");
 		textField_177.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2659,7 +2661,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_177);
 		
 		textField_178 = new JTextField();
-		textField_178.setForeground(Color.LIGHT_GRAY);
+		textField_178.setForeground(Color.BLACK);
 		textField_178.addMouseListener(this);
 		textField_178.setText("8");
 		textField_178.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2668,7 +2670,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_178);
 		
 		textField_179 = new JTextField();
-		textField_179.setForeground(Color.LIGHT_GRAY);
+		textField_179.setForeground(Color.BLACK);
 		textField_179.addMouseListener(this);
 		textField_179.setText("9");
 		textField_179.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2677,7 +2679,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_179);
 		
 		textField_187 = new JTextField();
-		textField_187.setForeground(Color.LIGHT_GRAY);
+		textField_187.setForeground(Color.BLACK);
 		textField_187.addMouseListener(this);
 		textField_187.setText("7");
 		textField_187.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2686,7 +2688,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_187);
 		
 		textField_188 = new JTextField();
-		textField_188.setForeground(Color.LIGHT_GRAY);
+		textField_188.setForeground(Color.BLACK);
 		textField_188.addMouseListener(this);
 		textField_188.setText("8");
 		textField_188.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2695,7 +2697,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_188);
 		
 		textField_189 = new JTextField();
-		textField_189.setForeground(Color.LIGHT_GRAY);
+		textField_189.setForeground(Color.BLACK);
 		textField_189.addMouseListener(this);
 		textField_189.setText("9");
 		textField_189.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2704,7 +2706,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_189);
 		
 		textField_251 = new JTextField();
-		textField_251.setForeground(Color.LIGHT_GRAY);
+		textField_251.setForeground(Color.BLACK);
 		textField_251.addMouseListener(this);
 		textField_251.setText("1");
 		textField_251.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2713,7 +2715,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_251);
 		
 		textField_252 = new JTextField();
-		textField_252.setForeground(Color.LIGHT_GRAY);
+		textField_252.setForeground(Color.BLACK);
 		textField_252.addMouseListener(this);
 		textField_252.setText("2");
 		textField_252.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2722,7 +2724,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_252);
 		
 		textField_253 = new JTextField();
-		textField_253.setForeground(Color.LIGHT_GRAY);
+		textField_253.setForeground(Color.BLACK);
 		textField_253.addMouseListener(this);
 		textField_253.setText("3");
 		textField_253.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2731,7 +2733,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_253);
 		
 		textField_261 = new JTextField();
-		textField_261.setForeground(Color.LIGHT_GRAY);
+		textField_261.setForeground(Color.BLACK);
 		textField_261.addMouseListener(this);
 		textField_261.setText("1");
 		textField_261.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2740,7 +2742,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_261);
 		
 		textField_262 = new JTextField();
-		textField_262.setForeground(Color.LIGHT_GRAY);
+		textField_262.setForeground(Color.BLACK);
 		textField_262.addMouseListener(this);
 		textField_262.setText("2");
 		textField_262.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2749,7 +2751,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_262);
 		
 		textField_263 = new JTextField();
-		textField_263.setForeground(Color.LIGHT_GRAY);
+		textField_263.setForeground(Color.BLACK);
 		textField_263.addMouseListener(this);
 		textField_263.setText("3");
 		textField_263.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2758,7 +2760,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_263);
 		
 		textField_271 = new JTextField();
-		textField_271.setForeground(Color.LIGHT_GRAY);
+		textField_271.setForeground(Color.BLACK);
 		textField_271.addMouseListener(this);
 		textField_271.setText("1");
 		textField_271.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2767,7 +2769,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_271);
 		
 		textField_272 = new JTextField();
-		textField_272.setForeground(Color.LIGHT_GRAY);
+		textField_272.setForeground(Color.BLACK);
 		textField_272.addMouseListener(this);
 		textField_272.setText("2");
 		textField_272.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2776,7 +2778,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_272);
 		
 		textField_273 = new JTextField();
-		textField_273.setForeground(Color.LIGHT_GRAY);
+		textField_273.setForeground(Color.BLACK);
 		textField_273.addMouseListener(this);
 		textField_273.setText("3");
 		textField_273.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2785,7 +2787,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_273);
 		
 		textField_254 = new JTextField();
-		textField_254.setForeground(Color.LIGHT_GRAY);
+		textField_254.setForeground(Color.BLACK);
 		textField_254.addMouseListener(this);
 		textField_254.setText("4");
 		textField_254.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2794,7 +2796,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_254);
 		
 		textField_255 = new JTextField();
-		textField_255.setForeground(Color.LIGHT_GRAY);
+		textField_255.setForeground(Color.BLACK);
 		textField_255.addMouseListener(this);
 		textField_255.setText("5");
 		textField_255.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2803,7 +2805,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_255);
 		
 		textField_256 = new JTextField();
-		textField_256.setForeground(Color.LIGHT_GRAY);
+		textField_256.setForeground(Color.BLACK);
 		textField_256.addMouseListener(this);
 		textField_256.setText("6");
 		textField_256.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2812,7 +2814,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_256);
 		
 		textField_264 = new JTextField();
-		textField_264.setForeground(Color.LIGHT_GRAY);
+		textField_264.setForeground(Color.BLACK);
 		textField_264.addMouseListener(this);
 		textField_264.setText("4");
 		textField_264.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2821,7 +2823,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_264);
 		
 		textField_265 = new JTextField();
-		textField_265.setForeground(Color.LIGHT_GRAY);
+		textField_265.setForeground(Color.BLACK);
 		textField_265.addMouseListener(this);
 		textField_265.setText("5");
 		textField_265.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2830,7 +2832,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_265);
 		
 		textField_266 = new JTextField();
-		textField_266.setForeground(Color.LIGHT_GRAY);
+		textField_266.setForeground(Color.BLACK);
 		textField_266.addMouseListener(this);
 		textField_266.setText("6");
 		textField_266.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2839,7 +2841,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_266);
 		
 		textField_274 = new JTextField();
-		textField_274.setForeground(Color.LIGHT_GRAY);
+		textField_274.setForeground(Color.BLACK);
 		textField_274.addMouseListener(this);
 		textField_274.setText("4");
 		textField_274.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2848,7 +2850,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_274);
 		
 		textField_275 = new JTextField();
-		textField_275.setForeground(Color.LIGHT_GRAY);
+		textField_275.setForeground(Color.BLACK);
 		textField_275.addMouseListener(this);
 		textField_275.setText("5");
 		textField_275.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2857,7 +2859,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_275);
 		
 		textField_276 = new JTextField();
-		textField_276.setForeground(Color.LIGHT_GRAY);
+		textField_276.setForeground(Color.BLACK);
 		textField_276.addMouseListener(this);
 		textField_276.setText("6");
 		textField_276.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2866,7 +2868,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_276);
 		
 		textField_257 = new JTextField();
-		textField_257.setForeground(Color.LIGHT_GRAY);
+		textField_257.setForeground(Color.BLACK);
 		textField_257.addMouseListener(this);
 		textField_257.setText("7");
 		textField_257.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2875,7 +2877,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_257);
 		
 		textField_258 = new JTextField();
-		textField_258.setForeground(Color.LIGHT_GRAY);
+		textField_258.setForeground(Color.BLACK);
 		textField_258.addMouseListener(this);
 		textField_258.setText("8");
 		textField_258.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2884,7 +2886,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_258);
 		
 		textField_259 = new JTextField();
-		textField_259.setForeground(Color.LIGHT_GRAY);
+		textField_259.setForeground(Color.BLACK);
 		textField_259.addMouseListener(this);
 		textField_259.setText("9");
 		textField_259.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2893,7 +2895,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_259);
 		
 		textField_267 = new JTextField();
-		textField_267.setForeground(Color.LIGHT_GRAY);
+		textField_267.setForeground(Color.BLACK);
 		textField_267.addMouseListener(this);
 		textField_267.setText("7");
 		textField_267.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2902,7 +2904,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_267);
 		
 		textField_268 = new JTextField();
-		textField_268.setForeground(Color.LIGHT_GRAY);
+		textField_268.setForeground(Color.BLACK);
 		textField_268.addMouseListener(this);
 		textField_268.setText("8");
 		textField_268.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2911,7 +2913,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_268);
 		
 		textField_269 = new JTextField();
-		textField_269.setForeground(Color.LIGHT_GRAY);
+		textField_269.setForeground(Color.BLACK);
 		textField_269.addMouseListener(this);
 		textField_269.setText("9");
 		textField_269.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2920,7 +2922,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_269);
 		
 		textField_277 = new JTextField();
-		textField_277.setForeground(Color.LIGHT_GRAY);
+		textField_277.setForeground(Color.BLACK);
 		textField_277.addMouseListener(this);
 		textField_277.setText("7");
 		textField_277.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2929,7 +2931,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_277);
 		
 		textField_278 = new JTextField();
-		textField_278.setForeground(Color.LIGHT_GRAY);
+		textField_278.setForeground(Color.BLACK);
 		textField_278.addMouseListener(this);
 		textField_278.setText("8");
 		textField_278.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2938,7 +2940,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_278);
 		
 		textField_279 = new JTextField();
-		textField_279.setForeground(Color.LIGHT_GRAY);
+		textField_279.setForeground(Color.BLACK);
 		textField_279.addMouseListener(this);
 		textField_279.setText("9");
 		textField_279.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2947,7 +2949,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_279);
 		
 		textField_281 = new JTextField();
-		textField_281.setForeground(Color.LIGHT_GRAY);
+		textField_281.setForeground(Color.BLACK);
 		textField_281.addMouseListener(this);
 		textField_281.setText("1");
 		textField_281.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2956,7 +2958,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_281);
 		
 		textField_282 = new JTextField();
-		textField_282.setForeground(Color.LIGHT_GRAY);
+		textField_282.setForeground(Color.BLACK);
 		textField_282.addMouseListener(this);
 		textField_282.setText("2");
 		textField_282.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2965,7 +2967,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_282);
 		
 		textField_283 = new JTextField();
-		textField_283.setForeground(Color.LIGHT_GRAY);
+		textField_283.setForeground(Color.BLACK);
 		textField_283.addMouseListener(this);
 		textField_283.setText("3");
 		textField_283.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2974,7 +2976,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_283);
 		
 		textField_291 = new JTextField();
-		textField_291.setForeground(Color.LIGHT_GRAY);
+		textField_291.setForeground(Color.BLACK);
 		textField_291.addMouseListener(this);
 		textField_291.setText("1");
 		textField_291.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2983,7 +2985,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_291);
 		
 		textField_292 = new JTextField();
-		textField_292.setForeground(Color.LIGHT_GRAY);
+		textField_292.setForeground(Color.BLACK);
 		textField_292.addMouseListener(this);
 		textField_292.setText("2");
 		textField_292.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -2992,7 +2994,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_292);
 		
 		textField_293 = new JTextField();
-		textField_293.setForeground(Color.LIGHT_GRAY);
+		textField_293.setForeground(Color.BLACK);
 		textField_293.addMouseListener(this);
 		textField_293.setText("3");
 		textField_293.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3001,7 +3003,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_293);
 		
 		textField_301 = new JTextField();
-		textField_301.setForeground(Color.LIGHT_GRAY);
+		textField_301.setForeground(Color.BLACK);
 		textField_301.addMouseListener(this);
 		textField_301.setText("1");
 		textField_301.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3010,7 +3012,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_301);
 		
 		textField_302 = new JTextField();
-		textField_302.setForeground(Color.LIGHT_GRAY);
+		textField_302.setForeground(Color.BLACK);
 		textField_302.addMouseListener(this);
 		textField_302.setText("2");
 		textField_302.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3019,7 +3021,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_302);
 		
 		textField_303 = new JTextField();
-		textField_303.setForeground(Color.LIGHT_GRAY);
+		textField_303.setForeground(Color.BLACK);
 		textField_303.addMouseListener(this);
 		textField_303.setText("3");
 		textField_303.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3028,7 +3030,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_303);
 		
 		textField_284 = new JTextField();
-		textField_284.setForeground(Color.LIGHT_GRAY);
+		textField_284.setForeground(Color.BLACK);
 		textField_284.addMouseListener(this);
 		textField_284.setText("4");
 		textField_284.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3037,7 +3039,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_284);
 		
 		textField_285 = new JTextField();
-		textField_285.setForeground(Color.LIGHT_GRAY);
+		textField_285.setForeground(Color.BLACK);
 		textField_285.addMouseListener(this);
 		textField_285.setText("5");
 		textField_285.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3046,7 +3048,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_285);
 		
 		textField_286 = new JTextField();
-		textField_286.setForeground(Color.LIGHT_GRAY);
+		textField_286.setForeground(Color.BLACK);
 		textField_286.addMouseListener(this);
 		textField_286.setText("6");
 		textField_286.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3055,7 +3057,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_286);
 		
 		textField_294 = new JTextField();
-		textField_294.setForeground(Color.LIGHT_GRAY);
+		textField_294.setForeground(Color.BLACK);
 		textField_294.addMouseListener(this);
 		textField_294.setText("4");
 		textField_294.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3064,7 +3066,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_294);
 		
 		textField_295 = new JTextField();
-		textField_295.setForeground(Color.LIGHT_GRAY);
+		textField_295.setForeground(Color.BLACK);
 		textField_295.addMouseListener(this);
 		textField_295.setText("5");
 		textField_295.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3073,7 +3075,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_295);
 		
 		textField_296 = new JTextField();
-		textField_296.setForeground(Color.LIGHT_GRAY);
+		textField_296.setForeground(Color.BLACK);
 		textField_296.addMouseListener(this);
 		textField_296.setText("6");
 		textField_296.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3082,7 +3084,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_296);
 		
 		textField_304 = new JTextField();
-		textField_304.setForeground(Color.LIGHT_GRAY);
+		textField_304.setForeground(Color.BLACK);
 		textField_304.addMouseListener(this);
 		textField_304.setText("4");
 		textField_304.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3091,7 +3093,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_304);
 		
 		textField_305 = new JTextField();
-		textField_305.setForeground(Color.LIGHT_GRAY);
+		textField_305.setForeground(Color.BLACK);
 		textField_305.addMouseListener(this);
 		textField_305.setText("5");
 		textField_305.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3100,7 +3102,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_305);
 		
 		textField_306 = new JTextField();
-		textField_306.setForeground(Color.LIGHT_GRAY);
+		textField_306.setForeground(Color.BLACK);
 		textField_306.addMouseListener(this);
 		textField_306.setText("6");
 		textField_306.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3109,7 +3111,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_306);
 		
 		textField_287 = new JTextField();
-		textField_287.setForeground(Color.LIGHT_GRAY);
+		textField_287.setForeground(Color.BLACK);
 		textField_287.addMouseListener(this);
 		textField_287.setText("7");
 		textField_287.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3118,7 +3120,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_287);
 		
 		textField_288 = new JTextField();
-		textField_288.setForeground(Color.LIGHT_GRAY);
+		textField_288.setForeground(Color.BLACK);
 		textField_288.addMouseListener(this);
 		textField_288.setText("8");
 		textField_288.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3127,7 +3129,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_288);
 		
 		textField_289 = new JTextField();
-		textField_289.setForeground(Color.LIGHT_GRAY);
+		textField_289.setForeground(Color.BLACK);
 		textField_289.addMouseListener(this);
 		textField_289.setText("9");
 		textField_289.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3136,7 +3138,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_289);
 		
 		textField_297 = new JTextField();
-		textField_297.setForeground(Color.LIGHT_GRAY);
+		textField_297.setForeground(Color.BLACK);
 		textField_297.addMouseListener(this);
 		textField_297.setText("7");
 		textField_297.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3145,7 +3147,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_297);
 		
 		textField_298 = new JTextField();
-		textField_298.setForeground(Color.LIGHT_GRAY);
+		textField_298.setForeground(Color.BLACK);
 		textField_298.addMouseListener(this);
 		textField_298.setText("8");
 		textField_298.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3154,7 +3156,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_298);
 		
 		textField_299 = new JTextField();
-		textField_299.setForeground(Color.LIGHT_GRAY);
+		textField_299.setForeground(Color.BLACK);
 		textField_299.addMouseListener(this);
 		textField_299.setText("9");
 		textField_299.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3163,7 +3165,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_299);
 		
 		textField_307 = new JTextField();
-		textField_307.setForeground(Color.LIGHT_GRAY);
+		textField_307.setForeground(Color.BLACK);
 		textField_307.addMouseListener(this);
 		textField_307.setText("7");
 		textField_307.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3172,7 +3174,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_307);
 		
 		textField_309 = new JTextField();
-		textField_309.setForeground(Color.LIGHT_GRAY);
+		textField_309.setForeground(Color.BLACK);
 		textField_309.addMouseListener(this);
 		textField_309.setText("9");
 		textField_309.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3181,7 +3183,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_309);
 		
 		textField_308 = new JTextField();
-		textField_308.setForeground(Color.LIGHT_GRAY);
+		textField_308.setForeground(Color.BLACK);
 		textField_308.addMouseListener(this);
 		textField_308.setText("8");
 		textField_308.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3190,7 +3192,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_308);
 		
 		textField_371 = new JTextField();
-		textField_371.setForeground(Color.LIGHT_GRAY);
+		textField_371.setForeground(Color.BLACK);
 		textField_371.addMouseListener(this);
 		textField_371.setText("1");
 		textField_371.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3199,7 +3201,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_371);
 		
 		textField_372 = new JTextField();
-		textField_372.setForeground(Color.LIGHT_GRAY);
+		textField_372.setForeground(Color.BLACK);
 		textField_372.addMouseListener(this);
 		textField_372.setText("2");
 		textField_372.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3208,7 +3210,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_372);
 		
 		textField_373 = new JTextField();
-		textField_373.setForeground(Color.LIGHT_GRAY);
+		textField_373.setForeground(Color.BLACK);
 		textField_373.addMouseListener(this);
 		textField_373.setText("3");
 		textField_373.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3217,7 +3219,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_373);
 		
 		textField_381 = new JTextField();
-		textField_381.setForeground(Color.LIGHT_GRAY);
+		textField_381.setForeground(Color.BLACK);
 		textField_381.addMouseListener(this);
 		textField_381.setText("1");
 		textField_381.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3226,7 +3228,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_381);
 		
 		textField_382 = new JTextField();
-		textField_382.setForeground(Color.LIGHT_GRAY);
+		textField_382.setForeground(Color.BLACK);
 		textField_382.addMouseListener(this);
 		textField_382.setText("2");
 		textField_382.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3235,7 +3237,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_382);
 		
 		textField_383 = new JTextField();
-		textField_383.setForeground(Color.LIGHT_GRAY);
+		textField_383.setForeground(Color.BLACK);
 		textField_383.addMouseListener(this);
 		textField_383.setText("3");
 		textField_383.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3244,7 +3246,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_383);
 		
 		textField_391 = new JTextField();
-		textField_391.setForeground(Color.LIGHT_GRAY);
+		textField_391.setForeground(Color.BLACK);
 		textField_391.addMouseListener(this);
 		textField_391.setText("1");
 		textField_391.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3253,7 +3255,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_391);
 		
 		textField_392 = new JTextField();
-		textField_392.setForeground(Color.LIGHT_GRAY);
+		textField_392.setForeground(Color.BLACK);
 		textField_392.addMouseListener(this);
 		textField_392.setText("2");
 		textField_392.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3262,7 +3264,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_392);
 		
 		textField_393 = new JTextField();
-		textField_393.setForeground(Color.LIGHT_GRAY);
+		textField_393.setForeground(Color.BLACK);
 		textField_393.addMouseListener(this);
 		textField_393.setText("3");
 		textField_393.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3271,7 +3273,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_393);
 		
 		textField_374 = new JTextField();
-		textField_374.setForeground(Color.LIGHT_GRAY);
+		textField_374.setForeground(Color.BLACK);
 		textField_374.addMouseListener(this);
 		textField_374.setText("4");
 		textField_374.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3280,7 +3282,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_374);
 		
 		textField_375 = new JTextField();
-		textField_375.setForeground(Color.LIGHT_GRAY);
+		textField_375.setForeground(Color.BLACK);
 		textField_375.addMouseListener(this);
 		textField_375.setText("5");
 		textField_375.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3289,7 +3291,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_375);
 		
 		textField_376 = new JTextField();
-		textField_376.setForeground(Color.LIGHT_GRAY);
+		textField_376.setForeground(Color.BLACK);
 		textField_376.addMouseListener(this);
 		textField_376.setText("6");
 		textField_376.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3298,7 +3300,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_376);
 		
 		textField_384 = new JTextField();
-		textField_384.setForeground(Color.LIGHT_GRAY);
+		textField_384.setForeground(Color.BLACK);
 		textField_384.addMouseListener(this);
 		textField_384.setText("4");
 		textField_384.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3307,7 +3309,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_384);
 		
 		textField_385 = new JTextField();
-		textField_385.setForeground(Color.LIGHT_GRAY);
+		textField_385.setForeground(Color.BLACK);
 		textField_385.addMouseListener(this);
 		textField_385.setText("5");
 		textField_385.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3316,7 +3318,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_385);
 		
 		textField_386 = new JTextField();
-		textField_386.setForeground(Color.LIGHT_GRAY);
+		textField_386.setForeground(Color.BLACK);
 		textField_386.addMouseListener(this);
 		textField_386.setText("6");
 		textField_386.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3325,7 +3327,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_386);
 		
 		textField_394 = new JTextField();
-		textField_394.setForeground(Color.LIGHT_GRAY);
+		textField_394.setForeground(Color.BLACK);
 		textField_394.addMouseListener(this);
 		textField_394.setText("4");
 		textField_394.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3334,7 +3336,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_394);
 		
 		textField_395 = new JTextField();
-		textField_395.setForeground(Color.LIGHT_GRAY);
+		textField_395.setForeground(Color.BLACK);
 		textField_395.addMouseListener(this);
 		textField_395.setText("5");
 		textField_395.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3343,7 +3345,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_395);
 		
 		textField_396 = new JTextField();
-		textField_396.setForeground(Color.LIGHT_GRAY);
+		textField_396.setForeground(Color.BLACK);
 		textField_396.addMouseListener(this);
 		textField_396.setText("6");
 		textField_396.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3352,7 +3354,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_396);
 		
 		textField_377 = new JTextField();
-		textField_377.setForeground(Color.LIGHT_GRAY);
+		textField_377.setForeground(Color.BLACK);
 		textField_377.addMouseListener(this);
 		textField_377.setText("7");
 		textField_377.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3361,7 +3363,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_377);
 		
 		textField_378 = new JTextField();
-		textField_378.setForeground(Color.LIGHT_GRAY);
+		textField_378.setForeground(Color.BLACK);
 		textField_378.addMouseListener(this);
 		textField_378.setText("8");
 		textField_378.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3370,7 +3372,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_378);
 		
 		textField_379 = new JTextField();
-		textField_379.setForeground(Color.LIGHT_GRAY);
+		textField_379.setForeground(Color.BLACK);
 		textField_379.addMouseListener(this);
 		textField_379.setText("9");
 		textField_379.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3379,7 +3381,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_379);
 		
 		textField_387 = new JTextField();
-		textField_387.setForeground(Color.LIGHT_GRAY);
+		textField_387.setForeground(Color.BLACK);
 		textField_387.addMouseListener(this);
 		textField_387.setText("7");
 		textField_387.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3388,7 +3390,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_387);
 		
 		textField_388 = new JTextField();
-		textField_388.setForeground(Color.LIGHT_GRAY);
+		textField_388.setForeground(Color.BLACK);
 		textField_388.addMouseListener(this);
 		textField_388.setText("8");
 		textField_388.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3398,7 +3400,7 @@ public class Grille  extends JFrame implements MouseListener {
 	}
 	private void initComponent2(){
 		textField_389 = new JTextField();
-		textField_389.setForeground(Color.LIGHT_GRAY);
+		textField_389.setForeground(Color.BLACK);
 		textField_389.addMouseListener(this);
 		textField_389.setText("9");
 		textField_389.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3407,7 +3409,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_389);
 		
 		textField_397 = new JTextField();
-		textField_397.setForeground(Color.LIGHT_GRAY);
+		textField_397.setForeground(Color.BLACK);
 		textField_397.addMouseListener(this);
 		textField_397.setText("7");
 		textField_397.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3416,7 +3418,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_397);
 		
 		textField_398 = new JTextField();
-		textField_398.setForeground(Color.LIGHT_GRAY);
+		textField_398.setForeground(Color.BLACK);
 		textField_398.addMouseListener(this);
 		textField_398.setText("8");
 		textField_398.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3425,7 +3427,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_398);
 		
 		textField_399 = new JTextField();
-		textField_399.setForeground(Color.LIGHT_GRAY);
+		textField_399.setForeground(Color.BLACK);
 		textField_399.addMouseListener(this);
 		textField_399.setText("9");
 		textField_399.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3434,7 +3436,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_399);
 		
 		textField_461 = new JTextField();
-		textField_461.setForeground(Color.LIGHT_GRAY);
+		textField_461.setForeground(Color.BLACK);
 		textField_461.addMouseListener(this);
 		textField_461.setText("1");
 		textField_461.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3443,7 +3445,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_461);
 		
 		textField_462 = new JTextField();
-		textField_462.setForeground(Color.LIGHT_GRAY);
+		textField_462.setForeground(Color.BLACK);
 		textField_462.addMouseListener(this);
 		textField_462.setText("2");
 		textField_462.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3452,7 +3454,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_462);
 		
 		textField_463 = new JTextField();
-		textField_463.setForeground(Color.LIGHT_GRAY);
+		textField_463.setForeground(Color.BLACK);
 		textField_463.addMouseListener(this);
 		textField_463.setText("3");
 		textField_463.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3461,7 +3463,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_463);
 		
 		textField_471 = new JTextField();
-		textField_471.setForeground(Color.LIGHT_GRAY);
+		textField_471.setForeground(Color.BLACK);
 		textField_471.addMouseListener(this);
 		textField_471.setText("1");
 		textField_471.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3470,7 +3472,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_471);
 		
 		textField_472 = new JTextField();
-		textField_472.setForeground(Color.LIGHT_GRAY);
+		textField_472.setForeground(Color.BLACK);
 		textField_472.addMouseListener(this);
 		textField_472.setText("2");
 		textField_472.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3479,7 +3481,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_472);
 		
 		textField_473 = new JTextField();
-		textField_473.setForeground(Color.LIGHT_GRAY);
+		textField_473.setForeground(Color.BLACK);
 		textField_473.addMouseListener(this);
 		textField_473.setText("3");
 		textField_473.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3488,7 +3490,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_473);
 		
 		textField_481 = new JTextField();
-		textField_481.setForeground(Color.LIGHT_GRAY);
+		textField_481.setForeground(Color.BLACK);
 		textField_481.addMouseListener(this);
 		textField_481.setText("1");
 		textField_481.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3497,7 +3499,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_481);
 		
 		textField_482 = new JTextField();
-		textField_482.setForeground(Color.LIGHT_GRAY);
+		textField_482.setForeground(Color.BLACK);
 		textField_482.addMouseListener(this);
 		textField_482.setText("2");
 		textField_482.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3506,7 +3508,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_482);
 		
 		textField_483 = new JTextField();
-		textField_483.setForeground(Color.LIGHT_GRAY);
+		textField_483.setForeground(Color.BLACK);
 		textField_483.addMouseListener(this);
 		textField_483.setText("3");
 		textField_483.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3515,7 +3517,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_483);
 		
 		textField_464 = new JTextField();
-		textField_464.setForeground(Color.LIGHT_GRAY);
+		textField_464.setForeground(Color.BLACK);
 		textField_464.addMouseListener(this);
 		textField_464.setText("4");
 		textField_464.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3524,7 +3526,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_464);
 		
 		textField_465 = new JTextField();
-		textField_465.setForeground(Color.LIGHT_GRAY);
+		textField_465.setForeground(Color.BLACK);
 		textField_465.addMouseListener(this);
 		textField_465.setText("5");
 		textField_465.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3533,7 +3535,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_465);
 		
 		textField_466 = new JTextField();
-		textField_466.setForeground(Color.LIGHT_GRAY);
+		textField_466.setForeground(Color.BLACK);
 		textField_466.addMouseListener(this);
 		textField_466.setText("6");
 		textField_466.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3542,7 +3544,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_466);
 		
 		textField_474 = new JTextField();
-		textField_474.setForeground(Color.LIGHT_GRAY);
+		textField_474.setForeground(Color.BLACK);
 		textField_474.addMouseListener(this);
 		textField_474.setText("4");
 		textField_474.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3551,7 +3553,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_474);
 		
 		textField_475 = new JTextField();
-		textField_475.setForeground(Color.LIGHT_GRAY);
+		textField_475.setForeground(Color.BLACK);
 		textField_475.addMouseListener(this);
 		textField_475.setText("5");
 		textField_475.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3560,7 +3562,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_475);
 		
 		textField_476 = new JTextField();
-		textField_476.setForeground(Color.LIGHT_GRAY);
+		textField_476.setForeground(Color.BLACK);
 		textField_476.addMouseListener(this);
 		textField_476.setText("6");
 		textField_476.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3569,7 +3571,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_476);
 		
 		textField_484 = new JTextField();
-		textField_484.setForeground(Color.LIGHT_GRAY);
+		textField_484.setForeground(Color.BLACK);
 		textField_484.addMouseListener(this);
 		textField_484.setText("4");
 		textField_484.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3578,7 +3580,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_484);
 		
 		textField_485 = new JTextField();
-		textField_485.setForeground(Color.LIGHT_GRAY);
+		textField_485.setForeground(Color.BLACK);
 		textField_485.addMouseListener(this);
 		textField_485.setText("5");
 		textField_485.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3587,7 +3589,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_485);
 		
 		textField_486 = new JTextField();
-		textField_486.setForeground(Color.LIGHT_GRAY);
+		textField_486.setForeground(Color.BLACK);
 		textField_486.addMouseListener(this);
 		textField_486.setText("6");
 		textField_486.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3596,7 +3598,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_486);
 		
 		textField_467 = new JTextField();
-		textField_467.setForeground(Color.LIGHT_GRAY);
+		textField_467.setForeground(Color.BLACK);
 		textField_467.addMouseListener(this);
 		textField_467.setText("7");
 		textField_467.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3605,7 +3607,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_467);
 		
 		textField_468 = new JTextField();
-		textField_468.setForeground(Color.LIGHT_GRAY);
+		textField_468.setForeground(Color.BLACK);
 		textField_468.addMouseListener(this);
 		textField_468.setText("8");
 		textField_468.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3614,7 +3616,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_468);
 		
 		textField_469 = new JTextField();
-		textField_469.setForeground(Color.LIGHT_GRAY);
+		textField_469.setForeground(Color.BLACK);
 		textField_469.addMouseListener(this);
 		textField_469.setText("9");
 		textField_469.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3623,7 +3625,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_469);
 		
 		textField_477 = new JTextField();
-		textField_477.setForeground(Color.LIGHT_GRAY);
+		textField_477.setForeground(Color.BLACK);
 		textField_477.addMouseListener(this);
 		textField_477.setText("7");
 		textField_477.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3632,7 +3634,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_477);
 		
 		textField_478 = new JTextField();
-		textField_478.setForeground(Color.LIGHT_GRAY);
+		textField_478.setForeground(Color.BLACK);
 		textField_478.addMouseListener(this);
 		textField_478.setText("8");
 		textField_478.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3641,7 +3643,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_478);
 		
 		textField_479 = new JTextField();
-		textField_479.setForeground(Color.LIGHT_GRAY);
+		textField_479.setForeground(Color.BLACK);
 		textField_479.addMouseListener(this);
 		textField_479.setText("9");
 		textField_479.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3650,7 +3652,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_479);
 		
 		textField_487 = new JTextField();
-		textField_487.setForeground(Color.LIGHT_GRAY);
+		textField_487.setForeground(Color.BLACK);
 		textField_487.addMouseListener(this);
 		textField_487.setText("7");
 		textField_487.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3659,7 +3661,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_487);
 		
 		textField_488 = new JTextField();
-		textField_488.setForeground(Color.LIGHT_GRAY);
+		textField_488.setForeground(Color.BLACK);
 		textField_488.addMouseListener(this);
 		textField_488.setText("8");
 		textField_488.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3668,7 +3670,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_488);
 		
 		textField_489 = new JTextField();
-		textField_489.setForeground(Color.LIGHT_GRAY);
+		textField_489.setForeground(Color.BLACK);
 		textField_489.addMouseListener(this);
 		textField_489.setText("9");
 		textField_489.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3677,7 +3679,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_489);
 		
 		textField_311 = new JTextField();
-		textField_311.setForeground(Color.LIGHT_GRAY);
+		textField_311.setForeground(Color.BLACK);
 		textField_311.addMouseListener(this);
 		textField_311.setText("1");
 		textField_311.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3686,7 +3688,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_311);
 		
 		textField_312 = new JTextField();
-		textField_312.setForeground(Color.LIGHT_GRAY);
+		textField_312.setForeground(Color.BLACK);
 		textField_312.addMouseListener(this);
 		textField_312.setText("2");
 		textField_312.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3695,7 +3697,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_312);
 		
 		textField_313 = new JTextField();
-		textField_313.setForeground(Color.LIGHT_GRAY);
+		textField_313.setForeground(Color.BLACK);
 		textField_313.addMouseListener(this);
 		textField_313.setText("3");
 		textField_313.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3704,7 +3706,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_313);
 		
 		textField_321 = new JTextField();
-		textField_321.setForeground(Color.LIGHT_GRAY);
+		textField_321.setForeground(Color.BLACK);
 		textField_321.addMouseListener(this);
 		textField_321.setText("1");
 		textField_321.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3713,7 +3715,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_321);
 		
 		textField_322 = new JTextField();
-		textField_322.setForeground(Color.LIGHT_GRAY);
+		textField_322.setForeground(Color.BLACK);
 		textField_322.addMouseListener(this);
 		textField_322.setText("2");
 		textField_322.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3722,7 +3724,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_322);
 		
 		textField_323 = new JTextField();
-		textField_323.setForeground(Color.LIGHT_GRAY);
+		textField_323.setForeground(Color.BLACK);
 		textField_323.addMouseListener(this);
 		textField_323.setText("3");
 		textField_323.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3731,7 +3733,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_323);
 		
 		textField_331 = new JTextField();
-		textField_331.setForeground(Color.LIGHT_GRAY);
+		textField_331.setForeground(Color.BLACK);
 		textField_331.addMouseListener(this);
 		textField_331.setText("1");
 		textField_331.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3740,7 +3742,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_331);
 		
 		textField_332 = new JTextField();
-		textField_332.setForeground(Color.LIGHT_GRAY);
+		textField_332.setForeground(Color.BLACK);
 		textField_332.addMouseListener(this);
 		textField_332.setText("2");
 		textField_332.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3749,7 +3751,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_332);
 		
 		textField_333 = new JTextField();
-		textField_333.setForeground(Color.LIGHT_GRAY);
+		textField_333.setForeground(Color.BLACK);
 		textField_333.addMouseListener(this);
 		textField_333.setText("3");
 		textField_333.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3758,7 +3760,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_333);
 		
 		textField_314 = new JTextField();
-		textField_314.setForeground(Color.LIGHT_GRAY);
+		textField_314.setForeground(Color.BLACK);
 		textField_314.addMouseListener(this);
 		textField_314.setText("4");
 		textField_314.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3767,7 +3769,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_314);
 		
 		textField_315 = new JTextField();
-		textField_315.setForeground(Color.LIGHT_GRAY);
+		textField_315.setForeground(Color.BLACK);
 		textField_315.addMouseListener(this);
 		textField_315.setText("5");
 		textField_315.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3776,7 +3778,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_315);
 		
 		textField_316 = new JTextField();
-		textField_316.setForeground(Color.LIGHT_GRAY);
+		textField_316.setForeground(Color.BLACK);
 		textField_316.addMouseListener(this);
 		textField_316.setText("6");
 		textField_316.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3785,7 +3787,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_316);
 		
 		textField_324 = new JTextField();
-		textField_324.setForeground(Color.LIGHT_GRAY);
+		textField_324.setForeground(Color.BLACK);
 		textField_324.addMouseListener(this);
 		textField_324.setText("4");
 		textField_324.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3794,7 +3796,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_324);
 		
 		textField_325 = new JTextField();
-		textField_325.setForeground(Color.LIGHT_GRAY);
+		textField_325.setForeground(Color.BLACK);
 		textField_325.addMouseListener(this);
 		textField_325.setText("5");
 		textField_325.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3803,7 +3805,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_325);
 		
 		textField_326 = new JTextField();
-		textField_326.setForeground(Color.LIGHT_GRAY);
+		textField_326.setForeground(Color.BLACK);
 		textField_326.addMouseListener(this);
 		textField_326.setText("6");
 		textField_326.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3812,7 +3814,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_326);
 		
 		textField_334 = new JTextField();
-		textField_334.setForeground(Color.LIGHT_GRAY);
+		textField_334.setForeground(Color.BLACK);
 		textField_334.addMouseListener(this);
 		textField_334.setText("4");
 		textField_334.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3821,7 +3823,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_334);
 		
 		textField_335 = new JTextField();
-		textField_335.setForeground(Color.LIGHT_GRAY);
+		textField_335.setForeground(Color.BLACK);
 		textField_335.addMouseListener(this);
 		textField_335.setText("5");
 		textField_335.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3830,7 +3832,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_335);
 		
 		textField_336 = new JTextField();
-		textField_336.setForeground(Color.LIGHT_GRAY);
+		textField_336.setForeground(Color.BLACK);
 		textField_336.addMouseListener(this);
 		textField_336.setText("6");
 		textField_336.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3839,7 +3841,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_336);
 		
 		textField_317 = new JTextField();
-		textField_317.setForeground(Color.LIGHT_GRAY);
+		textField_317.setForeground(Color.BLACK);
 		textField_317.addMouseListener(this);
 		textField_317.setText("7");
 		textField_317.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3848,7 +3850,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_317);
 		
 		textField_318 = new JTextField();
-		textField_318.setForeground(Color.LIGHT_GRAY);
+		textField_318.setForeground(Color.BLACK);
 		textField_318.addMouseListener(this);
 		textField_318.setText("8");
 		textField_318.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3857,7 +3859,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_318);
 		
 		textField_319 = new JTextField();
-		textField_319.setForeground(Color.LIGHT_GRAY);
+		textField_319.setForeground(Color.BLACK);
 		textField_319.addMouseListener(this);
 		textField_319.setText("9");
 		textField_319.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3866,7 +3868,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_319);
 		
 		textField_327 = new JTextField();
-		textField_327.setForeground(Color.LIGHT_GRAY);
+		textField_327.setForeground(Color.BLACK);
 		textField_327.addMouseListener(this);
 		textField_327.setText("7");
 		textField_327.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3875,7 +3877,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_327);
 		
 		textField_328 = new JTextField();
-		textField_328.setForeground(Color.LIGHT_GRAY);
+		textField_328.setForeground(Color.BLACK);
 		textField_328.addMouseListener(this);
 		textField_328.setText("8");
 		textField_328.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3884,7 +3886,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_328);
 		
 		textField_329 = new JTextField();
-		textField_329.setForeground(Color.LIGHT_GRAY);
+		textField_329.setForeground(Color.BLACK);
 		textField_329.addMouseListener(this);
 		textField_329.setText("9");
 		textField_329.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3893,7 +3895,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_329);
 		
 		textField_337 = new JTextField();
-		textField_337.setForeground(Color.LIGHT_GRAY);
+		textField_337.setForeground(Color.BLACK);
 		textField_337.addMouseListener(this);
 		textField_337.setText("7");
 		textField_337.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3902,7 +3904,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_337);
 		
 		textField_339 = new JTextField();
-		textField_339.setForeground(Color.LIGHT_GRAY);
+		textField_339.setForeground(Color.BLACK);
 		textField_339.addMouseListener(this);
 		textField_339.setText("9");
 		textField_339.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3911,7 +3913,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_339);
 		
 		textField_338 = new JTextField();
-		textField_338.setForeground(Color.LIGHT_GRAY);
+		textField_338.setForeground(Color.BLACK);
 		textField_338.addMouseListener(this);
 		textField_338.setText("8");
 		textField_338.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3920,7 +3922,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_338);
 		
 		textField_401 = new JTextField();
-		textField_401.setForeground(Color.LIGHT_GRAY);
+		textField_401.setForeground(Color.BLACK);
 		textField_401.addMouseListener(this);
 		textField_401.setText("1");
 		textField_401.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3929,7 +3931,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_401);
 		
 		textField_402 = new JTextField();
-		textField_402.setForeground(Color.LIGHT_GRAY);
+		textField_402.setForeground(Color.BLACK);
 		textField_402.addMouseListener(this);
 		textField_402.setText("2");
 		textField_402.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3938,7 +3940,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_402);
 		
 		textField_403 = new JTextField();
-		textField_403.setForeground(Color.LIGHT_GRAY);
+		textField_403.setForeground(Color.BLACK);
 		textField_403.addMouseListener(this);
 		textField_403.setText("3");
 		textField_403.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3947,7 +3949,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_403);
 		
 		textField_411 = new JTextField();
-		textField_411.setForeground(Color.LIGHT_GRAY);
+		textField_411.setForeground(Color.BLACK);
 		textField_411.addMouseListener(this);
 		textField_411.setText("1");
 		textField_411.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3956,7 +3958,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_411);
 		
 		textField_412 = new JTextField();
-		textField_412.setForeground(Color.LIGHT_GRAY);
+		textField_412.setForeground(Color.BLACK);
 		textField_412.addMouseListener(this);
 		textField_412.setText("2");
 		textField_412.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3965,7 +3967,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_412);
 		
 		textField_413 = new JTextField();
-		textField_413.setForeground(Color.LIGHT_GRAY);
+		textField_413.setForeground(Color.BLACK);
 		textField_413.addMouseListener(this);
 		textField_413.setText("3");
 		textField_413.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3974,7 +3976,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_413);
 		
 		textField_421 = new JTextField();
-		textField_421.setForeground(Color.LIGHT_GRAY);
+		textField_421.setForeground(Color.BLACK);
 		textField_421.addMouseListener(this);
 		textField_421.setText("1");
 		textField_421.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3983,7 +3985,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_421);
 		
 		textField_422 = new JTextField();
-		textField_422.setForeground(Color.LIGHT_GRAY);
+		textField_422.setForeground(Color.BLACK);
 		textField_422.addMouseListener(this);
 		textField_422.setText("2");
 		textField_422.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -3992,7 +3994,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_422);
 		
 		textField_423 = new JTextField();
-		textField_423.setForeground(Color.LIGHT_GRAY);
+		textField_423.setForeground(Color.BLACK);
 		textField_423.addMouseListener(this);
 		textField_423.setText("3");
 		textField_423.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4001,7 +4003,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_423);
 		
 		textField_404 = new JTextField();
-		textField_404.setForeground(Color.LIGHT_GRAY);
+		textField_404.setForeground(Color.BLACK);
 		textField_404.addMouseListener(this);
 		textField_404.setText("4");
 		textField_404.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4010,7 +4012,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_404);
 		
 		textField_405 = new JTextField();
-		textField_405.setForeground(Color.LIGHT_GRAY);
+		textField_405.setForeground(Color.BLACK);
 		textField_405.addMouseListener(this);
 		textField_405.setText("5");
 		textField_405.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4019,7 +4021,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_405);
 		
 		textField_406 = new JTextField();
-		textField_406.setForeground(Color.LIGHT_GRAY);
+		textField_406.setForeground(Color.BLACK);
 		textField_406.addMouseListener(this);
 		textField_406.setText("6");
 		textField_406.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4028,7 +4030,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_406);
 		
 		textField_414 = new JTextField();
-		textField_414.setForeground(Color.LIGHT_GRAY);
+		textField_414.setForeground(Color.BLACK);
 		textField_414.addMouseListener(this);
 		textField_414.setText("4");
 		textField_414.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4037,7 +4039,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_414);
 		
 		textField_415 = new JTextField();
-		textField_415.setForeground(Color.LIGHT_GRAY);
+		textField_415.setForeground(Color.BLACK);
 		textField_415.addMouseListener(this);
 		textField_415.setText("5");
 		textField_415.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4046,7 +4048,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_415);
 		
 		textField_416 = new JTextField();
-		textField_416.setForeground(Color.LIGHT_GRAY);
+		textField_416.setForeground(Color.BLACK);
 		textField_416.addMouseListener(this);
 		textField_416.setText("6");
 		textField_416.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4055,7 +4057,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_416);
 		
 		textField_424 = new JTextField();
-		textField_424.setForeground(Color.LIGHT_GRAY);
+		textField_424.setForeground(Color.BLACK);
 		textField_424.addMouseListener(this);
 		textField_424.setText("4");
 		textField_424.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4064,7 +4066,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_424);
 		
 		textField_425 = new JTextField();
-		textField_425.setForeground(Color.LIGHT_GRAY);
+		textField_425.setForeground(Color.BLACK);
 		textField_425.addMouseListener(this);
 		textField_425.setText("5");
 		textField_425.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4073,7 +4075,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_425);
 		
 		textField_426 = new JTextField();
-		textField_426.setForeground(Color.LIGHT_GRAY);
+		textField_426.setForeground(Color.BLACK);
 		textField_426.addMouseListener(this);
 		textField_426.setText("6");
 		textField_426.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4082,7 +4084,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_426);
 		
 		textField_407 = new JTextField();
-		textField_407.setForeground(Color.LIGHT_GRAY);
+		textField_407.setForeground(Color.BLACK);
 		textField_407.addMouseListener(this);
 		textField_407.setText("7");
 		textField_407.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4091,7 +4093,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_407);
 		
 		textField_408 = new JTextField();
-		textField_408.setForeground(Color.LIGHT_GRAY);
+		textField_408.setForeground(Color.BLACK);
 		textField_408.addMouseListener(this);
 		textField_408.setText("8");
 		textField_408.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4100,7 +4102,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_408);
 		
 		textField_409 = new JTextField();
-		textField_409.setForeground(Color.LIGHT_GRAY);
+		textField_409.setForeground(Color.BLACK);
 		textField_409.addMouseListener(this);
 		textField_409.setText("9");
 		textField_409.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4109,7 +4111,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_409);
 		
 		textField_417 = new JTextField();
-		textField_417.setForeground(Color.LIGHT_GRAY);
+		textField_417.setForeground(Color.BLACK);
 		textField_417.addMouseListener(this);
 		textField_417.setText("7");
 		textField_417.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4118,7 +4120,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_417);
 		
 		textField_418 = new JTextField();
-		textField_418.setForeground(Color.LIGHT_GRAY);
+		textField_418.setForeground(Color.BLACK);
 		textField_418.addMouseListener(this);
 		textField_418.setText("8");
 		textField_418.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4127,7 +4129,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_418);
 		
 		textField_419 = new JTextField();
-		textField_419.setForeground(Color.LIGHT_GRAY);
+		textField_419.setForeground(Color.BLACK);
 		textField_419.addMouseListener(this);
 		textField_419.setText("9");
 		textField_419.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4136,7 +4138,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_419);
 		
 		textField_427 = new JTextField();
-		textField_427.setForeground(Color.LIGHT_GRAY);
+		textField_427.setForeground(Color.BLACK);
 		textField_427.addMouseListener(this);
 		textField_427.setText("7");
 		textField_427.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4145,7 +4147,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_427);
 		
 		textField_428 = new JTextField();
-		textField_428.setForeground(Color.LIGHT_GRAY);
+		textField_428.setForeground(Color.BLACK);
 		textField_428.addMouseListener(this);
 		textField_428.setText("8");
 		textField_428.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4154,7 +4156,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_428);
 		
 		textField_429 = new JTextField();
-		textField_429.setForeground(Color.LIGHT_GRAY);
+		textField_429.setForeground(Color.BLACK);
 		textField_429.addMouseListener(this);
 		textField_429.setText("9");
 		textField_429.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4163,7 +4165,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_429);
 		
 		textField_491 = new JTextField();
-		textField_491.setForeground(Color.LIGHT_GRAY);
+		textField_491.setForeground(Color.BLACK);
 		textField_491.addMouseListener(this);
 		textField_491.setText("1");
 		textField_491.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4172,7 +4174,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_491);
 		
 		textField_492 = new JTextField();
-		textField_492.setForeground(Color.LIGHT_GRAY);
+		textField_492.setForeground(Color.BLACK);
 		textField_492.addMouseListener(this);
 		textField_492.setText("2");
 		textField_492.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4181,7 +4183,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_492);
 		
 		textField_493 = new JTextField();
-		textField_493.setForeground(Color.LIGHT_GRAY);
+		textField_493.setForeground(Color.BLACK);
 		textField_493.addMouseListener(this);
 		textField_493.setText("3");
 		textField_493.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4190,7 +4192,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_493);
 		
 		textField_501 = new JTextField();
-		textField_501.setForeground(Color.LIGHT_GRAY);
+		textField_501.setForeground(Color.BLACK);
 		textField_501.addMouseListener(this);
 		textField_501.setText("1");
 		textField_501.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4199,7 +4201,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_501);
 		
 		textField_502 = new JTextField();
-		textField_502.setForeground(Color.LIGHT_GRAY);
+		textField_502.setForeground(Color.BLACK);
 		textField_502.addMouseListener(this);
 		textField_502.setText("2");
 		textField_502.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4208,7 +4210,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_502);
 		
 		textField_503 = new JTextField();
-		textField_503.setForeground(Color.LIGHT_GRAY);
+		textField_503.setForeground(Color.BLACK);
 		textField_503.addMouseListener(this);
 		textField_503.setText("3");
 		textField_503.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4217,7 +4219,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_503);
 		
 		textField_511 = new JTextField();
-		textField_511.setForeground(Color.LIGHT_GRAY);
+		textField_511.setForeground(Color.BLACK);
 		textField_511.addMouseListener(this);
 		textField_511.setText("1");
 		textField_511.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4226,7 +4228,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_511);
 		
 		textField_512 = new JTextField();
-		textField_512.setForeground(Color.LIGHT_GRAY);
+		textField_512.setForeground(Color.BLACK);
 		textField_512.addMouseListener(this);
 		textField_512.setText("2");
 		textField_512.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4235,7 +4237,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_512);
 		
 		textField_513 = new JTextField();
-		textField_513.setForeground(Color.LIGHT_GRAY);
+		textField_513.setForeground(Color.BLACK);
 		textField_513.addMouseListener(this);
 		textField_513.setText("3");
 		textField_513.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4244,7 +4246,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_513);
 		
 		textField_494 = new JTextField();
-		textField_494.setForeground(Color.LIGHT_GRAY);
+		textField_494.setForeground(Color.BLACK);
 		textField_494.addMouseListener(this);
 		textField_494.setText("4");
 		textField_494.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4253,7 +4255,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_494);
 		
 		textField_495 = new JTextField();
-		textField_495.setForeground(Color.LIGHT_GRAY);
+		textField_495.setForeground(Color.BLACK);
 		textField_495.addMouseListener(this);
 		textField_495.setText("5");
 		textField_495.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4262,7 +4264,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_495);
 		
 		textField_496 = new JTextField();
-		textField_496.setForeground(Color.LIGHT_GRAY);
+		textField_496.setForeground(Color.BLACK);
 		textField_496.addMouseListener(this);
 		textField_496.setText("6");
 		textField_496.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4271,7 +4273,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_496);
 		
 		textField_504 = new JTextField();
-		textField_504.setForeground(Color.LIGHT_GRAY);
+		textField_504.setForeground(Color.BLACK);
 		textField_504.addMouseListener(this);
 		textField_504.setText("4");
 		textField_504.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4280,7 +4282,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_504);
 		
 		textField_505 = new JTextField();
-		textField_505.setForeground(Color.LIGHT_GRAY);
+		textField_505.setForeground(Color.BLACK);
 		textField_505.addMouseListener(this);
 		textField_505.setText("5");
 		textField_505.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4289,7 +4291,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_505);
 		
 		textField_506 = new JTextField();
-		textField_506.setForeground(Color.LIGHT_GRAY);
+		textField_506.setForeground(Color.BLACK);
 		textField_506.addMouseListener(this);
 		textField_506.setText("6");
 		textField_506.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4298,7 +4300,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_506);
 		
 		textField_514 = new JTextField();
-		textField_514.setForeground(Color.LIGHT_GRAY);
+		textField_514.setForeground(Color.BLACK);
 		textField_514.addMouseListener(this);
 		textField_514.setText("4");
 		textField_514.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4307,7 +4309,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_514);
 		
 		textField_515 = new JTextField();
-		textField_515.setForeground(Color.LIGHT_GRAY);
+		textField_515.setForeground(Color.BLACK);
 		textField_515.addMouseListener(this);
 		textField_515.setText("5");
 		textField_515.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4316,7 +4318,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_515);
 		
 		textField_516 = new JTextField();
-		textField_516.setForeground(Color.LIGHT_GRAY);
+		textField_516.setForeground(Color.BLACK);
 		textField_516.addMouseListener(this);
 		textField_516.setText("6");
 		textField_516.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4325,7 +4327,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_516);
 		
 		textField_497 = new JTextField();
-		textField_497.setForeground(Color.LIGHT_GRAY);
+		textField_497.setForeground(Color.BLACK);
 		textField_497.addMouseListener(this);
 		textField_497.setText("7");
 		textField_497.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4334,7 +4336,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_497);
 		
 		textField_498 = new JTextField();
-		textField_498.setForeground(Color.LIGHT_GRAY);
+		textField_498.setForeground(Color.BLACK);
 		textField_498.addMouseListener(this);
 		textField_498.setText("8");
 		textField_498.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4343,7 +4345,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_498);
 		
 		textField_499 = new JTextField();
-		textField_499.setForeground(Color.LIGHT_GRAY);
+		textField_499.setForeground(Color.BLACK);
 		textField_499.addMouseListener(this);
 		textField_499.setText("9");
 		textField_499.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4352,7 +4354,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_499);
 		
 		textField_507 = new JTextField();
-		textField_507.setForeground(Color.LIGHT_GRAY);
+		textField_507.setForeground(Color.BLACK);
 		textField_507.addMouseListener(this);
 		textField_507.setText("7");
 		textField_507.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4361,7 +4363,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_507);
 		
 		textField_508 = new JTextField();
-		textField_508.setForeground(Color.LIGHT_GRAY);
+		textField_508.setForeground(Color.BLACK);
 		textField_508.addMouseListener(this);
 		textField_508.setText("8");
 		textField_508.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4370,7 +4372,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_508);
 		
 		textField_509 = new JTextField();
-		textField_509.setForeground(Color.LIGHT_GRAY);
+		textField_509.setForeground(Color.BLACK);
 		textField_509.addMouseListener(this);
 		textField_509.setText("9");
 		textField_509.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4379,7 +4381,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_509);
 		
 		textField_517 = new JTextField();
-		textField_517.setForeground(Color.LIGHT_GRAY);
+		textField_517.setForeground(Color.BLACK);
 		textField_517.addMouseListener(this);
 		textField_517.setText("7");
 		textField_517.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4388,7 +4390,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_517);
 		
 		textField_518 = new JTextField();
-		textField_518.setForeground(Color.LIGHT_GRAY);
+		textField_518.setForeground(Color.BLACK);
 		textField_518.addMouseListener(this);
 		textField_518.setText("8");
 		textField_518.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4397,7 +4399,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_518);
 		
 		textField_519 = new JTextField();
-		textField_519.setForeground(Color.LIGHT_GRAY);
+		textField_519.setForeground(Color.BLACK);
 		textField_519.addMouseListener(this);
 		textField_519.setText("9");
 		textField_519.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4406,7 +4408,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_519);
 		
 		textField_341 = new JTextField();
-		textField_341.setForeground(Color.LIGHT_GRAY);
+		textField_341.setForeground(Color.BLACK);
 		textField_341.addMouseListener(this);
 		textField_341.setText("1");
 		textField_341.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4415,7 +4417,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_341);
 		
 		textField_342 = new JTextField();
-		textField_342.setForeground(Color.LIGHT_GRAY);
+		textField_342.setForeground(Color.BLACK);
 		textField_342.addMouseListener(this);
 		textField_342.setText("2");
 		textField_342.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4424,7 +4426,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_342);
 		
 		textField_343 = new JTextField();
-		textField_343.setForeground(Color.LIGHT_GRAY);
+		textField_343.setForeground(Color.BLACK);
 		textField_343.addMouseListener(this);
 		textField_343.setText("3");
 		textField_343.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4433,7 +4435,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_343);
 		
 		textField_351 = new JTextField();
-		textField_351.setForeground(Color.LIGHT_GRAY);
+		textField_351.setForeground(Color.BLACK);
 		textField_351.addMouseListener(this);
 		textField_351.setText("1");
 		textField_351.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4442,7 +4444,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_351);
 		
 		textField_352 = new JTextField();
-		textField_352.setForeground(Color.LIGHT_GRAY);
+		textField_352.setForeground(Color.BLACK);
 		textField_352.addMouseListener(this);
 		textField_352.setText("2");
 		textField_352.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4451,7 +4453,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_352);
 		
 		textField_353 = new JTextField();
-		textField_353.setForeground(Color.LIGHT_GRAY);
+		textField_353.setForeground(Color.BLACK);
 		textField_353.addMouseListener(this);
 		textField_353.setText("3");
 		textField_353.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4460,7 +4462,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_353);
 		
 		textField_361 = new JTextField();
-		textField_361.setForeground(Color.LIGHT_GRAY);
+		textField_361.setForeground(Color.BLACK);
 		textField_361.addMouseListener(this);
 		textField_361.setText("1");
 		textField_361.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4469,7 +4471,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_361);
 		
 		textField_362 = new JTextField();
-		textField_362.setForeground(Color.LIGHT_GRAY);
+		textField_362.setForeground(Color.BLACK);
 		textField_362.addMouseListener(this);
 		textField_362.setText("2");
 		textField_362.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4478,7 +4480,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_362);
 		
 		textField_363 = new JTextField();
-		textField_363.setForeground(Color.LIGHT_GRAY);
+		textField_363.setForeground(Color.BLACK);
 		textField_363.addMouseListener(this);
 		textField_363.setText("3");
 		textField_363.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4487,7 +4489,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_363);
 		
 		textField_344 = new JTextField();
-		textField_344.setForeground(Color.LIGHT_GRAY);
+		textField_344.setForeground(Color.BLACK);
 		textField_344.addMouseListener(this);
 		textField_344.setText("4");
 		textField_344.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4496,7 +4498,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_344);
 		
 		textField_345 = new JTextField();
-		textField_345.setForeground(Color.LIGHT_GRAY);
+		textField_345.setForeground(Color.BLACK);
 		textField_345.addMouseListener(this);
 		textField_345.setText("5");
 		textField_345.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4505,7 +4507,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_345);
 		
 		textField_346 = new JTextField();
-		textField_346.setForeground(Color.LIGHT_GRAY);
+		textField_346.setForeground(Color.BLACK);
 		textField_346.addMouseListener(this);
 		textField_346.setText("6");
 		textField_346.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4514,7 +4516,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_346);
 		
 		textField_354 = new JTextField();
-		textField_354.setForeground(Color.LIGHT_GRAY);
+		textField_354.setForeground(Color.BLACK);
 		textField_354.addMouseListener(this);
 		textField_354.setText("4");
 		textField_354.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4523,7 +4525,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_354);
 		
 		textField_355 = new JTextField();
-		textField_355.setForeground(Color.LIGHT_GRAY);
+		textField_355.setForeground(Color.BLACK);
 		textField_355.addMouseListener(this);
 		textField_355.setText("5");
 		textField_355.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4532,7 +4534,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_355);
 		
 		textField_356 = new JTextField();
-		textField_356.setForeground(Color.LIGHT_GRAY);
+		textField_356.setForeground(Color.BLACK);
 		textField_356.addMouseListener(this);
 		textField_356.setText("6");
 		textField_356.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4541,7 +4543,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_356);
 		
 		textField_364 = new JTextField();
-		textField_364.setForeground(Color.LIGHT_GRAY);
+		textField_364.setForeground(Color.BLACK);
 		textField_364.addMouseListener(this);
 		textField_364.setText("4");
 		textField_364.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4550,7 +4552,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_364);
 		
 		textField_365 = new JTextField();
-		textField_365.setForeground(Color.LIGHT_GRAY);
+		textField_365.setForeground(Color.BLACK);
 		textField_365.addMouseListener(this);
 		textField_365.setText("5");
 		textField_365.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4559,7 +4561,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_365);
 		
 		textField_366 = new JTextField();
-		textField_366.setForeground(Color.LIGHT_GRAY);
+		textField_366.setForeground(Color.BLACK);
 		textField_366.addMouseListener(this);
 		textField_366.setText("6");
 		textField_366.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4568,7 +4570,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_366);
 		
 		textField_347 = new JTextField();
-		textField_347.setForeground(Color.LIGHT_GRAY);
+		textField_347.setForeground(Color.BLACK);
 		textField_347.addMouseListener(this);
 		textField_347.setText("7");
 		textField_347.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4577,7 +4579,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_347);
 		
 		textField_348 = new JTextField();
-		textField_348.setForeground(Color.LIGHT_GRAY);
+		textField_348.setForeground(Color.BLACK);
 		textField_348.addMouseListener(this);
 		textField_348.setText("8");
 		textField_348.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4586,7 +4588,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_348);
 		
 		textField_349 = new JTextField();
-		textField_349.setForeground(Color.LIGHT_GRAY);
+		textField_349.setForeground(Color.BLACK);
 		textField_349.addMouseListener(this);
 		textField_349.setText("9");
 		textField_349.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4595,7 +4597,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_349);
 		
 		textField_357 = new JTextField();
-		textField_357.setForeground(Color.LIGHT_GRAY);
+		textField_357.setForeground(Color.BLACK);
 		textField_357.addMouseListener(this);
 		textField_357.setText("7");
 		textField_357.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4604,7 +4606,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_357);
 		
 		textField_358 = new JTextField();
-		textField_358.setForeground(Color.LIGHT_GRAY);
+		textField_358.setForeground(Color.BLACK);
 		textField_358.addMouseListener(this);
 		textField_358.setText("8");
 		textField_358.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4613,7 +4615,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_358);
 		
 		textField_359 = new JTextField();
-		textField_359.setForeground(Color.LIGHT_GRAY);
+		textField_359.setForeground(Color.BLACK);
 		textField_359.addMouseListener(this);
 		textField_359.setText("9");
 		textField_359.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4622,7 +4624,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_359);
 		
 		textField_367 = new JTextField();
-		textField_367.setForeground(Color.LIGHT_GRAY);
+		textField_367.setForeground(Color.BLACK);
 		textField_367.addMouseListener(this);
 		textField_367.setText("7");
 		textField_367.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4631,7 +4633,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_367);
 		
 		textField_369 = new JTextField();
-		textField_369.setForeground(Color.LIGHT_GRAY);
+		textField_369.setForeground(Color.BLACK);
 		textField_369.addMouseListener(this);
 		textField_369.setText("9");
 		textField_369.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4640,7 +4642,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_369);
 		
 		textField_368 = new JTextField();
-		textField_368.setForeground(Color.LIGHT_GRAY);
+		textField_368.setForeground(Color.BLACK);
 		textField_368.addMouseListener(this);
 		textField_368.setText("8");
 		textField_368.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4649,7 +4651,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_368);
 		
 		textField_431 = new JTextField();
-		textField_431.setForeground(Color.LIGHT_GRAY);
+		textField_431.setForeground(Color.BLACK);
 		textField_431.addMouseListener(this);
 		textField_431.setText("1");
 		textField_431.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4658,7 +4660,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_431);
 		
 		textField_432 = new JTextField();
-		textField_432.setForeground(Color.LIGHT_GRAY);
+		textField_432.setForeground(Color.BLACK);
 		textField_432.addMouseListener(this);
 		textField_432.setText("2");
 		textField_432.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4667,7 +4669,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_432);
 		
 		textField_433 = new JTextField();
-		textField_433.setForeground(Color.LIGHT_GRAY);
+		textField_433.setForeground(Color.BLACK);
 		textField_433.addMouseListener(this);
 		textField_433.setText("3");
 		textField_433.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4676,7 +4678,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_433);
 		
 		textField_441 = new JTextField();
-		textField_441.setForeground(Color.LIGHT_GRAY);
+		textField_441.setForeground(Color.BLACK);
 		textField_441.addMouseListener(this);
 		textField_441.setText("1");
 		textField_441.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4685,7 +4687,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_441);
 		
 		textField_442 = new JTextField();
-		textField_442.setForeground(Color.LIGHT_GRAY);
+		textField_442.setForeground(Color.BLACK);
 		textField_442.addMouseListener(this);
 		textField_442.setText("2");
 		textField_442.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4694,7 +4696,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_442);
 		
 		textField_443 = new JTextField();
-		textField_443.setForeground(Color.LIGHT_GRAY);
+		textField_443.setForeground(Color.BLACK);
 		textField_443.addMouseListener(this);
 		textField_443.setText("3");
 		textField_443.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4703,7 +4705,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_443);
 		
 		textField_451 = new JTextField();
-		textField_451.setForeground(Color.LIGHT_GRAY);
+		textField_451.setForeground(Color.BLACK);
 		textField_451.addMouseListener(this);
 		textField_451.setText("1");
 		textField_451.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4712,7 +4714,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_451);
 		
 		textField_452 = new JTextField();
-		textField_452.setForeground(Color.LIGHT_GRAY);
+		textField_452.setForeground(Color.BLACK);
 		textField_452.addMouseListener(this);
 		textField_452.setText("2");
 		textField_452.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4721,7 +4723,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_452);
 		
 		textField_453 = new JTextField();
-		textField_453.setForeground(Color.LIGHT_GRAY);
+		textField_453.setForeground(Color.BLACK);
 		textField_453.addMouseListener(this);
 		textField_453.setText("3");
 		textField_453.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4730,7 +4732,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_453);
 		
 		textField_434 = new JTextField();
-		textField_434.setForeground(Color.LIGHT_GRAY);
+		textField_434.setForeground(Color.BLACK);
 		textField_434.addMouseListener(this);
 		textField_434.setText("4");
 		textField_434.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4739,7 +4741,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_434);
 		
 		textField_435 = new JTextField();
-		textField_435.setForeground(Color.LIGHT_GRAY);
+		textField_435.setForeground(Color.BLACK);
 		textField_435.addMouseListener(this);
 		textField_435.setText("5");
 		textField_435.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4748,7 +4750,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_435);
 		
 		textField_436 = new JTextField();
-		textField_436.setForeground(Color.LIGHT_GRAY);
+		textField_436.setForeground(Color.BLACK);
 		textField_436.addMouseListener(this);
 		textField_436.setText("6");
 		textField_436.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4757,7 +4759,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_436);
 		
 		textField_444 = new JTextField();
-		textField_444.setForeground(Color.LIGHT_GRAY);
+		textField_444.setForeground(Color.BLACK);
 		textField_444.addMouseListener(this);
 		textField_444.setText("4");
 		textField_444.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4766,7 +4768,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_444);
 		
 		textField_445 = new JTextField();
-		textField_445.setForeground(Color.LIGHT_GRAY);
+		textField_445.setForeground(Color.BLACK);
 		textField_445.addMouseListener(this);
 		textField_445.setText("5");
 		textField_445.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4775,7 +4777,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_445);
 		
 		textField_446 = new JTextField();
-		textField_446.setForeground(Color.LIGHT_GRAY);
+		textField_446.setForeground(Color.BLACK);
 		textField_446.addMouseListener(this);
 		textField_446.setText("6");
 		textField_446.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4784,7 +4786,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_446);
 		
 		textField_454 = new JTextField();
-		textField_454.setForeground(Color.LIGHT_GRAY);
+		textField_454.setForeground(Color.BLACK);
 		textField_454.addMouseListener(this);
 		textField_454.setText("4");
 		textField_454.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4793,7 +4795,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_454);
 		
 		textField_455 = new JTextField();
-		textField_455.setForeground(Color.LIGHT_GRAY);
+		textField_455.setForeground(Color.BLACK);
 		textField_455.addMouseListener(this);
 		textField_455.setText("5");
 		textField_455.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4802,7 +4804,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_455);
 		
 		textField_456 = new JTextField();
-		textField_456.setForeground(Color.LIGHT_GRAY);
+		textField_456.setForeground(Color.BLACK);
 		textField_456.addMouseListener(this);
 		textField_456.setText("6");
 		textField_456.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4811,7 +4813,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_456);
 		
 		textField_437 = new JTextField();
-		textField_437.setForeground(Color.LIGHT_GRAY);
+		textField_437.setForeground(Color.BLACK);
 		textField_437.addMouseListener(this);
 		textField_437.setText("7");
 		textField_437.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4820,7 +4822,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_437);
 		
 		textField_438 = new JTextField();
-		textField_438.setForeground(Color.LIGHT_GRAY);
+		textField_438.setForeground(Color.BLACK);
 		textField_438.addMouseListener(this);
 		textField_438.setText("8");
 		textField_438.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4829,7 +4831,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_438);
 		
 		textField_439 = new JTextField();
-		textField_439.setForeground(Color.LIGHT_GRAY);
+		textField_439.setForeground(Color.BLACK);
 		textField_439.addMouseListener(this);
 		textField_439.setText("9");
 		textField_439.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4838,7 +4840,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_439);
 		
 		textField_447 = new JTextField();
-		textField_447.setForeground(Color.LIGHT_GRAY);
+		textField_447.setForeground(Color.BLACK);
 		textField_447.addMouseListener(this);
 		textField_447.setText("7");
 		textField_447.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4847,7 +4849,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_447);
 		
 		textField_448 = new JTextField();
-		textField_448.setForeground(Color.LIGHT_GRAY);
+		textField_448.setForeground(Color.BLACK);
 		textField_448.addMouseListener(this);
 		textField_448.setText("8");
 		textField_448.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4856,7 +4858,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_448);
 		
 		textField_449 = new JTextField();
-		textField_449.setForeground(Color.LIGHT_GRAY);
+		textField_449.setForeground(Color.BLACK);
 		textField_449.addMouseListener(this);
 		textField_449.setText("9");
 		textField_449.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4865,7 +4867,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_449);
 		
 		textField_457 = new JTextField();
-		textField_457.setForeground(Color.LIGHT_GRAY);
+		textField_457.setForeground(Color.BLACK);
 		textField_457.addMouseListener(this);
 		textField_457.setText("7");
 		textField_457.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4874,7 +4876,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_457);
 		
 		textField_458 = new JTextField();
-		textField_458.setForeground(Color.LIGHT_GRAY);
+		textField_458.setForeground(Color.BLACK);
 		textField_458.addMouseListener(this);
 		textField_458.setText("8");
 		textField_458.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4883,7 +4885,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_458);
 		
 		textField_459 = new JTextField();
-		textField_459.setForeground(Color.LIGHT_GRAY);
+		textField_459.setForeground(Color.BLACK);
 		textField_459.addMouseListener(this);
 		textField_459.setText("9");
 		textField_459.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4892,7 +4894,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_459);
 		
 		textField_521 = new JTextField();
-		textField_521.setForeground(Color.LIGHT_GRAY);
+		textField_521.setForeground(Color.BLACK);
 		textField_521.addMouseListener(this);
 		textField_521.setText("1");
 		textField_521.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4901,7 +4903,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_521);
 		
 		textField_522 = new JTextField();
-		textField_522.setForeground(Color.LIGHT_GRAY);
+		textField_522.setForeground(Color.BLACK);
 		textField_522.addMouseListener(this);
 		textField_522.setText("2");
 		textField_522.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4910,7 +4912,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_522);
 		
 		textField_523 = new JTextField();
-		textField_523.setForeground(Color.LIGHT_GRAY);
+		textField_523.setForeground(Color.BLACK);
 		textField_523.addMouseListener(this);
 		textField_523.setText("3");
 		textField_523.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4919,7 +4921,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_523);
 		
 		textField_531 = new JTextField();
-		textField_531.setForeground(Color.LIGHT_GRAY);
+		textField_531.setForeground(Color.BLACK);
 		textField_531.addMouseListener(this);
 		textField_531.setText("1");
 		textField_531.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4928,7 +4930,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_531);
 		
 		textField_532 = new JTextField();
-		textField_532.setForeground(Color.LIGHT_GRAY);
+		textField_532.setForeground(Color.BLACK);
 		textField_532.addMouseListener(this);
 		textField_532.setText("2");
 		textField_532.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4937,7 +4939,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_532);
 		
 		textField_533 = new JTextField();
-		textField_533.setForeground(Color.LIGHT_GRAY);
+		textField_533.setForeground(Color.BLACK);
 		textField_533.addMouseListener(this);
 		textField_533.setText("3");
 		textField_533.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4946,7 +4948,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_533);
 		
 		textField_541 = new JTextField();
-		textField_541.setForeground(Color.LIGHT_GRAY);
+		textField_541.setForeground(Color.BLACK);
 		textField_541.addMouseListener(this);
 		textField_541.setText("1");
 		textField_541.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4955,7 +4957,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_541);
 		
 		textField_542 = new JTextField();
-		textField_542.setForeground(Color.LIGHT_GRAY);
+		textField_542.setForeground(Color.BLACK);
 		textField_542.addMouseListener(this);
 		textField_542.setText("2");
 		textField_542.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4964,7 +4966,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_542);
 		
 		textField_543 = new JTextField();
-		textField_543.setForeground(Color.LIGHT_GRAY);
+		textField_543.setForeground(Color.BLACK);
 		textField_543.addMouseListener(this);
 		textField_543.setText("3");
 		textField_543.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4973,7 +4975,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_543);
 		
 		textField_524 = new JTextField();
-		textField_524.setForeground(Color.LIGHT_GRAY);
+		textField_524.setForeground(Color.BLACK);
 		textField_524.addMouseListener(this);
 		textField_524.setText("4");
 		textField_524.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4982,7 +4984,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_524);
 		
 		textField_525 = new JTextField();
-		textField_525.setForeground(Color.LIGHT_GRAY);
+		textField_525.setForeground(Color.BLACK);
 		textField_525.addMouseListener(this);
 		textField_525.setText("5");
 		textField_525.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -4991,7 +4993,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_525);
 		
 		textField_526 = new JTextField();
-		textField_526.setForeground(Color.LIGHT_GRAY);
+		textField_526.setForeground(Color.BLACK);
 		textField_526.addMouseListener(this);
 		textField_526.setText("6");
 		textField_526.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5000,7 +5002,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_526);
 		
 		textField_534 = new JTextField();
-		textField_534.setForeground(Color.LIGHT_GRAY);
+		textField_534.setForeground(Color.BLACK);
 		textField_534.addMouseListener(this);
 		textField_534.setText("4");
 		textField_534.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5009,7 +5011,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_534);
 		
 		textField_535 = new JTextField();
-		textField_535.setForeground(Color.LIGHT_GRAY);
+		textField_535.setForeground(Color.BLACK);
 		textField_535.addMouseListener(this);
 		textField_535.setText("5");
 		textField_535.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5018,7 +5020,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_535);
 		
 		textField_536 = new JTextField();
-		textField_536.setForeground(Color.LIGHT_GRAY);
+		textField_536.setForeground(Color.BLACK);
 		textField_536.addMouseListener(this);
 		textField_536.setText("6");
 		textField_536.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5027,7 +5029,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_536);
 		
 		textField_544 = new JTextField();
-		textField_544.setForeground(Color.LIGHT_GRAY);
+		textField_544.setForeground(Color.BLACK);
 		textField_544.addMouseListener(this);
 		textField_544.setText("4");
 		textField_544.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5036,7 +5038,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_544);
 		
 		textField_545 = new JTextField();
-		textField_545.setForeground(Color.LIGHT_GRAY);
+		textField_545.setForeground(Color.BLACK);
 		textField_545.addMouseListener(this);
 		textField_545.setText("5");
 		textField_545.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5045,7 +5047,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_545);
 		
 		textField_546 = new JTextField();
-		textField_546.setForeground(Color.LIGHT_GRAY);
+		textField_546.setForeground(Color.BLACK);
 		textField_546.addMouseListener(this);
 		textField_546.setText("6");
 		textField_546.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5054,7 +5056,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_546);
 		
 		textField_527 = new JTextField();
-		textField_527.setForeground(Color.LIGHT_GRAY);
+		textField_527.setForeground(Color.BLACK);
 		textField_527.addMouseListener(this);
 		textField_527.setText("7");
 		textField_527.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5063,7 +5065,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_527);
 		
 		textField_528 = new JTextField();
-		textField_528.setForeground(Color.LIGHT_GRAY);
+		textField_528.setForeground(Color.BLACK);
 		textField_528.addMouseListener(this);
 		textField_528.setText("8");
 		textField_528.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5072,7 +5074,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_528);
 		
 		textField_529 = new JTextField();
-		textField_529.setForeground(Color.LIGHT_GRAY);
+		textField_529.setForeground(Color.BLACK);
 		textField_529.addMouseListener(this);
 		textField_529.setText("9");
 		textField_529.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5081,7 +5083,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_529);
 		
 		textField_537 = new JTextField();
-		textField_537.setForeground(Color.LIGHT_GRAY);
+		textField_537.setForeground(Color.BLACK);
 		textField_537.addMouseListener(this);
 		textField_537.setText("7");
 		textField_537.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5090,7 +5092,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_537);
 		
 		textField_538 = new JTextField();
-		textField_538.setForeground(Color.LIGHT_GRAY);
+		textField_538.setForeground(Color.BLACK);
 		textField_538.addMouseListener(this);
 		textField_538.setText("8");
 		textField_538.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5099,7 +5101,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_538);
 		
 		textField_539 = new JTextField();
-		textField_539.setForeground(Color.LIGHT_GRAY);
+		textField_539.setForeground(Color.BLACK);
 		textField_539.addMouseListener(this);
 		textField_539.setText("9");
 		textField_539.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5108,7 +5110,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_539);
 		
 		textField_547 = new JTextField();
-		textField_547.setForeground(Color.LIGHT_GRAY);
+		textField_547.setForeground(Color.BLACK);
 		textField_547.addMouseListener(this);
 		textField_547.setText("7");
 		textField_547.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5117,7 +5119,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_547);
 		
 		textField_548 = new JTextField();
-		textField_548.setForeground(Color.LIGHT_GRAY);
+		textField_548.setForeground(Color.BLACK);
 		textField_548.addMouseListener(this);
 		textField_548.setText("8");
 		textField_548.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5126,7 +5128,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_548);
 		
 		textField_549 = new JTextField();
-		textField_549.setForeground(Color.LIGHT_GRAY);
+		textField_549.setForeground(Color.BLACK);
 		textField_549.addMouseListener(this);
 		textField_549.setText("9");
 		textField_549.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5135,7 +5137,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_549);
 		
 		textField_551 = new JTextField();
-		textField_551.setForeground(Color.LIGHT_GRAY);
+		textField_551.setForeground(Color.BLACK);
 		textField_551.addMouseListener(this);
 		textField_551.setText("1");
 		textField_551.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5144,7 +5146,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_551);
 		
 		textField_552 = new JTextField();
-		textField_552.setForeground(Color.LIGHT_GRAY);
+		textField_552.setForeground(Color.BLACK);
 		textField_552.addMouseListener(this);
 		textField_552.setText("2");
 		textField_552.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5153,7 +5155,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_552);
 		
 		textField_553 = new JTextField();
-		textField_553.setForeground(Color.LIGHT_GRAY);
+		textField_553.setForeground(Color.BLACK);
 		textField_553.addMouseListener(this);
 		textField_553.setText("3");
 		textField_553.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5162,7 +5164,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_553);
 		
 		textField_561 = new JTextField();
-		textField_561.setForeground(Color.LIGHT_GRAY);
+		textField_561.setForeground(Color.BLACK);
 		textField_561.addMouseListener(this);
 		textField_561.setText("1");
 		textField_561.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5171,7 +5173,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_561);
 		
 		textField_562 = new JTextField();
-		textField_562.setForeground(Color.LIGHT_GRAY);
+		textField_562.setForeground(Color.BLACK);
 		textField_562.addMouseListener(this);
 		textField_562.setText("2");
 		textField_562.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5180,7 +5182,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_562);
 		
 		textField_563 = new JTextField();
-		textField_563.setForeground(Color.LIGHT_GRAY);
+		textField_563.setForeground(Color.BLACK);
 		textField_563.addMouseListener(this);
 		textField_563.setText("3");
 		textField_563.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5189,7 +5191,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_563);
 		
 		textField_571 = new JTextField();
-		textField_571.setForeground(Color.LIGHT_GRAY);
+		textField_571.setForeground(Color.BLACK);
 		textField_571.addMouseListener(this);
 		textField_571.setText("1");
 		textField_571.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5198,7 +5200,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_571);
 		
 		textField_572 = new JTextField();
-		textField_572.setForeground(Color.LIGHT_GRAY);
+		textField_572.setForeground(Color.BLACK);
 		textField_572.addMouseListener(this);
 		textField_572.setText("2");
 		textField_572.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5207,7 +5209,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_572);
 		
 		textField_573 = new JTextField();
-		textField_573.setForeground(Color.LIGHT_GRAY);
+		textField_573.setForeground(Color.BLACK);
 		textField_573.addMouseListener(this);
 		textField_573.setText("3");
 		textField_573.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5216,7 +5218,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_573);
 		
 		textField_554 = new JTextField();
-		textField_554.setForeground(Color.LIGHT_GRAY);
+		textField_554.setForeground(Color.BLACK);
 		textField_554.addMouseListener(this);
 		textField_554.setText("4");
 		textField_554.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5225,7 +5227,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_554);
 		
 		textField_555 = new JTextField();
-		textField_555.setForeground(Color.LIGHT_GRAY);
+		textField_555.setForeground(Color.BLACK);
 		textField_555.addMouseListener(this);
 		textField_555.setText("5");
 		textField_555.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5234,7 +5236,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_555);
 		
 		textField_556 = new JTextField();
-		textField_556.setForeground(Color.LIGHT_GRAY);
+		textField_556.setForeground(Color.BLACK);
 		textField_556.addMouseListener(this);
 		textField_556.setText("6");
 		textField_556.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5243,7 +5245,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_556);
 		
 		textField_564 = new JTextField();
-		textField_564.setForeground(Color.LIGHT_GRAY);
+		textField_564.setForeground(Color.BLACK);
 		textField_564.addMouseListener(this);
 		textField_564.setText("4");
 		textField_564.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5252,7 +5254,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_564);
 		
 		textField_565 = new JTextField();
-		textField_565.setForeground(Color.LIGHT_GRAY);
+		textField_565.setForeground(Color.BLACK);
 		textField_565.addMouseListener(this);
 		textField_565.setText("5");
 		textField_565.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5261,7 +5263,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_565);
 		
 		textField_566 = new JTextField();
-		textField_566.setForeground(Color.LIGHT_GRAY);
+		textField_566.setForeground(Color.BLACK);
 		textField_566.addMouseListener(this);
 		textField_566.setText("6");
 		textField_566.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5270,7 +5272,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_566);
 		
 		textField_574 = new JTextField();
-		textField_574.setForeground(Color.LIGHT_GRAY);
+		textField_574.setForeground(Color.BLACK);
 		textField_574.addMouseListener(this);
 		textField_574.setText("4");
 		textField_574.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5279,7 +5281,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_574);
 		
 		textField_575 = new JTextField();
-		textField_575.setForeground(Color.LIGHT_GRAY);
+		textField_575.setForeground(Color.BLACK);
 		textField_575.addMouseListener(this);
 		textField_575.setText("5");
 		textField_575.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5288,7 +5290,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_575);
 		
 		textField_576 = new JTextField();
-		textField_576.setForeground(Color.LIGHT_GRAY);
+		textField_576.setForeground(Color.BLACK);
 		textField_576.addMouseListener(this);
 		textField_576.setText("6");
 		textField_576.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5297,7 +5299,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_576);
 		
 		textField_557 = new JTextField();
-		textField_557.setForeground(Color.LIGHT_GRAY);
+		textField_557.setForeground(Color.BLACK);
 		textField_557.addMouseListener(this);
 		textField_557.setText("7");
 		textField_557.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5306,7 +5308,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_557);
 		
 		textField_558 = new JTextField();
-		textField_558.setForeground(Color.LIGHT_GRAY);
+		textField_558.setForeground(Color.BLACK);
 		textField_558.addMouseListener(this);
 		textField_558.setText("8");
 		textField_558.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5315,7 +5317,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_558);
 		
 		textField_559 = new JTextField();
-		textField_559.setForeground(Color.LIGHT_GRAY);
+		textField_559.setForeground(Color.BLACK);
 		textField_559.addMouseListener(this);
 		textField_559.setText("9");
 		textField_559.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5324,7 +5326,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_559);
 		
 		textField_567 = new JTextField();
-		textField_567.setForeground(Color.LIGHT_GRAY);
+		textField_567.setForeground(Color.BLACK);
 		textField_567.addMouseListener(this);
 		textField_567.setText("7");
 		textField_567.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5333,7 +5335,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_567);
 		
 		textField_568 = new JTextField();
-		textField_568.setForeground(Color.LIGHT_GRAY);
+		textField_568.setForeground(Color.BLACK);
 		textField_568.addMouseListener(this);
 		textField_568.setText("8");
 		textField_568.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5342,7 +5344,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_568);
 		
 		textField_569 = new JTextField();
-		textField_569.setForeground(Color.LIGHT_GRAY);
+		textField_569.setForeground(Color.BLACK);
 		textField_569.addMouseListener(this);
 		textField_569.setText("9");
 		textField_569.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5351,7 +5353,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_569);
 		
 		textField_577 = new JTextField();
-		textField_577.setForeground(Color.LIGHT_GRAY);
+		textField_577.setForeground(Color.BLACK);
 		textField_577.addMouseListener(this);
 		textField_577.setText("7");
 		textField_577.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5360,7 +5362,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_577);
 		
 		textField_579 = new JTextField();
-		textField_579.setForeground(Color.LIGHT_GRAY);
+		textField_579.setForeground(Color.BLACK);
 		textField_579.addMouseListener(this);
 		textField_579.setText("9");
 		textField_579.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5369,7 +5371,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_579);
 		
 		textField_578 = new JTextField();
-		textField_578.setForeground(Color.LIGHT_GRAY);
+		textField_578.setForeground(Color.BLACK);
 		textField_578.addMouseListener(this);
 		textField_578.setText("8");
 		textField_578.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5378,7 +5380,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_578);
 		
 		textField_641 = new JTextField();
-		textField_641.setForeground(Color.LIGHT_GRAY);
+		textField_641.setForeground(Color.BLACK);
 		textField_641.addMouseListener(this);
 		textField_641.setText("1");
 		textField_641.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5387,7 +5389,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_641);
 		
 		textField_642 = new JTextField();
-		textField_642.setForeground(Color.LIGHT_GRAY);
+		textField_642.setForeground(Color.BLACK);
 		textField_642.addMouseListener(this);
 		textField_642.setText("2");
 		textField_642.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5396,7 +5398,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_642);
 		
 		textField_643 = new JTextField();
-		textField_643.setForeground(Color.LIGHT_GRAY);
+		textField_643.setForeground(Color.BLACK);
 		textField_643.addMouseListener(this);
 		textField_643.setText("3");
 		textField_643.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5405,7 +5407,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_643);
 		
 		textField_651 = new JTextField();
-		textField_651.setForeground(Color.LIGHT_GRAY);
+		textField_651.setForeground(Color.BLACK);
 		textField_651.addMouseListener(this);
 		textField_651.setText("1");
 		textField_651.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5414,7 +5416,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_651);
 		
 		textField_652 = new JTextField();
-		textField_652.setForeground(Color.LIGHT_GRAY);
+		textField_652.setForeground(Color.BLACK);
 		textField_652.addMouseListener(this);
 		textField_652.setText("2");
 		textField_652.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5423,7 +5425,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_652);
 		
 		textField_653 = new JTextField();
-		textField_653.setForeground(Color.LIGHT_GRAY);
+		textField_653.setForeground(Color.BLACK);
 		textField_653.addMouseListener(this);
 		textField_653.setText("3");
 		textField_653.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5432,7 +5434,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_653);
 		
 		textField_661 = new JTextField();
-		textField_661.setForeground(Color.LIGHT_GRAY);
+		textField_661.setForeground(Color.BLACK);
 		textField_661.addMouseListener(this);
 		textField_661.setText("1");
 		textField_661.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5441,7 +5443,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_661);
 		
 		textField_662 = new JTextField();
-		textField_662.setForeground(Color.LIGHT_GRAY);
+		textField_662.setForeground(Color.BLACK);
 		textField_662.addMouseListener(this);
 		textField_662.setText("2");
 		textField_662.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5450,7 +5452,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_662);
 		
 		textField_663 = new JTextField();
-		textField_663.setForeground(Color.LIGHT_GRAY);
+		textField_663.setForeground(Color.BLACK);
 		textField_663.addMouseListener(this);
 		textField_663.setText("3");
 		textField_663.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5459,7 +5461,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_663);
 		
 		textField_644 = new JTextField();
-		textField_644.setForeground(Color.LIGHT_GRAY);
+		textField_644.setForeground(Color.BLACK);
 		textField_644.addMouseListener(this);
 		textField_644.setText("4");
 		textField_644.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5468,7 +5470,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_644);
 		
 		textField_645 = new JTextField();
-		textField_645.setForeground(Color.LIGHT_GRAY);
+		textField_645.setForeground(Color.BLACK);
 		textField_645.addMouseListener(this);
 		textField_645.setText("5");
 		textField_645.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5477,7 +5479,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_645);
 		
 		textField_646 = new JTextField();
-		textField_646.setForeground(Color.LIGHT_GRAY);
+		textField_646.setForeground(Color.BLACK);
 		textField_646.addMouseListener(this);
 		textField_646.setText("6");
 		textField_646.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5486,7 +5488,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_646);
 		
 		textField_654 = new JTextField();
-		textField_654.setForeground(Color.LIGHT_GRAY);
+		textField_654.setForeground(Color.BLACK);
 		textField_654.addMouseListener(this);
 		textField_654.setText("4");
 		textField_654.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5495,7 +5497,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_654);
 		
 		textField_655 = new JTextField();
-		textField_655.setForeground(Color.LIGHT_GRAY);
+		textField_655.setForeground(Color.BLACK);
 		textField_655.addMouseListener(this);
 		textField_655.setText("5");
 		textField_655.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5504,7 +5506,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_655);
 		
 		textField_656 = new JTextField();
-		textField_656.setForeground(Color.LIGHT_GRAY);
+		textField_656.setForeground(Color.BLACK);
 		textField_656.addMouseListener(this);
 		textField_656.setText("6");
 		textField_656.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5513,7 +5515,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_656);
 		
 		textField_664 = new JTextField();
-		textField_664.setForeground(Color.LIGHT_GRAY);
+		textField_664.setForeground(Color.BLACK);
 		textField_664.addMouseListener(this);
 		textField_664.setText("4");
 		textField_664.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5522,7 +5524,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_664);
 		
 		textField_665 = new JTextField();
-		textField_665.setForeground(Color.LIGHT_GRAY);
+		textField_665.setForeground(Color.BLACK);
 		textField_665.addMouseListener(this);
 		textField_665.setText("5");
 		textField_665.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5531,7 +5533,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_665);
 		
 		textField_666 = new JTextField();
-		textField_666.setForeground(Color.LIGHT_GRAY);
+		textField_666.setForeground(Color.BLACK);
 		textField_666.addMouseListener(this);
 		textField_666.setText("6");
 		textField_666.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5540,7 +5542,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_666);
 		
 		textField_647 = new JTextField();
-		textField_647.setForeground(Color.LIGHT_GRAY);
+		textField_647.setForeground(Color.BLACK);
 		textField_647.addMouseListener(this);
 		textField_647.setText("7");
 		textField_647.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5549,7 +5551,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_647);
 		
 		textField_648 = new JTextField();
-		textField_648.setForeground(Color.LIGHT_GRAY);
+		textField_648.setForeground(Color.BLACK);
 		textField_648.addMouseListener(this);
 		textField_648.setText("8");
 		textField_648.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5558,7 +5560,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_648);
 		
 		textField_649 = new JTextField();
-		textField_649.setForeground(Color.LIGHT_GRAY);
+		textField_649.setForeground(Color.BLACK);
 		textField_649.addMouseListener(this);
 		textField_649.setText("9");
 		textField_649.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5567,7 +5569,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_649);
 		
 		textField_657 = new JTextField();
-		textField_657.setForeground(Color.LIGHT_GRAY);
+		textField_657.setForeground(Color.BLACK);
 		textField_657.addMouseListener(this);
 		textField_657.setText("7");
 		textField_657.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5576,7 +5578,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_657);
 		
 		textField_658 = new JTextField();
-		textField_658.setForeground(Color.LIGHT_GRAY);
+		textField_658.setForeground(Color.BLACK);
 		textField_658.addMouseListener(this);
 		textField_658.setText("8");
 		textField_658.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5585,7 +5587,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_658);
 		
 		textField_659 = new JTextField();
-		textField_659.setForeground(Color.LIGHT_GRAY);
+		textField_659.setForeground(Color.BLACK);
 		textField_659.addMouseListener(this);
 		textField_659.setText("9");
 		textField_659.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5594,7 +5596,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_659);
 		
 		textField_667 = new JTextField();
-		textField_667.setForeground(Color.LIGHT_GRAY);
+		textField_667.setForeground(Color.BLACK);
 		textField_667.addMouseListener(this);
 		textField_667.setText("7");
 		textField_667.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5603,7 +5605,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_667);
 		
 		textField_668 = new JTextField();
-		textField_668.setForeground(Color.LIGHT_GRAY);
+		textField_668.setForeground(Color.BLACK);
 		textField_668.addMouseListener(this);
 		textField_668.setText("8");
 		textField_668.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5612,7 +5614,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_668);
 		
 		textField_669 = new JTextField();
-		textField_669.setForeground(Color.LIGHT_GRAY);
+		textField_669.setForeground(Color.BLACK);
 		textField_669.addMouseListener(this);
 		textField_669.setText("9");
 		textField_669.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5621,7 +5623,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_669);
 		
 		textField_731 = new JTextField();
-		textField_731.setForeground(Color.LIGHT_GRAY);
+		textField_731.setForeground(Color.BLACK);
 		textField_731.addMouseListener(this);
 		textField_731.setText("1");
 		textField_731.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5630,7 +5632,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_731);
 		
 		textField_732 = new JTextField();
-		textField_732.setForeground(Color.LIGHT_GRAY);
+		textField_732.setForeground(Color.BLACK);
 		textField_732.addMouseListener(this);
 		textField_732.setText("2");
 		textField_732.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5639,7 +5641,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_732);
 		
 		textField_733 = new JTextField();
-		textField_733.setForeground(Color.LIGHT_GRAY);
+		textField_733.setForeground(Color.BLACK);
 		textField_733.addMouseListener(this);
 		textField_733.setText("3");
 		textField_733.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5648,7 +5650,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_733);
 		
 		textField_741 = new JTextField();
-		textField_741.setForeground(Color.LIGHT_GRAY);
+		textField_741.setForeground(Color.BLACK);
 		textField_741.addMouseListener(this);
 		textField_741.setText("1");
 		textField_741.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5657,7 +5659,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_741);
 		
 		textField_742 = new JTextField();
-		textField_742.setForeground(Color.LIGHT_GRAY);
+		textField_742.setForeground(Color.BLACK);
 		textField_742.addMouseListener(this);
 		textField_742.setText("2");
 		textField_742.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5666,7 +5668,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_742);
 		
 		textField_743 = new JTextField();
-		textField_743.setForeground(Color.LIGHT_GRAY);
+		textField_743.setForeground(Color.BLACK);
 		textField_743.addMouseListener(this);
 		textField_743.setText("3");
 		textField_743.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5675,7 +5677,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_743);
 		
 		textField_751 = new JTextField();
-		textField_751.setForeground(Color.LIGHT_GRAY);
+		textField_751.setForeground(Color.BLACK);
 		textField_751.addMouseListener(this);
 		textField_751.setText("1");
 		textField_751.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5684,7 +5686,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_751);
 		
 		textField_752 = new JTextField();
-		textField_752.setForeground(Color.LIGHT_GRAY);
+		textField_752.setForeground(Color.BLACK);
 		textField_752.addMouseListener(this);
 		textField_752.setText("2");
 		textField_752.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5693,7 +5695,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_752);
 		
 		textField_753 = new JTextField();
-		textField_753.setForeground(Color.LIGHT_GRAY);
+		textField_753.setForeground(Color.BLACK);
 		textField_753.addMouseListener(this);
 		textField_753.setText("3");
 		textField_753.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5702,7 +5704,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_753);
 		
 		textField_734 = new JTextField();
-		textField_734.setForeground(Color.LIGHT_GRAY);
+		textField_734.setForeground(Color.BLACK);
 		textField_734.addMouseListener(this);
 		textField_734.setText("4");
 		textField_734.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5711,7 +5713,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_734);
 		
 		textField_735 = new JTextField();
-		textField_735.setForeground(Color.LIGHT_GRAY);
+		textField_735.setForeground(Color.BLACK);
 		textField_735.addMouseListener(this);
 		textField_735.setText("5");
 		textField_735.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5720,7 +5722,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_735);
 		
 		textField_736 = new JTextField();
-		textField_736.setForeground(Color.LIGHT_GRAY);
+		textField_736.setForeground(Color.BLACK);
 		textField_736.addMouseListener(this);
 		textField_736.setText("6");
 		textField_736.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5729,7 +5731,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_736);
 		
 		textField_744 = new JTextField();
-		textField_744.setForeground(Color.LIGHT_GRAY);
+		textField_744.setForeground(Color.BLACK);
 		textField_744.addMouseListener(this);
 		textField_744.setText("4");
 		textField_744.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5738,7 +5740,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_744);
 		
 		textField_745 = new JTextField();
-		textField_745.setForeground(Color.LIGHT_GRAY);
+		textField_745.setForeground(Color.BLACK);
 		textField_745.addMouseListener(this);
 		textField_745.setText("5");
 		textField_745.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5747,7 +5749,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_745);
 		
 		textField_746 = new JTextField();
-		textField_746.setForeground(Color.LIGHT_GRAY);
+		textField_746.setForeground(Color.BLACK);
 		textField_746.addMouseListener(this);
 		textField_746.setText("6");
 		textField_746.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5756,7 +5758,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_746);
 		
 		textField_754 = new JTextField();
-		textField_754.setForeground(Color.LIGHT_GRAY);
+		textField_754.setForeground(Color.BLACK);
 		textField_754.addMouseListener(this);
 		textField_754.setText("4");
 		textField_754.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5765,7 +5767,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_754);
 		
 		textField_755 = new JTextField();
-		textField_755.setForeground(Color.LIGHT_GRAY);
+		textField_755.setForeground(Color.BLACK);
 		textField_755.addMouseListener(this);
 		textField_755.setText("5");
 		textField_755.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5774,7 +5776,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_755);
 		
 		textField_756 = new JTextField();
-		textField_756.setForeground(Color.LIGHT_GRAY);
+		textField_756.setForeground(Color.BLACK);
 		textField_756.addMouseListener(this);
 		textField_756.setText("6");
 		textField_756.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5783,7 +5785,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_756);
 		
 		textField_737 = new JTextField();
-		textField_737.setForeground(Color.LIGHT_GRAY);
+		textField_737.setForeground(Color.BLACK);
 		textField_737.addMouseListener(this);
 		textField_737.setText("7");
 		textField_737.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5792,7 +5794,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_737);
 		
 		textField_738 = new JTextField();
-		textField_738.setForeground(Color.LIGHT_GRAY);
+		textField_738.setForeground(Color.BLACK);
 		textField_738.addMouseListener(this);
 		textField_738.setText("8");
 		textField_738.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5801,7 +5803,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_738);
 		
 		textField_739 = new JTextField();
-		textField_739.setForeground(Color.LIGHT_GRAY);
+		textField_739.setForeground(Color.BLACK);
 		textField_739.addMouseListener(this);
 		textField_739.setText("9");
 		textField_739.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5810,7 +5812,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_739);
 		
 		textField_747 = new JTextField();
-		textField_747.setForeground(Color.LIGHT_GRAY);
+		textField_747.setForeground(Color.BLACK);
 		textField_747.addMouseListener(this);
 		textField_747.setText("7");
 		textField_747.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5819,7 +5821,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_747);
 		
 		textField_748 = new JTextField();
-		textField_748.setForeground(Color.LIGHT_GRAY);
+		textField_748.setForeground(Color.BLACK);
 		textField_748.addMouseListener(this);
 		textField_748.setText("8");
 		textField_748.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5828,7 +5830,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_748);
 		
 		textField_749 = new JTextField();
-		textField_749.setForeground(Color.LIGHT_GRAY);
+		textField_749.setForeground(Color.BLACK);
 		textField_749.addMouseListener(this);
 		textField_749.setText("9");
 		textField_749.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5837,7 +5839,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_749);
 		
 		textField_757 = new JTextField();
-		textField_757.setForeground(Color.LIGHT_GRAY);
+		textField_757.setForeground(Color.BLACK);
 		textField_757.addMouseListener(this);
 		textField_757.setText("7");
 		textField_757.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5846,7 +5848,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_757);
 		
 		textField_758 = new JTextField();
-		textField_758.setForeground(Color.LIGHT_GRAY);
+		textField_758.setForeground(Color.BLACK);
 		textField_758.addMouseListener(this);
 		textField_758.setText("8");
 		textField_758.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5855,7 +5857,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_758);
 		
 		textField_759 = new JTextField();
-		textField_759.setForeground(Color.LIGHT_GRAY);
+		textField_759.setForeground(Color.BLACK);
 		textField_759.addMouseListener(this);
 		textField_759.setText("9");
 		textField_759.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5864,7 +5866,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_759);
 		
 		textField_581 = new JTextField();
-		textField_581.setForeground(Color.LIGHT_GRAY);
+		textField_581.setForeground(Color.BLACK);
 		textField_581.addMouseListener(this);
 		textField_581.setText("1");
 		textField_581.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5873,7 +5875,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_581);
 		
 		textField_582 = new JTextField();
-		textField_582.setForeground(Color.LIGHT_GRAY);
+		textField_582.setForeground(Color.BLACK);
 		textField_582.addMouseListener(this);
 		textField_582.setText("2");
 		textField_582.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5882,7 +5884,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_582);
 		
 		textField_583 = new JTextField();
-		textField_583.setForeground(Color.LIGHT_GRAY);
+		textField_583.setForeground(Color.BLACK);
 		textField_583.addMouseListener(this);
 		textField_583.setText("3");
 		textField_583.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5891,7 +5893,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_583);
 		
 		textField_591 = new JTextField();
-		textField_591.setForeground(Color.LIGHT_GRAY);
+		textField_591.setForeground(Color.BLACK);
 		textField_591.addMouseListener(this);
 		textField_591.setText("1");
 		textField_591.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5900,7 +5902,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_591);
 		
 		textField_592 = new JTextField();
-		textField_592.setForeground(Color.LIGHT_GRAY);
+		textField_592.setForeground(Color.BLACK);
 		textField_592.addMouseListener(this);
 		textField_592.setText("2");
 		textField_592.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5909,7 +5911,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_592);
 		
 		textField_593 = new JTextField();
-		textField_593.setForeground(Color.LIGHT_GRAY);
+		textField_593.setForeground(Color.BLACK);
 		textField_593.addMouseListener(this);
 		textField_593.setText("3");
 		textField_593.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5918,7 +5920,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_593);
 		
 		textField_601 = new JTextField();
-		textField_601.setForeground(Color.LIGHT_GRAY);
+		textField_601.setForeground(Color.BLACK);
 		textField_601.addMouseListener(this);
 		textField_601.setText("1");
 		textField_601.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5927,7 +5929,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_601);
 		
 		textField_602 = new JTextField();
-		textField_602.setForeground(Color.LIGHT_GRAY);
+		textField_602.setForeground(Color.BLACK);
 		textField_602.addMouseListener(this);
 		textField_602.setText("2");
 		textField_602.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5936,7 +5938,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_602);
 		
 		textField_603 = new JTextField();
-		textField_603.setForeground(Color.LIGHT_GRAY);
+		textField_603.setForeground(Color.BLACK);
 		textField_603.addMouseListener(this);
 		textField_603.setText("3");
 		textField_603.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5945,7 +5947,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_603);
 		
 		textField_584 = new JTextField();
-		textField_584.setForeground(Color.LIGHT_GRAY);
+		textField_584.setForeground(Color.BLACK);
 		textField_584.addMouseListener(this);
 		textField_584.setText("4");
 		textField_584.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5954,7 +5956,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_584);
 		
 		textField_585 = new JTextField();
-		textField_585.setForeground(Color.LIGHT_GRAY);
+		textField_585.setForeground(Color.BLACK);
 		textField_585.addMouseListener(this);
 		textField_585.setText("5");
 		textField_585.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5963,7 +5965,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_585);
 		
 		textField_586 = new JTextField();
-		textField_586.setForeground(Color.LIGHT_GRAY);
+		textField_586.setForeground(Color.BLACK);
 		textField_586.addMouseListener(this);
 		textField_586.setText("6");
 		textField_586.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5972,7 +5974,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_586);
 		
 		textField_594 = new JTextField();
-		textField_594.setForeground(Color.LIGHT_GRAY);
+		textField_594.setForeground(Color.BLACK);
 		textField_594.addMouseListener(this);
 		textField_594.setText("4");
 		textField_594.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5981,7 +5983,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_594);
 		
 		textField_595 = new JTextField();
-		textField_595.setForeground(Color.LIGHT_GRAY);
+		textField_595.setForeground(Color.BLACK);
 		textField_595.addMouseListener(this);
 		textField_595.setText("5");
 		textField_595.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5990,7 +5992,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_595);
 		
 		textField_596 = new JTextField();
-		textField_596.setForeground(Color.LIGHT_GRAY);
+		textField_596.setForeground(Color.BLACK);
 		textField_596.addMouseListener(this);
 		textField_596.setText("6");
 		textField_596.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -5999,7 +6001,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_596);
 		
 		textField_604 = new JTextField();
-		textField_604.setForeground(Color.LIGHT_GRAY);
+		textField_604.setForeground(Color.BLACK);
 		textField_604.addMouseListener(this);
 		textField_604.setText("4");
 		textField_604.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6008,7 +6010,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_604);
 		
 		textField_605 = new JTextField();
-		textField_605.setForeground(Color.LIGHT_GRAY);
+		textField_605.setForeground(Color.BLACK);
 		textField_605.addMouseListener(this);
 		textField_605.setText("5");
 		textField_605.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6017,7 +6019,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_605);
 		
 		textField_606 = new JTextField();
-		textField_606.setForeground(Color.LIGHT_GRAY);
+		textField_606.setForeground(Color.BLACK);
 		textField_606.addMouseListener(this);
 		textField_606.setText("6");
 		textField_606.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6026,7 +6028,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_606);
 		
 		textField_587 = new JTextField();
-		textField_587.setForeground(Color.LIGHT_GRAY);
+		textField_587.setForeground(Color.BLACK);
 		textField_587.addMouseListener(this);
 		textField_587.setText("7");
 		textField_587.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6035,7 +6037,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_587);
 		
 		textField_588 = new JTextField();
-		textField_588.setForeground(Color.LIGHT_GRAY);
+		textField_588.setForeground(Color.BLACK);
 		textField_588.addMouseListener(this);
 		textField_588.setText("8");
 		textField_588.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6044,7 +6046,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_588);
 		
 		textField_589 = new JTextField();
-		textField_589.setForeground(Color.LIGHT_GRAY);
+		textField_589.setForeground(Color.BLACK);
 		textField_589.addMouseListener(this);
 		textField_589.setText("9");
 		textField_589.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6053,7 +6055,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_589);
 		
 		textField_597 = new JTextField();
-		textField_597.setForeground(Color.LIGHT_GRAY);
+		textField_597.setForeground(Color.BLACK);
 		textField_597.addMouseListener(this);
 		textField_597.setText("7");
 		textField_597.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6062,7 +6064,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_597);
 		
 		textField_598 = new JTextField();
-		textField_598.setForeground(Color.LIGHT_GRAY);
+		textField_598.setForeground(Color.BLACK);
 		textField_598.addMouseListener(this);
 		textField_598.setText("8");
 		textField_598.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6071,7 +6073,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_598);
 		
 		textField_599 = new JTextField();
-		textField_599.setForeground(Color.LIGHT_GRAY);
+		textField_599.setForeground(Color.BLACK);
 		textField_599.addMouseListener(this);
 		textField_599.setText("9");
 		textField_599.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6080,7 +6082,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_599);
 		
 		textField_607 = new JTextField();
-		textField_607.setForeground(Color.LIGHT_GRAY);
+		textField_607.setForeground(Color.BLACK);
 		textField_607.addMouseListener(this);
 		textField_607.setText("7");
 		textField_607.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6089,7 +6091,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_607);
 		
 		textField_609 = new JTextField();
-		textField_609.setForeground(Color.LIGHT_GRAY);
+		textField_609.setForeground(Color.BLACK);
 		textField_609.addMouseListener(this);
 		textField_609.setText("9");
 		textField_609.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6098,7 +6100,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_609);
 		
 		textField_608 = new JTextField();
-		textField_608.setForeground(Color.LIGHT_GRAY);
+		textField_608.setForeground(Color.BLACK);
 		textField_608.addMouseListener(this);
 		textField_608.setText("8");
 		textField_608.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6107,7 +6109,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_608);
 		
 		textField_671 = new JTextField();
-		textField_671.setForeground(Color.LIGHT_GRAY);
+		textField_671.setForeground(Color.BLACK);
 		textField_671.addMouseListener(this);
 		textField_671.setText("1");
 		textField_671.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6116,7 +6118,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_671);
 		
 		textField_672 = new JTextField();
-		textField_672.setForeground(Color.LIGHT_GRAY);
+		textField_672.setForeground(Color.BLACK);
 		textField_672.addMouseListener(this);
 		textField_672.setText("2");
 		textField_672.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6125,7 +6127,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_672);
 		
 		textField_673 = new JTextField();
-		textField_673.setForeground(Color.LIGHT_GRAY);
+		textField_673.setForeground(Color.BLACK);
 		textField_673.addMouseListener(this);
 		textField_673.setText("3");
 		textField_673.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6134,7 +6136,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_673);
 		
 		textField_681 = new JTextField();
-		textField_681.setForeground(Color.LIGHT_GRAY);
+		textField_681.setForeground(Color.BLACK);
 		textField_681.addMouseListener(this);
 		textField_681.setText("1");
 		textField_681.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6143,7 +6145,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_681);
 		
 		textField_682 = new JTextField();
-		textField_682.setForeground(Color.LIGHT_GRAY);
+		textField_682.setForeground(Color.BLACK);
 		textField_682.addMouseListener(this);
 		textField_682.setText("2");
 		textField_682.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6152,7 +6154,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_682);
 		
 		textField_683 = new JTextField();
-		textField_683.setForeground(Color.LIGHT_GRAY);
+		textField_683.setForeground(Color.BLACK);
 		textField_683.addMouseListener(this);
 		textField_683.setText("3");
 		textField_683.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6161,7 +6163,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_683);
 		
 		textField_691 = new JTextField();
-		textField_691.setForeground(Color.LIGHT_GRAY);
+		textField_691.setForeground(Color.BLACK);
 		textField_691.addMouseListener(this);
 		textField_691.setText("1");
 		textField_691.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6170,7 +6172,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_691);
 		
 		textField_692 = new JTextField();
-		textField_692.setForeground(Color.LIGHT_GRAY);
+		textField_692.setForeground(Color.BLACK);
 		textField_692.addMouseListener(this);
 		textField_692.setText("2");
 		textField_692.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6179,7 +6181,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_692);
 		
 		textField_693 = new JTextField();
-		textField_693.setForeground(Color.LIGHT_GRAY);
+		textField_693.setForeground(Color.BLACK);
 		textField_693.addMouseListener(this);
 		textField_693.setText("3");
 		textField_693.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6188,7 +6190,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_693);
 		
 		textField_674 = new JTextField();
-		textField_674.setForeground(Color.LIGHT_GRAY);
+		textField_674.setForeground(Color.BLACK);
 		textField_674.addMouseListener(this);
 		textField_674.setText("4");
 		textField_674.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6197,7 +6199,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_674);
 		
 		textField_675 = new JTextField();
-		textField_675.setForeground(Color.LIGHT_GRAY);
+		textField_675.setForeground(Color.BLACK);
 		textField_675.addMouseListener(this);
 		textField_675.setText("5");
 		textField_675.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6206,7 +6208,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_675);
 		
 		textField_676 = new JTextField();
-		textField_676.setForeground(Color.LIGHT_GRAY);
+		textField_676.setForeground(Color.BLACK);
 		textField_676.addMouseListener(this);
 		textField_676.setText("6");
 		textField_676.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6215,7 +6217,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_676);
 		
 		textField_684 = new JTextField();
-		textField_684.setForeground(Color.LIGHT_GRAY);
+		textField_684.setForeground(Color.BLACK);
 		textField_684.addMouseListener(this);
 		textField_684.setText("4");
 		textField_684.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6224,7 +6226,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_684);
 		
 		textField_685 = new JTextField();
-		textField_685.setForeground(Color.LIGHT_GRAY);
+		textField_685.setForeground(Color.BLACK);
 		textField_685.addMouseListener(this);
 		textField_685.setText("5");
 		textField_685.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6233,7 +6235,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_685);
 		
 		textField_686 = new JTextField();
-		textField_686.setForeground(Color.LIGHT_GRAY);
+		textField_686.setForeground(Color.BLACK);
 		textField_686.addMouseListener(this);
 		textField_686.setText("6");
 		textField_686.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6242,7 +6244,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_686);
 		
 		textField_694 = new JTextField();
-		textField_694.setForeground(Color.LIGHT_GRAY);
+		textField_694.setForeground(Color.BLACK);
 		textField_694.addMouseListener(this);
 		textField_694.setText("4");
 		textField_694.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6251,7 +6253,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_694);
 		
 		textField_695 = new JTextField();
-		textField_695.setForeground(Color.LIGHT_GRAY);
+		textField_695.setForeground(Color.BLACK);
 		textField_695.addMouseListener(this);
 		textField_695.setText("5");
 		textField_695.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6260,7 +6262,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_695);
 		
 		textField_696 = new JTextField();
-		textField_696.setForeground(Color.LIGHT_GRAY);
+		textField_696.setForeground(Color.BLACK);
 		textField_696.addMouseListener(this);
 		textField_696.setText("6");
 		textField_696.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6269,7 +6271,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_696);
 		
 		textField_677 = new JTextField();
-		textField_677.setForeground(Color.LIGHT_GRAY);
+		textField_677.setForeground(Color.BLACK);
 		textField_677.addMouseListener(this);
 		textField_677.setText("7");
 		textField_677.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6278,7 +6280,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_677);
 		
 		textField_678 = new JTextField();
-		textField_678.setForeground(Color.LIGHT_GRAY);
+		textField_678.setForeground(Color.BLACK);
 		textField_678.addMouseListener(this);
 		textField_678.setText("8");
 		textField_678.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6287,7 +6289,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_678);
 		
 		textField_679 = new JTextField();
-		textField_679.setForeground(Color.LIGHT_GRAY);
+		textField_679.setForeground(Color.BLACK);
 		textField_679.addMouseListener(this);
 		textField_679.setText("9");
 		textField_679.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6296,7 +6298,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_679);
 		
 		textField_687 = new JTextField();
-		textField_687.setForeground(Color.LIGHT_GRAY);
+		textField_687.setForeground(Color.BLACK);
 		textField_687.addMouseListener(this);
 		textField_687.setText("7");
 		textField_687.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6305,7 +6307,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_687);
 		
 		textField_688 = new JTextField();
-		textField_688.setForeground(Color.LIGHT_GRAY);
+		textField_688.setForeground(Color.BLACK);
 		textField_688.addMouseListener(this);
 		textField_688.setText("8");
 		textField_688.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6314,7 +6316,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_688);
 		
 		textField_689 = new JTextField();
-		textField_689.setForeground(Color.LIGHT_GRAY);
+		textField_689.setForeground(Color.BLACK);
 		textField_689.addMouseListener(this);
 		textField_689.setText("9");
 		textField_689.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6323,7 +6325,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_689);
 		
 		textField_697 = new JTextField();
-		textField_697.setForeground(Color.LIGHT_GRAY);
+		textField_697.setForeground(Color.BLACK);
 		textField_697.addMouseListener(this);
 		textField_697.setText("7");
 		textField_697.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6332,7 +6334,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_697);
 		
 		textField_698 = new JTextField();
-		textField_698.setForeground(Color.LIGHT_GRAY);
+		textField_698.setForeground(Color.BLACK);
 		textField_698.addMouseListener(this);
 		textField_698.setText("8");
 		textField_698.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6341,7 +6343,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_698);
 		
 		textField_699 = new JTextField();
-		textField_699.setForeground(Color.LIGHT_GRAY);
+		textField_699.setForeground(Color.BLACK);
 		textField_699.addMouseListener(this);
 		textField_699.setText("9");
 		textField_699.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6350,7 +6352,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_699);
 		
 		textField_761 = new JTextField();
-		textField_761.setForeground(Color.LIGHT_GRAY);
+		textField_761.setForeground(Color.BLACK);
 		textField_761.addMouseListener(this);
 		textField_761.setText("1");
 		textField_761.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6359,7 +6361,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_761);
 		
 		textField_762 = new JTextField();
-		textField_762.setForeground(Color.LIGHT_GRAY);
+		textField_762.setForeground(Color.BLACK);
 		textField_762.addMouseListener(this);
 		textField_762.setText("2");
 		textField_762.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6368,7 +6370,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_762);
 		
 		textField_763 = new JTextField();
-		textField_763.setForeground(Color.LIGHT_GRAY);
+		textField_763.setForeground(Color.BLACK);
 		textField_763.addMouseListener(this);
 		textField_763.setText("3");
 		textField_763.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6377,7 +6379,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_763);
 		
 		textField_771 = new JTextField();
-		textField_771.setForeground(Color.LIGHT_GRAY);
+		textField_771.setForeground(Color.BLACK);
 		textField_771.addMouseListener(this);
 		textField_771.setText("1");
 		textField_771.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6386,7 +6388,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_771);
 		
 		textField_772 = new JTextField();
-		textField_772.setForeground(Color.LIGHT_GRAY);
+		textField_772.setForeground(Color.BLACK);
 		textField_772.addMouseListener(this);
 		textField_772.setText("2");
 		textField_772.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6395,7 +6397,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_772);
 		
 		textField_773 = new JTextField();
-		textField_773.setForeground(Color.LIGHT_GRAY);
+		textField_773.setForeground(Color.BLACK);
 		textField_773.addMouseListener(this);
 		textField_773.setText("3");
 		textField_773.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6404,7 +6406,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_773);
 		
 		textField_781 = new JTextField();
-		textField_781.setForeground(Color.LIGHT_GRAY);
+		textField_781.setForeground(Color.BLACK);
 		textField_781.addMouseListener(this);
 		textField_781.setText("1");
 		textField_781.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6413,7 +6415,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_781);
 		
 		textField_782 = new JTextField();
-		textField_782.setForeground(Color.LIGHT_GRAY);
+		textField_782.setForeground(Color.BLACK);
 		textField_782.addMouseListener(this);
 		textField_782.setText("2");
 		textField_782.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6422,7 +6424,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_782);
 		
 		textField_783 = new JTextField();
-		textField_783.setForeground(Color.LIGHT_GRAY);
+		textField_783.setForeground(Color.BLACK);
 		textField_783.addMouseListener(this);
 		textField_783.setText("3");
 		textField_783.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6431,7 +6433,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_783);
 		
 		textField_764 = new JTextField();
-		textField_764.setForeground(Color.LIGHT_GRAY);
+		textField_764.setForeground(Color.BLACK);
 		textField_764.addMouseListener(this);
 		textField_764.setText("4");
 		textField_764.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6440,7 +6442,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_764);
 		
 		textField_765 = new JTextField();
-		textField_765.setForeground(Color.LIGHT_GRAY);
+		textField_765.setForeground(Color.BLACK);
 		textField_765.addMouseListener(this);
 		textField_765.setText("5");
 		textField_765.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6449,7 +6451,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_765);
 		
 		textField_766 = new JTextField();
-		textField_766.setForeground(Color.LIGHT_GRAY);
+		textField_766.setForeground(Color.BLACK);
 		textField_766.addMouseListener(this);
 		textField_766.setText("6");
 		textField_766.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6458,7 +6460,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_766);
 		
 		textField_774 = new JTextField();
-		textField_774.setForeground(Color.LIGHT_GRAY);
+		textField_774.setForeground(Color.BLACK);
 		textField_774.addMouseListener(this);
 		textField_774.setText("4");
 		textField_774.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6467,7 +6469,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_774);
 		
 		textField_775 = new JTextField();
-		textField_775.setForeground(Color.LIGHT_GRAY);
+		textField_775.setForeground(Color.BLACK);
 		textField_775.addMouseListener(this);
 		textField_775.setText("5");
 		textField_775.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6476,7 +6478,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_775);
 		
 		textField_776 = new JTextField();
-		textField_776.setForeground(Color.LIGHT_GRAY);
+		textField_776.setForeground(Color.BLACK);
 		textField_776.addMouseListener(this);
 		textField_776.setText("6");
 		textField_776.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6485,7 +6487,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_776);
 		
 		textField_784 = new JTextField();
-		textField_784.setForeground(Color.LIGHT_GRAY);
+		textField_784.setForeground(Color.BLACK);
 		textField_784.addMouseListener(this);
 		textField_784.setText("4");
 		textField_784.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6494,7 +6496,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_784);
 		
 		textField_785 = new JTextField();
-		textField_785.setForeground(Color.LIGHT_GRAY);
+		textField_785.setForeground(Color.BLACK);
 		textField_785.addMouseListener(this);
 		textField_785.setText("5");
 		textField_785.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6503,7 +6505,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_785);
 		
 		textField_786 = new JTextField();
-		textField_786.setForeground(Color.LIGHT_GRAY);
+		textField_786.setForeground(Color.BLACK);
 		textField_786.addMouseListener(this);
 		textField_786.setText("6");
 		textField_786.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6512,7 +6514,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_786);
 		
 		textField_767 = new JTextField();
-		textField_767.setForeground(Color.LIGHT_GRAY);
+		textField_767.setForeground(Color.BLACK);
 		textField_767.addMouseListener(this);
 		textField_767.setText("7");
 		textField_767.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6521,7 +6523,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_767);
 		
 		textField_768 = new JTextField();
-		textField_768.setForeground(Color.LIGHT_GRAY);
+		textField_768.setForeground(Color.BLACK);
 		textField_768.addMouseListener(this);
 		textField_768.setText("8");
 		textField_768.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6530,7 +6532,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_768);
 		
 		textField_769 = new JTextField();
-		textField_769.setForeground(Color.LIGHT_GRAY);
+		textField_769.setForeground(Color.BLACK);
 		textField_769.addMouseListener(this);
 		textField_769.setText("9");
 		textField_769.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6539,7 +6541,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_769);
 		
 		textField_777 = new JTextField();
-		textField_777.setForeground(Color.LIGHT_GRAY);
+		textField_777.setForeground(Color.BLACK);
 		textField_777.addMouseListener(this);
 		textField_777.setText("7");
 		textField_777.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6548,7 +6550,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_777);
 		
 		textField_778 = new JTextField();
-		textField_778.setForeground(Color.LIGHT_GRAY);
+		textField_778.setForeground(Color.BLACK);
 		textField_778.addMouseListener(this);
 		textField_778.setText("8");
 		textField_778.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6557,7 +6559,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_778);
 		
 		textField_779 = new JTextField();
-		textField_779.setForeground(Color.LIGHT_GRAY);
+		textField_779.setForeground(Color.BLACK);
 		textField_779.addMouseListener(this);
 		textField_779.setText("9");
 		textField_779.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6566,7 +6568,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_779);
 		
 		textField_787 = new JTextField();
-		textField_787.setForeground(Color.LIGHT_GRAY);
+		textField_787.setForeground(Color.BLACK);
 		textField_787.addMouseListener(this);
 		textField_787.setText("7");
 		textField_787.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6575,7 +6577,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_787);
 		
 		textField_788 = new JTextField();
-		textField_788.setForeground(Color.LIGHT_GRAY);
+		textField_788.setForeground(Color.BLACK);
 		textField_788.addMouseListener(this);
 		textField_788.setText("8");
 		textField_788.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6584,7 +6586,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_788);
 		
 		textField_789 = new JTextField();
-		textField_789.setForeground(Color.LIGHT_GRAY);
+		textField_789.setForeground(Color.BLACK);
 		textField_789.addMouseListener(this);
 		textField_789.setText("9");
 		textField_789.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6593,7 +6595,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_789);
 		
 		textField_611 = new JTextField();
-		textField_611.setForeground(Color.LIGHT_GRAY);
+		textField_611.setForeground(Color.BLACK);
 		textField_611.addMouseListener(this);
 		textField_611.setText("1");
 		textField_611.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6602,7 +6604,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_611);
 		
 		textField_612 = new JTextField();
-		textField_612.setForeground(Color.LIGHT_GRAY);
+		textField_612.setForeground(Color.BLACK);
 		textField_612.addMouseListener(this);
 		textField_612.setText("2");
 		textField_612.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6611,7 +6613,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_612);
 		
 		textField_613 = new JTextField();
-		textField_613.setForeground(Color.LIGHT_GRAY);
+		textField_613.setForeground(Color.BLACK);
 		textField_613.addMouseListener(this);
 		textField_613.setText("3");
 		textField_613.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6620,7 +6622,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_613);
 		
 		textField_621 = new JTextField();
-		textField_621.setForeground(Color.LIGHT_GRAY);
+		textField_621.setForeground(Color.BLACK);
 		textField_621.addMouseListener(this);
 		textField_621.setText("1");
 		textField_621.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6629,7 +6631,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_621);
 		
 		textField_622 = new JTextField();
-		textField_622.setForeground(Color.LIGHT_GRAY);
+		textField_622.setForeground(Color.BLACK);
 		textField_622.addMouseListener(this);
 		textField_622.setText("2");
 		textField_622.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6638,7 +6640,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_622);
 		
 		textField_623 = new JTextField();
-		textField_623.setForeground(Color.LIGHT_GRAY);
+		textField_623.setForeground(Color.BLACK);
 		textField_623.addMouseListener(this);
 		textField_623.setText("3");
 		textField_623.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6647,7 +6649,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_623);
 		
 		textField_631 = new JTextField();
-		textField_631.setForeground(Color.LIGHT_GRAY);
+		textField_631.setForeground(Color.BLACK);
 		textField_631.addMouseListener(this);
 		textField_631.setText("1");
 		textField_631.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6656,7 +6658,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_631);
 		
 		textField_632 = new JTextField();
-		textField_632.setForeground(Color.LIGHT_GRAY);
+		textField_632.setForeground(Color.BLACK);
 		textField_632.addMouseListener(this);
 		textField_632.setText("2");
 		textField_632.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6665,7 +6667,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_632);
 		
 		textField_633 = new JTextField();
-		textField_633.setForeground(Color.LIGHT_GRAY);
+		textField_633.setForeground(Color.BLACK);
 		textField_633.addMouseListener(this);
 		textField_633.setText("3");
 		textField_633.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6674,7 +6676,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_633);
 		
 		textField_614 = new JTextField();
-		textField_614.setForeground(Color.LIGHT_GRAY);
+		textField_614.setForeground(Color.BLACK);
 		textField_614.addMouseListener(this);
 		textField_614.setText("4");
 		textField_614.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6683,7 +6685,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_614);
 		
 		textField_615 = new JTextField();
-		textField_615.setForeground(Color.LIGHT_GRAY);
+		textField_615.setForeground(Color.BLACK);
 		textField_615.addMouseListener(this);
 		textField_615.setText("5");
 		textField_615.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6692,7 +6694,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_615);
 		
 		textField_616 = new JTextField();
-		textField_616.setForeground(Color.LIGHT_GRAY);
+		textField_616.setForeground(Color.BLACK);
 		textField_616.addMouseListener(this);
 		textField_616.setText("6");
 		textField_616.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6701,7 +6703,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_616);
 		
 		textField_624 = new JTextField();
-		textField_624.setForeground(Color.LIGHT_GRAY);
+		textField_624.setForeground(Color.BLACK);
 		textField_624.addMouseListener(this);
 		textField_624.setText("4");
 		textField_624.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6710,7 +6712,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_624);
 		
 		textField_625 = new JTextField();
-		textField_625.setForeground(Color.LIGHT_GRAY);
+		textField_625.setForeground(Color.BLACK);
 		textField_625.addMouseListener(this);
 		textField_625.setText("5");
 		textField_625.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6719,7 +6721,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_625);
 		
 		textField_626 = new JTextField();
-		textField_626.setForeground(Color.LIGHT_GRAY);
+		textField_626.setForeground(Color.BLACK);
 		textField_626.addMouseListener(this);
 		textField_626.setText("6");
 		textField_626.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6728,7 +6730,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_626);
 		
 		textField_634 = new JTextField();
-		textField_634.setForeground(Color.LIGHT_GRAY);
+		textField_634.setForeground(Color.BLACK);
 		textField_634.addMouseListener(this);
 		textField_634.setText("4");
 		textField_634.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6737,7 +6739,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_634);
 		
 		textField_635 = new JTextField();
-		textField_635.setForeground(Color.LIGHT_GRAY);
+		textField_635.setForeground(Color.BLACK);
 		textField_635.addMouseListener(this);
 		textField_635.setText("5");
 		textField_635.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6746,7 +6748,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_635);
 		
 		textField_636 = new JTextField();
-		textField_636.setForeground(Color.LIGHT_GRAY);
+		textField_636.setForeground(Color.BLACK);
 		textField_636.addMouseListener(this);
 		textField_636.setText("6");
 		textField_636.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6755,7 +6757,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_636);
 		
 		textField_617 = new JTextField();
-		textField_617.setForeground(Color.LIGHT_GRAY);
+		textField_617.setForeground(Color.BLACK);
 		textField_617.addMouseListener(this);
 		textField_617.setText("7");
 		textField_617.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6764,7 +6766,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_617);
 		
 		textField_618 = new JTextField();
-		textField_618.setForeground(Color.LIGHT_GRAY);
+		textField_618.setForeground(Color.BLACK);
 		textField_618.addMouseListener(this);
 		textField_618.setText("8");
 		textField_618.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6773,7 +6775,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_618);
 		
 		textField_619 = new JTextField();
-		textField_619.setForeground(Color.LIGHT_GRAY);
+		textField_619.setForeground(Color.BLACK);
 		textField_619.addMouseListener(this);
 		textField_619.setText("9");
 		textField_619.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6782,7 +6784,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_619);
 		
 		textField_627 = new JTextField();
-		textField_627.setForeground(Color.LIGHT_GRAY);
+		textField_627.setForeground(Color.BLACK);
 		textField_627.addMouseListener(this);
 		textField_627.setText("7");
 		textField_627.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6791,7 +6793,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_627);
 		
 		textField_628 = new JTextField();
-		textField_628.setForeground(Color.LIGHT_GRAY);
+		textField_628.setForeground(Color.BLACK);
 		textField_628.addMouseListener(this);
 		textField_628.setText("8");
 		textField_628.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6800,7 +6802,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_628);
 		
 		textField_629 = new JTextField();
-		textField_629.setForeground(Color.LIGHT_GRAY);
+		textField_629.setForeground(Color.BLACK);
 		textField_629.addMouseListener(this);
 		textField_629.setText("9");
 		textField_629.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6809,7 +6811,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_629);
 		
 		textField_637 = new JTextField();
-		textField_637.setForeground(Color.LIGHT_GRAY);
+		textField_637.setForeground(Color.BLACK);
 		textField_637.addMouseListener(this);
 		textField_637.setText("7");
 		textField_637.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6818,7 +6820,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_637);
 		
 		textField_639 = new JTextField();
-		textField_639.setForeground(Color.LIGHT_GRAY);
+		textField_639.setForeground(Color.BLACK);
 		textField_639.addMouseListener(this);
 		textField_639.setText("9");
 		textField_639.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6827,7 +6829,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_639);
 		
 		textField_638 = new JTextField();
-		textField_638.setForeground(Color.LIGHT_GRAY);
+		textField_638.setForeground(Color.BLACK);
 		textField_638.addMouseListener(this);
 		textField_638.setText("8");
 		textField_638.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6836,7 +6838,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_638);
 		
 		textField_701 = new JTextField();
-		textField_701.setForeground(Color.LIGHT_GRAY);
+		textField_701.setForeground(Color.BLACK);
 		textField_701.addMouseListener(this);
 		textField_701.setText("1");
 		textField_701.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6845,7 +6847,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_701);
 		
 		textField_702 = new JTextField();
-		textField_702.setForeground(Color.LIGHT_GRAY);
+		textField_702.setForeground(Color.BLACK);
 		textField_702.addMouseListener(this);
 		textField_702.setText("2");
 		textField_702.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6854,7 +6856,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_702);
 		
 		textField_703 = new JTextField();
-		textField_703.setForeground(Color.LIGHT_GRAY);
+		textField_703.setForeground(Color.BLACK);
 		textField_703.addMouseListener(this);
 		textField_703.setText("3");
 		textField_703.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6863,7 +6865,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_703);
 		
 		textField_711 = new JTextField();
-		textField_711.setForeground(Color.LIGHT_GRAY);
+		textField_711.setForeground(Color.BLACK);
 		textField_711.addMouseListener(this);
 		textField_711.setText("1");
 		textField_711.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6872,7 +6874,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_711);
 		
 		textField_712 = new JTextField();
-		textField_712.setForeground(Color.LIGHT_GRAY);
+		textField_712.setForeground(Color.BLACK);
 		textField_712.addMouseListener(this);
 		textField_712.setText("2");
 		textField_712.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6881,7 +6883,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_712);
 		
 		textField_713 = new JTextField();
-		textField_713.setForeground(Color.LIGHT_GRAY);
+		textField_713.setForeground(Color.BLACK);
 		textField_713.addMouseListener(this);
 		textField_713.setText("3");
 		textField_713.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6890,7 +6892,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_713);
 		
 		textField_721 = new JTextField();
-		textField_721.setForeground(Color.LIGHT_GRAY);
+		textField_721.setForeground(Color.BLACK);
 		textField_721.addMouseListener(this);
 		textField_721.setText("1");
 		textField_721.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6899,7 +6901,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_721);
 		
 		textField_722 = new JTextField();
-		textField_722.setForeground(Color.LIGHT_GRAY);
+		textField_722.setForeground(Color.BLACK);
 		textField_722.addMouseListener(this);
 		textField_722.setText("2");
 		textField_722.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6908,7 +6910,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_722);
 		
 		textField_723 = new JTextField();
-		textField_723.setForeground(Color.LIGHT_GRAY);
+		textField_723.setForeground(Color.BLACK);
 		textField_723.addMouseListener(this);
 		textField_723.setText("3");
 		textField_723.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6917,7 +6919,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_723);
 		
 		textField_704 = new JTextField();
-		textField_704.setForeground(Color.LIGHT_GRAY);
+		textField_704.setForeground(Color.BLACK);
 		textField_704.addMouseListener(this);
 		textField_704.setText("4");
 		textField_704.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6926,7 +6928,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_704);
 		
 		textField_705 = new JTextField();
-		textField_705.setForeground(Color.LIGHT_GRAY);
+		textField_705.setForeground(Color.BLACK);
 		textField_705.addMouseListener(this);
 		textField_705.setText("5");
 		textField_705.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6935,7 +6937,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_705);
 		
 		textField_706 = new JTextField();
-		textField_706.setForeground(Color.LIGHT_GRAY);
+		textField_706.setForeground(Color.BLACK);
 		textField_706.addMouseListener(this);
 		textField_706.setText("6");
 		textField_706.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6944,7 +6946,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_706);
 		
 		textField_714 = new JTextField();
-		textField_714.setForeground(Color.LIGHT_GRAY);
+		textField_714.setForeground(Color.BLACK);
 		textField_714.addMouseListener(this);
 		textField_714.setText("4");
 		textField_714.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6953,7 +6955,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_714);
 		
 		textField_715 = new JTextField();
-		textField_715.setForeground(Color.LIGHT_GRAY);
+		textField_715.setForeground(Color.BLACK);
 		textField_715.addMouseListener(this);
 		textField_715.setText("5");
 		textField_715.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6962,7 +6964,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_715);
 		
 		textField_716 = new JTextField();
-		textField_716.setForeground(Color.LIGHT_GRAY);
+		textField_716.setForeground(Color.BLACK);
 		textField_716.addMouseListener(this);
 		textField_716.setText("6");
 		textField_716.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6971,7 +6973,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_716);
 		
 		textField_724 = new JTextField();
-		textField_724.setForeground(Color.LIGHT_GRAY);
+		textField_724.setForeground(Color.BLACK);
 		textField_724.addMouseListener(this);
 		textField_724.setText("4");
 		textField_724.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6980,7 +6982,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_724);
 		
 		textField_725 = new JTextField();
-		textField_725.setForeground(Color.LIGHT_GRAY);
+		textField_725.setForeground(Color.BLACK);
 		textField_725.addMouseListener(this);
 		textField_725.setText("5");
 		textField_725.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6989,7 +6991,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_725);
 		
 		textField_726 = new JTextField();
-		textField_726.setForeground(Color.LIGHT_GRAY);
+		textField_726.setForeground(Color.BLACK);
 		textField_726.addMouseListener(this);
 		textField_726.setText("6");
 		textField_726.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -6998,7 +7000,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_726);
 		
 		textField_707 = new JTextField();
-		textField_707.setForeground(Color.LIGHT_GRAY);
+		textField_707.setForeground(Color.BLACK);
 		textField_707.addMouseListener(this);
 		textField_707.setText("7");
 		textField_707.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7007,7 +7009,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_707);
 		
 		textField_708 = new JTextField();
-		textField_708.setForeground(Color.LIGHT_GRAY);
+		textField_708.setForeground(Color.BLACK);
 		textField_708.addMouseListener(this);
 		textField_708.setText("8");
 		textField_708.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7016,7 +7018,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_708);
 		
 		textField_709 = new JTextField();
-		textField_709.setForeground(Color.LIGHT_GRAY);
+		textField_709.setForeground(Color.BLACK);
 		textField_709.addMouseListener(this);
 		textField_709.setText("9");
 		textField_709.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7025,7 +7027,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_709);
 		
 		textField_717 = new JTextField();
-		textField_717.setForeground(Color.LIGHT_GRAY);
+		textField_717.setForeground(Color.BLACK);
 		textField_717.addMouseListener(this);
 		textField_717.setText("7");
 		textField_717.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7034,7 +7036,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_717);
 		
 		textField_718 = new JTextField();
-		textField_718.setForeground(Color.LIGHT_GRAY);
+		textField_718.setForeground(Color.BLACK);
 		textField_718.addMouseListener(this);
 		textField_718.setText("8");
 		textField_718.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7043,7 +7045,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_718);
 		
 		textField_719 = new JTextField();
-		textField_719.setForeground(Color.LIGHT_GRAY);
+		textField_719.setForeground(Color.BLACK);
 		textField_719.addMouseListener(this);
 		textField_719.setText("9");
 		textField_719.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7052,7 +7054,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_719);
 		
 		textField_727 = new JTextField();
-		textField_727.setForeground(Color.LIGHT_GRAY);
+		textField_727.setForeground(Color.BLACK);
 		textField_727.addMouseListener(this);
 		textField_727.setText("7");
 		textField_727.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7061,7 +7063,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_727);
 		
 		textField_728 = new JTextField();
-		textField_728.setForeground(Color.LIGHT_GRAY);
+		textField_728.setForeground(Color.BLACK);
 		textField_728.addMouseListener(this);
 		textField_728.setText("8");
 		textField_728.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7070,7 +7072,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_728);
 		
 		textField_729 = new JTextField();
-		textField_729.setForeground(Color.LIGHT_GRAY);
+		textField_729.setForeground(Color.BLACK);
 		textField_729.addMouseListener(this);
 		textField_729.setText("9");
 		textField_729.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7079,7 +7081,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_729);
 		
 		textField_791 = new JTextField();
-		textField_791.setForeground(Color.LIGHT_GRAY);
+		textField_791.setForeground(Color.BLACK);
 		textField_791.addMouseListener(this);
 		textField_791.setText("1");
 		textField_791.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7088,7 +7090,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_791);
 		
 		textField_792 = new JTextField();
-		textField_792.setForeground(Color.LIGHT_GRAY);
+		textField_792.setForeground(Color.BLACK);
 		textField_792.addMouseListener(this);
 		textField_792.setText("2");
 		textField_792.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7097,7 +7099,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_792);
 		
 		textField_793 = new JTextField();
-		textField_793.setForeground(Color.LIGHT_GRAY);
+		textField_793.setForeground(Color.BLACK);
 		textField_793.addMouseListener(this);
 		textField_793.setText("3");
 		textField_793.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7106,7 +7108,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_793);
 		
 		textField_801 = new JTextField();
-		textField_801.setForeground(Color.LIGHT_GRAY);
+		textField_801.setForeground(Color.BLACK);
 		textField_801.addMouseListener(this);
 		textField_801.setText("1");
 		textField_801.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7115,7 +7117,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_801);
 		
 		textField_802 = new JTextField();
-		textField_802.setForeground(Color.LIGHT_GRAY);
+		textField_802.setForeground(Color.BLACK);
 		textField_802.addMouseListener(this);
 		textField_802.setText("2");
 		textField_802.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7124,7 +7126,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_802);
 		
 		textField_803 = new JTextField();
-		textField_803.setForeground(Color.LIGHT_GRAY);
+		textField_803.setForeground(Color.BLACK);
 		textField_803.addMouseListener(this);
 		textField_803.setText("3");
 		textField_803.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7133,7 +7135,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_803);
 		
 		textField_811 = new JTextField();
-		textField_811.setForeground(Color.LIGHT_GRAY);
+		textField_811.setForeground(Color.BLACK);
 		textField_811.addMouseListener(this);
 		textField_811.setText("1");
 		textField_811.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7142,7 +7144,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_811);
 		
 		textField_812 = new JTextField();
-		textField_812.setForeground(Color.LIGHT_GRAY);
+		textField_812.setForeground(Color.BLACK);
 		textField_812.addMouseListener(this);
 		textField_812.setText("2");
 		textField_812.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7151,7 +7153,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_812);
 		
 		textField_813 = new JTextField();
-		textField_813.setForeground(Color.LIGHT_GRAY);
+		textField_813.setForeground(Color.BLACK);
 		textField_813.addMouseListener(this);
 		textField_813.setText("3");
 		textField_813.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7160,7 +7162,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_813);
 		
 		textField_794 = new JTextField();
-		textField_794.setForeground(Color.LIGHT_GRAY);
+		textField_794.setForeground(Color.BLACK);
 		textField_794.addMouseListener(this);
 		textField_794.setText("4");
 		textField_794.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7169,7 +7171,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_794);
 		
 		textField_795 = new JTextField();
-		textField_795.setForeground(Color.LIGHT_GRAY);
+		textField_795.setForeground(Color.BLACK);
 		textField_795.addMouseListener(this);
 		textField_795.setText("5");
 		textField_795.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7178,7 +7180,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_795);
 		
 		textField_796 = new JTextField();
-		textField_796.setForeground(Color.LIGHT_GRAY);
+		textField_796.setForeground(Color.BLACK);
 		textField_796.addMouseListener(this);
 		textField_796.setText("6");
 		textField_796.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7187,7 +7189,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_796);
 		
 		textField_804 = new JTextField();
-		textField_804.setForeground(Color.LIGHT_GRAY);
+		textField_804.setForeground(Color.BLACK);
 		textField_804.addMouseListener(this);
 		textField_804.setText("4");
 		textField_804.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7196,7 +7198,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_804);
 		
 		textField_805 = new JTextField();
-		textField_805.setForeground(Color.LIGHT_GRAY);
+		textField_805.setForeground(Color.BLACK);
 		textField_805.addMouseListener(this);
 		textField_805.setText("5");
 		textField_805.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7205,7 +7207,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_805);
 		
 		textField_806 = new JTextField();
-		textField_806.setForeground(Color.LIGHT_GRAY);
+		textField_806.setForeground(Color.BLACK);
 		textField_806.addMouseListener(this);
 		textField_806.setText("6");
 		textField_806.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7214,7 +7216,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_806);
 		
 		textField_814 = new JTextField();
-		textField_814.setForeground(Color.LIGHT_GRAY);
+		textField_814.setForeground(Color.BLACK);
 		textField_814.addMouseListener(this);
 		textField_814.setText("4");
 		textField_814.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7223,7 +7225,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_814);
 		
 		textField_815 = new JTextField();
-		textField_815.setForeground(Color.LIGHT_GRAY);
+		textField_815.setForeground(Color.BLACK);
 		textField_815.addMouseListener(this);
 		textField_815.setText("5");
 		textField_815.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7232,7 +7234,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_815);
 		
 		textField_816 = new JTextField();
-		textField_816.setForeground(Color.LIGHT_GRAY);
+		textField_816.setForeground(Color.BLACK);
 		textField_816.addMouseListener(this);
 		textField_816.setText("6");
 		textField_816.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7241,7 +7243,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_816);
 		
 		textField_797 = new JTextField();
-		textField_797.setForeground(Color.LIGHT_GRAY);
+		textField_797.setForeground(Color.BLACK);
 		textField_797.addMouseListener(this);
 		textField_797.setText("7");
 		textField_797.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7250,7 +7252,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_797);
 		
 		textField_798 = new JTextField();
-		textField_798.setForeground(Color.LIGHT_GRAY);
+		textField_798.setForeground(Color.BLACK);
 		textField_798.addMouseListener(this);
 		textField_798.setText("8");
 		textField_798.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7259,7 +7261,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_798);
 		
 		textField_799 = new JTextField();
-		textField_799.setForeground(Color.LIGHT_GRAY);
+		textField_799.setForeground(Color.BLACK);
 		textField_799.addMouseListener(this);
 		textField_799.setText("9");
 		textField_799.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7268,7 +7270,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_799);
 		
 		textField_807 = new JTextField();
-		textField_807.setForeground(Color.LIGHT_GRAY);
+		textField_807.setForeground(Color.BLACK);
 		textField_807.addMouseListener(this);
 		textField_807.setText("7");
 		textField_807.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7277,7 +7279,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_807);
 		
 		textField_808 = new JTextField();
-		textField_808.setForeground(Color.LIGHT_GRAY);
+		textField_808.setForeground(Color.BLACK);
 		textField_808.addMouseListener(this);
 		textField_808.setText("8");
 		textField_808.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7286,7 +7288,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_808);
 		
 		textField_809 = new JTextField();
-		textField_809.setForeground(Color.LIGHT_GRAY);
+		textField_809.setForeground(Color.BLACK);
 		textField_809.addMouseListener(this);
 		textField_809.setText("9");
 		textField_809.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7295,7 +7297,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_809);
 		
 		textField_817 = new JTextField();
-		textField_817.setForeground(Color.LIGHT_GRAY);
+		textField_817.setForeground(Color.BLACK);
 		textField_817.addMouseListener(this);
 		textField_817.setText("7");
 		textField_817.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7304,7 +7306,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_817);
 		
 		textField_818 = new JTextField();
-		textField_818.setForeground(Color.LIGHT_GRAY);
+		textField_818.setForeground(Color.BLACK);
 		textField_818.addMouseListener(this);
 		textField_818.setText("8");
 		textField_818.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7313,7 +7315,7 @@ public class Grille  extends JFrame implements MouseListener {
 		add(textField_818);
 		
 		textField_819 = new JTextField();
-		textField_819.setForeground(Color.LIGHT_GRAY);
+		textField_819.setForeground(Color.BLACK);
 		textField_819.addMouseListener(this);
 		textField_819.setHorizontalAlignment(SwingConstants.CENTER);
 		textField_819.setText("9");
@@ -7324,7 +7326,7 @@ public class Grille  extends JFrame implements MouseListener {
 		
 		
 		textField = new JTextField();
-		textField.setBounds(590, 31, 272, 264);
+		textField.setBounds(450, 31, 272, 264);
 		add(textField);
 		textField.setColumns(10);
 	}
@@ -7347,12 +7349,7 @@ public class Grille  extends JFrame implements MouseListener {
 		if(JT.getForeground()==Color.LIGHT_GRAY){
 			JT.setForeground(Color.BLACK);
 		}else{
-			int h = getHeight();
-			if(h==20){
 				JT.setForeground(Color.LIGHT_GRAY);
-			}else{
-				changementTaille(JT);
-			}
 		}
 	}
 	
