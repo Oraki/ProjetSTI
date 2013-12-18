@@ -63,7 +63,7 @@ public class ExpertSudoku {
     //TODO
     private void trouverSolution() throws JessException {
         definirTemplate();
-
+        
     }
 
     /**
@@ -80,16 +80,17 @@ public class ExpertSudoku {
             return -2;
         } else {
             try {
-                puzzle[c.getLigne()][c.getColonne()] = c.getNumero();
-                initialiserList();
-                trouverCoups();
-
                 int strat = -1;
                 for (int i = 0; i < coupPossible.length; ++i) {
                     if (coupPossible[i].contains(c)) {
                         strat = i;
                     }
                 }
+                
+                puzzle[c.getLigne()][c.getColonne()] = c.getNumero();
+                initialiserList();
+                trouverCoups();
+ 
                 return strat;
             } catch (JessException e) {
                 e.printStackTrace();
@@ -113,16 +114,17 @@ public class ExpertSudoku {
             return -2;
         } else {
             try {
-                possibilites[c.getLigne()][c.getColonne()][c.getNumero()] = false;
-                initialiserList();
-                trouverCoups();
-
                 int strat = -1;
                 for (int i = 0; i < retraitPossible.length; ++i) {
                     if (retraitPossible[i].contains(c)) {
                         strat = i;
                     }
                 }
+                
+                possibilites[c.getLigne()][c.getColonne()][c.getNumero()] = false;
+                initialiserList();
+                trouverCoups();
+                
                 return strat;
             } catch (JessException e) {
                 e.printStackTrace();
