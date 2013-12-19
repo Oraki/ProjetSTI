@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -21,9 +22,12 @@ public class Sudoku
 	
 	ExpertSudoku expert;
 	
-	List listeCoupStrat1 = new LinkedList(); //liste des coup possibles en applicant la stratégie 1
-	List listeCoupStrat2 = new LinkedList(); //liste des coup possibles en applicant la stratégie 2
-	List listeCoupStrat3 = new LinkedList(); //liste des coup possibles en applicant la stratégie 3
+	ArrayList<Coup> listeCoupStrat1 = new ArrayList<Coup>(); //liste des coup possibles en applicant la stratégie 1
+	ArrayList<Coup> listeCoupStrat2 = new ArrayList<Coup>(); //liste des coup possibles en applicant la stratégie 2
+	ArrayList<Coup> listeCoupStrat3 = new ArrayList<Coup>(); //liste des coup possibles en applicant la stratégie 3
+	
+	ArrayList<Coup> listErreurCoup = new ArrayList<Coup>();
+	ArrayList<Coup> listErreurHypo = new ArrayList<Coup>();
 	
 	Interface inter;
 	
@@ -78,9 +82,9 @@ public class Sudoku
 		listeCoupStrat2.clear();
 		listeCoupStrat3.clear();
 		
-		listeCoupStrat1 = expert.getCoupPossible(1);
-		listeCoupStrat2 = expert.getCoupPossible(2);
-		listeCoupStrat3 = expert.getCoupPossible(3);
+		listeCoupStrat1 = (ArrayList<Coup>)expert.getCoupPossible(1);
+		listeCoupStrat2 = (ArrayList<Coup>)expert.getCoupPossible(2);
+		listeCoupStrat3 = (ArrayList<Coup>)expert.getCoupPossible(3);
 	}
 	
 	public void AjoutHypotheseMat(int ligne, int colonne, int numero)//Ajout d'une hypothèse par l'utilisateur
@@ -167,5 +171,37 @@ public class Sudoku
 		}
 		
 		RetirerHypotheseMat(ligne, colonne, numero);
+	}
+	
+	public void RetirerCoup(int ligne, int colonne, int region, int  numero)
+	{
+		Coup coup = new Coup(ligne, colonne, numero);
+		
+		listErreurCoup.remove(coup);
+		
+		RetraitChiffreMat(ligne, colonne);
+	}
+	
+	public void RemettreHypothèse(int ligne, int colonne, int region, int  numero)
+	{
+		Coup coup = new Coup(ligne, colonne, numero);
+		listErreurHypo.remove(coup);
+		AjoutHypotheseMat(ligne, colonne, numero);
+	}
+	
+	public int GetNbErreuCoup()
+	{
+		return listErreurCoup.size();
+	}
+	
+	public int GetNbErreuHypo()
+	{
+		return listErreurHypo.size();
+	}
+	
+	public void ClearErreurs()
+	{
+		listErreurCoup.clear();
+		listErreurHypo.clear();
 	}
 }
