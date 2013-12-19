@@ -8,6 +8,9 @@ import java.awt.Component;
 import java.awt.Color;
 import java.awt.event.*;
 import java.awt.EventQueue;
+import java.awt.Graphics ;
+import java.applet.Applet;
+import sudoku.Trait;
 
 public class Grille  extends JFrame implements MouseListener {
 	
@@ -756,7 +759,7 @@ public class Grille  extends JFrame implements MouseListener {
 		
 		
 		textField_11 = new JTextField();
-		textField_11.setForeground(Color.BLACK);
+		textField_11.setForeground(Color.RED);
 		textField_11.addMouseListener(this);
 		textField_11.setText("1");
 		textField_11.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -7346,10 +7349,12 @@ public class Grille  extends JFrame implements MouseListener {
 	public void mouseExited (MouseEvent ev){}
 	
 	public void changementCouleur(JTextField JT){
-		if(JT.getForeground()==Color.LIGHT_GRAY){
-			JT.setForeground(Color.BLACK);
-		}else{
-				JT.setForeground(Color.LIGHT_GRAY);
+		if(JT.getForeground()!=Color.RED){
+			if(JT.getForeground()==Color.LIGHT_GRAY){
+				JT.setForeground(Color.BLACK);
+			}else{
+					JT.setForeground(Color.LIGHT_GRAY);
+			}
 		}
 	}
 	
@@ -7365,139 +7370,142 @@ public class Grille  extends JFrame implements MouseListener {
 		w = JT.getWidth();
 		te=JT.getText();		
 		int i = Integer.parseInt(te);
-		if(i==1){
-			if(h==20){
-				JT.setBounds(x+2, y+2, w+21, h+26);
-				JT.setOpaque(true);
-				JT.setForeground(Color.BLACK);
-				JT.setFont(new Font("Times New Roman", Font.BOLD, 20));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
-			}else{
-				JT.setBounds(x-2, y-2, w-21, h-26);
-				JT.setOpaque(false);
-				JT.setForeground(Color.LIGHT_GRAY);
-				JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
+		if(JT.getForeground()!=Color.RED){
+
+			if(i==1){
+				if(h==20){
+					JT.setBounds(x+2, y+2, w+21, h+26);
+					JT.setOpaque(true);
+					JT.setForeground(Color.BLACK);
+					JT.setFont(new Font("Times New Roman", Font.BOLD, 20));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}else{
+					JT.setBounds(x-2, y-2, w-21, h-26);
+					JT.setOpaque(false);
+					JT.setForeground(Color.LIGHT_GRAY);
+					JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}
 			}
-		}
-		if(i==2){
-			if(h==20){
-				JT.setBounds(x-11, y+2, w+21, h+26);
-				JT.setOpaque(true);
-				JT.setForeground(Color.BLACK);
-				JT.setFont(new Font("Times New Roman", Font.BOLD,20));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
-			}else{
-				JT.setBounds(x+11, y-2, w-21, h-26);
-				JT.setOpaque(false);
-				JT.setForeground(Color.LIGHT_GRAY);
-				JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
+			if(i==2){
+				if(h==20){
+					JT.setBounds(x-11, y+2, w+21, h+26);
+					JT.setOpaque(true);
+					JT.setForeground(Color.BLACK);
+					JT.setFont(new Font("Times New Roman", Font.BOLD,20));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}else{
+					JT.setBounds(x+11, y-2, w-21, h-26);
+					JT.setOpaque(false);
+					JT.setForeground(Color.LIGHT_GRAY);
+					JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}
 			}
-		}
-		if(i==3){
-			if(h==20){
-				JT.setBounds(x-24, y+2, w+21, h+26);
-				JT.setOpaque(true);
-				JT.setForeground(Color.BLACK);
-				JT.setFont(new Font("Times New Roman", Font.BOLD,20));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
-			}else{
-				JT.setBounds(x+24, y-2, w-21, h-26);
-				JT.setOpaque(false);
-				JT.setForeground(Color.LIGHT_GRAY);
-				JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
+			if(i==3){
+				if(h==20){
+					JT.setBounds(x-24, y+2, w+21, h+26);
+					JT.setOpaque(true);
+					JT.setForeground(Color.BLACK);
+					JT.setFont(new Font("Times New Roman", Font.BOLD,20));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}else{
+					JT.setBounds(x+24, y-2, w-21, h-26);
+					JT.setOpaque(false);
+					JT.setForeground(Color.LIGHT_GRAY);
+					JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}
 			}
-		}
-		if(i==4){
-			if(h==20){
-				JT.setBounds(x+2, y-13, w+21, h+26);
-				JT.setOpaque(true);
-				JT.setForeground(Color.BLACK);
-				JT.setFont(new Font("Times New Roman", Font.BOLD,20));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
-			}else{
-				JT.setBounds(x-2, y+13, w-21, h-26);
-				JT.setOpaque(false);
-				JT.setForeground(Color.LIGHT_GRAY);
-				JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
+			if(i==4){
+				if(h==20){
+					JT.setBounds(x+2, y-13, w+21, h+26);
+					JT.setOpaque(true);
+					JT.setForeground(Color.BLACK);
+					JT.setFont(new Font("Times New Roman", Font.BOLD,20));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}else{
+					JT.setBounds(x-2, y+13, w-21, h-26);
+					JT.setOpaque(false);
+					JT.setForeground(Color.LIGHT_GRAY);
+					JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}
 			}
-		}
-		if(i==5){
-			if(h==20){
-				JT.setBounds(x-11, y-13, w+21, h+26);
-				JT.setOpaque(true);
-				JT.setForeground(Color.BLACK);
-				JT.setFont(new Font("Times New Roman", Font.BOLD,20));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
-			}else{
-				JT.setBounds(x+11, y+13, w-21, h-26);
-				JT.setOpaque(false);
-				JT.setForeground(Color.LIGHT_GRAY);
-				JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
+			if(i==5){
+				if(h==20){
+					JT.setBounds(x-11, y-13, w+21, h+26);
+					JT.setOpaque(true);
+					JT.setForeground(Color.BLACK);
+					JT.setFont(new Font("Times New Roman", Font.BOLD,20));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}else{
+					JT.setBounds(x+11, y+13, w-21, h-26);
+					JT.setOpaque(false);
+					JT.setForeground(Color.LIGHT_GRAY);
+					JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}
 			}
-		}
-		if(i==6){
-			if(h==20){
-				JT.setBounds(x-24, y-13, w+21, h+26);
-				JT.setOpaque(true);
-				JT.setForeground(Color.BLACK);
-				JT.setFont(new Font("Times New Roman", Font.BOLD,20));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
-			}else{
-				JT.setBounds(x+24, y+13, w-21, h-26);
-				JT.setOpaque(false);
-				JT.setForeground(Color.LIGHT_GRAY);
-				JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
+			if(i==6){
+				if(h==20){
+					JT.setBounds(x-24, y-13, w+21, h+26);
+					JT.setOpaque(true);
+					JT.setForeground(Color.BLACK);
+					JT.setFont(new Font("Times New Roman", Font.BOLD,20));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}else{
+					JT.setBounds(x+24, y+13, w-21, h-26);
+					JT.setOpaque(false);
+					JT.setForeground(Color.LIGHT_GRAY);
+					JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}
 			}
-		}
-		if(i==7){
-			if(h==20){
-				JT.setBounds(x+2, y-28, w+21, h+26);
-				JT.setOpaque(true);
-				JT.setForeground(Color.BLACK);
-				JT.setFont(new Font("Times New Roman", Font.BOLD,20));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
-			}else{
-				JT.setBounds(x-2, y+28, w-21, h-26);
-				JT.setOpaque(false);
-				JT.setForeground(Color.LIGHT_GRAY);
-				JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
+			if(i==7){
+				if(h==20){
+					JT.setBounds(x+2, y-28, w+21, h+26);
+					JT.setOpaque(true);
+					JT.setForeground(Color.BLACK);
+					JT.setFont(new Font("Times New Roman", Font.BOLD,20));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}else{
+					JT.setBounds(x-2, y+28, w-21, h-26);
+					JT.setOpaque(false);
+					JT.setForeground(Color.LIGHT_GRAY);
+					JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}
 			}
-		}
-		if(i==8){
-			if(h==20){
-				JT.setBounds(x-11, y-28, w+21, h+26);
-				JT.setOpaque(true);
-				JT.setForeground(Color.BLACK);
-				JT.setFont(new Font("Times New Roman", Font.BOLD,20));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
-			}else{
-				JT.setBounds(x+11, y+28, w-21, h-26);
-				JT.setOpaque(false);
-				JT.setForeground(Color.LIGHT_GRAY);
-				JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
+			if(i==8){
+				if(h==20){
+					JT.setBounds(x-11, y-28, w+21, h+26);
+					JT.setOpaque(true);
+					JT.setForeground(Color.BLACK);
+					JT.setFont(new Font("Times New Roman", Font.BOLD,20));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}else{
+					JT.setBounds(x+11, y+28, w-21, h-26);
+					JT.setOpaque(false);
+					JT.setForeground(Color.LIGHT_GRAY);
+					JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}
 			}
-		}
-		if(i==9){
-			if(h==20){
-				JT.setBounds(x-24, y-28, w+21, h+26);
-				JT.setOpaque(true);
-				JT.setForeground(Color.BLACK);
-				JT.setFont(new Font("Times New Roman", Font.BOLD,20));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
-			}else{
-				JT.setBounds(x+24, y+28, w-21, h-26);
-				JT.setOpaque(false);
-				JT.setForeground(Color.LIGHT_GRAY);
-				JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
-				JT.setHorizontalAlignment(SwingConstants.CENTER);
+			if(i==9){
+				if(h==20){
+					JT.setBounds(x-24, y-28, w+21, h+26);
+					JT.setOpaque(true);
+					JT.setForeground(Color.BLACK);
+					JT.setFont(new Font("Times New Roman", Font.BOLD,20));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}else{
+					JT.setBounds(x+24, y+28, w-21, h-26);
+					JT.setOpaque(false);
+					JT.setForeground(Color.LIGHT_GRAY);
+					JT.setFont(new Font("Times New Roman", Font.PLAIN, 7));
+					JT.setHorizontalAlignment(SwingConstants.CENTER);
+				}
 			}
 		}
 	}
