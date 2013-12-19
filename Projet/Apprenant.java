@@ -20,7 +20,6 @@ public class Apprenant
 	
 	int numRandom;
 	int nombreDeCoupJoue;
-	int nombreDHypoCorrectesFaites;
 	
 	public Apprenant()
 	{
@@ -46,7 +45,6 @@ public class Apprenant
 		
 		numRandom = 0;
 		nombreDeCoupJoue = 0;
-		nombreDHypoCorrectesFaites = 0;
 	}
 	
 	public void AddSuccess(int knowledge)
