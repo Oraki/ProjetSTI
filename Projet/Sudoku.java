@@ -14,22 +14,22 @@ public class Sudoku
 	
 	
 	Apprenant apprenant = new Apprenant();
-	//Tuteur tuteur = new Tuteur();
+	ExpertSudoku expert;
+	Tuteur tuteur = new Tuteur(this);
 	
 	Case matriceSudoku[][] = new Case[9][9];
 	Case matriceAffiche[][] = new Case[9][9];
 	Case matrice[][] = new Case[9][9];
 	
-	ExpertSudoku expert;
 	
-	ArrayList<Coup> listeCoupStrat1 = new ArrayList<Coup>(); //liste des coup possibles en applicant la strat�gie 1
-	ArrayList<Coup> listeCoupStrat2 = new ArrayList<Coup>(); //liste des coup possibles en applicant la strat�gie 2
-	ArrayList<Coup> listeCoupStrat3 = new ArrayList<Coup>(); //liste des coup possibles en applicant la strat�gie 3
+	
+	ArrayList<Coup> listeCoupStrat1 = new ArrayList<Coup>(); //liste des coup possibles en applicant la strat���gie 1
+	ArrayList<Coup> listeCoupStrat2 = new ArrayList<Coup>(); //liste des coup possibles en applicant la strat���gie 2
+	ArrayList<Coup> listeCoupStrat3 = new ArrayList<Coup>(); //liste des coup possibles en applicant la strat���gie 3
 	
 	ArrayList<Coup> listErreurCoup = new ArrayList<Coup>();
 	ArrayList<Coup> listErreurHypo = new ArrayList<Coup>();
-	
-	Interface inter;
+
 	
 	public Sudoku()
 	{
@@ -43,8 +43,6 @@ public class Sudoku
 		}	
 		
 		//expert = new ExpertSudoku( ConvertToTabInt(matriceSudoku));
-		inter = new Interface();
-		inter.show();
 	}
 	
 	private int[][] ConvertToTabInt(Case[][] tab)
@@ -87,12 +85,12 @@ public class Sudoku
 		listeCoupStrat3 = (ArrayList<Coup>)expert.getCoupPossible(3);
 	}
 	
-	public void AjoutHypotheseMat(int ligne, int colonne, int numero)//Ajout d'une hypoth�se par l'utilisateur
+	public void AjoutHypotheseMat(int ligne, int colonne, int numero)//Ajout d'une hypoth���se par l'utilisateur
 	{
 		matriceSudoku[ligne][colonne].tabHypo[numero - 1] = true;
 	}
 	
-	public void RetirerHypotheseMat(int ligne, int colonne, int numero)//Retrait d'une hypoth�se par l'utilisateur
+	public void RetirerHypotheseMat(int ligne, int colonne, int numero)//Retrait d'une hypoth���se par l'utilisateur
 	{
 		matriceSudoku[ligne][colonne].tabHypo[numero - 1] = false;
 	}
@@ -109,7 +107,7 @@ public class Sudoku
 	
 	public void JouerCoup(int ligne, int colonne, int  numero)
 	{
-		if(matriceSudoku[ligne][colonne].CaseRemplie())//on v�rifie si la case n'est pas d�j� remplie
+		if(matriceSudoku[ligne][colonne].CaseRemplie())//on v���rifie si la case n'est pas d���j��� remplie
 		{
 			Coup coup = new Coup(ligne, colonne, numero);
 			int CoupPossible = expert.jouerValeur(coup); 
@@ -122,7 +120,7 @@ public class Sudoku
 				listErreurCoup.add(coup);
 				break;
 				
-			case -1://r�ponse bonne mais impossible d'identifier les strat�gies
+			case -1://réponse bonne mais impossible d'identifier les stratégies
 				apprenant.AddRandom();
 				break;
 			
@@ -156,7 +154,7 @@ public class Sudoku
 			listErreurHypo.add(coup);
 			break;
 			
-		case -1://r�ponse bonne mais impossible d'identifier les strat�gies
+		case -1://r���ponse bonne mais impossible d'identifier les strat���gies
 			apprenant.AddRandom();
 			break;
 		

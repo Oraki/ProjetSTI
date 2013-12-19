@@ -1,6 +1,9 @@
 
 public class Tuteur 
 {
+	/****
+	 * éééééé
+	 */
 	private Apprenant _apprenant;
 	private Grille _grille;
 	private ExpertSudoku _expert;
@@ -59,7 +62,7 @@ public class Tuteur
 	private static String message_Succes_2 = "Tu as encore une fois bien applique "+_succesStrat+" ! Bien joue !";
 	private static String message_Succes_3 = "Felicitation ! Je crois que tu as compris le principe de "+_succesStrat+". Plus la peine de te feliciter a nouveau !";
 	
-	private static String message_Hasard = "Aucune strategie ne te permet de faire cela. J'estime que tu joues au hasard !";
+	private static String message_Hasard_1 = "C'est la bonne valeur";
 	
 	public Tuteur(Sudoku zeSudoku)
 	{
