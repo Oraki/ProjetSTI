@@ -39,7 +39,7 @@ public class Apprenant
 		knowledge_fail_ponderation[1] = 15;
 		
 		//A calibrer
-		knowledge_lvl[0] = 10;
+		knowledge_lvl[0] = 0;
 		knowledge_lvl[1] = 30;
 		knowledge_lvl[2] = 60;
 		knowledge_lvl[3] = 100;
