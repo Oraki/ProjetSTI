@@ -9,7 +9,7 @@ public class Coup {
     public Coup(int ligne, int colonne, int numero) {
         this.ligne = ligne;
         this.colonne = colonne;
-        this.region = ligne / 3 + (colonne / 3) * 3;
+        this.region = colonne / 3 + (ligne / 3) * 3;
         this.numero = numero;
     }
 

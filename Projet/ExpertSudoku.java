@@ -60,10 +60,67 @@ public class ExpertSudoku {
         }
     }
 
-    //TODO
     private void trouverSolution() throws JessException {
+        System.out.println("*** Recherche de la solution ***");
+        moteur.reset();
         definirTemplate();
-        
+        moteur.store("EXPERT", this);
+
+        String rule = "(defrule sulution\n";
+        for (int i = 0; i < 9; ++i) {
+            for (int j = 0; j < 9; ++j) {
+                rule += "(possibilite (ligne " + i + ") (col " + j + ") (zone "
+                        + (j / 3 + (i / 3) * 3) + ") (is ?v" + i + j + "&:(neq ?v"
+                        + i + j;
+                for (int k = 0; k < i; ++k) {
+                    rule += " ?v" + k + j;
+                }
+                for (int k = 0; k < j; ++k) {
+                    rule += " ?v" + i + k;
+                }
+                for (int k = 1; k <= i % 3; ++k) {
+                    for (int l = 1; l <= j % 3; ++l) {
+                        rule += " ?v" + (i - k) + (j - l);
+                    }
+                }
+                rule += ")))\n";
+            }
+        }
+        rule += "=>\n";
+        rule += "(call (fetch EXPERT) solutionTrouve ";
+        for (int i = 0; i < 9; ++i) {
+            rule += "(create$";
+            for (int j = 0; j < 9; ++j) {
+                rule += " ?v" + i + j;
+            }
+            rule += ")";
+        }
+        rule += "))";
+        moteur.executeCommand(rule);
+
+        for (int i = 0; i < puzzle.length; ++i) {
+            for (int j = 0; j < puzzle[i].length; ++j) {
+                if (puzzle[i][j] != 0) {
+                    Fact f = new Fact(dtPoss);
+                    f.setSlotValue("ligne", new Value(i, RU.INTEGER));
+                    f.setSlotValue("col", new Value(j, RU.INTEGER));
+                    f.setSlotValue("zone", new Value(j / 3 + (i / 3) * 3, RU.INTEGER));
+                    f.setSlotValue("is", new Value(puzzle[i][j], RU.INTEGER));
+                    moteur.assertFact(f);
+                } else {
+                    for (int k = 1; k <= 9; ++k) {
+                        Fact f = new Fact(dtPoss);
+                        f.setSlotValue("ligne", new Value(i, RU.INTEGER));
+                        f.setSlotValue("col", new Value(j, RU.INTEGER));
+                        f.setSlotValue("zone", new Value(j / 3 + (i / 3) * 3, RU.INTEGER));
+                        f.setSlotValue("is", new Value(k, RU.INTEGER));
+                        moteur.assertFact(f);
+                    }
+                }
+            }
+        }
+        moteur.run();
+        System.out.println("*** Fin de la recherche ***");
     }
 
     /**
@@ -86,11 +143,11 @@ public class ExpertSudoku {
                         strat = i;
                     }
                 }
-                
+
                 puzzle[c.getLigne()][c.getColonne()] = c.getNumero();
                 initialiserList();
                 trouverCoups();
- 
+
                 return strat;
             } catch (JessException e) {
                 e.printStackTrace();
@@ -120,11 +177,11 @@ public class ExpertSudoku {
                         strat = i;
                     }
                 }
-                
-                possibilites[c.getLigne()][c.getColonne()][c.getNumero()] = false;
+
+                possibilites[c.getLigne()][c.getColonne()][c.getNumero() - 1] = false;
                 initialiserList();
                 trouverCoups();
-                
+
                 return strat;
             } catch (JessException e) {
                 e.printStackTrace();
@@ -148,7 +205,7 @@ public class ExpertSudoku {
      * @param c le cout à remettre
      */
     public void remettrePossibilite(Coup c) {
-        possibilites[c.getLigne()][c.getColonne()][c.getNumero()] = true;
+        possibilites[c.getLigne()][c.getColonne()][c.getNumero() - 1] = true;
     }
 
     /**
@@ -202,17 +259,17 @@ public class ExpertSudoku {
                     Fact f = new Fact(dtValeur);
                     f.setSlotValue("ligne", new Value(i, RU.INTEGER));
                     f.setSlotValue("col", new Value(j, RU.INTEGER));
-                    f.setSlotValue("zone", new Value(i / 3 + (j / 3) * 3, RU.INTEGER));
+                    f.setSlotValue("zone", new Value(j / 3 + (i / 3) * 3, RU.INTEGER));
                     f.setSlotValue("is", new Value(puzzle[i][j], RU.INTEGER));
                     moteur.assertFact(f);
                 } else {
-                    for (int k = 1; k <= 9; ++k) {
+                    for (int k = 0; k < 9; ++k) {
                         if (possibilites[i][j][k]) {
                             Fact f = new Fact(dtPoss);
                             f.setSlotValue("ligne", new Value(i, RU.INTEGER));
                             f.setSlotValue("col", new Value(j, RU.INTEGER));
-                            f.setSlotValue("zone", new Value(i / 3 + (j / 3) * 3, RU.INTEGER));
-                            f.setSlotValue("is", new Value(k, RU.INTEGER));
+                            f.setSlotValue("zone", new Value(j / 3 + (i / 3) * 3, RU.INTEGER));
+                            f.setSlotValue("is", new Value(k + 1, RU.INTEGER));
                             moteur.assertFact(f);
                         }
                     }
@@ -230,7 +287,11 @@ public class ExpertSudoku {
      * @param strat
      */
     public void ajouterCoup(int ligne, int col, int val, int strat) {
-        coupPossible[strat].add(new Coup(ligne, col, val));
+        assert (solution[ligne][col] == val);
+        Coup c = new Coup(ligne, col, val);
+        if (!coupPossible[strat].contains(c)) {
+            coupPossible[strat].add(c);
+        }
     }
 
     /**
@@ -242,14 +303,44 @@ public class ExpertSudoku {
      * @param strat
      */
     public void retirerPossibilite(int ligne, int col, int val, int strat) {
-        retraitPossible[strat].add(new Coup(ligne, col, val));
+        //assert (solution[ligne][col] != val);
+        Coup c = new Coup(ligne, col, val);
+        if (!retraitPossible[strat].contains(c)) {
+            retraitPossible[strat].add(c);
+        }
+    }
+
+    /**
+     * Fonction pour communiquer avec Jess. Ne pas utiiliser.
+     *
+     * @param l0
+     * @param l1
+     * @param l2
+     * @param l3
+     * @param l4
+     * @param l5
+     * @param l6
+     * @param l7
+     * @param l8
+     */
+    public void solutionTrouve(int[] l0, int[] l1, int[] l2, int[] l3,
+            int[] l4, int[] l5, int[] l6, int[] l7, int[] l8) {
+        solution[0] = l0;
+        solution[1] = l1;
+        solution[2] = l2;
+        solution[3] = l3;
+        solution[4] = l4;
+        solution[5] = l5;
+        solution[6] = l6;
+        solution[7] = l7;
+        solution[8] = l8;
     }
 
     private void trouverCoups() throws JessException {
-        moteur.reset();
-        definirTemplate();
-
         //Stratégie #0 (Retrait hypothese)
+        moteur.clear();
+        definirTemplate();
+        ajouterPuzzleDansJess();
         moteur.executeCommand("(defrule eliminerPossi "
                 + "?f <-(possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
                 + "(valeur (ligne ?x2) (col ?y2) (zone ?z2) (is ?v))"
@@ -257,27 +348,37 @@ public class ExpertSudoku {
                 + "=> "
                 + "(call (fetch EXPERT) retirerPossibilite ?x ?y ?v 0) "
                 + "(retract ?f)) ");
+        moteur.run();
 
-        //Stratégie #0 (Coup)
-        moteur.executeCommand("(defrule strategie0 "
+        //Stratégie #1 (Coup)
+        moteur.executeCommand("(defrule strategie1 "
                 + "?f <- (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
                 + "(or (not (possibilite (ligne ?x) (col ?y2&:(neq ?y2 ?y)) (is ?v))) "
                 + "(not (possibilite (ligne ?x2&:(neq ?x2 ?x)) (col ?y) (is ?v))) "
                 + "(not (and (possibilite (ligne ?x2) (col ?y2) (zone ?z) (is ?v)) "
                 + "(test (not (and (eq ?x2 ?x) (eq ?y2 ?y))))))) "
                 + "=> "
-                + "(call (fetch EXPERT) ajouterCoup ?x ?y ?v 0) "
-                + "(retract ?f)"
+                + "(call (fetch EXPERT) ajouterCoup ?x ?y ?v 1) "
                 + ")");
-
-        //Stratégie #1 (Coup)
-        moteur.executeCommand("(defrule strategie1 "
+        moteur.run();
+        
+        //Stratégie #0 (Coup)
+        moteur.clear();
+        definirTemplate();
+        moteur.executeCommand("(defrule elimPos "
+                + "?f <- (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
+                + "(valeur (ligne ?x2) (col ?y2) (zone ?z2) (is ?v))"
+                + "(test (or (eq ?x2 ?x) (eq ?z2 ?z) (eq ?y2 ?y))) "
+                + "=> "
+                + "(retract ?f)) ");
+        moteur.executeCommand("(defrule strategie0 "
                 + "?f <- (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
                 + "(not (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v2&:(neq ?v2 ?v)))) "
                 + "=> "
-                + "(call (fetch EXPERT) ajouterCoup ?x ?y ?v 1) "
-                + "(retract ?f) "
+                + "(call (fetch EXPERT) ajouterCoup ?x ?y ?v 0) "
                 + ")");
+        ajouterPuzzleDansJess();
+        moteur.run();
 
         //Stratégie #1 (Retrait hypothese)
         moteur.executeCommand("(defrule insertitude "
@@ -288,20 +389,21 @@ public class ExpertSudoku {
                 + "(test (or (eq ?x ?x2) (eq ?y2 ?y) (eq ?z2 ?z)))"
                 + "(possibilite (ligne ?x2) (col ?y2) (zone ?z2) (is ?v2)) "
                 + "(not (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v4&:(neq ?v4 ?v ?v2)))) "
-                + "?f <- (possibilite (ligne ?x3) (ligne ?y3) (zone ?z3) (is ?v5&:(or (eq ?v5 ?v) (eq ?v5 ?v2)))) "
+                + "(possibilite (ligne ?x3) (ligne ?y3) (zone ?z3) (is ?v5&:(or (eq ?v5 ?v) (eq ?v5 ?v2)))) "
                 + "(test (or (eq ?x ?x3) (eq ?y3 ?y) (eq ?z3 ?z))) "
                 + "=> "
-                + "(call (fetch EXPERT) retirerPossibilite ?x ?y ?v 1) "
-                + "(retract ?f)"
+                + "(call (fetch EXPERT) retirerPossibilite ?x3 ?y3 ?v5 1) "
                 + ")");
 
-        ajouterPuzzleDansJess();
         moteur.run();
     }
 
+    
+    
     /**
      * Main de test
-     * @param a 
+     *
+     * @param a
      */
     public static void main(String[] a) {
         int[][] g = new int[9][9];
@@ -388,5 +490,6 @@ public class ExpertSudoku {
         g[8][8] = 0;
 
         ExpertSudoku es = new ExpertSudoku(g);
+        System.out.println("Fin");
     }
 }
