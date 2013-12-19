@@ -45,10 +45,9 @@ public class Tuteur
 	private static String message_Strat3_Definition = "";
 	private static String message_Strat3_Conseil = "";
 	
-	private static String message_Erreur_1 = "Attention ! Tu as fait 1 erreur. Tu peux l'apercevoir en rouge sur la grille.";
-	private static String message_Erreur_2 = "Prends garde ! Tu as fait 2 erreurs. Tu peux les apercevoir en rouge sur la grille.";
-	private static String message_Erreur_3 = "Misericorde ! Tu as fait 3 erreurs. Tu peux les apercevoir en rouge sur la grille.";
-	private static String message_Erreur_4 = "Doux Jesus ! Tu as fait 3 erreurs. Je te laisse soin de les corriger...";
+	private static String message_Erreur_0 = "Attention ! Tu as fait une erreur. Tu peux l'apercevoir en rouge sur la grille.";
+	private static String message_Erreur_12 = "Prends garde ! Tu as fait quelques erreurs. Tu peux les apercevoir en rouge sur la grille.";
+	private static String message_Erreur_3 = "Doux Jesus ! Tu as fait 3 erreurs. Je te laisse soin de les corriger...";
 
 	private static String message_Indice_Introduction = "Voici un indice qui te debloquera j'espere.";
 	private static String message_Indice_Strat = "Voici une strategie que tu n'as pas encore utilisee souvent. Il s'agit de la stragie dite "+_indiceStrat;
@@ -58,7 +57,7 @@ public class Tuteur
 	
 	private static String message_Succes_1 = "Bravo ! Tu as applique pour la premiere fois "+_succesStrat+" avec succes !";
 	private static String message_Succes_2 = "Tu as encore une fois bien applique "+_succesStrat+" ! Bien joue !";
-	private static String message_Succes_3 = "Je crois que tu as compris le principe de "+_succesStrat+". Plus la peine de te feliciter a nouveau !";
+	private static String message_Succes_3 = "Felicitation ! Je crois que tu as compris le principe de "+_succesStrat+". Plus la peine de te feliciter a nouveau !";
 	
 	private static String message_Hasard = "Aucune strategie ne te permet de faire cela. J'estime que tu joues au hasard !";
 	
@@ -79,8 +78,17 @@ public class Tuteur
 	
 	public void Message_Connexion()
 	{
-		messages_Connexion_Bienvenue();
-		messages_But_Introduction();
+		_grille.ajouterMessage(message_Connexion_Bienvenue);
+		
+		int niveauExpertise = _apprenant.GetNiveau();
+		
+		if(niveauExpertise==0)
+		{
+			_grille.ajouterMessage(message_Connexion_Interface);
+			_grille.ajouterMessage(message_Principe_Introduction);
+			_grille.ajouterMessage(message_Principe_But);
+			_grille.ajouterMessage(message_Principe_Regles);
+		}
 	}
 	
 	public void Message_Indice()
@@ -94,28 +102,40 @@ public class Tuteur
 				case 0:
 				{
 					_indiceStrat = "des hypotheses.";
-					messages_Indice_Strat0();
+					
+					_grille.ajouterMessage(message_Indice_Strat);
+					_grille.ajouterMessage(message_Strat0_Definition);
+					_grille.ajouterMessage(message_Strat0_Conseil);
 				}
 				break;
 				
 				case 1:
 				{
 					_indiceStrat = "de l'hypothese seule visible.";
-					messages_Indice_Strat1();
+					
+					_grille.ajouterMessage(message_Indice_Strat);
+					_grille.ajouterMessage(message_Strat1_Definition);
+					_grille.ajouterMessage(message_Strat1_Conseil);
 				}
 				break;
 				
 				case 2:
 				{
 					_indiceStrat = "de l'hypothese seule cachee.";
-					messages_Indice_Strat2();
+					
+					_grille.ajouterMessage(message_Indice_Strat);
+					_grille.ajouterMessage(message_Strat2_Definition);
+					_grille.ajouterMessage(message_Strat2_Conseil);
 				}
 				break;
 				
 				case 3:
 				{
 					_indiceStrat = "des paires d'hypotheses visible.";
-					messages_Indice_Strat3();
+					
+					_grille.ajouterMessage(message_Indice_Strat);
+					_grille.ajouterMessage(message_Strat3_Definition);
+					_grille.ajouterMessage(message_Strat3_Conseil);
 				}
 				break;
 			}
@@ -131,16 +151,23 @@ public class Tuteur
 				case 0:
 				{
 					Coup coup = _expert.coupAJoueur();
+					
 					_indiceCoup = "a la ligne "+String.valueOf(coup.getLigne())+" et a la colonne "+String.valueOf(coup.getColonne());
-					messages_Indice_Coup();
+					
+					_grille.ajouterMessage(message_Indice_Introduction);
+					_grille.ajouterMessage(message_Indice_Coup);
+
 				}
 				break;
 					
 				case 1:
 				{
 					int region = _expert.regionAJouer();
+					
 					_indiceRegion = String.valueOf(region);
-					messages_Indice_Region();
+					
+					_grille.ajouterMessage(message_Indice_Introduction);
+					_grille.ajouterMessage(message_Indice_Region);
 				}
 				break;
 					
@@ -148,6 +175,7 @@ public class Tuteur
 				{
 					
 					int zone = _expert.zoneAJouer();
+					
 					switch(zone)
 					{
 					 	case 0:
@@ -181,7 +209,8 @@ public class Tuteur
 					 	break;	 
 					}
 					
-					messages_Indice_Zone();
+					_grille.ajouterMessage(message_Indice_Introduction);
+					_grille.ajouterMessage(message_Indice_Zone);
 				}
 				break;
 			}
@@ -200,7 +229,10 @@ public class Tuteur
 			{
 				if(_aDejaVuStrat0 == false)
 				{
-					messages_Strat0_Introduction();
+					_grille.ajouterMessage(message_Strat0_Introduction);
+					_grille.ajouterMessage(message_Strat0_Definition);
+					_grille.ajouterMessage(message_Strat0_Conseil);
+					
 					_aDejaVuStrat0 = true;
 				}
 			}
@@ -210,7 +242,10 @@ public class Tuteur
 			{
 				if(_aDejaVuStrat1 == false)
 				{
-					messages_Strat1_Introduction();
+					_grille.ajouterMessage(message_Strat1_Introduction);
+					_grille.ajouterMessage(message_Strat1_Definition);
+					_grille.ajouterMessage(message_Strat1_Conseil);
+					
 					_aDejaVuStrat1 = true;
 				}
 			}
@@ -220,7 +255,10 @@ public class Tuteur
 			{
 				if(_aDejaVuStrat2 == false)
 				{
-					messages_Strat2_Introduction();
+					_grille.ajouterMessage(message_Strat2_Introduction);
+					_grille.ajouterMessage(message_Strat2_Definition);
+					_grille.ajouterMessage(message_Strat2_Conseil);
+					
 					_aDejaVuStrat2 = true;
 				}
 			}
@@ -230,7 +268,10 @@ public class Tuteur
 			{
 				if(_aDejaVuStrat3 == false)
 				{
-					messages_Strat3_Introduction();
+					_grille.ajouterMessage(message_Strat3_Introduction);
+					_grille.ajouterMessage(message_Strat3_Definition);
+					_grille.ajouterMessage(message_Strat3_Conseil);
+					
 					_aDejaVuStrat3 = true;
 				}
 			}
@@ -243,31 +284,44 @@ public class Tuteur
 	public void Message_Erreur()
 	{
 		int niveauExpertise = _apprenant.GetNiveau();
-		//check le nombre d'erreur dans la classe principale ou ici ?
+		int nombreErreursPonderees = _sudoku.GetNbErreuCoup()*3+_sudoku.GetNbErreuHypo();
 		
 		switch(niveauExpertise)
 		{
 			case 0:
 			{
-				messages_Erreur_1();
+				if(nombreErreursPonderees>0)
+				{
+					_grille.ajouterMessage(message_Erreur_0);
+				}
+				
 			}
 			break;
 			
 			case 1:
 			{
-				messages_Erreur_2();
+				if(nombreErreursPonderees>5)
+				{
+					_grille.ajouterMessage(message_Erreur_12);
+				}
 			}
 			break;
 
 			case 2:
 			{
-				messages_Erreur_3();
+				if(nombreErreursPonderees>8)
+				{
+					_grille.ajouterMessage(message_Erreur_12);
+				}
 			}
 			break;
 			
 			case 3:
 			{
-				messages_Erreur_4();
+				if(nombreErreursPonderees>8)
+				{
+					_grille.ajouterMessage(message_Erreur_3);
+				}
 			}
 			break;
 			
@@ -275,9 +329,8 @@ public class Tuteur
 		}
 	}
 	
-	public void Message_Succes()
+	public void Message_Succes(int numeroStrat)
 	{
-		int numeroStrat = 0; //get je ne sais pas comment ??!!
 		int nbSuccesStrat = 0;
 		
 		switch(numeroStrat)
@@ -315,19 +368,19 @@ public class Tuteur
 		{
 			case 1:
 			{
-				messages_Succes_1();
+				_grille.ajouterMessage(message_Succes_1);
 			}
 			break;
 			
 			case 2:
 			{
-				messages_Succes_2();
+				_grille.ajouterMessage(message_Succes_2);
 			}
 			break;
 			
 			case 3:
 			{
-				messages_Succes_3();
+				_grille.ajouterMessage(message_Succes_3);
 			}
 			break;
 			
@@ -341,216 +394,7 @@ public class Tuteur
 	
 	public void Message_Hasard()
 	{
-		messages_Hasard();
-	}
-	
-	
-	public void MAJTexteTuteur(String texte)
-	{
-		/*
-		
-		if(!texte.equals("\n"))
-		{	
-			System.out.print("Tuteur :\n");
-		}
-		
-		try 
-		{
-			Thread.sleep(500);
-		} catch (InterruptedException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		for(int i=0; i<texte.length();i++)
-		{
-			System.out.print(texte.charAt(i));
-			
-			try 
-			{
-				Thread.sleep(40);
-			} catch (InterruptedException e) 
-			{
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		
-		try 
-		{
-			Thread.sleep(1000);
-		} catch (InterruptedException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		System.out.print("\n\n");
-		
-		*/
-		
-		_grille.ajouterMessage(texte);
-	}
-	
-	
-	
-	public void messages_Connexion_Bienvenue()
-	{
-
-		MAJTexteTuteur(message_Connexion_Bienvenue);
-		MAJTexteTuteur(message_Connexion_Interface);	
-		MAJTexteTuteur("\n");
-
-	}
-	
-	public void messages_But_Introduction()
-	{
-		MAJTexteTuteur(message_Principe_Introduction);
-		MAJTexteTuteur(message_Principe_But);
-		MAJTexteTuteur(message_Principe_Regles);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Strat0_Introduction()
-	{
-		_aDejaVuStrat0 = true;
-		
-		MAJTexteTuteur(message_Strat0_Introduction);
-		MAJTexteTuteur(message_Strat0_Definition);
-		MAJTexteTuteur(message_Strat0_Conseil);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Strat1_Introduction()
-	{
-		_aDejaVuStrat1 = true;
-		
-		MAJTexteTuteur(message_Strat1_Introduction);
-		MAJTexteTuteur(message_Strat1_Definition);
-		MAJTexteTuteur(message_Strat1_Conseil);
-		MAJTexteTuteur("\n");
-	}
-
-	public void messages_Strat2_Introduction()
-	{
-		_aDejaVuStrat2 = true;
-		
-		MAJTexteTuteur(message_Strat2_Introduction);
-		MAJTexteTuteur(message_Strat2_Definition);
-		MAJTexteTuteur(message_Strat2_Conseil);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Strat3_Introduction()
-	{
-		_aDejaVuStrat3 = true;
-		
-		MAJTexteTuteur(message_Strat3_Introduction);
-		MAJTexteTuteur(message_Strat3_Definition);
-		MAJTexteTuteur(message_Strat3_Conseil);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Indice_Strat0()
-	{
-		MAJTexteTuteur(message_Indice_Strat);
-		MAJTexteTuteur(message_Strat0_Definition);
-		MAJTexteTuteur(message_Strat0_Conseil);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Indice_Strat1()
-	{
-		MAJTexteTuteur(message_Indice_Strat);
-		MAJTexteTuteur(message_Strat1_Definition);
-		MAJTexteTuteur(message_Strat1_Conseil);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Indice_Strat2()
-	{
-		MAJTexteTuteur(message_Indice_Strat);
-		MAJTexteTuteur(message_Strat2_Definition);
-		MAJTexteTuteur(message_Strat2_Conseil);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Indice_Strat3()
-	{
-		MAJTexteTuteur(message_Indice_Strat);
-		MAJTexteTuteur(message_Strat3_Definition);
-		MAJTexteTuteur(message_Strat3_Conseil);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Indice_Coup()
-	{
-		MAJTexteTuteur(message_Indice_Introduction);
-		MAJTexteTuteur(message_Indice_Coup);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Indice_Region()
-	{
-		MAJTexteTuteur(message_Indice_Introduction);
-		MAJTexteTuteur(message_Indice_Region);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Indice_Zone()
-	{
-		MAJTexteTuteur(message_Indice_Introduction);
-		MAJTexteTuteur(message_Indice_Zone);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Erreur_1()
-	{
-		MAJTexteTuteur(message_Erreur_1);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Erreur_2()
-	{
-		MAJTexteTuteur(message_Erreur_2);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Erreur_3()
-	{
-		MAJTexteTuteur(message_Erreur_3);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Erreur_4()
-	{
-		MAJTexteTuteur(message_Erreur_4);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Succes_1()
-	{
-		MAJTexteTuteur(message_Succes_1);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Succes_2()
-	{
-		MAJTexteTuteur(message_Succes_2);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Succes_3()
-	{
-		MAJTexteTuteur(message_Succes_3);
-		MAJTexteTuteur("\n");
-	}
-	
-	public void messages_Hasard()
-	{
-		MAJTexteTuteur(message_Hasard);
-		MAJTexteTuteur("\n");
+		_grille.ajouterMessage(message_Hasard);
 	}
 	
 	public static void main(String[] args)
