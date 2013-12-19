@@ -1,9 +1,8 @@
-package sudoku;
 
 public class Tuteur 
 {
 	private Apprenant _apprenant;
-	private Interface _interface;
+	private Grille _grille;
 	private ExpertSudoku _expert;
 	private Sudoku _sudoku;
 	
@@ -21,6 +20,8 @@ public class Tuteur
 	private static String _indiceRegion;
 	private static String _indiceZone;
 	
+	private static String _succesStrat;
+	
 	private static String message_Connexion_Bienvenue = "Bienvenue sur SudokuSmartTutor, le systeme tutoriel intelligent pour apprendre a jouer au Sudoku !";
 	private static String message_Connexion_Interface = "L'interface de SudokuSmartTutor te permet d'eliminer des hypotheses (ecrites en petites) a l'aide du clic droit sur une case. Tu peux aussi jouer un coup pour entrer une valeur definitive (ecrite en gros) a l'aide du clic gauche. Si tu es bloque, tu peux demander de l'aide avec le bouton Indice.";
 	
@@ -28,19 +29,19 @@ public class Tuteur
 	private static String message_Principe_But = "Le but du jeu du Sudoku est de completer la grille, divisee en 9 lignes, 9 colonnes et 9 regions (notees de 1 a 9 selon le sens de lecture occidental), en remplissant chaque case par un chiffre compris entre 1 et 9, de maniere a ce que les regles de bases soient satisfaites.";
 	private static String message_Principe_Regles = "Un chiffre dans une case satisfait la regle de la colonne si aucun autre meme chiffre ne se trouve dans la colonne de la case en question. Il en va de meme avec la regle de la ligne et la regle de la region.";
 	
-	private static String message_Strat0_Introduction = "Ensuite, voici la strategie initiale, dite des hypotheses.";
+	private static String message_Strat0_Introduction = "Ensuite, voici la strategie initiale, dite des hypotheses simples.";
 	private static String message_Strat0_Definition = "Un chiffre est une hypothese pour une case si ce chiffre satisfait les trois regles de bases dans cette case. Il peut y avoir plusieurs hypotheses par cases.";
 	private static String message_Strat0_Conseil = "Il est pertinant de chercher a eliminer les hypotheses dans les cases dont la colonne, la ligne ou la region correspondante est le moins vide... Tu as plus de chance de pouvoir y appliquer des strategies par la suite !";
 	
-	private static String message_Strat1_Introduction = "Tu as l'air d'avoir compris le principe des hypotheses ! Voici la premiere strategie, dite de l'hypothese seule visible.";
+	private static String message_Strat1_Introduction = "Tu as l'air de bien maitriser le principe des hypotheses ! Pour aller plus loin, voici la premiere strategie, dite de l'hypothese seule visible.";
 	private static String message_Strat1_Definition = "Une hypothese est la valeur definitive dans une case si dans cette case se trouve cette hypothese et elle seule.";
 	private static String message_Strat1_Conseil = "Tu dois appliquer la premiere strategie des que tu constates que c'est possible avant de continuer a chercher d'autres hypotheses... Et n'oublies pas de mettre a jour tes hypotheses en consequence !";
 	
-	private static String message_Strat2_Introduction = "Tu as l'air d'avoir compris le principe de l'hypothese seule visible ! Voici la deuxieme strategie, dite de l'hypothese seule cachee.";
+	private static String message_Strat2_Introduction = "Tu as l'air de bien maitriser le principe de l'hypothese seule visible ! Pour aller plus loin, voici la deuxieme strategie, dite de l'hypothese seule cachee.";
 	private static String message_Strat2_Definition = "Une hypothese est la valeur definitive dans une case si cette hypothese ne se trouve pas dans la colonne, la ligne ou la region de cette case.";
 	private static String message_Strat2_Conseil = "Applique la deuxieme strategie des que tu constates que c'est possible ou bien des que la premiere n'est plus applicable... Tu dois alors te concentrer d'avantage sur les hypotheses !";
 	
-	private static String message_Strat3_Introduction = "Tu as l'air d'avoir compris le principe de l'hypothese seule cachee ! Voici la troisieme strategie, dite des paires d'hypotheses visibles.";
+	private static String message_Strat3_Introduction = "Tu as l'air de bien maitriser le principe de l'hypothese seule cachee ! Pour aller plus loin, voici la troisieme strategie, dite des paires d'hypotheses visibles.";
 	private static String message_Strat3_Definition = "";
 	private static String message_Strat3_Conseil = "";
 	
@@ -55,11 +56,17 @@ public class Tuteur
 	private static String message_Indice_Region = "Il y a une region ou au moins un coup est possible. Il s'agit de la region numero "+_indiceRegion+".";
 	private static String message_Indice_Zone ="Il y a une zone ou au moins au coup est possible. Il s'agit de la partie "+_indiceZone+" de la grille.";
 	
-	public Tuteur(Apprenant zeApprenant, ExpertSudoku zeExpert, Interface zeInterface, Sudoku zeSudoku)
+	private static String message_Succes_1 = "Bravo ! Tu as applique pour la premiere fois "+_succesStrat+" avec succes !";
+	private static String message_Succes_2 = "Tu as encore une fois bien applique "+_succesStrat+" ! Bien joue !";
+	private static String message_Succes_3 = "Je crois que tu as compris le principe de "+_succesStrat+". Plus la peine de te feliciter a nouveau !";
+	
+	private static String message_Hasard = "Aucune strategie ne te permet de faire cela. J'estime que tu joues au hasard !";
+	
+	public Tuteur(Apprenant zeApprenant, ExpertSudoku zeExpert, Grille zeGrille, Sudoku zeSudoku)
 	{
 		_apprenant = zeApprenant;
 		_expert = zeExpert;
-		_interface = zeInterface;
+		_grille = zeGrille;
 		_sudoku = zeSudoku;
 	}
 	
@@ -259,6 +266,73 @@ public class Tuteur
 			//Maj interface
 		}
 	}
+	public void Message_Succes()
+	{
+		int numeroStrat = 0; //get je ne sais pas comment ??!!
+		int nbSuccesStrat = 0;
+		
+		switch(numeroStrat)
+		{
+			case 0:
+			{
+				_indiceStrat = "la strategie des hypotheses simples";
+				nbSuccesStrat = 0; //get de l'apprenant
+			}
+				break;
+				
+			case 2:
+			{
+				_indiceStrat = "la strategie de l'hypothese seule visible";
+				nbSuccesStrat = 0; //get de l'apprenant
+			}
+				break;
+				
+			case 3:
+			{
+				_indiceStrat = "la strategie de l'hypothese seule cachee";
+				nbSuccesStrat = 0; //get de l'apprenant
+			}
+				break;
+				
+			case 4:
+			{
+				_indiceStrat = "la strategie des paires d'hypotheses visibles";
+				nbSuccesStrat = 0; //get de l'apprenant
+			}
+				break;
+		}
+		
+		switch(nbSuccesStrat)
+		{
+			case 1:
+			{
+				messages_Succes_1();
+			}
+			break;
+			
+			case 2:
+			{
+				messages_Succes_2();
+			}
+			break;
+			
+			case 3:
+			{
+				messages_Succes_3();
+			}
+			break;
+			
+			default:
+			{
+				//rien
+			}
+			break;
+		}
+	}
+	public void Message_Hasard()
+	{
+		messages_Hasard();
+	}
 	
 	public void MAJTexteTuteur(String texte)
 	{
@@ -301,6 +375,7 @@ public class Tuteur
 		
 		System.out.print("\n\n");
 	}
+	
 	
 	public void messages_Connexion_Bienvenue()
 	{
@@ -433,6 +508,26 @@ public class Tuteur
 	public void messages_Erreur_4()
 	{
 		MAJTexteTuteur(message_Erreur_4);
+		MAJTexteTuteur("\n");
+	}
+	public void messages_Succes_1()
+	{
+		MAJTexteTuteur(message_Succes_1);
+		MAJTexteTuteur("\n");
+	}
+	public void messages_Succes_2()
+	{
+		MAJTexteTuteur(message_Succes_2);
+		MAJTexteTuteur("\n");
+	}
+	public void messages_Succes_3()
+	{
+		MAJTexteTuteur(message_Succes_3);
+		MAJTexteTuteur("\n");
+	}
+	public void messages_Hasard()
+	{
+		MAJTexteTuteur(message_Hasard);
 		MAJTexteTuteur("\n");
 	}
 	
