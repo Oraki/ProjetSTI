@@ -772,7 +772,7 @@ public class Grille extends JFrame implements MouseListener {
         setLayout(null);
 
         textField_11 = new JTextField();
-        textField_11.setForeground(Color.RED);
+        textField_11.setForeground(Color.BLUE);
         textField_11.addMouseListener(this);
         textField_11.setText("1");
         textField_11.setFont(new Font("Times New Roman", Font.PLAIN, 7));
@@ -8112,7 +8112,7 @@ public class Grille extends JFrame implements MouseListener {
     }
 
     public void changementCouleur(JTextField JT) {
-        if (JT.getForeground() != Color.RED) {
+        if (JT.getForeground() != Color.BLUE) {
             if (JT.getForeground() == Color.LIGHT_GRAY) {
                 JT.setForeground(Color.BLACK);
             } else {
@@ -8133,7 +8133,7 @@ public class Grille extends JFrame implements MouseListener {
         w = JT.getWidth();
         te = JT.getText();
         int i = Integer.parseInt(te);
-        if (JT.getForeground() != Color.RED) {
+        if (JT.getForeground() != Color.BLUE) {
 
             if (i == 1) {
                 if (h == 20) {

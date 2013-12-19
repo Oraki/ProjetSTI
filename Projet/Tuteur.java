@@ -67,6 +67,7 @@ public class Tuteur
 		_apprenant = zeSudoku.apprenant;
 		_expert = zeSudoku.expert;
 		//_grille = zeSudoku
+		_sudoku = zeSudoku;
 
 	}
 	
@@ -122,7 +123,7 @@ public class Tuteur
 			{
 				case 0:
 				{
-					Coup coup = new Coup(1,1,1); //get de l'expert
+					Coup coup = _expert.coupAJoueur();
 					_indiceCoup = "a la ligne "+String.valueOf(coup.getLigne())+" et a la colonne "+String.valueOf(coup.getColonne());
 					messages_Indice_Coup();
 				}
@@ -130,7 +131,7 @@ public class Tuteur
 					
 				case 1:
 				{
-					int region = 0; //get de l'expert
+					int region = _expert.regionAJouer();
 					_indiceRegion = String.valueOf(region);
 					messages_Indice_Region();
 				}
@@ -139,7 +140,7 @@ public class Tuteur
 				case 2:
 				{
 					
-					int zone = 0; //get de l'expert
+					int zone = _expert.zoneAJouer();
 					switch(zone)
 					{
 					 	case 0:
@@ -184,7 +185,7 @@ public class Tuteur
 	
 	public void Message_Strategie()
 	{
-		int niveauExpertise = 0; //get de l'apprenant
+		int niveauExpertise = _apprenant.GetNiveau();
 		
 		switch(niveauExpertise)
 		{
@@ -234,7 +235,7 @@ public class Tuteur
 
 	public void Message_Erreur()
 	{
-		int niveauExpertise = 0; //get de l'apprenant
+		int niveauExpertise = _apprenant.GetNiveau();
 		//check le nombre d'erreur dans la classe principale ou ici ?
 		
 		switch(niveauExpertise)
@@ -276,28 +277,28 @@ public class Tuteur
 			case 0:
 			{
 				_indiceStrat = "la strategie des hypotheses simples";
-				nbSuccesStrat = 0; //get de l'apprenant
+				nbSuccesStrat = _apprenant.knowledge_success[numeroStrat];
+			}
+				break;		
+				
+			case 1:
+			{
+				_indiceStrat = "la strategie de l'hypothese seule visible";
+				nbSuccesStrat = _apprenant.knowledge_success[numeroStrat];
 			}
 				break;
 				
 			case 2:
 			{
-				_indiceStrat = "la strategie de l'hypothese seule visible";
-				nbSuccesStrat = 0; //get de l'apprenant
+				_indiceStrat = "la strategie de l'hypothese seule cachee";
+				nbSuccesStrat = _apprenant.knowledge_success[numeroStrat];
 			}
 				break;
 				
 			case 3:
 			{
-				_indiceStrat = "la strategie de l'hypothese seule cachee";
-				nbSuccesStrat = 0; //get de l'apprenant
-			}
-				break;
-				
-			case 4:
-			{
 				_indiceStrat = "la strategie des paires d'hypotheses visibles";
-				nbSuccesStrat = 0; //get de l'apprenant
+				nbSuccesStrat = _apprenant.knowledge_success[numeroStrat];
 			}
 				break;
 		}
