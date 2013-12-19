@@ -119,6 +119,7 @@ public class Sudoku
 			{
 			case -2 ://reponse fausse
 				apprenant.AddFail(0);
+				listErreurCoup.add(coup);
 				break;
 				
 			case -1://réponse bonne mais impossible d'identifier les stratégies
@@ -152,6 +153,7 @@ public class Sudoku
 		{
 		case -2 ://reponse fausse
 			apprenant.AddFail(1);
+			listErreurHypo.add(coup);
 			break;
 			
 		case -1://réponse bonne mais impossible d'identifier les stratégies
