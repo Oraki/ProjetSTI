@@ -1,13 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/**
- *
- * @author Tunel
- */
 public class Grille extends javax.swing.JFrame {
 
     private CasePanel[][] tabCP;
@@ -90,7 +81,7 @@ public class Grille extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Grille(new Sudoku()).setVisible(true);
+                new Grille(null).setVisible(true);
             }
         });
     }

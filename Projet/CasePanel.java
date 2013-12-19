@@ -142,8 +142,7 @@ public class CasePanel extends javax.swing.JPanel {
     }
 
     private void setValeur(int v) {
-        Coup c = new Coup(ligne, col, v);
-        //jouerValeur(c);
+        main.JouerCoup(ligne, col, v);
         setValeur(v, false);
     }
 
@@ -159,18 +158,16 @@ public class CasePanel extends javax.swing.JPanel {
     }
 
     public void retirerValeur() {
-        Coup c = new Coup(ligne, col, Integer.parseInt(soluLabel.getText()));
-        //retirerValeur(c)
+        main.RetirerCoup(ligne, col, Integer.parseInt(soluLabel.getText()));
         soluPanel.setVisible(false);
         possPanel.setVisible(true);
     }
 
     public void retirerPoss(int i) {
-        Coup c = new Coup(ligne, col, i);
         if (possi[i-1]) {
-            //retirerPossi(c);
+            main.RetirerHypothese(ligne, col, i);
         } else {
-            //remettrePossi(c);
+            main.RemettreHypothese(ligne, col, i);
         }
         possi[i-1] = !possi[i-1];
         updatePoss();

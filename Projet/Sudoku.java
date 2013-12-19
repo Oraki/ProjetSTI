@@ -22,9 +22,9 @@ public class Sudoku
 	
 	ExpertSudoku expert;
 	
-	ArrayList<Coup> listeCoupStrat1 = new ArrayList<Coup>(); //liste des coup possibles en applicant la stratégie 1
-	ArrayList<Coup> listeCoupStrat2 = new ArrayList<Coup>(); //liste des coup possibles en applicant la stratégie 2
-	ArrayList<Coup> listeCoupStrat3 = new ArrayList<Coup>(); //liste des coup possibles en applicant la stratégie 3
+	ArrayList<Coup> listeCoupStrat1 = new ArrayList<Coup>(); //liste des coup possibles en applicant la stratï¿½gie 1
+	ArrayList<Coup> listeCoupStrat2 = new ArrayList<Coup>(); //liste des coup possibles en applicant la stratï¿½gie 2
+	ArrayList<Coup> listeCoupStrat3 = new ArrayList<Coup>(); //liste des coup possibles en applicant la stratï¿½gie 3
 	
 	ArrayList<Coup> listErreurCoup = new ArrayList<Coup>();
 	ArrayList<Coup> listErreurHypo = new ArrayList<Coup>();
@@ -87,12 +87,12 @@ public class Sudoku
 		listeCoupStrat3 = (ArrayList<Coup>)expert.getCoupPossible(3);
 	}
 	
-	public void AjoutHypotheseMat(int ligne, int colonne, int numero)//Ajout d'une hypothèse par l'utilisateur
+	public void AjoutHypotheseMat(int ligne, int colonne, int numero)//Ajout d'une hypothï¿½se par l'utilisateur
 	{
 		matriceSudoku[ligne][colonne].tabHypo[numero - 1] = true;
 	}
 	
-	public void RetirerHypotheseMat(int ligne, int colonne, int numero)//Retrait d'une hypothèse par l'utilisateur
+	public void RetirerHypotheseMat(int ligne, int colonne, int numero)//Retrait d'une hypothï¿½se par l'utilisateur
 	{
 		matriceSudoku[ligne][colonne].tabHypo[numero - 1] = false;
 	}
@@ -107,9 +107,9 @@ public class Sudoku
 		matriceSudoku[ligne][colonne].chiffre = 0;
 	}
 	
-	public void JouerCoup(int ligne, int colonne, int region, int  numero)
+	public void JouerCoup(int ligne, int colonne, int  numero)
 	{
-		if(matriceSudoku[ligne][colonne].CaseRemplie())//on vérifie si la case n'est pas déjà remplie
+		if(matriceSudoku[ligne][colonne].CaseRemplie())//on vï¿½rifie si la case n'est pas dï¿½jï¿½ remplie
 		{
 			Coup coup = new Coup(ligne, colonne, numero);
 			int CoupPossible = expert.jouerValeur(coup); 
@@ -122,7 +122,7 @@ public class Sudoku
 				listErreurCoup.add(coup);
 				break;
 				
-			case -1://réponse bonne mais impossible d'identifier les stratégies
+			case -1://rï¿½ponse bonne mais impossible d'identifier les stratï¿½gies
 				apprenant.AddRandom();
 				break;
 			
@@ -144,7 +144,7 @@ public class Sudoku
 		
 	}
 	
-	public void RetirerHypothese(int ligne, int colonne, int region, int  numero)
+	public void RetirerHypothese(int ligne, int colonne, int  numero)
 	{				
 		Coup coup = new Coup(ligne, colonne, numero);
 		int CoupPossible = expert.retirerPossibilite(coup);
@@ -156,7 +156,7 @@ public class Sudoku
 			listErreurHypo.add(coup);
 			break;
 			
-		case -1://réponse bonne mais impossible d'identifier les stratégies
+		case -1://rï¿½ponse bonne mais impossible d'identifier les stratï¿½gies
 			apprenant.AddRandom();
 			break;
 		
@@ -175,7 +175,7 @@ public class Sudoku
 		RetirerHypotheseMat(ligne, colonne, numero);
 	}
 	
-	public void RetirerCoup(int ligne, int colonne, int region, int  numero)
+	public void RetirerCoup(int ligne, int colonne, int  numero)
 	{
 		Coup coup = new Coup(ligne, colonne, numero);
 		
@@ -184,7 +184,7 @@ public class Sudoku
 		RetraitChiffreMat(ligne, colonne);
 	}
 	
-	public void RemettreHypothese(int ligne, int colonne, int region, int  numero)
+	public void RemettreHypothese(int ligne, int colonne, int  numero)
 	{
 		Coup coup = new Coup(ligne, colonne, numero);
 		listErreurHypo.remove(coup);
