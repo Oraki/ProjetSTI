@@ -1,4 +1,5 @@
 
+import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import jess.*;
@@ -361,7 +362,7 @@ public class ExpertSudoku {
                 + "(call (fetch EXPERT) ajouterCoup ?x ?y ?v 1) "
                 + ")");
         moteur.run();
-        
+
         //Stratégie #0 (Coup)
         moteur.clear();
         definirTemplate();
@@ -398,8 +399,109 @@ public class ExpertSudoku {
         moteur.run();
     }
 
-    
-    
+    private int getIndiceMax(int[] tab) {
+        int max = Integer.MIN_VALUE;
+        int ind = -1;
+
+        for (int i = 0; i < tab.length; ++i) {
+            if (tab[i] > max) {
+                max = tab[i];
+                ind = i;
+            }
+        }
+        return ind;
+    }
+
+    /**
+     * Trouve une zone qui est itéressante à jouer. Une zone étant le carré de 9
+     * cases du sudoku
+     *
+     * @return le numéro de la zone
+     */
+    public int zoneAJouer() {
+        int[] cmpt = new int[9];
+
+        for (int i = 0; i < coupPossible.length; ++i) {
+            Iterator<Coup> it = coupPossible[i].iterator();
+            while (it.hasNext()) {
+                ++cmpt[it.next().getRegion()];
+            }
+        }
+
+        return getIndiceMax(cmpt);
+    }
+
+    /**
+     * Trouve une région qui est itéressante à jouer.
+     *
+     * @return 0 pour la gauche du puzzle, 1 pour la droite, 2, le haut, 3 le
+     * bas ou 4 pour la zone du centre.
+     */
+    public int regionAJouer() {
+        int[] cmpt = new int[5];
+
+        for (int i = 0; i < coupPossible.length; ++i) {
+            Iterator<Coup> it = coupPossible[i].iterator();
+            while (it.hasNext()) {
+                int z = it.next().getRegion();
+                if (z == 4) {
+                    ++cmpt[4];
+                } else {
+                    if (z % 3 == 0) {
+                        ++cmpt[0];
+                    } else if (z % 3 == 2) {
+                        ++cmpt[1];
+                    }
+                    if (z < 3) {
+                        ++cmpt[2];
+                    } else if (z >= 6) {
+                        ++cmpt[3];
+                    }
+                }
+            }
+        }
+
+        return getIndiceMax(cmpt);
+    }
+
+    /**
+     * Trouve une valeur qui peut être mit dans le tableau.
+     *
+     * @return Un coup possible. Si le puzzle est fini, null.
+     */
+    public Coup coupAJoueur() {
+        if (!coupPossible[0].isEmpty()) {
+            return coupPossible[0].get(0);
+        } else if (!coupPossible[1].isEmpty()) {
+            return coupPossible[1].get(0);
+        } else {
+            for (int i = 0; i < solution.length; ++i) {
+                for (int j = 0; j < solution[i].length; ++j) {
+                    if (puzzle[i][j] == 0) {
+                        return new Coup(i, j, solution[i][j]);
+                    }
+                }
+            }
+            return null;
+        }
+    }
+
+    /**
+     * Vérifie si le puzzle est complèté
+     *
+     * @return true, si complèté, false, sinon.
+     */
+    public boolean puzzleComplete() {
+        for (int i = 0; i < solution.length; ++i) {
+            for (int j = 0; j < solution[i].length; ++j) {
+                if (puzzle[i][j] == 0) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     /**
      * Main de test
      *
