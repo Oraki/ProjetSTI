@@ -206,4 +206,97 @@ public class Sudoku
 		listErreurCoup.clear();
 		listErreurHypo.clear();
 	}
+	
+	
+	//----------------------------------------------------------------------------
+	
+	public Case[][] GenererSudoku1()
+	{
+		Case tab[][] = new Case[9][9];
+		
+		for(int i = 0; i<9; i++)
+		{
+			for(int j = 0; j<9; j++)
+			{
+				tab[i][j] = new Case();
+			}
+		}	
+		
+		tab[0][3].chiffre = 1;
+		tab[0][5].chiffre = 5;
+		tab[1][0].chiffre = 1;
+		tab[1][1].chiffre = 4;
+		tab[1][6].chiffre = 6;
+		tab[1][7].chiffre = 7;
+		tab[2][1].chiffre = 8;
+		tab[2][5].chiffre = 2;
+		tab[2][6].chiffre = 4;
+		tab[3][1].chiffre = 6;
+		tab[3][2].chiffre = 3;
+		tab[3][4].chiffre = 7;
+		tab[3][7].chiffre = 1;
+		tab[4][0].chiffre = 9;
+		tab[4][8].chiffre = 3;
+		tab[5][1].chiffre = 1;
+		tab[5][4].chiffre = 9;
+		tab[5][6].chiffre = 5;
+		tab[5][7].chiffre = 2;
+		tab[6][2].chiffre = 7;
+		tab[6][3].chiffre = 2;
+		tab[6][7].chiffre = 8;
+		tab[7][1].chiffre = 2;
+		tab[7][2].chiffre = 6;
+		tab[7][7].chiffre = 3;
+		tab[7][8].chiffre = 5;
+		tab[8][3].chiffre = 4;
+		tab[8][5].chiffre = 9;
+		
+		
+		return tab;
+		
+	}
+	
+	public Case[][] GenererSudoku2()
+	{
+		Case tab[][] = new Case[9][9];
+		
+		for(int i = 0; i<9; i++)
+		{
+			for(int j = 0; j<9; j++)
+			{
+				tab[i][j] = new Case();
+			}
+		}	
+		
+		tab[0][5].chiffre = 4;
+		tab[0][7].chiffre = 2;
+		tab[0][8].chiffre = 8;
+		tab[1][0].chiffre = 4;
+		tab[1][2].chiffre = 6;
+		tab[1][8].chiffre = 5;
+		tab[2][0].chiffre = 1;
+		tab[2][4].chiffre = 3;
+		tab[2][6].chiffre = 6;
+		tab[3][3].chiffre = 3;
+		tab[3][5].chiffre = 1;
+		tab[4][1].chiffre = 8;
+		tab[4][2].chiffre = 7;
+		tab[4][6].chiffre = 1;
+		tab[4][7].chiffre = 4;
+		tab[5][3].chiffre = 7;
+		tab[5][5].chiffre = 9;
+		tab[6][2].chiffre = 2;
+		tab[6][4].chiffre = 1;
+		tab[6][7].chiffre = 3;
+		tab[7][0].chiffre = 9;
+		tab[7][6].chiffre = 5;
+		tab[7][8].chiffre = 7;
+		tab[8][0].chiffre = 6;
+		tab[8][1].chiffre = 7;
+		tab[8][3].chiffre = 4;
+		
+		
+		return tab;
+		
+	}
 }
