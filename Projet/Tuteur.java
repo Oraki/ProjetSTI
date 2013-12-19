@@ -29,7 +29,7 @@ public class Tuteur
 	private static String message_Principe_But = "Le but du jeu du Sudoku est de completer la grille, divisee en 9 lignes, 9 colonnes et 9 regions (notees de 1 a 9 selon le sens de lecture occidental), en remplissant chaque case par un chiffre compris entre 1 et 9, de maniere a ce que les regles de bases soient satisfaites.";
 	private static String message_Principe_Regles = "Un chiffre dans une case satisfait la regle de la colonne si aucun autre meme chiffre ne se trouve dans la colonne de la case en question. Il en va de meme avec la regle de la ligne et la regle de la region.";
 	
-	private static String message_Strat0_Introduction = "Ensuite, voici la strategie initiale, dite des hypotheses simples.";
+	private static String message_Strat0_Introduction = "Comme c'est tout premier Sudoku, voici la strategie initiale, dite des hypotheses simples.";
 	private static String message_Strat0_Definition = "Un chiffre est une hypothese pour une case si ce chiffre satisfait les trois regles de bases dans cette case. Il peut y avoir plusieurs hypotheses par cases.";
 	private static String message_Strat0_Conseil = "Il est pertinant de chercher a eliminer les hypotheses dans les cases dont la colonne, la ligne ou la region correspondante est le moins vide... Tu as plus de chance de pouvoir y appliquer des strategies par la suite !";
 	
@@ -74,6 +74,13 @@ public class Tuteur
 	public Tuteur()
 	{
 		
+	}
+	
+	
+	public void Message_Connexion()
+	{
+		messages_Connexion_Bienvenue();
+		messages_But_Introduction();
 	}
 	
 	public void Message_Indice()
@@ -267,6 +274,7 @@ public class Tuteur
 			//Maj interface
 		}
 	}
+	
 	public void Message_Succes()
 	{
 		int numeroStrat = 0; //get je ne sais pas comment ??!!
@@ -330,13 +338,17 @@ public class Tuteur
 			break;
 		}
 	}
+	
 	public void Message_Hasard()
 	{
 		messages_Hasard();
 	}
 	
+	
 	public void MAJTexteTuteur(String texte)
 	{
+		/*
+		
 		if(!texte.equals("\n"))
 		{	
 			System.out.print("Tuteur :\n");
@@ -375,7 +387,12 @@ public class Tuteur
 		}
 		
 		System.out.print("\n\n");
+		
+		*/
+		
+		_grille.ajouterMessage(texte);
 	}
+	
 	
 	
 	public void messages_Connexion_Bienvenue()
@@ -511,21 +528,25 @@ public class Tuteur
 		MAJTexteTuteur(message_Erreur_4);
 		MAJTexteTuteur("\n");
 	}
+	
 	public void messages_Succes_1()
 	{
 		MAJTexteTuteur(message_Succes_1);
 		MAJTexteTuteur("\n");
 	}
+	
 	public void messages_Succes_2()
 	{
 		MAJTexteTuteur(message_Succes_2);
 		MAJTexteTuteur("\n");
 	}
+	
 	public void messages_Succes_3()
 	{
 		MAJTexteTuteur(message_Succes_3);
 		MAJTexteTuteur("\n");
 	}
+	
 	public void messages_Hasard()
 	{
 		MAJTexteTuteur(message_Hasard);

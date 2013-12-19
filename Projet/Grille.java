@@ -8085,7 +8085,15 @@ public class Grille extends JFrame implements MouseListener {
     }
 
     public void ajouterMessage(String s) {
-        texteTuteur.setText(texteTuteur.getText() + "\n" + s);
+    	
+    	if(!s.equals("\n"))
+    	{
+    		texteTuteur.setText(texteTuteur.getText()+"Tuteur :\n"+s+"\n\n");
+    	}
+    	else
+    	{
+    		texteTuteur.setText(texteTuteur.getText()+"\n\n");
+    	}
     }
 
     public void mouseClicked(MouseEvent ev) {
