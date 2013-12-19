@@ -3,9 +3,6 @@ public class Grille extends javax.swing.JFrame {
 
     private CasePanel[][] tabCP;
 
-    /**
-     * Creates new form Grille
-     */
     public Grille(Sudoku sudo) {
         tabCP = new CasePanel[9][9];
         initComponents();
@@ -18,12 +15,36 @@ public class Grille extends javax.swing.JFrame {
         }
     }
 
+    //TODO
     public void ajouterMessage(String s) {
-   /*     if (!s.equals("\n")) {
-            texteTuteur.setText(texteTuteur.getText() + "Tuteur :\n" + s + "\n\n");
-        } else {
-            texteTuteur.setText(texteTuteur.getText() + "\n\n");
-        }*/
+        /*     if (!s.equals("\n")) {
+         texteTuteur.setText(texteTuteur.getText() + "Tuteur :\n" + s + "\n\n");
+         } else {
+         texteTuteur.setText(texteTuteur.getText() + "\n\n");
+         }*/
+    }
+    
+    //TODO
+    public void effacerMessages(){
+        
+    }
+
+    public void erreurHypo(int ligne, int col, int valeur, boolean err) {
+        tabCP[ligne][col].setErreurHypo(valeur, err);
+    }
+
+    public void erreurValeur(int ligne, int col, boolean err) {
+        tabCP[ligne][col].setErreur(err);
+    }
+
+    public void setPuzzle(int[][] puzzle) {
+        for (int i = 0; i < puzzle.length; ++i) {
+            for (int j = 0; j < puzzle[i].length; ++j) {
+                if (puzzle[i][j] != 0) {
+                    tabCP[i][j].setValeur(puzzle[i][j], true);
+                }
+            }
+        }
     }
 
     /**

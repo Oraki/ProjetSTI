@@ -1,20 +1,8 @@
 
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
-
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.SwingUtilities;
 
-/**
- *
- * @author Tunel
- */
 public class CasePanel extends javax.swing.JPanel {
 
     private final int ligne;
@@ -22,6 +10,7 @@ public class CasePanel extends javax.swing.JPanel {
     private final boolean[] possi;
     private final boolean[] erreurPossi;
     private boolean erreur;
+    private boolean isPuzzle;
     private Sudoku main;
 
     public CasePanel(Sudoku sudo, int ligne, int col) {
@@ -38,14 +27,8 @@ public class CasePanel extends javax.swing.JPanel {
         possPanel.setVisible(true);
     }
 
-    public void setErreur(int valeur) {
-        erreurPossi[valeur] = true;
-    }
-
-    public void effacerErreurs() {
-        for (int i = 0; i < possi.length; ++i) {
-            possi[i] = false;
-        }
+    public void setErreurHypo(int valeur, boolean err) {
+        erreurPossi[valeur] = err;
     }
 
     private void updatePoss() {
@@ -147,6 +130,7 @@ public class CasePanel extends javax.swing.JPanel {
     }
 
     public void setValeur(int v, boolean puzzle) {
+        isPuzzle = puzzle;
         soluLabel.setText(v + "");
         if (puzzle) {
             soluLabel.setForeground(Color.blue);
@@ -157,19 +141,21 @@ public class CasePanel extends javax.swing.JPanel {
         possPanel.setVisible(false);
     }
 
-    public void retirerValeur() {
-        main.RetirerCoup(ligne, col, Integer.parseInt(soluLabel.getText()));
-        soluPanel.setVisible(false);
-        possPanel.setVisible(true);
+    private void retirerValeur() {
+        if (!isPuzzle) {
+            main.RetirerCoup(ligne, col, Integer.parseInt(soluLabel.getText()));
+            soluPanel.setVisible(false);
+            possPanel.setVisible(true);
+        }
     }
 
-    public void retirerPoss(int i) {
-        if (possi[i-1]) {
+    private void retirerPoss(int i) {
+        if (possi[i - 1]) {
             main.RetirerHypothese(ligne, col, i);
         } else {
             main.RemettreHypothese(ligne, col, i);
         }
-        possi[i-1] = !possi[i-1];
+        possi[i - 1] = !possi[i - 1];
         updatePoss();
     }
 
