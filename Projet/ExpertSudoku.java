@@ -413,8 +413,8 @@ public class ExpertSudoku {
     }
 
     /**
-     * Trouve une region qui est itéressante à jouer. Une zone étant le carré de 9
-     * cases du sudoku
+     * Trouve une region qui est itéressante à jouer. Une zone étant le carré de
+     * 9 cases du sudoku
      *
      * @return le numéro de la zone
      */
@@ -462,6 +462,20 @@ public class ExpertSudoku {
         }
 
         return getIndiceMax(cmpt);
+    }
+
+    public int strategieAJoueur() {
+        if (!retraitPossible[0].isEmpty()) {
+            return 0;
+        } else if (!coupPossible[0].isEmpty()) {
+            return 1;
+        } else if (!coupPossible[1].isEmpty()) {
+            return 2;
+        } else if (!retraitPossible[1].isEmpty()) {
+            return 3;
+        } else {
+            return -1;
+        }
     }
 
     /**
