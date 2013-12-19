@@ -413,12 +413,12 @@ public class ExpertSudoku {
     }
 
     /**
-     * Trouve une zone qui est itéressante à jouer. Une zone étant le carré de 9
+     * Trouve une region qui est itéressante à jouer. Une zone étant le carré de 9
      * cases du sudoku
      *
      * @return le numéro de la zone
      */
-    public int zoneAJouer() {
+    public int regionAJouer() {
         int[] cmpt = new int[9];
 
         for (int i = 0; i < coupPossible.length; ++i) {
@@ -432,12 +432,12 @@ public class ExpertSudoku {
     }
 
     /**
-     * Trouve une région qui est itéressante à jouer.
+     * Trouve une zone qui est itéressante à jouer.
      *
      * @return 0 pour la gauche du puzzle, 1 pour la droite, 2, le haut, 3 le
      * bas ou 4 pour la zone du centre.
      */
-    public int regionAJouer() {
+    public int zoneAJouer() {
         int[] cmpt = new int[5];
 
         for (int i = 0; i < coupPossible.length; ++i) {
