@@ -62,12 +62,12 @@ public class Tuteur
 	
 	private static String message_Hasard = "Aucune strategie ne te permet de faire cela. J'estime que tu joues au hasard !";
 	
-	public Tuteur(Apprenant zeApprenant, ExpertSudoku zeExpert, Grille zeGrille, Sudoku zeSudoku)
+	public Tuteur(Sudoku zeSudoku)
 	{
-		_apprenant = zeApprenant;
-		_expert = zeExpert;
-		_grille = zeGrille;
-		_sudoku = zeSudoku;
+		_apprenant = zeSudoku.apprenant;
+		_expert = zeSudoku.expert;
+		//_grille = zeSudoku
+
 	}
 	
 	public Tuteur()
@@ -116,7 +116,7 @@ public class Tuteur
 		}
 		if(_aDejaEuUnIndice == true)
 		{
-			int niveauExpertise = 0; //get de l'apprenant
+			int niveauExpertise = _apprenant.GetNiveau();
 			
 			switch(niveauExpertise)
 			{
