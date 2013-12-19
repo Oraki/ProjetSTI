@@ -184,7 +184,7 @@ public class Sudoku
 		RetraitChiffreMat(ligne, colonne);
 	}
 	
-	public void RemettreHypothèse(int ligne, int colonne, int region, int  numero)
+	public void RemettreHypothese(int ligne, int colonne, int region, int  numero)
 	{
 		Coup coup = new Coup(ligne, colonne, numero);
 		listErreurHypo.remove(coup);
