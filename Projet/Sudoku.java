@@ -153,13 +153,13 @@ public class Sudoku
 			
 			case 0://strat 1
 				apprenant.AddSuccess(0);
-				tuteur.Message_Succes(1);
+				tuteur.Message_Succes(0);
 				tuteur.Message_Strategie();
 				break;
 			
 			case 1://strat 2
 				apprenant.AddSuccess(1);
-				tuteur.Message_Succes(2);
+				tuteur.Message_Succes(1);
 				tuteur.Message_Strategie();
 				break;
 				
@@ -193,7 +193,7 @@ public class Sudoku
 		
 		case 0://strat 1
 			apprenant.AddSuccess(2);
-			tuteur.Message_Succes(0);
+			tuteur.Message_Succes(2);
 			tuteur.Message_Strategie();
 			break;
 		
