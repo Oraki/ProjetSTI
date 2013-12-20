@@ -198,7 +198,7 @@ public class Sudoku
 		
 		case 1://strat 2
 			apprenant.AddSuccess(3);
-			//.Message_Succes(3);
+			//tuteur.Message_Succes(3);
 			//tuteur.Message_Strategie();
 			break;
 			

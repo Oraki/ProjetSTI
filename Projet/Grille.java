@@ -33,7 +33,7 @@ public class Grille extends javax.swing.JFrame {
     	
     	for(int i=0; i<s.length(); i++)
     	{
-    		texteTuteur.append(s);
+    		texteTuteur.append(s.charAt(i));
     		
     		try {
 				Thread.sleep(40);
