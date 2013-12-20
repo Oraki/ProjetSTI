@@ -5,8 +5,8 @@ public class Apprenant
 	
 	// 0 -> KNOWLEDGE_1, //Validation d'une valeur avec la stratégie de l'hypothèse seule explicite 
 	// 1 -> KNOWLEDGE_2, //Validation d'une valeur avec la stratégie de l'hypothèse seule cachée 
-	// 2 -> KNOWLEDGE_3, //Elimination d'une hypothèses avec les règles de bases
-	// 3 -> KNOWLEDGE_4, //Elimination d'une hypothèses avec la stratégie des paires d'hypothèses explicite
+	// 2 -> KNOWLEDGE_3, //Elimination d'une hypothèse avec les règles de bases
+	// 3 -> KNOWLEDGE_4, //Elimination d'une hypothèse avec la stratégie des paires d'hypothèses explicite
 	int knowledge_success[] = new int[KNOWLEDGE_COUNT];
 	
 	// 0 -> FAIL_1, //Echec dans l'ajout d'un chiffre

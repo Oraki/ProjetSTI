@@ -1,6 +1,6 @@
 
 public class Grille extends javax.swing.JFrame {
-
+	
     private final CasePanel[][] tabCP;
     private final Sudoku sudo;
 
