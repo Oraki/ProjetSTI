@@ -19,11 +19,8 @@ public class Grille extends javax.swing.JFrame {
     }
 
     public void ajouterMessage(String s) {
-        if (!s.equals("\n")) {
-            texteTuteur.append("\nTuteur :\n   " + s);
-        } else {
-            texteTuteur.append(s+"\n");
-        }
+    	texteTuteur.append("\nTuteur :\n   " + s+"\n");
+
     }
 
     public void effacerMessages() {
