@@ -143,24 +143,24 @@ public class Sudoku
 			case -2 ://reponse fausse
 				apprenant.AddFail(0);
 				listErreurCoup.add(coup);
-				tuteur.Message_Erreur();
+				//tuteur.Message_Erreur();
 				break;
 				
 			case -1://réponse bonne mais impossible d'identifier les stratégies
 				apprenant.AddRandom();
-				tuteur.Message_Hasard();
+				//tuteur.Message_Hasard();
 				break;
 			
 			case 0://strat 1
 				apprenant.AddSuccess(0);
-				tuteur.Message_Succes(1);
-				tuteur.Message_Strategie();
+				//tuteur.Message_Succes(1);
+				//tuteur.Message_Strategie();
 				break;
 			
 			case 1://strat 2
 				apprenant.AddSuccess(1);
-				tuteur.Message_Succes(2);
-				tuteur.Message_Strategie();
+				//tuteur.Message_Succes(2);
+				//tuteur.Message_Strategie();
 				break;
 				
 			default:
@@ -170,7 +170,7 @@ public class Sudoku
 			AjoutChiffreMat(ligne, colonne, numero);
 		}
 		
-		
+		grille.ajouterMessage("Niv : " + apprenant.GetNiveau() + "   KNOW : " + apprenant.knowledge_success[0] + " " + apprenant.knowledge_success[1] + " " + apprenant.knowledge_success[2] + " " + apprenant.knowledge_success[3] + "     Fail : " + apprenant.knowledge_fail[0] + " " + apprenant.knowledge_fail[1]);
 	}
 	
 	public void RetirerHypothese(int ligne, int colonne, int  numero)
@@ -183,24 +183,24 @@ public class Sudoku
 		case -2 ://reponse fausse
 			apprenant.AddFail(1);
 			listErreurHypo.add(coup);
-			tuteur.Message_Erreur();
+			//tuteur.Message_Erreur();
 			break;
 			
 		case -1://r���ponse bonne mais impossible d'identifier les strat���gies
 			apprenant.AddRandom();
-			tuteur.Message_Hasard();
+			//tuteur.Message_Hasard();
 			break;
 		
 		case 0://strat 1
 			apprenant.AddSuccess(2);
-			tuteur.Message_Succes(0);
-			tuteur.Message_Strategie();
+			//tuteur.Message_Succes(0);
+			//tuteur.Message_Strategie();
 			break;
 		
 		case 1://strat 2
 			apprenant.AddSuccess(3);
-			tuteur.Message_Succes(3);
-			tuteur.Message_Strategie();
+			//.Message_Succes(3);
+			//tuteur.Message_Strategie();
 			break;
 			
 		default:
@@ -208,6 +208,8 @@ public class Sudoku
 		}
 		
 		RetirerHypotheseMat(ligne, colonne, numero);
+		
+		grille.ajouterMessage("Niv : " + apprenant.GetNiveau() + "   KNOW : " + apprenant.knowledge_success[0] + " " + apprenant.knowledge_success[1] + " " + apprenant.knowledge_success[2] + " " + apprenant.knowledge_success[3] + "     Fail : " + apprenant.knowledge_fail[0] + " " + apprenant.knowledge_fail[1]);
 	}
 	
 	public void RetirerCoup(int ligne, int colonne, int  numero)
