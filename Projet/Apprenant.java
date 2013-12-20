@@ -97,4 +97,22 @@ public class Apprenant
 	
 	}
 	
+	public int Getlvl()
+	{
+		int lvl = 0;
+		
+		for (int i = 0; i< KNOWLEDGE_COUNT; i++)
+		{
+			lvl += (knowledge_success[i] * knowledge_sucess_ponderation[i]);
+		}
+		
+		for (int i = 0; i< KNOWLEDGE_COUNT/2; i++)
+		{
+			lvl -= (knowledge_fail[i] * knowledge_fail_ponderation[i]);
+		}
+		
+		return lvl;
+	
+	}
+	
 }

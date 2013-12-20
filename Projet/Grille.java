@@ -19,8 +19,44 @@ public class Grille extends javax.swing.JFrame {
     }
 
     public void ajouterMessage(String s) {
-        texteTuteur.append("\nTuteur :\n   " + s + "\n");
+    	
+    	
+    	/*
+    	texteTuteur.append("Tuteur :\n   ");
+    	
+    	try {
+			Thread.sleep(300);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
+    	for(int i=0; i<s.length(); i++)
+    	{
+    		texteTuteur.append(String.valueOf(s.charAt(i)));
+    		
+    		try {
+				Thread.sleep(40);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	}
+    	
+        
         texteTuteur.setCaretPosition(texteTuteur.getText().length());
+        
+        try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+        
+        texteTuteur.append("\n\n");
+        */
+        
+      texteTuteur.append("Tuteur :\n   " + s + "\n\n");
     }
 
     public void effacerMessages() {

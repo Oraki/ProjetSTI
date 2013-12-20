@@ -17,7 +17,7 @@ public class Tuteur
 	
 	private String message_Principe_Introduction =    "Pour commencer, voici le principe de base du jeu du Sudoku :";
 	private String message_Principe_But =             "Le but du jeu du Sudoku est de completer la grille, divisee en 9 lignes, 9 colonnes et 9 regions\n (notees de 1 a 9 selon le sens de lecture occidental), en remplissant chaque case par un chiffre\n compris entre 1 et 9, de maniere a ce que les regles de bases soient satisfaites.";
-	private String message_Principe_Regles =          "Un chiffre dans une case satisfait la regle de la colonne si aucun autre meme chiffre ne se trouve\n dans la colonne de la case en question. Il en va de meme avec la regle de la ligne et la regle\n de la region.";
+	private String message_Principe_Regles =          "Voici les regles de base. Un chiffre dans une case satisfait la regle de la colonne si aucun autre\n meme chiffre ne se trouve dans la colonne de la case en question. Il en va de meme avec la regle\n de la ligne et la regle de la region.";
 	
 	private String message_Strat0_Introduction =      "Comme c'est tout premier Sudoku, voici la strategie initiale, dite des hypotheses simples.";
 	private String message_Strat0_Definition =        "Un chiffre est une hypothese pour une case si ce chiffre satisfait les trois regles de bases dans\n cette case. Il peut y avoir plusieurs hypotheses par cases.";
@@ -78,6 +78,7 @@ public class Tuteur
 		_sudoku = zeSudoku;
 		
 		Message_Connexion();
+		Message_Strategie();
 
 	}
 	
@@ -361,7 +362,7 @@ public class Tuteur
 	
 	public void Message_Succes(int numeroStrat)
 	{
-		int nbSuccesStrat = 1;
+		int nbSuccesStrat = 0;
 		
 		switch(numeroStrat)
 		{
