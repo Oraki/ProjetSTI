@@ -11,7 +11,7 @@ public class Sudoku
 	
 	Apprenant apprenant = new Apprenant();
 	ExpertSudoku expert;
-	Tuteur tuteur = new Tuteur(this);
+	Tuteur tuteur;
 	Grille grille;
 	
 	Case matriceSudoku[][] = new Case[9][9];
@@ -61,15 +61,12 @@ public class Sudoku
         }
         //</editor-fold>
 
-        final Sudoku fSudo = this;
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                grille = new Grille(fSudo);
-                grille.setVisible(true);
-                grille.setPuzzle(ConvertToTabInt(matriceSudoku));
-            }
-        });
+        
+        grille = new Grille(this);
+        grille.setVisible(true);
+        grille.setPuzzle(ConvertToTabInt(matriceSudoku));
+        tuteur = new Tuteur(this);
+        
     }
 
 	private int[][] ConvertToTabInt(Case[][] tab)
