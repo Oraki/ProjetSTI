@@ -169,7 +169,7 @@ public class Sudoku
 			AjoutChiffreMat(ligne, colonne, numero);
 		}
 		
-		grille.ajouterMessage("Niv : " + apprenant.GetNiveau() + "   KNOW : " + apprenant.knowledge_success[0] + " " + apprenant.knowledge_success[1] + " " + apprenant.knowledge_success[2] + " " + apprenant.knowledge_success[3] + "     Fail : " + apprenant.knowledge_fail[0] + " " + apprenant.knowledge_fail[1] + "    rd : " + apprenant.numRandom);
+		grille.ajouterMessage("Niv : " + apprenant.GetNiveau() + "   LVL : " + apprenant.Getlvl() +"   KNOW : " + apprenant.knowledge_success[0] + " " + apprenant.knowledge_success[1] + " " + apprenant.knowledge_success[2] + " " + apprenant.knowledge_success[3] + "     Fail : " + apprenant.knowledge_fail[0] + " " + apprenant.knowledge_fail[1] + "    rd : " + apprenant.numRandom);
 	}
 	
 	public void RetirerHypothese(int ligne, int colonne, int  numero)
@@ -208,7 +208,7 @@ public class Sudoku
 		
 		RetirerHypotheseMat(ligne, colonne, numero);
 		
-		grille.ajouterMessage("Niv : " + apprenant.GetNiveau() + "   KNOW : " + apprenant.knowledge_success[0] + " " + apprenant.knowledge_success[1] + " " + apprenant.knowledge_success[2] + " " + apprenant.knowledge_success[3] + "     Fail : " + apprenant.knowledge_fail[0] + " " + apprenant.knowledge_fail[1] + "    rd : " + apprenant.numRandom);
+		grille.ajouterMessage("Niv : " + apprenant.GetNiveau() + "   LVL : " + apprenant.Getlvl() + "   KNOW : " + apprenant.knowledge_success[0] + " " + apprenant.knowledge_success[1] + " " + apprenant.knowledge_success[2] + " " + apprenant.knowledge_success[3] + "     Fail : " + apprenant.knowledge_fail[0] + " " + apprenant.knowledge_fail[1] + "    rd : " + apprenant.numRandom);
 	}
 	
 	public void RetirerCoup(int ligne, int colonne, int  numero)
