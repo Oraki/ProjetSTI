@@ -60,7 +60,7 @@ public class Tuteur
 	
 	public void MettreAjourMessages()
 	{
-		message_Indice_Strat = "Voici une strategie que tu n'as pas encore utilisee souvent. Il s'agit de la stragie dite "+_indiceStrat;
+		message_Indice_Strat = "Pour avancer, tu dois appliquer la strategie dite "+_indiceStrat+". Voici un petit rappel.";
 		message_Indice_Coup = "Il y a une case ou un coup est jouable. Il s'agit de la case situee "+_indiceCoup+".";
 		message_Indice_Region = "Il y a une region ou au moins un coup est possible. Il s'agit de la region numero "+_indiceRegion+".";
 		message_Indice_Zone ="Il y a une zone ou au moins au coup est possible. Il s'agit de la partie "+_indiceZone+" de la grille.";
@@ -103,13 +103,13 @@ public class Tuteur
 	{
 		if(_aDejaEuUnIndice == false)
 		{
-			int strategieLaMoinsUtilisee = 0; //get de l'apprenant
+			int strategieUtilisable = _expert.strategieAJoueur();
 			
-			switch(strategieLaMoinsUtilisee)
+			switch(strategieUtilisable)
 			{
 				case 0:
 				{
-					_indiceStrat = "des hypotheses.";
+					_indiceStrat = "des hypotheses simples.";
 					MettreAjourMessages();
 					
 					_grille.ajouterMessage(message_Indice_Strat);
@@ -172,8 +172,21 @@ public class Tuteur
 
 				}
 				break;
-					
+				
 				case 1:
+				{
+					Coup coup = _expert.coupAJoueur();
+					
+					_indiceCoup = "a la ligne "+String.valueOf(coup.getLigne())+" et a la colonne "+String.valueOf(coup.getColonne());
+					MettreAjourMessages();
+					
+					_grille.ajouterMessage(message_Indice_Introduction);
+					_grille.ajouterMessage(message_Indice_Coup);
+
+				}
+				break;
+					
+				case 2:
 				{
 					int region = _expert.regionAJouer();
 					
@@ -185,9 +198,8 @@ public class Tuteur
 				}
 				break;
 					
-				case 2:
+				case 3:
 				{
-					
 					int zone = _expert.zoneAJouer();
 					
 					switch(zone)
@@ -290,9 +302,7 @@ public class Tuteur
 					_aDejaVuStrat3 = true;
 				}
 			}
-			break;
-			
-			
+			break;	
 		}
 	}
 
@@ -308,8 +318,8 @@ public class Tuteur
 				if(nombreErreursPonderees>0)
 				{
 					_grille.ajouterMessage(message_Erreur_0);
+					//Maj interface
 				}
-				
 			}
 			break;
 			
@@ -318,6 +328,7 @@ public class Tuteur
 				if(nombreErreursPonderees>5)
 				{
 					_grille.ajouterMessage(message_Erreur_12);
+					//Maj interface
 				}
 			}
 			break;
@@ -327,6 +338,7 @@ public class Tuteur
 				if(nombreErreursPonderees>8)
 				{
 					_grille.ajouterMessage(message_Erreur_12);
+					//Maj interface
 				}
 			}
 			break;
@@ -336,12 +348,13 @@ public class Tuteur
 				if(nombreErreursPonderees>8)
 				{
 					_grille.ajouterMessage(message_Erreur_3);
+					//Maj interface
 				}
 			}
 			break;
-			
-			//Maj interface
 		}
+		
+		_aDejaEuUnIndice = false;
 	}
 	
 	public void Message_Succes(int numeroStrat)
@@ -413,6 +426,8 @@ public class Tuteur
 			}
 			break;
 		}
+		
+		_aDejaEuUnIndice = false;
 	}
 	
 	public void Message_Hasard()
@@ -444,8 +459,9 @@ public class Tuteur
 				//rien
 			}
 			break;
-		
 		}
+		
+		_aDejaEuUnIndice = false;
 	}
 	
 	public static void main(String[] args)
