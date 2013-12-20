@@ -362,7 +362,7 @@ public class Tuteur
 	
 	public void Message_Succes(int numeroStrat)
 	{
-		int nbSuccesStrat = 1;
+		int nbSuccesStrat = 0;
 		
 		switch(numeroStrat)
 		{
