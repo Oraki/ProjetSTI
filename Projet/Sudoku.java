@@ -59,10 +59,11 @@ public class Sudoku
         }
         //</editor-fold>
 
+        final Sudoku fSudo = this;
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                grille = new Grille(new Sudoku());
+                grille = new Grille(fSudo);
                 grille.setVisible(true);
             }
         });

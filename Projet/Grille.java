@@ -155,7 +155,7 @@ public class Grille extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                Grille g = new Grille(new Sudoku());
+                Grille g = new Grille(null);
                 g.setVisible(true);
             }
         });
