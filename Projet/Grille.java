@@ -80,6 +80,9 @@ public class Grille extends javax.swing.JFrame {
 
         getContentPane().add(jeuPanel, java.awt.BorderLayout.CENTER);
 
+        jPanel2.setMinimumSize(new java.awt.Dimension(300, 300));
+        jPanel2.setName(""); // NOI18N
+
         texteTuteur.setEditable(false);
         texteTuteur.setColumns(20);
         texteTuteur.setRows(5);
@@ -111,9 +114,8 @@ public class Grille extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(indiceBouton)
-                        .addGap(0, 62, Short.MAX_VALUE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap())
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE)))
         );
 
         getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_END);

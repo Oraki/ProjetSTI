@@ -97,12 +97,11 @@ public class ExpertSudoku {
             rule += ")";
         }
         rule += "))";
-        moteur.executeCommand(rule);
 
         for (int i = 0; i < puzzle.length; ++i) {
             for (int j = 0; j < puzzle[i].length; ++j) {
                 if (puzzle[i][j] != 0) {
-                    Fact f = new Fact(dtPoss);
+                    Fact f = new Fact(dtValeur);
                     f.setSlotValue("ligne", new Value(i, RU.INTEGER));
                     f.setSlotValue("col", new Value(j, RU.INTEGER));
                     f.setSlotValue("zone", new Value(j / 3 + (i / 3) * 3, RU.INTEGER));
@@ -120,6 +119,29 @@ public class ExpertSudoku {
                 }
             }
         }
+
+        moteur.executeCommand("(defrule elimPos "
+                + "?f <- (possibilite (ligne ?x) (col ?y) (zone ?z) (is ?v)) "
+                + "(valeur (ligne ?x2) (col ?y2) (zone ?z2) (is ?v))"
+                + "(test (or (eq ?x2 ?x) (eq ?z2 ?z) (eq ?y2 ?y))) "
+                + "=> "
+                + "(retract ?f)) ");
+        moteur.run();
+
+        for (int i = 0; i < puzzle.length; ++i) {
+            for (int j = 0; j < puzzle[i].length; ++j) {
+                if (puzzle[i][j] != 0) {
+                    Fact f = new Fact(dtPoss);
+                    f.setSlotValue("ligne", new Value(i, RU.INTEGER));
+                    f.setSlotValue("col", new Value(j, RU.INTEGER));
+                    f.setSlotValue("zone", new Value(j / 3 + (i / 3) * 3, RU.INTEGER));
+                    f.setSlotValue("is", new Value(puzzle[i][j], RU.INTEGER));
+                    moteur.assertFact(f);
+                }
+            }
+        }
+
+        moteur.executeCommand(rule);
         moteur.run();
         System.out.println("*** Fin de la recherche ***");
     }
