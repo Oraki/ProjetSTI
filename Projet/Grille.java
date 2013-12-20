@@ -1,6 +1,6 @@
 
 public class Grille extends javax.swing.JFrame {
-	
+
     private final CasePanel[][] tabCP;
     private final Sudoku sudo;
 
@@ -19,8 +19,8 @@ public class Grille extends javax.swing.JFrame {
     }
 
     public void ajouterMessage(String s) {
-    	texteTuteur.append("\nTuteur :\n   " + s+"\n");
-
+        texteTuteur.append("\nTuteur :\n   " + s + "\n");
+        texteTuteur.setCaretPosition(texteTuteur.getText().length());
     }
 
     public void effacerMessages() {
