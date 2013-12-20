@@ -36,7 +36,7 @@ public class Sudoku
         }*/
     	
     	 matriceSudoku =  GenererSudoku1(); 
-    	 //expert = new ExpertSudoku(ConvertToTabInt(matriceSudoku));
+    	 expert = new ExpertSudoku(ConvertToTabInt(matriceSudoku));
     	 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
