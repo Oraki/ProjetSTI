@@ -22,7 +22,7 @@ public class Grille extends javax.swing.JFrame {
         if (!s.equals("\n")) {
             texteTuteur.append("\nTuteur :\n   " + s);
         } else {
-            texteTuteur.append(s);
+            texteTuteur.append(s+"\n");
         }
     }
 

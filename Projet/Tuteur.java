@@ -13,27 +13,27 @@ public class Tuteur
 	private boolean _aDejaVuStrat3 = false;
 	
 	private String message_Connexion_Bienvenue =      "Bienvenue sur SudokuSmartTutor, le systeme tutoriel intelligent pour apprendre a jouer au Sudoku !";
-	private String message_Connexion_Interface =      "L'interface de SudokuSmartTutor te permet d'eliminer des hypotheses (ecrites en petites) a l'aide du clic droit sur une case. Tu peux aussi jouer un coup pour entrer une valeur definitive (ecrite en gros) a l'aide du clic gauche. Si tu es bloque, tu peux demander de l'aide avec le bouton Indice.";
+	private String message_Connexion_Interface =      "L'interface de SudokuSmartTutor te permet d'eliminer des hypotheses (ecrites en petites) a l'aide du clic droit\n sur une case. Tu peux aussi jouer un coup pour entrer une valeur definitive (ecrite en gros) a l'aide du clic gauche. Si tu es bloque, tu peux demander de l'aide avec le bouton Indice.";
 	
 	private String message_Principe_Introduction =    "Pour commencer, voici le principe de base du jeu du Sudoku :";
-	private String message_Principe_But =             "Le but du jeu du Sudoku est de completer la grille, divisee en 9 lignes, 9 colonnes et 9 regions (notees de 1 a 9 selon le sens de lecture occidental), en remplissant chaque case par un chiffre compris entre 1 et 9, de maniere a ce que les regles de bases soient satisfaites.";
-	private String message_Principe_Regles =          "Un chiffre dans une case satisfait la regle de la colonne si aucun autre meme chiffre ne se trouve dans la colonne de la case en question. Il en va de meme avec la regle de la ligne et la regle de la region.";
+	private String message_Principe_But =             "Le but du jeu du Sudoku est de completer la grille, divisee en 9 lignes, 9 colonnes et 9 regions (notees de 1 a 9\n selon le sens de lecture occidental), en remplissant chaque case par un chiffre compris entre 1 et 9, de maniere a ce que les regles de bases soient satisfaites.";
+	private String message_Principe_Regles =          "Un chiffre dans une case satisfait la regle de la colonne si aucun autre meme chiffre ne se trouve dans la \ncolonne de la case en question. Il en va de meme avec la regle de la ligne et la regle de la region.";
 	
 	private String message_Strat0_Introduction =      "Comme c'est tout premier Sudoku, voici la strategie initiale, dite des hypotheses simples.";
-	private String message_Strat0_Definition =        "Un chiffre est une hypothese pour une case si ce chiffre satisfait les trois regles de bases dans cette case. Il peut y avoir plusieurs hypotheses par cases.";
-	private String message_Strat0_Conseil =           "Il est pertinant de chercher a eliminer les hypotheses dans les cases dont la colonne, la ligne ou la region correspondante est le moins vide... Tu as plus de chance de pouvoir y appliquer des strategies par la suite !";
+	private String message_Strat0_Definition =        "Un chiffre est une hypothese pour une case si ce chiffre satisfait les trois regles de bases dans cette case.\n Il peut y avoir plusieurs hypotheses par cases.";
+	private String message_Strat0_Conseil =           "Il est pertinant de chercher a eliminer les hypotheses dans les cases dont la colonne, la ligne ou la region\n correspondante est le moins vide... Tu as plus de chance de pouvoir y appliquer des strategies par la suite !";
 	
-	private String message_Strat1_Introduction =      "Tu as l'air de bien maitriser le principe des hypotheses ! Pour aller plus loin, voici la premiere strategie, dite de l'hypothese seule visible.";
+	private String message_Strat1_Introduction =      "Tu as l'air de bien maitriser le principe des hypotheses ! Pour aller plus loin, voici la premiere strategie, dite\n de l'hypothese seule visible.";
 	private String message_Strat1_Definition =        "Une hypothese est la valeur definitive dans une case si dans cette case se trouve cette hypothese et elle seule.";
-	private String message_Strat1_Conseil =           "Tu dois appliquer la premiere strategie des que tu constates que c'est possible avant de continuer a chercher d'autres hypotheses... Et n'oublies pas de mettre a jour tes hypotheses en consequence !";
+	private String message_Strat1_Conseil =           "Tu dois appliquer la premiere strategie des que tu constates que c'est possible avant de continuer a chercher\n d'autres hypotheses... Et n'oublies pas de mettre a jour tes hypotheses en consequence !";
 	
-	private String message_Strat2_Introduction =      "Tu as l'air de bien maitriser le principe de l'hypothese seule visible ! Pour aller plus loin, voici la deuxieme strategie, dite de l'hypothese seule cachee.";
-	private String message_Strat2_Definition =        "Une hypothese est la valeur definitive dans une case si cette hypothese ne se trouve pas dans les autres cases de la colonne, de la ligne ou de la region de cette case.";
-	private String message_Strat2_Conseil =           "Applique la deuxieme strategie des que tu constates que c'est possible ou bien des que la premiere n'est plus applicable... Tu dois alors te concentrer d'avantage sur les hypotheses !";
+	private String message_Strat2_Introduction =      "Tu as l'air de bien maitriser le principe de l'hypothese seule visible ! Pour aller plus loin, voici la deuxieme\n strategie, dite de l'hypothese seule cachee.";
+	private String message_Strat2_Definition =        "Une hypothese est la valeur definitive dans une case si cette hypothese ne se trouve pas dans les autres cases\n de la colonne, de la ligne ou de la region de cette case.";
+	private String message_Strat2_Conseil =           "Applique la deuxieme strategie des que tu constates que c'est possible ou bien des que la premiere n'est plus\n applicable... Tu dois alors te concentrer d'avantage sur les hypotheses !";
 	
-	private String message_Strat3_Introduction =      "Tu as l'air de bien maitriser le principe de l'hypothese seule cachee ! Pour aller plus loin, voici la troisieme strategie, dite des paires d'hypotheses visibles.";
-	private String message_Strat3_Definition =        "Si dans deux cases parmi une colonne, un ligne ou une region se trouvent les deux memes hypotheses et elles seules, alors toutes ces mêmes hypothèses dans les autres cases de la colonne, de la ligne ou de la region en question peuvent etre eliminee.";
-	private String message_Strat3_Conseil =           "Cette strategie ne permet que d'eliminer des hypotheses. Applique la des que possible...Puis essaye d'appliquer a nouveau les precedentes strategies !";
+	private String message_Strat3_Introduction =      "Tu as l'air de bien maitriser le principe de l'hypothese seule cachee ! Pour aller plus loin, voici la troisieme\n strategie, dite des paires d'hypotheses visibles.";
+	private String message_Strat3_Definition =        "Si dans deux cases parmi une colonne, un ligne ou une region se trouvent les deux memes hypotheses et elles\n seules, alors toutes ces mêmes hypothèses dans les autres cases de la colonne, de la ligne ou de la region en question peuvent etre eliminee.";
+	private String message_Strat3_Conseil =           "Cette strategie ne permet que d'eliminer des hypotheses. Applique la des que possible...Puis essaye d'appliquer\n a nouveau les precedentes strategies !";
 	
 	private String message_Erreur_0 =                 "Attention ! Tu as fait une erreur. Tu peux l'apercevoir en rouge sur la grille.";
 	private String message_Erreur_12 =                "Prends garde ! Tu as fait quelques erreurs. Tu peux les apercevoir en rouge sur la grille.";
