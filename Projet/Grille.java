@@ -44,7 +44,7 @@ public class Grille extends javax.swing.JFrame {
     	}
     	
         
-        texteTuteur.setCaretPosition(texteTuteur.getText().length());
+        
         
         try {
 			Thread.sleep(500);
@@ -57,6 +57,7 @@ public class Grille extends javax.swing.JFrame {
         */
         
       texteTuteur.append("Tuteur :\n   " + s + "\n\n");
+      texteTuteur.setCaretPosition(texteTuteur.getText().length());
     }
 
     public void effacerMessages() {
