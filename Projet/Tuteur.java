@@ -28,12 +28,12 @@ public class Tuteur
 	private String message_Strat1_Conseil = "Tu dois appliquer la premiere strategie des que tu constates que c'est possible avant de continuer a chercher d'autres hypotheses... Et n'oublies pas de mettre a jour tes hypotheses en consequence !";
 	
 	private String message_Strat2_Introduction = "Tu as l'air de bien maitriser le principe de l'hypothese seule visible ! Pour aller plus loin, voici la deuxieme strategie, dite de l'hypothese seule cachee.";
-	private String message_Strat2_Definition = "Une hypothese est la valeur definitive dans une case si cette hypothese ne se trouve pas dans la colonne, la ligne ou la region de cette case.";
+	private String message_Strat2_Definition = "Une hypothese est la valeur definitive dans une case si cette hypothese ne se trouve pas dans les autres cases de la colonne, de la ligne ou de la region de cette case.";
 	private String message_Strat2_Conseil = "Applique la deuxieme strategie des que tu constates que c'est possible ou bien des que la premiere n'est plus applicable... Tu dois alors te concentrer d'avantage sur les hypotheses !";
 	
 	private String message_Strat3_Introduction = "Tu as l'air de bien maitriser le principe de l'hypothese seule cachee ! Pour aller plus loin, voici la troisieme strategie, dite des paires d'hypotheses visibles.";
-	private String message_Strat3_Definition = "";
-	private String message_Strat3_Conseil = "";
+	private String message_Strat3_Definition = "Si dans deux cases parmi une colonne, un ligne ou une region se trouvent les deux memes hypotheses et elles seules, alors toutes ces mêmes hypothèses dans les autres cases de la colonne, de la ligne ou de la region en question peuvent etre eliminee.";
+	private String message_Strat3_Conseil = "Cette strategie ne permet que d'eliminer des hypotheses. Applique la des que possible...Puis essaye d'appliquer a nouveau les precedentes strategies !";
 	
 	private String message_Erreur_0 = "Attention ! Tu as fait une erreur. Tu peux l'apercevoir en rouge sur la grille.";
 	private String message_Erreur_12 = "Prends garde ! Tu as fait quelques erreurs. Tu peux les apercevoir en rouge sur la grille.";
@@ -74,8 +74,10 @@ public class Tuteur
 	{
 		_apprenant = zeSudoku.apprenant;
 		_expert = zeSudoku.expert;
-		//_grille = zeSudoku
+		_grille = zeSudoku.grille;
 		_sudoku = zeSudoku;
+		
+		Message_Connexion();
 
 	}
 	
