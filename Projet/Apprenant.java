@@ -26,8 +26,11 @@ public class Apprenant
 		for (int i = 0 ; i < KNOWLEDGE_COUNT; i++ )
 		{
 			knowledge_success[i] = 0;
-			knowledge_fail[i] = 0;
 		}
+		
+		knowledge_fail[0] = 0;
+		knowledge_fail[1] = 0;
+		
 		//A calibrer
 		knowledge_sucess_ponderation[0] = 10;
 		knowledge_sucess_ponderation[1] = 30;
@@ -79,7 +82,7 @@ public class Apprenant
 			lvl += (knowledge_success[i] * knowledge_sucess_ponderation[i]);
 		}
 		
-		for (int i = 0; i< KNOWLEDGE_COUNT; i++)
+		for (int i = 0; i< KNOWLEDGE_COUNT/2; i++)
 		{
 			lvl -= (knowledge_fail[i] * knowledge_fail_ponderation[i]);
 		}
