@@ -82,12 +82,12 @@ public class Sudoku
 			{
 				if (tab[i][j].CaseRemplie())
 				{
-					tabTemp[i][j] = tab[i][j].chiffre;
+					tabTemp[j][i] = tab[i][j].chiffre;
 				}
 				
 				else
 				{
-					tabTemp[i][j] = 0;
+					tabTemp[j][i] = 0;
 				}
 					
 			}
