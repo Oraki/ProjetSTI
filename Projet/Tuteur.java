@@ -166,7 +166,7 @@ public class Tuteur
 				{
 					Coup coup = _expert.coupAJoueur();
 					
-					_indiceCoup = "a la ligne "+String.valueOf(coup.getLigne())+" et a la colonne "+String.valueOf(coup.getColonne());
+					_indiceCoup = "a la ligne "+String.valueOf(coup.getLigne()+1)+" et a la colonne "+String.valueOf(coup.getColonne()+1);
 					MettreAjourMessages();
 					
 					_grille.ajouterMessage(message_Indice_Introduction);
