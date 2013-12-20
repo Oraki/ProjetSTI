@@ -18,10 +18,11 @@ public class Sudoku
 	
 	
 	
-	ArrayList<Coup> listeCoupStrat1 = new ArrayList<Coup>(); //liste des coup possibles en applicant la strat���gie 1
+	/*ArrayList<Coup> listeCoupStrat1 = new ArrayList<Coup>(); //liste des coup possibles en applicant la strat���gie 1
 	ArrayList<Coup> listeCoupStrat2 = new ArrayList<Coup>(); //liste des coup possibles en applicant la strat���gie 2
 	ArrayList<Coup> listeCoupStrat3 = new ArrayList<Coup>(); //liste des coup possibles en applicant la strat���gie 3
-	
+	*/
+        
 	ArrayList<Coup> listErreurCoup = new ArrayList<Coup>();
 	ArrayList<Coup> listErreurHypo = new ArrayList<Coup>();
 
@@ -98,7 +99,7 @@ public class Sudoku
 		return true;
 	}
 	
-	public void MAJCoupPossible()//Mise  jour des listes des coups possible
+	/*public void MAJCoupPossible()//Mise  jour des listes des coups possible
 	{
 		listeCoupStrat1.clear();
 		listeCoupStrat2.clear();
@@ -107,7 +108,7 @@ public class Sudoku
 		listeCoupStrat1 = (ArrayList<Coup>)expert.getCoupPossible(1);
 		listeCoupStrat2 = (ArrayList<Coup>)expert.getCoupPossible(2);
 		listeCoupStrat3 = (ArrayList<Coup>)expert.getCoupPossible(3);
-	}
+	}*/
 	
 	public void AjoutHypotheseMat(int ligne, int colonne, int numero)//Ajout d'une hypoth���se par l'utilisateur
 	{
@@ -143,7 +144,7 @@ public class Sudoku
 			case -2 ://reponse fausse
 				apprenant.AddFail(0);
 				listErreurCoup.add(coup);
-				//tuteur.Message_Erreur();
+				tuteur.Message_Erreur();
 				break;
 				
 			case -1://réponse bonne mais impossible d'identifier les stratégies
