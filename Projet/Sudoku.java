@@ -134,7 +134,6 @@ public class Sudoku
 		
 		if(!matriceSudoku[ligne][colonne].CaseRemplie())//on v���rifie si la case n'est pas d���j��� remplie
 		{
-			grille.ajouterMessage("Caca");
 			Coup coup = new Coup(ligne, colonne, numero);
 			int CoupPossible = expert.jouerValeur(coup); 
 			
