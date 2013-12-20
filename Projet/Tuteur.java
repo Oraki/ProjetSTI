@@ -320,7 +320,7 @@ public class Tuteur
 				if(nombreErreursPonderees>0)
 				{
 					_grille.ajouterMessage(message_Erreur_0);
-					//Maj interface
+					_sudoku.afficherErreurs();
 				}
 			}
 			break;
@@ -330,7 +330,7 @@ public class Tuteur
 				if(nombreErreursPonderees>5)
 				{
 					_grille.ajouterMessage(message_Erreur_12);
-					//Maj interface
+					_sudoku.afficherErreurs();
 				}
 			}
 			break;
@@ -340,7 +340,7 @@ public class Tuteur
 				if(nombreErreursPonderees>8)
 				{
 					_grille.ajouterMessage(message_Erreur_12);
-					//Maj interface
+					_sudoku.afficherErreurs();
 				}
 			}
 			break;
@@ -350,7 +350,7 @@ public class Tuteur
 				if(nombreErreursPonderees>8)
 				{
 					_grille.ajouterMessage(message_Erreur_3);
-					//Maj interface
+					_sudoku.afficherErreurs();
 				}
 			}
 			break;
