@@ -1,9 +1,5 @@
 
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.ListIterator;
-
 
 public class Sudoku
 {
@@ -16,6 +12,7 @@ public class Sudoku
 	Apprenant apprenant = new Apprenant();
 	ExpertSudoku expert;
 	Tuteur tuteur = new Tuteur(this);
+        Grille grille;
 	
 	Case matriceSudoku[][] = new Case[9][9];
 	Case matriceAffiche[][] = new Case[9][9];
@@ -30,21 +27,47 @@ public class Sudoku
 	ArrayList<Coup> listErreurCoup = new ArrayList<Coup>();
 	ArrayList<Coup> listErreurHypo = new ArrayList<Coup>();
 
-	
-	public Sudoku()
-	{
-		for(int i = 0; i<9; i++)
-		{
-			for(int j = 0; j<9; j++)
-			{
-				matriceSudoku[i][j] = new Case();	
-				matriceAffiche[i][j] = new Case();
-			}
-		}	
-		
-		//expert = new ExpertSudoku( ConvertToTabInt(matriceSudoku));
-	}
-	
+    public Sudoku() {
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 9; j++) {
+                matriceSudoku[i][j] = new Case();
+                matriceAffiche[i][j] = new Case();
+            }
+        }
+
+        //expert = new ExpertSudoku( ConvertToTabInt(matriceSudoku));
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Grille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(Grille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(Grille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(Grille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                grille = new Grille(new Sudoku());
+                grille.setVisible(true);
+            }
+        });
+    }
+
 	private int[][] ConvertToTabInt(Case[][] tab)
 	{
 		int[][] tabTemp = new int[9][9];
@@ -309,4 +332,8 @@ public class Sudoku
 		return tab;
 		
 	}
+
+    public void afficherIndice() {
+        tuteur.Message_Indice();
+    }
 }
