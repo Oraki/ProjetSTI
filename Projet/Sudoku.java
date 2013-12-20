@@ -236,12 +236,26 @@ public class Sudoku
 		return listErreurHypo.size();
 	}
 	
-	public void ClearErreurs()
-	{
-		listErreurCoup.clear();
-		listErreurHypo.clear();
-	}
-	
+    public void ClearErreurs() {
+        for (Coup c : listErreurCoup) {
+            grille.erreurValeur(c.getLigne(), c.getColonne(), false);
+        }
+        for (Coup c : listErreurHypo) {
+            grille.erreurHypo(c.getLigne(), c.getColonne(), c.getNumero(), false);
+        }
+        listErreurCoup.clear();
+        listErreurHypo.clear();
+    }
+
+    public void afficherErreurs() {
+        for (Coup c : listErreurCoup) {
+            grille.erreurValeur(c.getLigne(), c.getColonne(), true);
+        }
+        for (Coup c : listErreurHypo) {
+            grille.erreurHypo(c.getLigne(), c.getColonne(), c.getNumero(), true);
+        }
+    }
+
 	
 	//----------------------------------------------------------------------------
 	
