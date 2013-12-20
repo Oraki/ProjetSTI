@@ -12,11 +12,9 @@ public class Sudoku
 	Apprenant apprenant = new Apprenant();
 	ExpertSudoku expert;
 	Tuteur tuteur = new Tuteur(this);
-        Grille grille;
+	Grille grille;
 	
 	Case matriceSudoku[][] = new Case[9][9];
-	Case matriceAffiche[][] = new Case[9][9];
-	Case matrice[][] = new Case[9][9];
 	
 	
 	
@@ -28,14 +26,18 @@ public class Sudoku
 	ArrayList<Coup> listErreurHypo = new ArrayList<Coup>();
 
     public Sudoku() {
+    	
+    	/*
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 9; j++) {
                 matriceSudoku[i][j] = new Case();
                 matriceAffiche[i][j] = new Case();
             }
-        }
-
-        //expert = new ExpertSudoku( ConvertToTabInt(matriceSudoku));
+        }*/
+    	
+    	 matriceSudoku =  GenererSudoku1(); 
+    	 //expert = new ExpertSudoku(ConvertToTabInt(matriceSudoku));
+    	 
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -65,6 +67,7 @@ public class Sudoku
             public void run() {
                 grille = new Grille(fSudo);
                 grille.setVisible(true);
+                grille.setPuzzle(ConvertToTabInt(matriceSudoku));
             }
         });
     }
@@ -131,11 +134,12 @@ public class Sudoku
 	
 	public void JouerCoup(int ligne, int colonne, int  numero)
 	{
-		if(matriceSudoku[ligne][colonne].CaseRemplie())//on v���rifie si la case n'est pas d���j��� remplie
+		
+		if(!matriceSudoku[ligne][colonne].CaseRemplie())//on v���rifie si la case n'est pas d���j��� remplie
 		{
+			grille.ajouterMessage("Caca");
 			Coup coup = new Coup(ligne, colonne, numero);
 			int CoupPossible = expert.jouerValeur(coup); 
-			
 			
 			switch (CoupPossible)
 			{
