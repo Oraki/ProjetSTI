@@ -87,7 +87,7 @@ public class Apprenant
 			lvl -= (knowledge_fail[i] * knowledge_fail_ponderation[i]);
 		}
 		
-		int a = 0;
+		int a = -1;
 		while(lvl > knowledge_lvl[a])
 		{
 			a++;
