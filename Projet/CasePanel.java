@@ -134,9 +134,9 @@ public class CasePanel extends javax.swing.JPanel {
         isPuzzle = puzzle;
         soluLabel.setText(v + "");
         if (puzzle) {
-            soluLabel.setForeground(Color.blue);
-        } else {
             soluLabel.setForeground(Color.BLACK);
+        } else {
+            soluLabel.setForeground(Color.blue);
         }
         soluPanel.setVisible(true);
         possPanel.setVisible(false);
