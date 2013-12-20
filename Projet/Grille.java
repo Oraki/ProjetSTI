@@ -1,32 +1,33 @@
 
 public class Grille extends javax.swing.JFrame {
 
-    private CasePanel[][] tabCP;
+    private final CasePanel[][] tabCP;
+    private final Sudoku sudo;
 
     public Grille(Sudoku sudo) {
         tabCP = new CasePanel[9][9];
+        this.sudo = sudo;
         initComponents();
         for (int i = 0; i < 9; ++i) {
             for (int j = 0; j < 9; ++j) {
                 tabCP[i][j] = new CasePanel(sudo, i, j);
-                tabCP[i][j].setBounds(i * 42 + (i / 3) * 5, j * 42 + (j / 3) * 5, 42, 42);
-                add(tabCP[i][j]);
+                tabCP[i][j].setBounds(i * 42 + (i / 3) * 3 + 3, j * 42
+                        + (j / 3) * 3 + 3, 42, 42);
+                jeuPanel.add(tabCP[i][j]);
             }
         }
     }
 
-    //TODO
     public void ajouterMessage(String s) {
-        /*     if (!s.equals("\n")) {
-         texteTuteur.setText(texteTuteur.getText() + "Tuteur :\n" + s + "\n\n");
-         } else {
-         texteTuteur.setText(texteTuteur.getText() + "\n\n");
-         }*/
+        if (!s.equals("\n")) {
+            texteTuteur.append("\nTuteur :\n   " + s);
+        } else {
+            texteTuteur.append(s);
+        }
     }
-    
-    //TODO
-    public void effacerMessages(){
-        
+
+    public void effacerMessages() {
+        texteTuteur.setText("");
     }
 
     public void erreurHypo(int ligne, int col, int valeur, boolean err) {
@@ -56,21 +57,73 @@ public class Grille extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jeuPanel = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        texteTuteur = new javax.swing.JTextArea();
+        indiceBouton = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jeuPanel.setMinimumSize(new java.awt.Dimension(390, 390));
+
+        javax.swing.GroupLayout jeuPanelLayout = new javax.swing.GroupLayout(jeuPanel);
+        jeuPanel.setLayout(jeuPanelLayout);
+        jeuPanelLayout.setHorizontalGroup(
+            jeuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 713, Short.MAX_VALUE)
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jeuPanelLayout.setVerticalGroup(
+            jeuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 390, Short.MAX_VALUE)
         );
+
+        getContentPane().add(jeuPanel, java.awt.BorderLayout.CENTER);
+
+        texteTuteur.setEditable(false);
+        texteTuteur.setColumns(20);
+        texteTuteur.setRows(5);
+        texteTuteur.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jScrollPane1.setViewportView(texteTuteur);
+
+        indiceBouton.setText("indice");
+        indiceBouton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                indiceBoutonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 628, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(indiceBouton)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(indiceBouton)
+                        .addGap(0, 62, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        getContentPane().add(jPanel2, java.awt.BorderLayout.PAGE_END);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void indiceBoutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indiceBoutonActionPerformed
+        sudo.afficherIndice();
+    }//GEN-LAST:event_indiceBoutonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -102,11 +155,17 @@ public class Grille extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Grille(null).setVisible(true);
+                Grille g = new Grille(new Sudoku());
+                g.setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton indiceBouton;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel jeuPanel;
+    private javax.swing.JTextArea texteTuteur;
     // End of variables declaration//GEN-END:variables
 }

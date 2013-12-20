@@ -29,6 +29,7 @@ public class CasePanel extends javax.swing.JPanel {
 
     public void setErreurHypo(int valeur, boolean err) {
         erreurPossi[valeur] = err;
+        updatePoss();
     }
 
     private void updatePoss() {

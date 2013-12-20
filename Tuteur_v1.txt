@@ -1,0 +1,60 @@
+Tuteur
+
+
+
+Principe du tuteur
+
+La but du tuteur est celui de remplir le rôle de coach pour l’apprenant. Le tuteur accompagne l’apprenant tout au long de sa partie de Sudoku à travers des messages textuel. Chaque action de l’apprenant est analysée puis le tuteur réagit en conséquence à travers ces feedback, de manière à le conduire vers l’obtention d’un bon modèle mental des stratégies du succès du Sudoku. Le tuteur s’adapte alors au niveau de l’apprenant, lui laissant de plus en plus d’autonomie une fois qu’un bonne expertise est atteint, tout en insistant sur les concepts nouveaux qu’il introduit au fil de la progression.
+
+
+
+Bienvenue !
+
+A l’ouverture du logiciel, le tuteur présente le logiciel et son interface utilisateur. Si c’est la toute première fois que l’apprenant lance l’application, le tuteur procède directement par l’enseignement les principes de base du Sudoku, à savoir le but du jeu, la topologie de la grille de jeu et les règles de bases.
+
+
+
+Introduction des stratégies
+
+L’introduction des stratégies est gérée par palier d’expertise. Au tout début d’apprentissage, le tuteur enseigne une stratégie initiale comme première directive de jeu. Tout au long de la progression, le tuteur explique à l’apprenant de nouvelles stratégies dès lors que les précédentes stratégies sont estimées maîtrisées par ce dernier. Elles ne sont expliquées qu’une seule fois à chaque fois. Elles peuvent être réintroduites intelligemment à travers l’utilisation des indices.
+
+
+
+Application d’une stratégie avec succès
+
+Dès lors que l’apprenant applique une stratégie avec succès, le tuteur le félicite et l’encourage, en explicitant la stratégie que l’apprenant vient d’utiliser. A la troisième félicitation du tuteur pour une stratégie donnée, ce dernier le félicite encore mais pour une ultime fois, estimant que l’utilisateur a été suffisamment flatté et maitrise désormais la stratégie en question.
+
+
+
+Gestion des erreurs de l’apprenant
+
+Les erreurs sont gérées par palier d’expertise. Au début de l’apprentissage, le tuteur indiquera précisément les erreurs à l’apprenant immédiatement après les avoir commises. Au fur et à mesure, le tuteur se fera plus discret sur cette détection des erreurs, obligeant l’apprenant à rester plus concentré sur sa partie et à devenir indépendant de la détection des erreurs du tuteur. En fin d’apprentissage, le tuteur indiquera seulement que des erreurs sont présente, donnant seulement une conscience supplémentaire à l’apprenant. Pour le tuteur, les erreurs dues au hypothèses sont trois fois moins importantes que les erreurs dues aux valeurs définitives, il effectue donc un traitement pondéré globale des erreurs. Seules les erreurs de commissions sont analysées, ce qui n’est pas le cas des erreurs d’omission.
+
+
+
+Coups au hasard
+
+Il est tout à fait possible pour un être humain de jouer au hasard. Le tuteur prends cela en compte en identifiant le hasard comme une absence de stratégie dans les coups de l’apprenant. S’il arrive à l’apprenant de jouer un coup au hasard menant à une valeur correcte, le tuteur le lui signale les trois première fois, de manière à ne pas restreindre ses libertés d’action. Pour le cas où le coup mène à une valeur erronée, le tuteur considère cela comme erreur et la gestion des erreurs s’applique. Ainsi, à une certaine avancée de l’apprentissage, il sera difficile pour l’apprenant d’obtenir des renseignements sur des coups joués aléatoirement, ce qui renforce son autonomie, son jugement et sa prise de responsabilité vis à vis de ses coups.
+
+
+Utilisation des indices
+
+Si l’apprenant se retrouve bloqué et n’arrive pas à avancer, il peut décider à tout moment de demander un indice au tuteur. Comme premier indice, le tuteur rappelle à l’apprenant l’explication complète de la stratégie la plus simple qu’il est possible d’utiliser pour qu’il se débloque. Cela permet de lui rafraichir la mémoire concernant une stratégie qu’il n’arrive pas à appliquer de manière procédurale en plus de focaliser son attention sur l’utilisation d’une stratégie en particulier. Comme deuxième indice, le tuteur indique à l’apprenant où une valeur définitive peut être inscrite. Selon son niveau d’expertise, la position du coup à jouer est de moins en moins précise, de manière a améliorer la vision globale de l’apprenant quant à sa grille, même en cas de difficultés. Lorsque l’utilisateur joue un coup après avoir demandé un indice, le compteur des indices retombe à zéro.
+
+
+
+Possibles améliorations futures du tuteur
+
+Tout d’abord, il n’y a aucune sauvegarde du modèle de l’apprenant. Par conséquent, si l’apprenant relance l’application, ses connaissances seront remise à zéro. La sauvegarde devrait être implémentée pour une utilisation plus poussées du logiciel.
+En outre, l’évaluation de l’expertise de l’apprenant a été faite de manière subjective. il serait judicieux de procéder à une évaluation plus rigoureuse à travers des tests utilisateurs.
+De plus, les erreurs réalisées par l’apprenant ne sont pas analysées mais simplement signalées. Une opportunité d’amélioration serait de fournir des explications en rapport avec les erreurs commises, en répertoriant les erreurs courantes ainsi que leurs causes.
+Pour finir, l’apprenant pourrait être tenter d’exploiter le fonctionnement du tuteur pour arriver à résoudre des Sudoku plus facilement, notamment avec la gestion des erreurs couplée avec les coups au hasards. Des tests utilisateurs devrait être mis en place afin d’ajuster la qualité, la quantité et la pertinence des interventions du tuteur de manière à améliorer son aspect pédagogique dans le but de parfaire les conditions d’apprentissage.
+
+
+
+Les fonctionnalités du tuteur sont résumées au sein du diagramme suivant.
+
+
+
+
+
