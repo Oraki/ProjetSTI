@@ -352,7 +352,7 @@ public class Tuteur
 				if(nombreErreursPonderees>8)
 				{
 					_grille.ajouterMessage(message_Erreur_3);
-					_sudoku.afficherErreurs();
+					
 				}
 			}
 			break;
