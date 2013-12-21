@@ -27,6 +27,7 @@ public class ExpertSudoku {
      *
      * @param puzzle La grille de valeur, où 0 (zéro) représente une case vide.
      */
+    @SuppressWarnings("unchecked")
     public ExpertSudoku(int[][] puzzle) {
         this.puzzle = puzzle;
         this.moteur = new Rete();
@@ -486,7 +487,7 @@ public class ExpertSudoku {
         return getIndiceMax(cmpt);
     }
 
-    public int strategieAJoueur() {
+    public int strategieAJouer() {
         if (!retraitPossible[0].isEmpty()) {
             return 0;
         } else if (!coupPossible[0].isEmpty()) {
@@ -505,7 +506,7 @@ public class ExpertSudoku {
      *
      * @return Un coup possible. Si le puzzle est fini, null.
      */
-    public Coup coupAJoueur() {
+    public Coup coupAJouer() {
         if (!coupPossible[0].isEmpty()) {
             return coupPossible[0].get(0);
         } else if (!coupPossible[1].isEmpty()) {
@@ -536,98 +537,5 @@ public class ExpertSudoku {
             }
         }
         return true;
-    }
-
-    /**
-     * Main de test
-     *
-     * @param a
-     */
-    public static void main(String[] a) {
-        int[][] g = new int[9][9];
-        g[0][0] = 0;
-        g[0][1] = 0;
-        g[0][2] = 0;
-        g[0][3] = 0;
-        g[0][4] = 7;
-        g[0][5] = 0;
-        g[0][6] = 0;
-        g[0][7] = 5;
-        g[0][8] = 0;
-        g[1][0] = 9;
-        g[1][1] = 0;
-        g[1][2] = 0;
-        g[1][3] = 4;
-        g[1][4] = 2;
-        g[1][5] = 1;
-        g[1][6] = 7;
-        g[1][7] = 0;
-        g[1][8] = 3;
-        g[2][0] = 0;
-        g[2][1] = 4;
-        g[2][2] = 6;
-        g[2][3] = 5;
-        g[2][4] = 0;
-        g[2][5] = 0;
-        g[2][6] = 0;
-        g[2][7] = 8;
-        g[2][8] = 2;
-        g[3][0] = 0;
-        g[3][1] = 7;
-        g[3][2] = 0;
-        g[3][3] = 8;
-        g[3][4] = 0;
-        g[3][5] = 0;
-        g[3][6] = 0;
-        g[3][7] = 9;
-        g[3][8] = 0;
-        g[4][0] = 0;
-        g[4][1] = 0;
-        g[4][2] = 5;
-        g[4][3] = 9;
-        g[4][4] = 0;
-        g[4][5] = 3;
-        g[4][6] = 6;
-        g[4][7] = 0;
-        g[4][8] = 0;
-        g[5][0] = 0;
-        g[5][1] = 6;
-        g[5][2] = 0;
-        g[5][3] = 0;
-        g[5][4] = 0;
-        g[5][5] = 7;
-        g[5][6] = 0;
-        g[5][7] = 4;
-        g[5][8] = 0;
-        g[6][0] = 1;
-        g[6][1] = 2;
-        g[6][2] = 0;
-        g[6][3] = 0;
-        g[6][4] = 0;
-        g[6][5] = 5;
-        g[6][6] = 9;
-        g[6][7] = 7;
-        g[6][8] = 0;
-        g[7][0] = 6;
-        g[7][1] = 0;
-        g[7][2] = 7;
-        g[7][3] = 1;
-        g[7][4] = 9;
-        g[7][5] = 4;
-        g[7][6] = 0;
-        g[7][7] = 0;
-        g[7][8] = 5;
-        g[8][0] = 0;
-        g[8][1] = 9;
-        g[8][2] = 0;
-        g[8][3] = 0;
-        g[8][4] = 6;
-        g[8][5] = 0;
-        g[8][6] = 0;
-        g[8][7] = 0;
-        g[8][8] = 0;
-
-        ExpertSudoku es = new ExpertSudoku(g);
-        System.out.println("Fin");
     }
 }
