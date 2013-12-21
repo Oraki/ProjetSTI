@@ -1,12 +1,16 @@
 
+import java.util.concurrent.LinkedBlockingQueue;
+
 public class Grille extends javax.swing.JFrame {
 
     private final CasePanel[][] tabCP;
     private final Sudoku sudo;
+    private LinkedBlockingQueue<String> messages;
 
     public Grille(Sudoku sudo) {
         tabCP = new CasePanel[9][9];
         this.sudo = sudo;
+        messages = new LinkedBlockingQueue<>();
         initComponents();
         for (int i = 0; i < 9; ++i) {
             for (int j = 0; j < 9; ++j) {
@@ -16,48 +20,47 @@ public class Grille extends javax.swing.JFrame {
                 jeuPanel.add(tabCP[i][j]);
             }
         }
+        (new Thread() {
+            public void run() {
+                while (true) {
+                    try {
+                        String s = messages.take();
+                        setEnabled(false);
+                        for (CasePanel[] tcp : tabCP) {
+                            for (CasePanel cp : tcp) {
+                                cp.setEnabled(false);
+                            }
+                        }
+                        texteTuteur.append("\nTuteur :\n   ");
+                        Thread.sleep(300);
+                        for (int i = 0; i < s.length(); i++) {
+                            texteTuteur.append(String.valueOf(s.charAt(i)));
+                            texteTuteur.setCaretPosition(texteTuteur.getText().length());
+
+                            Thread.sleep(20);
+                        }
+                        Thread.sleep(500);
+                        texteTuteur.append("\n");
+                        texteTuteur.setCaretPosition(texteTuteur.getText().length());
+                    } catch (InterruptedException e) {
+                    }
+                    setEnabled(true);
+                }
+            }
+        }).start();
+    }
+
+    @Override
+    public void setEnabled(boolean e) {
+        for (CasePanel[] tcp : tabCP) {
+            for (CasePanel cp : tcp) {
+                cp.setEnabled(e);
+            }
+        }
     }
 
     public void ajouterMessage(String s) {
-    	
-    	
-    	
-    	texteTuteur.append("Tuteur :\n   ");
-    	
-    	try {
-			Thread.sleep(300);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-    	
-    	for(int i=0; i<s.length(); i++)
-    	{
-    		texteTuteur.append(String.valueOf(s.charAt(i)));
-    		
-    		try {
-				Thread.sleep(20);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-    	}
-    	
-        
-        
-        
-        try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-        
-        texteTuteur.append("\n\n");
-        
-        
-      //texteTuteur.append("Tuteur :\n   " + s + "\n\n");
-      texteTuteur.setCaretPosition(texteTuteur.getText().length());
+        messages.add(s);
     }
 
     public void effacerMessages() {
@@ -160,42 +163,6 @@ public class Grille extends javax.swing.JFrame {
     private void indiceBoutonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_indiceBoutonActionPerformed
         sudo.afficherIndice();
     }//GEN-LAST:event_indiceBoutonActionPerformed
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Grille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Grille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Grille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Grille.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                Grille g = new Grille(null);
-                g.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton indiceBouton;

@@ -11,6 +11,7 @@ public class CasePanel extends javax.swing.JPanel {
     private final boolean[] erreurPossi;
     private boolean erreur;
     private boolean isPuzzle;
+    private boolean enable;
     private Sudoku main;
 
     public CasePanel(Sudoku sudo, int ligne, int col) {
@@ -25,10 +26,11 @@ public class CasePanel extends javax.swing.JPanel {
         initComponents();
         soluPanel.setVisible(false);
         possPanel.setVisible(true);
+        enable = true;
     }
 
     public void setErreurHypo(int valeur, boolean err) {
-        erreurPossi[valeur] = err;
+        erreurPossi[valeur - 1] = err;
         updatePoss();
     }
 
@@ -165,7 +167,33 @@ public class CasePanel extends javax.swing.JPanel {
         if (erreur) {
             soluPanel.setBackground(new Color(255, 102, 102));
         } else {
-            soluPanel.setBackground(Color.BLACK);
+            soluPanel.setBackground(Color.WHITE);
+        }
+    }
+
+    @Override
+    public void setEnabled(boolean e) {
+        enable = e;
+        if (!enable) {
+            soluPanel.setBackground(Color.LIGHT_GRAY);
+            possPanel.setBackground(Color.LIGHT_GRAY);
+            poss1Panel.setBackground(Color.LIGHT_GRAY);
+            poss2Panel.setBackground(Color.LIGHT_GRAY);
+            poss3Panel.setBackground(Color.LIGHT_GRAY);
+            poss4Panel.setBackground(Color.LIGHT_GRAY);
+            poss5Panel.setBackground(Color.LIGHT_GRAY);
+            poss6Panel.setBackground(Color.LIGHT_GRAY);
+            poss7Panel.setBackground(Color.LIGHT_GRAY);
+            poss8Panel.setBackground(Color.LIGHT_GRAY);
+            poss9Panel.setBackground(Color.LIGHT_GRAY);
+        } else {
+            possPanel.setBackground(Color.WHITE);
+            updatePoss();
+            if (erreur) {
+                soluPanel.setBackground(new Color(255, 102, 102));
+            } else {
+                soluPanel.setBackground(Color.WHITE);
+            }
         }
     }
 
@@ -376,89 +404,109 @@ public class CasePanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void poss4LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poss4LabelMouseClicked
-        int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
-        if (SwingUtilities.isLeftMouseButton(evt)) {
-            setValeur(i);
-        } else if (SwingUtilities.isRightMouseButton(evt)) {
-            retirerPoss(i);
+        if (enable) {
+            int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
+            if (SwingUtilities.isLeftMouseButton(evt)) {
+                setValeur(i);
+            } else if (SwingUtilities.isRightMouseButton(evt)) {
+                retirerPoss(i);
+            }
         }
     }//GEN-LAST:event_poss4LabelMouseClicked
 
     private void poss1LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poss1LabelMouseClicked
-        int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
-        if (SwingUtilities.isLeftMouseButton(evt)) {
-            setValeur(i);
-        } else if (SwingUtilities.isRightMouseButton(evt)) {
-            retirerPoss(i);
+        if (enable) {
+            int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
+            if (SwingUtilities.isLeftMouseButton(evt)) {
+                setValeur(i);
+            } else if (SwingUtilities.isRightMouseButton(evt)) {
+                retirerPoss(i);
+            }
         }
     }//GEN-LAST:event_poss1LabelMouseClicked
 
     private void poss2LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poss2LabelMouseClicked
-        int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
-        if (SwingUtilities.isLeftMouseButton(evt)) {
-            setValeur(i);
-        } else if (SwingUtilities.isRightMouseButton(evt)) {
-            retirerPoss(i);
+        if (enable) {
+            int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
+            if (SwingUtilities.isLeftMouseButton(evt)) {
+                setValeur(i);
+            } else if (SwingUtilities.isRightMouseButton(evt)) {
+                retirerPoss(i);
+            }
         }
     }//GEN-LAST:event_poss2LabelMouseClicked
 
     private void poss3LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poss3LabelMouseClicked
-        int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
-        if (SwingUtilities.isLeftMouseButton(evt)) {
-            setValeur(i);
-        } else if (SwingUtilities.isRightMouseButton(evt)) {
-            retirerPoss(i);
+        if (enable) {
+            int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
+            if (SwingUtilities.isLeftMouseButton(evt)) {
+                setValeur(i);
+            } else if (SwingUtilities.isRightMouseButton(evt)) {
+                retirerPoss(i);
+            }
         }
     }//GEN-LAST:event_poss3LabelMouseClicked
 
     private void poss5LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poss5LabelMouseClicked
-        int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
-        if (SwingUtilities.isLeftMouseButton(evt)) {
-            setValeur(i);
-        } else if (SwingUtilities.isRightMouseButton(evt)) {
-            retirerPoss(i);
+        if (enable) {
+            int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
+            if (SwingUtilities.isLeftMouseButton(evt)) {
+                setValeur(i);
+            } else if (SwingUtilities.isRightMouseButton(evt)) {
+                retirerPoss(i);
+            }
         }
     }//GEN-LAST:event_poss5LabelMouseClicked
 
     private void poss6LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poss6LabelMouseClicked
-        int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
-        if (SwingUtilities.isLeftMouseButton(evt)) {
-            setValeur(i);
-        } else if (SwingUtilities.isRightMouseButton(evt)) {
-            retirerPoss(i);
+        if (enable) {
+            int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
+            if (SwingUtilities.isLeftMouseButton(evt)) {
+                setValeur(i);
+            } else if (SwingUtilities.isRightMouseButton(evt)) {
+                retirerPoss(i);
+            }
         }
     }//GEN-LAST:event_poss6LabelMouseClicked
 
     private void poss7LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poss7LabelMouseClicked
-        int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
-        if (SwingUtilities.isLeftMouseButton(evt)) {
-            setValeur(i);
-        } else if (SwingUtilities.isRightMouseButton(evt)) {
-            retirerPoss(i);
+        if (enable) {
+            int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
+            if (SwingUtilities.isLeftMouseButton(evt)) {
+                setValeur(i);
+            } else if (SwingUtilities.isRightMouseButton(evt)) {
+                retirerPoss(i);
+            }
         }
     }//GEN-LAST:event_poss7LabelMouseClicked
 
     private void poss8LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poss8LabelMouseClicked
-        int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
-        if (SwingUtilities.isLeftMouseButton(evt)) {
-            setValeur(i);
-        } else if (SwingUtilities.isRightMouseButton(evt)) {
-            retirerPoss(i);
+        if (enable) {
+            int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
+            if (SwingUtilities.isLeftMouseButton(evt)) {
+                setValeur(i);
+            } else if (SwingUtilities.isRightMouseButton(evt)) {
+                retirerPoss(i);
+            }
         }
     }//GEN-LAST:event_poss8LabelMouseClicked
 
     private void poss9LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_poss9LabelMouseClicked
-        int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
-        if (SwingUtilities.isLeftMouseButton(evt)) {
-            setValeur(i);
-        } else if (SwingUtilities.isRightMouseButton(evt)) {
-            retirerPoss(i);
+        if (enable) {
+            int i = Integer.parseInt(((JLabel) evt.getSource()).getText());
+            if (SwingUtilities.isLeftMouseButton(evt)) {
+                setValeur(i);
+            } else if (SwingUtilities.isRightMouseButton(evt)) {
+                retirerPoss(i);
+            }
         }
     }//GEN-LAST:event_poss9LabelMouseClicked
 
     private void soluLabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_soluLabelMouseClicked
-        if (SwingUtilities.isRightMouseButton(evt)) {
-            retirerValeur();
+        if (enable) {
+            if (SwingUtilities.isRightMouseButton(evt)) {
+                retirerValeur();
+            }
         }
     }//GEN-LAST:event_soluLabelMouseClicked
 
