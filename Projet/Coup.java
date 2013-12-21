@@ -53,7 +53,6 @@ public class Coup {
 
     @Override
     public String toString() {
-        return "Coup{" + "ligne=" + ligne + ", colonne=" + colonne
-                + ", region=" + region + ", numero=" + numero + '}';
+        return "Coup{" + "ligne=" + ligne + ", colonne=" + colonne + ", region=" + region + ", numero=" + numero + '}';
     }
 }
