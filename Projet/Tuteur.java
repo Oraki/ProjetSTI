@@ -104,59 +104,6 @@ public class Tuteur
 	
 	public void Message_Indice()
 	{
-		if(_aDejaEuUnIndice == false)
-		{
-			int strategieUtilisable = _expert.strategieAJoueur();
-			
-			switch(strategieUtilisable)
-			{
-				case 0:
-				{
-					_indiceStrat = "des hypotheses simples.";
-					MettreAjourMessages();
-					
-					_grille.ajouterMessage(message_Indice_Strat);
-					_grille.ajouterMessage(message_Strat0_Definition);
-					_grille.ajouterMessage(message_Strat0_Conseil);
-				}
-				break;
-				
-				case 1:
-				{
-					_indiceStrat = "de l'hypothese seule visible.";
-					MettreAjourMessages();
-					
-					_grille.ajouterMessage(message_Indice_Strat);
-					_grille.ajouterMessage(message_Strat1_Definition);
-					_grille.ajouterMessage(message_Strat1_Conseil);
-				}
-				break;
-				
-				case 2:
-				{
-					_indiceStrat = "de l'hypothese seule cachee.";
-					MettreAjourMessages();
-					
-					_grille.ajouterMessage(message_Indice_Strat);
-					_grille.ajouterMessage(message_Strat2_Definition);
-					_grille.ajouterMessage(message_Strat2_Conseil);
-				}
-				break;
-				
-				case 3:
-				{
-					_indiceStrat = "des paires d'hypotheses visible.";
-					MettreAjourMessages();
-					
-					_grille.ajouterMessage(message_Indice_Strat);
-					_grille.ajouterMessage(message_Strat3_Definition);
-					_grille.ajouterMessage(message_Strat3_Conseil);
-				}
-				break;
-			}
-			
-			_aDejaEuUnIndice = true;
-		}
 		if(_aDejaEuUnIndice == true)
 		{
 			int niveauExpertise = _apprenant.GetNiveau();
@@ -246,6 +193,60 @@ public class Tuteur
 			}
 			
 			_aDejaEuUnIndice = false;
+		}
+		
+		else
+		{
+			int strategieUtilisable = _expert.strategieAJoueur();
+			
+			switch(strategieUtilisable)
+			{
+				case 0:
+				{
+					_indiceStrat = "des hypotheses simples.";
+					MettreAjourMessages();
+					
+					_grille.ajouterMessage(message_Indice_Strat);
+					_grille.ajouterMessage(message_Strat0_Definition);
+					_grille.ajouterMessage(message_Strat0_Conseil);
+				}
+				break;
+				
+				case 1:
+				{
+					_indiceStrat = "de l'hypothese seule visible.";
+					MettreAjourMessages();
+					
+					_grille.ajouterMessage(message_Indice_Strat);
+					_grille.ajouterMessage(message_Strat1_Definition);
+					_grille.ajouterMessage(message_Strat1_Conseil);
+				}
+				break;
+				
+				case 2:
+				{
+					_indiceStrat = "de l'hypothese seule cachee.";
+					MettreAjourMessages();
+					
+					_grille.ajouterMessage(message_Indice_Strat);
+					_grille.ajouterMessage(message_Strat2_Definition);
+					_grille.ajouterMessage(message_Strat2_Conseil);
+				}
+				break;
+				
+				case 3:
+				{
+					_indiceStrat = "des paires d'hypotheses visible.";
+					MettreAjourMessages();
+					
+					_grille.ajouterMessage(message_Indice_Strat);
+					_grille.ajouterMessage(message_Strat3_Definition);
+					_grille.ajouterMessage(message_Strat3_Conseil);
+				}
+				break;
+			}
+			
+			_aDejaEuUnIndice = true;
 		}
 	}
 	
@@ -371,7 +372,7 @@ public class Tuteur
 				_succesStrat = "la strategie des hypotheses simples";
 				MettreAjourMessages();
 				
-				nbSuccesStrat = _apprenant.knowledge_success[numeroStrat];
+				nbSuccesStrat = _apprenant.knowledge_success[2];
 			}
 				break;		
 				
@@ -380,7 +381,7 @@ public class Tuteur
 				_succesStrat = "la strategie de l'hypothese seule visible";
 				MettreAjourMessages();
 				
-				nbSuccesStrat = _apprenant.knowledge_success[numeroStrat];
+				nbSuccesStrat = _apprenant.knowledge_success[0];
 			}
 				break;
 				
@@ -389,7 +390,7 @@ public class Tuteur
 				_succesStrat = "la strategie de l'hypothese seule cachee";
 				MettreAjourMessages();
 				
-				nbSuccesStrat = _apprenant.knowledge_success[numeroStrat];
+				nbSuccesStrat = _apprenant.knowledge_success[1];
 			}
 				break;
 				
@@ -398,7 +399,7 @@ public class Tuteur
 				_succesStrat = "la strategie des paires d'hypotheses visibles";
 				MettreAjourMessages();
 				
-				nbSuccesStrat = _apprenant.knowledge_success[numeroStrat];
+				nbSuccesStrat = _apprenant.knowledge_success[3];
 			}
 				break;
 		}

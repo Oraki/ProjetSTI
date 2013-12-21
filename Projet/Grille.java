@@ -21,7 +21,7 @@ public class Grille extends javax.swing.JFrame {
     public void ajouterMessage(String s) {
     	
     	
-    	/*
+    	
     	texteTuteur.append("Tuteur :\n   ");
     	
     	try {
@@ -36,7 +36,7 @@ public class Grille extends javax.swing.JFrame {
     		texteTuteur.append(String.valueOf(s.charAt(i)));
     		
     		try {
-				Thread.sleep(40);
+				Thread.sleep(20);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -54,9 +54,9 @@ public class Grille extends javax.swing.JFrame {
 		}
         
         texteTuteur.append("\n\n");
-        */
         
-      texteTuteur.append("Tuteur :\n   " + s + "\n\n");
+        
+      //texteTuteur.append("Tuteur :\n   " + s + "\n\n");
       texteTuteur.setCaretPosition(texteTuteur.getText().length());
     }
 

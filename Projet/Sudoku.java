@@ -153,13 +153,13 @@ public class Sudoku
 			
 			case 0://strat 1
 				apprenant.AddSuccess(0);
-				tuteur.Message_Succes(0);
+				tuteur.Message_Succes(1);
 				tuteur.Message_Strategie();
 				break;
 			
 			case 1://strat 2
 				apprenant.AddSuccess(1);
-				tuteur.Message_Succes(1);
+				tuteur.Message_Succes(2);
 				tuteur.Message_Strategie();
 				break;
 				
@@ -170,7 +170,7 @@ public class Sudoku
 			AjoutChiffreMat(ligne, colonne, numero);
 		}
 		
-		grille.ajouterMessage("Niv : " + apprenant.GetNiveau() + "   LVL : " + apprenant.Getlvl() +"   KNOW : " + apprenant.knowledge_success[0] + " " + apprenant.knowledge_success[1] + " " + apprenant.knowledge_success[2] + " " + apprenant.knowledge_success[3] + "     Fail : " + apprenant.knowledge_fail[0] + " " + apprenant.knowledge_fail[1] + "    rd : " + apprenant.numRandom);
+		//grille.ajouterMessage("Niv : " + apprenant.GetNiveau() + "   LVL : " + apprenant.Getlvl() +"   KNOW : " + apprenant.knowledge_success[0] + " " + apprenant.knowledge_success[1] + " " + apprenant.knowledge_success[2] + " " + apprenant.knowledge_success[3] + "     Fail : " + apprenant.knowledge_fail[0] + " " + apprenant.knowledge_fail[1] + "    rd : " + apprenant.numRandom);
 	}
 	
 	public void RetirerHypothese(int ligne, int colonne, int  numero)
@@ -193,7 +193,7 @@ public class Sudoku
 		
 		case 0://strat 1
 			apprenant.AddSuccess(2);
-			tuteur.Message_Succes(2);
+			tuteur.Message_Succes(0);
 			tuteur.Message_Strategie();
 			break;
 		
@@ -209,7 +209,7 @@ public class Sudoku
 		
 		RetirerHypotheseMat(ligne, colonne, numero);
 		
-		grille.ajouterMessage("Niv : " + apprenant.GetNiveau() + "   LVL : " + apprenant.Getlvl() + "   KNOW : " + apprenant.knowledge_success[0] + " " + apprenant.knowledge_success[1] + " " + apprenant.knowledge_success[2] + " " + apprenant.knowledge_success[3] + "     Fail : " + apprenant.knowledge_fail[0] + " " + apprenant.knowledge_fail[1] + "    rd : " + apprenant.numRandom);
+		//grille.ajouterMessage("Niv : " + apprenant.GetNiveau() + "   LVL : " + apprenant.Getlvl() + "   KNOW : " + apprenant.knowledge_success[0] + " " + apprenant.knowledge_success[1] + " " + apprenant.knowledge_success[2] + " " + apprenant.knowledge_success[3] + "     Fail : " + apprenant.knowledge_fail[0] + " " + apprenant.knowledge_fail[1] + "    rd : " + apprenant.numRandom);
 	}
 	
 	public void RetirerCoup(int ligne, int colonne, int  numero)
