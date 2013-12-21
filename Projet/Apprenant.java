@@ -30,18 +30,18 @@ public class Apprenant {
 
         //A calibrer
         knowledge_sucess_ponderation[0] = 10;
-        knowledge_sucess_ponderation[1] = 30;
+        knowledge_sucess_ponderation[1] = 20;
         knowledge_sucess_ponderation[2] = 1;
-        knowledge_sucess_ponderation[3] = 30;
+        knowledge_sucess_ponderation[3] = 5;
 
-        knowledge_fail_ponderation[0] = 20;
-        knowledge_fail_ponderation[1] = 15;
+        knowledge_fail_ponderation[0] = 30;
+        knowledge_fail_ponderation[1] = 3;
 
         //A calibrer
         knowledge_lvl[0] = 0;
-        knowledge_lvl[1] = 30;
-        knowledge_lvl[2] = 60;
-        knowledge_lvl[3] = 100;
+        knowledge_lvl[1] = 50;
+        knowledge_lvl[2] = 120;
+        knowledge_lvl[3] = 200;
 
         numRandom = 0;
         nombreDeCoupJoue = 0;
