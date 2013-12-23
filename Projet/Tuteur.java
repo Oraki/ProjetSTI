@@ -107,8 +107,8 @@ public class Tuteur {
                 case 0:
                     Coup coup = _expert.coupAJouer();
 
-                    _indiceCoup = "a la ligne " + String.valueOf(coup.getLigne() + 1)
-                            + " et a la colonne " + String.valueOf(coup.getColonne() + 1);
+                    _indiceCoup = "a la ligne " + coup.getColonne() + 1
+                            + " et a la colonne " + coup.getLigne() + 1;
                     MettreAjourMessages();
 
                     _grille.ajouterMessage(message_Indice_Introduction);
@@ -117,8 +117,8 @@ public class Tuteur {
                 case 1:
                     Coup coup2 = _expert.coupAJouer();
 
-                    _indiceCoup = "a la ligne " + String.valueOf(coup2.getLigne())
-                            + " et a la colonne " + String.valueOf(coup2.getColonne());
+                    _indiceCoup = "a la ligne " + coup2.getColonne() + 1
+                            + " et a la colonne " + coup2.getLigne() + 1;
                     MettreAjourMessages();
 
                     _grille.ajouterMessage(message_Indice_Introduction);
